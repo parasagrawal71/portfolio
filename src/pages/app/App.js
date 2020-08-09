@@ -1,7 +1,7 @@
 import React from "react";
-import { connect } from "react-redux";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
+import Header from "components/header/Header";
 
 // IMPORT OTHERS HERE //
 import "./App.css";
@@ -9,13 +9,10 @@ import "./App.css";
 const App = () => {
   return (
     <main>
+      <Header />
       <div>Portfolio</div>
     </main>
   );
 };
 
-const mapStateToProps = (store) => {
-  return { toastState: store };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
