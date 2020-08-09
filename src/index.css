@@ -1,10 +1,16 @@
 /* *** FONT FAMILIES *** */
+
 @font-face {
-  font-family: "Roboto-Regular";
-  src: url(assets/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+  font-family: "Montserrat-Regular";
+  src: url(assets/fonts/Montserrat/Montserrat-Regular.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: "Roboto-Medium";
-  src: url(assets/fonts/Roboto/Roboto-Medium.ttf) format("truetype");
+  font-family: "Montserrat-Medium";
+  src: url(assets/fonts/Montserrat/Montserrat-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat-ExtraBold";
+  src: url(assets/fonts/Montserrat/Montserrat-Black.ttf) format("truetype");
 }

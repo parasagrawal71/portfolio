@@ -1,0 +1,12 @@
+@import "utils/commonStyles/colors.scss";
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.app {
+  background: linear-gradient(#29323c, #485563);
+  height: 100vh;
+  padding: 0 150px;
+}

@@ -1,0 +1,41 @@
+@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/flex.scss";
+
+.home {
+  position: relative;
+  top: 30%;
+  @include flex-row;
+  color: $white;
+  font-family: Montserrat-Regular;
+}
+
+.home--left {
+  margin-top: 50px;
+  letter-spacing: 1px;
+  width: 60%;
+
+  .home-hi {
+  }
+
+  .home-name {
+    text-transform: uppercase;
+    font-family: Montserrat-ExtraBold;
+    font-size: 40px;
+  }
+
+  .home-designation {
+  }
+}
+
+.home--right {
+  width: 50%;
+  color: $black;
+  @include flex-row-end;
+
+  pre {
+    width: 60%;
+    background-color: $white;
+    border-radius: 10px;
+    padding: 20px;
+  }
+}

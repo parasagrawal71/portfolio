@@ -4,7 +4,11 @@ import React from "react";
 import "./Header.scss";
 
 const Header = () => {
-  return <header></header>;
+  return (
+    <header>
+      <div />
+    </header>
+  );
 };
 
 export default Header;
