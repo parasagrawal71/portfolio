@@ -11,9 +11,9 @@ const Header = () => {
         <a href="#home">Home</a>
         <a href="#about">About Me</a>
         <a href="#techStack">Tech Stack</a>
-        <a href="#a">Experience</a>
-        <a href="#a">Projects</a>
-        <a href="#a">Contact</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </section>
     </main>
   );
