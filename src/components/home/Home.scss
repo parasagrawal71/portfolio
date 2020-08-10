@@ -1,12 +1,15 @@
 @import "utils/commonStyles/colors.scss";
 @import "utils/commonStyles/flex.scss";
 
+.home-container {
+  @include flex-col;
+  height: 100vh;
+}
+
 .home {
   position: relative;
   top: 30%;
   @include flex-row;
-  color: $white;
-  font-family: Montserrat-Regular;
 }
 
 .home--left {
@@ -20,7 +23,7 @@
   .home-name {
     text-transform: uppercase;
     font-family: Montserrat-ExtraBold;
-    font-size: 40px;
+    font-size: 45px;
   }
 
   .home-designation {

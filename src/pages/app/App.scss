@@ -5,8 +5,30 @@ body {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .app {
   background: linear-gradient(#29323c, #485563);
-  height: 100vh;
   padding: 0 150px;
+  color: $white;
+  font-family: Montserrat-Regular;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(#29323c, #485563);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c2c2c2;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
