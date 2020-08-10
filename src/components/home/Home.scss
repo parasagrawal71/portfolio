@@ -2,18 +2,16 @@
 @import "utils/commonStyles/flex.scss";
 
 .home-container {
-  @include flex-col;
-  height: 100vh;
+  @include flex-col-cen;
+  height: calc(100vh - 60px);
 }
 
 .home {
-  position: relative;
-  top: 30%;
-  @include flex-row;
+  @include flex-row-b-sb-cen;
+  margin-top: -10vh;
 }
 
 .home--left {
-  margin-top: 50px;
   letter-spacing: 1px;
   width: 60%;
 
@@ -23,7 +21,7 @@
   .home-name {
     text-transform: uppercase;
     font-family: Montserrat-ExtraBold;
-    font-size: 45px;
+    font-size: 50px;
   }
 
   .home-designation {
@@ -38,6 +36,7 @@
   pre {
     width: 60%;
     background-color: $white;
+    opacity: 0.7;
     border-radius: 10px;
     padding: 20px;
   }
