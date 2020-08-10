@@ -2,11 +2,17 @@
 
 body {
   margin: 0;
-  box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 .app {
