@@ -3,32 +3,68 @@
 
 .aboutMe {
   height: 100vh;
-  padding: 80px 0;
+  padding: 60px 0;
 }
 
 .aboutMe--top {
   text-align: center;
+  padding-bottom: 20px;
 
   header {
     font-size: 25px;
+    padding-bottom: 20px;
   }
 
-  p {
+  .aboutMe-descrp {
+    @include flex-row;
+
+    img {
+      border-radius: 50%;
+      width: 200px;
+      height: auto;
+    }
+
+    p {
+      // max-width: 700px;
+      text-align: start;
+      padding-left: 40px;
+    }
   }
 }
 
 .aboutMe--bottom {
-  @include flex-row;
-
-  div {
-    width: calc(90% / 3);
-    height: 35vh;
-    background-color: rgb(248, 248, 248);
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    border-radius: 10px;
+  header {
+    font-size: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-bottom: 30px;
   }
 
-  div:not(:last-child) {
-    margin-right: 5%;
+  .aboutMe--bottom-whatIDo {
+    @include flex-row;
+
+    section {
+      width: calc(80% / 3);
+      height: 35vh;
+      background-color: rgb(248, 248, 248);
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+      opacity: 0.7;
+      border-radius: 10px;
+    }
+
+    section:not(:last-child) {
+      margin-right: 10%;
+    }
+  }
+}
+
+.aboutMe-whatIDo-box {
+  color: $black;
+  @include flex-col-h-cen;
+  padding: 15px;
+
+  img {
+    width: 60px;
+    height: 60px;
   }
 }
