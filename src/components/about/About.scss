@@ -1,12 +1,12 @@
 @import "utils/commonStyles/colors.scss";
 @import "utils/commonStyles/flex.scss";
 
-.aboutMe {
+.about {
   height: 100vh;
   padding: 60px 0;
 }
 
-.aboutMe--top {
+.about--top {
   text-align: center;
   padding-bottom: 20px;
 
@@ -15,7 +15,7 @@
     padding-bottom: 20px;
   }
 
-  .aboutMe-descrp {
+  .about-descrp {
     @include flex-row;
 
     img {
@@ -32,7 +32,7 @@
   }
 }
 
-.aboutMe--bottom {
+.about--bottom {
   header {
     font-size: 30px;
     text-transform: uppercase;
@@ -40,7 +40,7 @@
     padding-bottom: 30px;
   }
 
-  .aboutMe--bottom-whatIDo {
+  .about--bottom-whatIDo {
     @include flex-row;
 
     section {
@@ -58,7 +58,7 @@
   }
 }
 
-.aboutMe-whatIDo-box {
+.about-whatIDo-box {
   color: $black;
   @include flex-col-h-cen;
   padding: 15px;

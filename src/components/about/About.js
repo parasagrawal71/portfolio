@@ -1,16 +1,16 @@
 import React from "react";
 
 // IMPORT OTHERS HERE //
-import "./AboutMe.scss";
+import "./About.scss";
 import profilePic from "assets/img/paras_formal.jpg";
 import frontend from "assets/img/frontend.svg";
 
-const AboutMe = () => {
+const About = () => {
   return (
-    <main className="aboutMe" id="about">
-      <section className="aboutMe--top">
+    <main className="about" id="about">
+      <section className="about--top">
         <header>ABOUT ME</header>
-        <section className="aboutMe-descrp">
+        <section className="about-descrp">
           <img src={profilePic} alt="profile" />
           <p>
             Hello! I&#39;m Paras Agrawal, a full stack developer, a Python enthusiast, and a guy
@@ -20,10 +20,10 @@ const AboutMe = () => {
           </p>
         </section>
       </section>
-      <section className="aboutMe--bottom">
+      <section className="about--bottom">
         <header>what i do</header>
-        <section className="aboutMe--bottom-whatIDo">
-          <section className="aboutMe-whatIDo-box">
+        <section className="about--bottom-whatIDo">
+          <section className="about-whatIDo-box">
             <img src={frontend} alt="frontend" />
             <div>Front-End</div>
             <p>
@@ -31,7 +31,7 @@ const AboutMe = () => {
               jQuery or more advanced javascript MVC frameworks such as angular
             </p>
           </section>
-          <section className="aboutMe-whatIDo-box">
+          <section className="about-whatIDo-box">
             <img src={frontend} alt="frontend" />
             <div>Back-End</div>
             <p>
@@ -39,7 +39,7 @@ const AboutMe = () => {
               jQuery or more advanced javascript MVC frameworks such as angular
             </p>
           </section>
-          <section className="aboutMe-whatIDo-box">
+          <section className="about-whatIDo-box">
             <img src={frontend} alt="frontend" />
             <div>Mobile App</div>
             <p>
@@ -53,4 +53,4 @@ const AboutMe = () => {
   );
 };
 
-export default AboutMe;
+export default About;
