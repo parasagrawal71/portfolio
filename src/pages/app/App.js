@@ -2,12 +2,12 @@ import React from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import Header from "components/header/Header";
-import Home from "components/home/Home";
-import AboutMe from "components/about/About";
-import TechStack from "components/skillset/Skillset";
-import Experience from "components/experience/Experience";
-import Projects from "components/projects/Projects";
-import Contact from "components/contact/Contact";
+import Home from "sections/home/Home";
+import AboutMe from "sections/about/About";
+import TechStack from "sections/skillset/Skillset";
+import Experience from "sections/experience/Experience";
+import Projects from "sections/projects/Projects";
+import Contact from "sections/contact/Contact";
 
 // IMPORT OTHERS HERE //
 import "./App.scss";

@@ -2,7 +2,7 @@ import React from "react";
 import Particles from "react-particles-js";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
-import CharTransition from "./CharTransition";
+import CharTransition from "../../components/charTransition/CharTransition";
 
 // IMPORT OTHERS HERE //
 import "./Home.scss";
