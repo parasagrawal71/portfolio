@@ -17,7 +17,7 @@
 
   .home-hi {
     font-size: 15px;
-    animation: fadein 3s;
+    animation: fadein-full 3s;
   }
 
   .home-name {
@@ -28,7 +28,7 @@
     font-size: 50px;
 
     span {
-      animation: move-text 0.2s forwards;
+      animation: move-text-name 0.2s forwards;
       position: relative;
       top: 0;
       opacity: 0;
@@ -37,32 +37,6 @@
 
   .home-designation {
     font-size: 18px;
-  }
-}
-
-@keyframes move-text {
-  0% {
-    top: -40px;
-    opacity: 0;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes fadein {
-  0% {
-    opacity: 0;
-  }
-
-  30% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
 
