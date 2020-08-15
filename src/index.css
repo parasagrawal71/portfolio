@@ -11,6 +11,11 @@
 }
 
 @font-face {
+  font-family: "Montserrat-Bold";
+  src: url(assets/fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+}
+
+@font-face {
   font-family: "Montserrat-ExtraBold";
   src: url(assets/fonts/Montserrat/Montserrat-Black.ttf) format("truetype");
 }

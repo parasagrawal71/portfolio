@@ -3,21 +3,25 @@
 
 .header {
   @include flex-row-sb;
-  padding: 20px 0;
+  padding: 20px 150px;
   position: sticky;
   top: 0;
   z-index: 9999;
 }
 
 .header--left {
+  img {
+    width: 70px;
+  }
 }
 
 .header--right {
-  @include flex-row;
+  @include flex-row-v-cen;
   font-size: 15px;
 
   a {
-    color: $white;
+    font-weight: bold;
+    color: $grey;
     text-decoration: none;
   }
 

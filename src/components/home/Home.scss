@@ -1,48 +1,31 @@
 @import "utils/commonStyles/colors.scss";
 @import "utils/commonStyles/flex.scss";
 
-.home-container {
-  @include flex-col-cen;
-  // background: url(../../assets/img/bg.png);
-  height: calc(100vh - 60px);
-  // background-position: center;
-  // background-repeat: no-repeat;
-  // background-size: cover;
-}
-
 .home {
-  @include flex-row-b-sb-cen;
-  margin-top: -10vh;
+  height: calc(100vh - 80px);
 }
 
-.home--left {
+.particles {
+}
+
+.home-content {
+  position: relative;
+  top: 35%;
   letter-spacing: 1px;
-  width: 60%;
+  text-align: center;
 
   .home-hi {
+    font-size: 15px;
   }
 
   .home-name {
+    letter-spacing: 5px;
     text-transform: uppercase;
     font-family: Montserrat-ExtraBold;
     font-size: 50px;
   }
 
   .home-designation {
-  }
-}
-
-.home--right {
-  width: 50%;
-  color: $black;
-  @include flex-row-end;
-
-  pre {
-    width: 60%;
-    background-color: $white;
-    opacity: 0.7;
-    border-radius: 10px;
-    padding: 20px;
-    width: fit-content;
+    font-size: 18px;
   }
 }
