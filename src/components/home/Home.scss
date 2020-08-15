@@ -6,6 +6,7 @@
 }
 
 .particles {
+  margin-top: -10%;
 }
 
 .home-content {
@@ -18,7 +19,9 @@
     font-size: 15px;
   }
 
-  .home-name {
+  .home-name-wrapper {
+    @include flex-row-cen;
+    text-align: center;
     letter-spacing: 5px;
     text-transform: uppercase;
     font-family: Montserrat-ExtraBold;
