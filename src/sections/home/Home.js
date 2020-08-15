@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <main className="home" id="#">
       <section className="home-content">
-        <div className="home-hi">Hi there, I&#39;m</div>
+        <div className="home-hi">Hi there!, I&#39;m</div>
         <div className="home-name">
           {fullName.map((char, index) => (
             <span key={index} style={{ animationDelay: `${0.3 + index / 10}s` }}>
