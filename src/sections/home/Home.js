@@ -15,11 +15,26 @@ const Home = () => {
     const timer = setTimeout(() => {
       setEnableTyping(true);
     }, 2200);
+    handleResize();
 
     return () => {
       clearTimeout(timer);
     };
   }, []);
+
+  const handleResize = () => {
+    const threshold = 600;
+    const initialDiff = window.innerWidth > threshold ? 1 : -1;
+
+    window.addEventListener("resize", () => {
+      const width = window.innerWidth;
+      const currentDiff = width - threshold;
+      if (currentDiff * initialDiff < 0) {
+        // eslint-disable-next-line no-restricted-globals, no-undef
+        location.reload();
+      }
+    });
+  };
 
   const fullName = Array.from("Paras Agrawal");
 
