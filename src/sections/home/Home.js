@@ -6,10 +6,14 @@ import ParticlesComp from "components/particlesComp/ParticlesComp";
 
 // IMPORT OTHERS HERE //
 import "./Home.scss";
+import { handleResize } from "utils/functions";
 
 const Home = () => {
   // STATE Variables
   const [enableTyping, setEnableTyping] = useState(false);
+
+  // Variables
+  const fullName = Array.from("Paras Agrawal");
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -21,22 +25,6 @@ const Home = () => {
       clearTimeout(timer);
     };
   }, []);
-
-  const handleResize = () => {
-    const threshold = 600;
-    const initialDiff = window.innerWidth > threshold ? 1 : -1;
-
-    window.addEventListener("resize", () => {
-      const width = window.innerWidth;
-      const currentDiff = width - threshold;
-      if (currentDiff * initialDiff < 0) {
-        // eslint-disable-next-line no-restricted-globals, no-undef
-        location.reload();
-      }
-    });
-  };
-
-  const fullName = Array.from("Paras Agrawal");
 
   return (
     <main className="home" id="#">
