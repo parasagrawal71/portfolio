@@ -1,7 +1,7 @@
 import React from "react";
-import Particles from "react-particles-js";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
+import ParticlesComp from "components/particlesComp/ParticlesComp";
 
 // IMPORT OTHERS HERE //
 import "./Home.scss";
@@ -23,27 +23,7 @@ const Home = () => {
         </div>
         <div className="home-designation">{designation}</div>
       </section>
-      <Particles
-        className="particles"
-        params={{
-          particles: {
-            number: {
-              value: 50,
-            },
-            size: {
-              value: 3,
-            },
-          },
-          interactivity: {
-            events: {
-              onhover: {
-                enable: false,
-                mode: "repulse",
-              },
-            },
-          },
-        }}
-      />
+      <ParticlesComp className="particles" />
     </main>
   );
 };
