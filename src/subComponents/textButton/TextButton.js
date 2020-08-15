@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // IMPORT OTHERS HERE //
 import "./TextButton.scss";
@@ -7,18 +7,29 @@ const TextButton = (props) => {
   const {
     btnText,
     btnCallback,
-    onHoverRequired,
     iconOnRight,
     customBtnClass,
     customDropdownClass,
     customBtnStyle,
     children,
+    onHoverRequired,
+    onClickRequired,
   } = props;
+
+  // STATE Variables
+  const [isDropdownVisble, setIsDropdownVisble] = useState(false);
 
   return (
     <div
       role="button"
-      onClick={btnCallback}
+      onClick={() => {
+        if (btnCallback) {
+          btnCallback();
+        }
+        if (onClickRequired) {
+          setIsDropdownVisble(!isDropdownVisble);
+        }
+      }}
       className={`text-button ${customBtnClass || ""}`}
       style={customBtnStyle}
       onKeyDown={() => {}}
@@ -27,7 +38,19 @@ const TextButton = (props) => {
       {btnText}
       {iconOnRight}
       {onHoverRequired && (
-        <div className={`dropdown-content ${customDropdownClass || ""}`}>{children}</div>
+        <div className={`dropdown-content dropdown-hover-content ${customDropdownClass || ""}`}>
+          {children}
+        </div>
+      )}
+
+      {onClickRequired && (
+        <div
+          className={`dropdown-content dropdown-click-content ${
+            isDropdownVisble ? "visible" : "nonvisible"
+          } ${customDropdownClass || ""}`}
+        >
+          {children}
+        </div>
       )}
     </div>
   );

@@ -1,13 +1,17 @@
 import React from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
-// import TextButton from "subComponents/textButton/TextButton";
+import TextButton from "subComponents/textButton/TextButton";
 
 // IMPORT OTHERS HERE //
 import "./Header.scss";
 import { pLogo, hamBurger } from "assets/Images";
 
 const Header = () => {
+  const returnMenuIcon = () => {
+    return <img src={hamBurger} alt="hamburger" />;
+  };
+
   return (
     <main className="header">
       <section className="header--left">
@@ -18,13 +22,22 @@ const Header = () => {
         <a href="#">Home</a>
         <a href="#about">About</a>
         <a href="#skillset">Skillset</a>
-        {/* <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a> */}
         <a href="#contact">Contact</a>
       </section>
 
       <section className="header--right-mobile">
-        <img src={hamBurger} alt="hamburger" />
+        <TextButton
+          btnText={null}
+          iconOnRight={returnMenuIcon()}
+          customBtnClass="header--right-mobile-btn"
+          customDropdownClass="header--right-mobile-menu-items"
+          onClickRequired
+        >
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#skillset">Skillset</a>
+          <a href="#contact">Contact</a>
+        </TextButton>
       </section>
     </main>
   );

@@ -32,6 +32,23 @@
 
 .header--right-mobile {
   display: none;
+
+  .header--right-mobile-btn {
+    background-color: inherit;
+  }
+}
+
+.header--right-mobile-menu-items {
+  @include flex-col;
+  text-align: right;
+  right: 5%;
+
+  a {
+    font-weight: bold;
+    color: $grey;
+    text-decoration: none;
+    padding-top: 15px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
