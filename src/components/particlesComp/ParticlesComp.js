@@ -1,10 +1,13 @@
 import React from "react";
 import Particles from "react-particles-js";
 
+// IMPORT OTHERS HERE //
+import "./ParticlesComp.scss";
+
 const ParticlesComp = ({ className }) => {
   return (
     <Particles
-      className={className}
+      className={`${className} particles-comp`}
       params={{
         particles: {
           number: {

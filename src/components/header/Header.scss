@@ -3,7 +3,7 @@
 
 .header {
   @include flex-row-sb;
-  padding: 20px 150px;
+  padding: 20px 12%;
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -27,5 +27,11 @@
 
   a:not(:last-child) {
     padding-right: 30px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 20px 5%;
   }
 }
