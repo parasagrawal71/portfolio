@@ -16,6 +16,12 @@ const ParticlesComp = ({ className }) => {
           size: {
             value: 3,
           },
+          color: {
+            value: "#787878",
+          },
+          line_linked: {
+            color: "#787878",
+          },
         },
         interactivity: {
           events: {
