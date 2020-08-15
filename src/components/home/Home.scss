@@ -3,7 +3,11 @@
 
 .home-container {
   @include flex-col-cen;
+  // background: url(../../assets/img/bg.png);
   height: calc(100vh - 60px);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
 }
 
 .home {
