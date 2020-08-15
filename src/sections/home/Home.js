@@ -2,33 +2,26 @@ import React from "react";
 import Particles from "react-particles-js";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
-import CharTransition from "../../components/charTransition/CharTransition";
 
 // IMPORT OTHERS HERE //
 import "./Home.scss";
 
 const Home = () => {
-  const firstName = "Paras".split("");
-  const lastName = "Agrawal".split("");
-
-  const designationArray = Array.from("Full Stack Developer");
+  const fullName = Array.from("Paras Agrawal");
+  const designation = Array.from("Full Stack Developer");
 
   return (
     <main className="home" id="#">
       <section className="home-content">
         <div className="home-hi">Hi there, I&#39;m</div>
         <div className="home-name">
-          <CharTransition charArray={firstName} />
-          <div>&nbsp;</div>
-          <CharTransition charArray={lastName} />
-        </div>
-        <div className="home-designation">
-          {designationArray.map((char, index) => (
-            <span key={index} style={{ animationDelay: `${0.5 + index / 10}s` }}>
+          {fullName.map((char, index) => (
+            <span key={index} style={{ animationDelay: `${0.3 + index / 10}s` }}>
               {char}
             </span>
           ))}
         </div>
+        <div className="home-designation">{designation}</div>
       </section>
       <Particles
         className="particles"

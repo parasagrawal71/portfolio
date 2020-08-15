@@ -17,19 +17,15 @@
 
   .home-hi {
     font-size: 15px;
+    animation: fadein 3s;
   }
 
   .home-name {
-    @include flex-row-cen;
     text-align: center;
     letter-spacing: 5px;
     text-transform: uppercase;
     font-family: Montserrat-ExtraBold;
     font-size: 50px;
-  }
-
-  .home-designation {
-    font-size: 18px;
 
     span {
       animation: move-text 0.2s forwards;
@@ -37,6 +33,11 @@
       top: 0;
       opacity: 0;
     }
+  }
+
+  .home-designation {
+    font-size: 18px;
+    animation: fadein 2.5s;
   }
 }
 
@@ -48,6 +49,20 @@
 
   100% {
     top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  100% {
     opacity: 1;
   }
 }
