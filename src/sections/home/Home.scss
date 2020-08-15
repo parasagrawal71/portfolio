@@ -19,7 +19,7 @@
     font-size: 15px;
   }
 
-  .home-name-wrapper {
+  .home-name {
     @include flex-row-cen;
     text-align: center;
     letter-spacing: 5px;
@@ -30,5 +30,24 @@
 
   .home-designation {
     font-size: 18px;
+
+    span {
+      animation: move-text 0.2s forwards;
+      position: relative;
+      top: 0;
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes move-text {
+  0% {
+    top: -40px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 0;
+    opacity: 1;
   }
 }

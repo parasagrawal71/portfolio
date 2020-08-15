@@ -11,16 +11,25 @@ const Home = () => {
   const firstName = "Paras".split("");
   const lastName = "Agrawal".split("");
 
+  const designationArray = Array.from("Full Stack Developer");
+
   return (
     <main className="home" id="#">
       <section className="home-content">
         <div className="home-hi">Hi there, I&#39;m</div>
-        <div className="home-name-wrapper">
+        <div className="home-name">
           <CharTransition charArray={firstName} />
           <div>&nbsp;</div>
           <CharTransition charArray={lastName} />
         </div>
-        <div className="home-designation">Full Stack Developer</div>
+        <div className="home-designation">
+          {designationArray.map((char, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <span key={index} style={{ animationDelay: `${0.5 + index / 10}s` }}>
+              {char}
+            </span>
+          ))}
+        </div>
       </section>
       <Particles
         className="particles"
