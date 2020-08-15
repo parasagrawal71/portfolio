@@ -22,6 +22,7 @@
     "react-hooks/exhaustive-deps": "error",
     "no-use-before-define": "off",
     "import/prefer-default-export": "off",
-    "jsx-a11y/anchor-is-valid": "off"
+    "jsx-a11y/anchor-is-valid": "off",
+    "react/no-array-index-key": "off"
   }
 }

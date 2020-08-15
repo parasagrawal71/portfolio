@@ -24,7 +24,6 @@ const Home = () => {
         </div>
         <div className="home-designation">
           {designationArray.map((char, index) => (
-            // eslint-disable-next-line react/no-array-index-key
             <span key={index} style={{ animationDelay: `${0.5 + index / 10}s` }}>
               {char}
             </span>
