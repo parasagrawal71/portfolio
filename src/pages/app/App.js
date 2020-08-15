@@ -8,6 +8,7 @@ import TechStack from "sections/skillset/Skillset";
 import Experience from "sections/experience/Experience";
 import Projects from "sections/projects/Projects";
 import Contact from "sections/contact/Contact";
+import ScrollToTopBtn from "components/scrollToTopBtn/ScrollToTopBtn";
 
 // IMPORT OTHERS HERE //
 import "./App.scss";
@@ -22,6 +23,7 @@ const App = () => {
       <Experience />
       <Projects />
       <Contact />
+      <ScrollToTopBtn />
     </main>
   );
 };
