@@ -15,7 +15,7 @@
   }
 }
 
-.header--right {
+.header--right-web {
   @include flex-row-v-cen;
   font-size: 15px;
 
@@ -30,8 +30,20 @@
   }
 }
 
+.header--right-mobile {
+  display: none;
+}
+
 @media only screen and (max-width: 600px) {
   .header {
     padding: 20px 5%;
+  }
+
+  .header--right-web {
+    display: none;
+  }
+
+  .header--right-mobile {
+    display: block;
   }
 }
