@@ -3,32 +3,60 @@
 
 .about {
   height: 100vh;
-  padding: 70px 6%;
-  color: $grey;
+  padding: 85px 6%;
 }
 
-.about--top {
+.about-header {
+  color: $white;
   text-align: center;
   padding-bottom: 20px;
 
-  header {
+  div {
     font-size: 25px;
-    padding-bottom: 20px;
+  }
+}
+
+.about--top {
+  @include flex-row;
+
+  .profile-pic {
+    border-radius: 50%;
+    width: 200px;
+    height: auto;
   }
 
   .about-descrp {
-    @include flex-row;
-
-    img {
-      border-radius: 50%;
-      width: 200px;
-      height: auto;
-    }
+    padding-left: 120px;
 
     p {
       // max-width: 700px;
       text-align: start;
-      padding-left: 40px;
+    }
+
+    section {
+      @include flex-row;
+
+      .social-link {
+        img {
+          width: 26px;
+          background-color: inherit;
+        }
+      }
+
+      .social-link:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+
+    .download-resume {
+      text-transform: capitalize;
+      font-size: 13px;
+      background-color: inherit;
+      border: 1px solid $grey;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 10px;
+      width: fit-content;
     }
   }
 }

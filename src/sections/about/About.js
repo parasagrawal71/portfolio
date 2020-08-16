@@ -1,26 +1,61 @@
 import React from "react";
 
+// IMPORT USER-DEFINED COMPONENTS HERE //
+import TextButton from "subComponents/textButton/TextButton";
+
 // IMPORT OTHERS HERE //
 import "./About.scss";
-import profilePic from "assets/img/paras_formal.jpg";
-import frontend from "assets/img/frontend.svg";
+import { myPicture, lines, github, linkedin, mail, instagram } from "assets/Images";
+import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL } from "utils/constants";
 
 const About = () => {
   return (
     <main className="about" id="about">
+      <header className="about-header">
+        <div>ABOUT</div>
+        <img src={lines} alt="lines" />
+      </header>
+
       <section className="about--top">
-        <header>ABOUT</header>
+        <img src={myPicture} alt="profile-pic" className="profile-pic" />
         <section className="about-descrp">
-          <img src={profilePic} alt="profile" />
           <p>
             Hello! I&#39;m Paras Agrawal, a full stack developer, a Python enthusiast, and a guy
-            slighty obsessed for code quality. Also I&#39;m a co-founder of pykod.com. I’m currently
-            available for freelance work. If you have a project that you want to get started or
-            think you need my help with something, then get in touch.
+            slighty obsessed for code quality.
           </p>
+          <section>
+            <a href={`mailto:${MAIL_ID}`} className="social-link">
+              <img src={mail} alt="mail" />
+            </a>
+            <a href={GITHUB_URL} className="social-link" target="_blank" rel="noopener noreferrer">
+              <img src={github} alt="github" />
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={linkedin} alt="linkedin" />
+            </a>
+            <a
+              href={INSTAGRAM_URL}
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img src={instagram} alt="instagram" />
+            </a>
+          </section>
+          <TextButton
+            btnText="download resume"
+            btnCallback={() => {}}
+            customBtnClass="download-resume"
+          />
         </section>
       </section>
-      <section className="about--bottom">
+
+      {/* <section className="about--bottom">
         <header>what i do</header>
         <section className="about--bottom-whatIDo">
           <section className="about-whatIDo-box">
@@ -48,7 +83,7 @@ const About = () => {
             </p>
           </section>
         </section>
-      </section>
+      </section> */}
     </main>
   );
 };
