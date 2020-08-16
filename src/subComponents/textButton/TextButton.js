@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // IMPORT OTHERS HERE //
 import "./TextButton.scss";
@@ -18,6 +18,16 @@ const TextButton = (props) => {
 
   // STATE Variables
   const [isDropdownVisble, setIsDropdownVisble] = useState(false);
+
+  useEffect(() => {
+    const closeDropdownListener = window.addEventListener("scroll", () =>
+      setIsDropdownVisble(false)
+    );
+
+    return () => {
+      window.removeEventListener(closeDropdownListener);
+    };
+  }, []);
 
   return (
     <div
