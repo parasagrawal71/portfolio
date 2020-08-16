@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // IMPORT OTHERS HERE //
 import "./ScrollToTopBtn.scss";
@@ -7,13 +7,19 @@ import { scrollToTop } from "assets/Images";
 const ScrollArrow = () => {
   const [showScroll, setShowScroll] = useState(false);
 
+  useEffect(() => {
+    const scrollTopListener = window.addEventListener("scroll", checkScrollTop);
+    return () => {
+      window.removeEventListener(scrollTopListener);
+    };
+  }, []);
+
   const checkScrollTop = () => {
-    const positionFromTop = 800;
-    if (!showScroll && window.pageYOffset > positionFromTop) {
+    if (window.pageYOffset > 800) {
       setShowScroll(true);
-    } else if (showScroll && window.pageYOffset <= positionFromTop) {
-      setShowScroll(false);
+      return;
     }
+    setShowScroll(false);
   };
 
   const scrollTop = () => {
