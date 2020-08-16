@@ -68,3 +68,10 @@
     height: 60px;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .about {
+    height: auto;
+    padding-top: 80px;
+  }
+}

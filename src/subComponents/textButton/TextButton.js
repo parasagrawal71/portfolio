@@ -24,17 +24,18 @@ const TextButton = (props) => {
   const btnRef = useRef();
 
   useEffect(() => {
-    const closeDropdownListener = window.addEventListener("scroll", () =>
-      setIsDropdownVisble(false)
-    );
-
-    const clickOutsideListener = window.addEventListener("click", checkClickOutside);
+    let closeDropdownListener;
+    let clickOutsideListener;
+    if (onClickRequired) {
+      closeDropdownListener = window.addEventListener("scroll", () => setIsDropdownVisble(false));
+      clickOutsideListener = window.addEventListener("click", checkClickOutside);
+    }
 
     return () => {
       window.removeEventListener(closeDropdownListener);
       window.removeEventListener(clickOutsideListener);
     };
-  }, []);
+  }, [onClickRequired]);
 
   const checkClickOutside = (e) => {
     if (!btnRef.current.contains(e.target)) {
