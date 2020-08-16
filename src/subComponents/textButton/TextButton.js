@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 // IMPORT OTHERS HERE //
 import "./TextButton.scss";
 
 const TextButton = (props) => {
+  // Props
   const {
     btnText,
     btnCallback,
@@ -19,15 +20,27 @@ const TextButton = (props) => {
   // STATE Variables
   const [isDropdownVisble, setIsDropdownVisble] = useState(false);
 
+  // Refs
+  const btnRef = useRef();
+
   useEffect(() => {
     const closeDropdownListener = window.addEventListener("scroll", () =>
       setIsDropdownVisble(false)
     );
 
+    const clickOutsideListener = window.addEventListener("click", checkClickOutside);
+
     return () => {
       window.removeEventListener(closeDropdownListener);
+      window.removeEventListener(clickOutsideListener);
     };
   }, []);
+
+  const checkClickOutside = (e) => {
+    if (!btnRef.current.contains(e.target)) {
+      setIsDropdownVisble(false);
+    }
+  };
 
   return (
     <div
@@ -44,6 +57,7 @@ const TextButton = (props) => {
       style={customBtnStyle}
       onKeyDown={() => {}}
       tabIndex="0"
+      ref={btnRef}
     >
       {btnText}
       {iconOnRight}
