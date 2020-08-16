@@ -17,7 +17,8 @@
 }
 
 .about--top {
-  @include flex-row;
+  @include flex-row-cen;
+  padding: 0 10%;
 
   .profile-pic {
     border-radius: 50%;
@@ -26,15 +27,18 @@
   }
 
   .about-descrp {
+    @include flex-col-sb;
     padding-left: 120px;
 
     p {
-      // max-width: 700px;
       text-align: start;
+      letter-spacing: 1.2px;
+      margin-top: 2px;
     }
 
     section {
       @include flex-row;
+      padding-top: 10px;
 
       .social-link {
         img {
@@ -54,7 +58,7 @@
       background-color: inherit;
       border: 1px solid $grey;
       padding: 10px;
-      margin-top: 20px;
+      margin-bottom: 2px;
       border-radius: 10px;
       width: fit-content;
     }
@@ -63,43 +67,88 @@
 
 .about--bottom {
   header {
-    font-size: 30px;
     text-transform: uppercase;
     text-align: center;
-    padding-bottom: 30px;
+    padding: 50px 0 15px 0;
+
+    div {
+      font-size: 20px;
+    }
   }
 
-  .about--bottom-whatIDo {
-    @include flex-row;
+  .about-whatIDo {
+    @include flex-row-cen;
+    padding: 0 calc(10% - 35px);
 
     section {
-      width: calc(80% / 3);
-      // height: 35vh;
-      // background-color: rgb(248, 248, 248);
-      // box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
-      // opacity: 0.7;
-      // border-radius: 10px;
+      // width: calc(65% / 3);
     }
 
     section:not(:last-child) {
-      margin-right: 10%;
+      // margin-right: 10%;
     }
   }
 }
 
 .about-whatIDo-box {
   @include flex-col-h-cen;
-  padding: 15px;
+  padding: 25px;
 
   img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .backend {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobileapp {
+    width: 40px;
+    height: 40px;
+  }
+
+  div {
+    padding-top: 8px;
+  }
+
+  p {
+    text-align: center;
+    letter-spacing: 1.2px;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .about {
     height: auto;
-    padding-top: 80px;
+    padding-top: 90px;
+  }
+
+  .about--top {
+    @include flex-col-h-cen;
+
+    .about-descrp {
+      padding-left: 0;
+      padding-top: 30px;
+
+      p {
+        text-align: justify;
+      }
+    }
+
+    section {
+      margin-top: 10px;
+    }
+
+    .download-resume {
+      margin-top: 20px;
+    }
+  }
+
+  .about--bottom {
+    .about-whatIDo {
+      @include flex-col-h-cen;
+    }
   }
 }

@@ -5,7 +5,17 @@ import TextButton from "subComponents/textButton/TextButton";
 
 // IMPORT OTHERS HERE //
 import "./About.scss";
-import { myPicture, lines, github, linkedin, mail, instagram } from "assets/Images";
+import {
+  myPicture,
+  lines,
+  github,
+  linkedin,
+  mail,
+  instagram,
+  frontend,
+  backend,
+  mobileapp,
+} from "assets/Images";
 import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL } from "utils/constants";
 
 const About = () => {
@@ -20,8 +30,9 @@ const About = () => {
         <img src={myPicture} alt="profile-pic" className="profile-pic" />
         <section className="about-descrp">
           <p>
-            Hello! I&#39;m Paras Agrawal, a full stack developer, a Python enthusiast, and a guy
-            slighty obsessed for code quality.
+            Hello! I&#39;m Paras Agrawal, a full stack developer, and a guy slighty obsessed for
+            code quality. I am currently working for a start-up, piktorlabs, since more than one
+            year. I not only love to code also I like to solve problems.
           </p>
           <section>
             <a href={`mailto:${MAIL_ID}`} className="social-link">
@@ -55,35 +66,30 @@ const About = () => {
         </section>
       </section>
 
-      {/* <section className="about--bottom">
-        <header>what i do</header>
-        <section className="about--bottom-whatIDo">
+      <section className="about--bottom">
+        <header>
+          <div>what i do</div>
+        </header>
+        <section className="about-whatIDo">
           <section className="about-whatIDo-box">
             <img src={frontend} alt="frontend" />
-            <div>Front-End</div>
-            <p>
-              As a javascript developer, I have experience in HTML5 and CSS3 techniques working with
-              jQuery or more advanced javascript MVC frameworks such as angular
-            </p>
+            <div>Front-end</div>
+            <p>As a javascript developer, I have experience in HTML5 and CSS3 techniques working</p>
           </section>
+
           <section className="about-whatIDo-box">
-            <img src={frontend} alt="frontend" />
-            <div>Back-End</div>
-            <p>
-              As a javascript developer, I have experience in HTML5 and CSS3 techniques working with
-              jQuery or more advanced javascript MVC frameworks such as angular
-            </p>
+            <img src={backend} alt="backend" className="backend" />
+            <div>Back-end</div>
+            <p>As a javascript developer, I have experience in HTML5 and CSS3 techniques working</p>
           </section>
+
           <section className="about-whatIDo-box">
-            <img src={frontend} alt="frontend" />
+            <img src={mobileapp} alt="mobileapp" className="mobileapp" />
             <div>Mobile App</div>
-            <p>
-              As a javascript developer, I have experience in HTML5 and CSS3 techniques working with
-              jQuery or more advanced javascript MVC frameworks such as angular
-            </p>
+            <p>As a javascript developer, I have experience in HTML5 and CSS3 techniques working</p>
           </section>
         </section>
-      </section> */}
+      </section>
     </main>
   );
 };
