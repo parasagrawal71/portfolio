@@ -18,7 +18,8 @@ const Header = () => {
   }, []);
 
   const enableHeaderShadow = () => {
-    if (window.pageYOffset > 700) {
+    const positionFromTop = window.innerWidth > 600 ? 400 : 400;
+    if (window.pageYOffset > positionFromTop) {
       setEnableShadow(true);
       return;
     }
