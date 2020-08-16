@@ -3,10 +3,20 @@
 
 .header {
   @include flex-row-sb;
-  padding: 20px 6%;
+  padding: 15px 6%;
   position: sticky;
   top: 0;
   z-index: 9999;
+}
+
+.header-shadow {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+  background-color: #26343d;
+}
+
+.no-shadow {
+  box-shadow: none;
+  background-color: none;
 }
 
 .header--left {

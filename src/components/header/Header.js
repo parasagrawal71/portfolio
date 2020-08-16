@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import TextButton from "subComponents/textButton/TextButton";
@@ -8,12 +8,29 @@ import "./Header.scss";
 import { pLogo, hamBurger } from "assets/Images";
 
 const Header = () => {
+  const [enableShadow, setEnableShadow] = useState(false);
+
+  useEffect(() => {
+    const headerShadowListener = window.addEventListener("scroll", enableHeaderShadow);
+    return () => {
+      window.removeEventListener(headerShadowListener);
+    };
+  }, []);
+
+  const enableHeaderShadow = () => {
+    if (window.pageYOffset > 700) {
+      setEnableShadow(true);
+      return;
+    }
+    setEnableShadow(false);
+  };
+
   const returnMenuIcon = () => {
     return <img src={hamBurger} alt="hamburger" />;
   };
 
   return (
-    <main className="header">
+    <main className={`header ${enableShadow ? "header-shadow" : "no-shadow"}`}>
       <section className="header--left">
         <img src={pLogo} alt="p-logo" />
       </section>

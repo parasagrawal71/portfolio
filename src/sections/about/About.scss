@@ -3,7 +3,8 @@
 
 .about {
   height: 100vh;
-  padding: 60px 0;
+  padding: 60px 6%;
+  color: $grey;
 }
 
 .about--top {
@@ -46,10 +47,10 @@
     section {
       width: calc(80% / 3);
       height: 35vh;
-      background-color: rgb(248, 248, 248);
-      box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
-      opacity: 0.7;
-      border-radius: 10px;
+      // background-color: rgb(248, 248, 248);
+      // box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+      // opacity: 0.7;
+      // border-radius: 10px;
     }
 
     section:not(:last-child) {
@@ -59,7 +60,6 @@
 }
 
 .about-whatIDo-box {
-  color: $black;
   @include flex-col-h-cen;
   padding: 15px;
 
