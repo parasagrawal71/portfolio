@@ -12,8 +12,11 @@ const Header = () => {
 
   useEffect(() => {
     const headerShadowListener = window.addEventListener("scroll", enableHeaderShadow);
+    // const activeMenuItemListener = window.addEventListener("scroll", checkActiveMenuItem);
+
     return () => {
       window.removeEventListener(headerShadowListener);
+      // window.removeEventListener(activeMenuItemListener);
     };
   }, []);
 
@@ -26,8 +29,52 @@ const Header = () => {
     setEnableShadow(false);
   };
 
-  const returnMenuIcon = () => {
+  // const checkActiveMenuItem = () => {
+  //   const windowHeight = window.innerHeight;
+  //   const positionFromTop = window.pageYOffset;
+  //   if (positionFromTop < windowHeight) {
+  //     // window.location.hash = "";
+  //   } else if (positionFromTop > windowHeight && positionFromTop < 2 * windowHeight) {
+  //     // window.location.hash = "#about";
+  //   } else if (positionFromTop > 2 * windowHeight && positionFromTop < 3 * windowHeight) {
+  //     // window.location.hash = "#skillset";
+  //   } else if (positionFromTop > 3 * windowHeight) {
+  //     // window.location.hash = "#contact";
+  //   }
+  // };
+
+  // eslint-disable-next-line no-unused-vars
+  const enableBorderOfMenuItem = (hash) => {
+    // if (window.location.hash === hash) {
+    //   return "border-bottom";
+    // }
+    // return "border-none";
+  };
+
+  const renderMenuIcon = () => {
     return <img src={hamBurger} alt="hamburger" />;
+  };
+
+  const renderMenuItems = () => {
+    return (
+      <>
+        <a href="#" className={enableBorderOfMenuItem("")}>
+          Home
+        </a>
+        <a href="#about" className={enableBorderOfMenuItem("#about")}>
+          About
+        </a>
+        <a href="#projects" className={enableBorderOfMenuItem("#projects")}>
+          Projects
+        </a>
+        <a href="#skillset" className={enableBorderOfMenuItem("#skillset")}>
+          Skillset
+        </a>
+        <a href="#contact" className={enableBorderOfMenuItem("#contact")}>
+          Contact
+        </a>
+      </>
+    );
   };
 
   return (
@@ -36,25 +83,17 @@ const Header = () => {
         <img src={pLogo} alt="p-logo" />
       </section>
 
-      <section className="header--right-web">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#skillset">Skillset</a>
-        <a href="#contact">Contact</a>
-      </section>
+      <section className="header--right-web">{renderMenuItems()}</section>
 
       <section className="header--right-mobile">
         <TextButton
           btnText={null}
-          iconOnRight={returnMenuIcon()}
+          iconOnRight={renderMenuIcon()}
           customBtnClass="header--right-mobile-btn"
           customDropdownClass="header--right-mobile-menu-items"
           onClickRequired
         >
-          <a href="#">Home</a>
-          <a href="#about">About</a>
-          <a href="#skillset">Skillset</a>
-          <a href="#contact">Contact</a>
+          {renderMenuItems()}
         </TextButton>
       </section>
     </main>
