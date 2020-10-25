@@ -7,8 +7,9 @@ import About from "sections/about/About";
 import Skillset from "sections/skillset/Skillset";
 // import Experience from "sections/experience/Experience";
 // import Projects from "sections/projects/Projects";
-import Contact from "sections/contact/Contact";
+// import Contact from "sections/contact/Contact";
 import ScrollToTopBtn from "components/scrollToTopBtn/ScrollToTopBtn";
+import Footer from "sections/footer/Footer";
 
 // IMPORT OTHERS HERE //
 import "./App.scss";
@@ -20,7 +21,8 @@ const App = () => {
       <Home />
       <About />
       <Skillset />
-      <Contact />
+      {/* <Contact /> */}
+      <Footer />
       <ScrollToTopBtn />
     </main>
   );

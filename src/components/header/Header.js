@@ -70,9 +70,9 @@ const Header = () => {
         <a href="#skillset" className={enableBorderOfMenuItem("#skillset")}>
           Skillset
         </a>
-        <a href="#contact" className={enableBorderOfMenuItem("#contact")}>
+        {/* <a href="#contact" className={enableBorderOfMenuItem("#contact")}>
           Contact
-        </a>
+        </a> */}
       </>
     );
   };
