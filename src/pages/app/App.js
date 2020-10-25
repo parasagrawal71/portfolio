@@ -6,7 +6,7 @@ import Home from "sections/home/Home";
 import About from "sections/about/About";
 import Skillset from "sections/skillset/Skillset";
 // import Experience from "sections/experience/Experience";
-import Projects from "sections/projects/Projects";
+// import Projects from "sections/projects/Projects";
 import Contact from "sections/contact/Contact";
 import ScrollToTopBtn from "components/scrollToTopBtn/ScrollToTopBtn";
 
@@ -19,7 +19,6 @@ const App = () => {
       <Header />
       <Home />
       <About />
-      <Projects />
       <Skillset />
       <Contact />
       <ScrollToTopBtn />
