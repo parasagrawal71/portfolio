@@ -102,11 +102,23 @@
   .backend {
     width: 40px;
     height: 40px;
+    margin-top: 6px;
   }
 
   .mobileapp {
-    width: 40px;
-    height: 40px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .halfAndroid {
+    width: 22px;
+    height: auto;
+  }
+
+  .halfiOS {
+    width: 22px;
+    height: auto;
+    margin-left: 5px;
   }
 
   div {
@@ -117,6 +129,14 @@
     text-align: center;
     letter-spacing: 1.2px;
   }
+}
+
+.backend-container p {
+  margin-top: 20px;
+}
+
+.mobileapp-container p {
+  margin-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {

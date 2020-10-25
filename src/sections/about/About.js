@@ -14,9 +14,11 @@ import {
   instagram,
   frontend,
   backend,
-  mobileapp,
+  halfAndroid,
+  halfiOS,
 } from "assets/Images";
 import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL } from "utils/constants";
+import myCV from "assets/pdfs/Paras_Agrawal_CV.pdf";
 
 const About = () => {
   return (
@@ -60,7 +62,7 @@ const About = () => {
           </section>
           <TextButton
             btnText="download resume"
-            btnCallback={() => {}}
+            btnCallback={() => window.open(myCV, "_none")}
             customBtnClass="download-resume"
           />
         </section>
@@ -71,22 +73,28 @@ const About = () => {
           <div>what i do</div>
         </header>
         <section className="about-whatIDo">
-          <section className="about-whatIDo-box">
+          <section className="about-whatIDo-box frontend-container">
             <img src={frontend} alt="frontend" />
             <div>Front-end</div>
-            <p>As a javascript developer, I have experience in HTML5 and CSS3 techniques working</p>
+            <p>As a javascript developer, I have experience in React JS and Vue JS libraries.</p>
           </section>
 
-          <section className="about-whatIDo-box">
+          <section className="about-whatIDo-box backend-container">
             <img src={backend} alt="backend" className="backend" />
             <div>Back-end</div>
-            <p>As a javascript developer, I have experience in HTML5 and CSS3 techniques working</p>
+            <p>I&#39;m more back end focused and love to work with APIs in Node js and Python.</p>
           </section>
 
-          <section className="about-whatIDo-box">
-            <img src={mobileapp} alt="mobileapp" className="mobileapp" />
+          <section className="about-whatIDo-box mobileapp-container">
+            <div className="mobileapp">
+              <img src={halfAndroid} alt="halfAndroid" className="halfAndroid" />
+              <img src={halfiOS} alt="halfiOS" className="halfiOS" />
+            </div>
             <div>Mobile App</div>
-            <p>As a javascript developer, I have experience in HTML5 and CSS3 techniques working</p>
+            <p>
+              I love building mobile app using React Native library for android as well as iOS
+              platform
+            </p>
           </section>
         </section>
       </section>
