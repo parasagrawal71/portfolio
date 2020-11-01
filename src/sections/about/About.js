@@ -18,9 +18,16 @@ import {
   halfiOS,
 } from "assets/Images";
 import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL } from "utils/constants";
-import myCV from "assets/pdfs/Paras_Agrawal_CV.pdf";
+import myCV from "assets/pdfs/Paras-Agrawal_Full-Stack_CV.pdf";
 
 const About = () => {
+  // const downloadCV = () => {
+  //   const link = window.document.createElement("a");
+  //   link.setAttribute("href", myCV);
+  //   // link.setAttribute("download", myCV);
+  //   link.click();
+  // };
+
   return (
     <main className="about" id="about">
       <header className="about-header">
