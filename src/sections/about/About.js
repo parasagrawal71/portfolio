@@ -39,9 +39,9 @@ const About = () => {
         <img src={myPicture} alt="profile-pic" className="profile-pic" />
         <section className="about-descrp">
           <p>
-            Hello! I&#39;m Paras Agrawal, a full stack developer, and a guy slighty obsessed for
-            code quality. I am currently working for a start-up, piktorlabs, since more than one
-            year. I not only love to code also I like to solve problems.
+            Hello! I&#39;m Paras Agrawal, a full-stack developer, and a guy slightly obsessed with
+            code quality. I am currently working for a start-up, Piktorlabs, for one and a half
+            years. I not only love to code also like to solve problems.
           </p>
           <section>
             <a href={`mailto:${MAIL_ID}`} className="social-link">
