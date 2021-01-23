@@ -40,8 +40,7 @@ const About = () => {
         <section className="about-descrp">
           <p>
             Hello! I&#39;m Paras Agrawal, a full-stack developer, and a guy slightly obsessed with
-            code quality. I am currently working for a start-up, Piktorlabs, for one and a half
-            years. I not only love to code also like to solve problems.
+            code quality. I am currently working for a start-up, nference. I not only love to code also like to solve problems.
           </p>
           <section>
             <a href={`mailto:${MAIL_ID}`} className="social-link">
