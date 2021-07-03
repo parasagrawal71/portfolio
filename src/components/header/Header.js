@@ -15,8 +15,8 @@ const Header = () => {
     // const activeMenuItemListener = window.addEventListener("scroll", checkActiveMenuItem);
 
     return () => {
-      window.removeEventListener(headerShadowListener);
-      // window.removeEventListener(activeMenuItemListener);
+      window.removeEventListener("scroll", headerShadowListener);
+      // window.removeEventListener("scroll", activeMenuItemListener);
     };
   }, []);
 
