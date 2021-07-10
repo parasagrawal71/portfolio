@@ -5,16 +5,6 @@
   height: 100vh;
   padding: 85px 6%;
 
-  .main-header {
-    color: $white;
-    text-align: center;
-    padding-bottom: 20px;
-
-    .main-header__name {
-      font-size: 25px;
-    }
-  }
-
   .skills-cnt {
     display: flex;
     flex-direction: row;
