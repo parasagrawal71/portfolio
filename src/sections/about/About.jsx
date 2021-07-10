@@ -25,27 +25,29 @@ const About = () => {
         <section className={appStyles.description}>
           <p>{aboutDescription}</p>
 
-          <section className={appStyles["social-icons-cnt"]}>
-            {socialProfiles?.map((social) => {
-              return (
-                <a
-                  key={social?.name}
-                  href={social?.href}
-                  className={appStyles["social-link"]}
-                  target={social?.newTab && "_blank"}
-                  rel={social?.newTab && "noopener noreferrer"}
-                >
-                  <img src={social?.icon} alt={social?.name} />
-                </a>
-              );
-            })}
-          </section>
+          <section className={appStyles["social-resume-cnt"]}>
+            <section className={appStyles["social-icons-cnt"]}>
+              {socialProfiles?.map((social) => {
+                return (
+                  <a
+                    key={social?.name}
+                    href={social?.href}
+                    className={appStyles["social-link"]}
+                    target={social?.newTab && "_blank"}
+                    rel={social?.newTab && "noopener noreferrer"}
+                  >
+                    <img src={social?.icon} alt={social?.name} />
+                  </a>
+                );
+              })}
+            </section>
 
-          <TextButton
-            btnText="download resume"
-            btnCallback={() => window.open(RESUME_URL, "_none")}
-            customBtnClass={appStyles["download-resume"]}
-          />
+            <TextButton
+              btnText="download resume"
+              btnCallback={() => window.open(RESUME_URL, "_none")}
+              customBtnClass={appStyles["download-resume"]}
+            />
+          </section>
         </section>
       </section>
 
