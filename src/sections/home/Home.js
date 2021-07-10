@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Typical from "react-typical";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
-import ParticlesComp from "components/particlesComp/ParticlesComp";
+import ParticlesComponent from "components/particles/ParticlesComponent";
 
 // IMPORT OTHERS HERE //
 import "./Home.scss";
@@ -48,7 +48,7 @@ const Home = () => {
           </section>
         )}
       </section>
-      <ParticlesComp className="particles" />
+      <ParticlesComponent className="particles" />
     </main>
   );
 };

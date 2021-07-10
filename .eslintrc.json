@@ -1,11 +1,23 @@
 {
-  "extends": ["airbnb", "prettier"],
-  "plugins": ["prettier", "react", "react-hooks"],
-  "env": { "browser": true },
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "prettier",
+    "react",
+    "react-hooks"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"]
+        "paths": [
+          "src"
+        ]
       }
     }
   },
@@ -16,13 +28,35 @@
         "endOfLine": "auto"
       }
     ],
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
     "react/prop-types": 0,
-    "no-console": ["error"],
+    "no-console": [
+      "warn"
+    ],
     "react-hooks/exhaustive-deps": "error",
     "no-use-before-define": "off",
     "import/prefer-default-export": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "react/no-array-index-key": "off"
+    "arrow-body-style": "off",
+    "no-unused-vars": "warn",
+    "no-nested-ternary": "off",
+    "react/no-array-index-key": "off",
+    "react/destructuring-assignment": "off",
+    "no-case-declarations": "off",
+    "no-param-reassign": "off",
+    "consistent-return": "off",
+    "no-else-return": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": "off",
+    "jsx-a11y/label-has-associated-control": "off",
+    "jsx-a11y/no-noninteractive-element-to-interactive-role": "off"
   }
 }

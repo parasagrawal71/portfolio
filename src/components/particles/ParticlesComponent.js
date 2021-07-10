@@ -2,9 +2,9 @@ import React from "react";
 import Particles from "react-particles-js";
 
 // IMPORT OTHERS HERE //
-import "./ParticlesComp.scss";
+import "./ParticlesComponent.scss";
 
-const ParticlesComp = ({ className }) => {
+const ParticlesComponent = ({ className }) => {
   return (
     <Particles
       className={`${className} particles-comp`}
@@ -36,4 +36,4 @@ const ParticlesComp = ({ className }) => {
   );
 };
 
-export default ParticlesComp;
+export default ParticlesComponent;
