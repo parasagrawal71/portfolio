@@ -19,6 +19,7 @@ import {
 } from "assets/Images";
 import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL } from "utils/constants";
 import myCV from "assets/pdfs/Paras-Agrawal_Full-Stack_CV.pdf";
+import { fullName } from "config";
 
 const About = () => {
   // const downloadCV = () => {
@@ -39,9 +40,9 @@ const About = () => {
         <img src={myPicture} alt="profile-pic" className="profile-pic" />
         <section className="about-descrp">
           <p>
-            Hello! I&#39;m Paras Agrawal, a full-stack developer, and a guy slightly obsessed with
-            code quality. I am currently working for a start-up, nference. I not only love to code
-            also like to solve problems.
+            Hello! I&#39;m {fullName}, a full-stack developer, and a guy slightly obsessed with code
+            quality. I am currently working for a start-up, nference. I not only love to code also
+            like to solve problems.
           </p>
           <section>
             <a href={`mailto:${MAIL_ID}`} className="social-link">

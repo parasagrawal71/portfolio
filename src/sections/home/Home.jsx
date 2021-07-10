@@ -5,6 +5,7 @@ import Typical from "react-typical";
 import ParticlesComponent from "components/particles/ParticlesComponent";
 
 // IMPORT OTHERS HERE //
+import { fullName } from "config";
 import "./Home.scss";
 import { handleResize } from "utils/functions";
 
@@ -13,7 +14,7 @@ const Home = () => {
   const [enableTyping, setEnableTyping] = useState(false);
 
   // Variables
-  const fullName = Array.from("Paras Agrawal");
+  const fullNameArray = Array.from(fullName);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -31,7 +32,7 @@ const Home = () => {
       <section className="home-content">
         <div className="home-hi">Hi there!, I&#39;m</div>
         <div className="home-name">
-          {fullName.map((char, index) => (
+          {fullNameArray?.map((char, index) => (
             <span key={index} style={{ animationDelay: `${0.3 + index / 10}s` }}>
               {char}
             </span>
