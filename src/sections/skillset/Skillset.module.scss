@@ -1,0 +1,67 @@
+@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/flex.scss";
+
+.main-cnt {
+  height: 100vh;
+  padding: 85px 6%;
+
+  .main-header {
+    color: $white;
+    text-align: center;
+    padding-bottom: 20px;
+
+    .main-header__name {
+      font-size: 25px;
+    }
+  }
+
+  .skills-cnt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 100px;
+
+    &:last-child {
+      justify-content: space-evenly;
+    }
+
+    .skill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 200px;
+      padding: 30px 0;
+
+      img {
+        height: 40px;
+        width: auto;
+      }
+
+      img.awsIcon {
+        height: 30px;
+      }
+
+      .skill-name {
+        padding-top: 12px;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-cnt {
+    height: auto;
+    padding-top: 90px;
+
+    .skills-cnt {
+      justify-content: center;
+      padding: 0;
+
+      .skill {
+        min-width: 150px;
+      }
+    }
+  }
+}

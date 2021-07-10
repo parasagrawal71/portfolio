@@ -1,24 +1,24 @@
 import React from "react";
 
 // IMPORT OTHERS HERE //
-import "./Skillset.scss";
 import { lines } from "assets/Images";
 import { skillsetsArray } from "config/skillset";
+import appStyles from "./Skillset.module.scss";
 
 const Skillset = () => {
   return (
-    <main className="skillset" id="skillset">
-      <header className="skillset-header">
-        <div>SKILLSET</div>
+    <main className={appStyles["main-cnt"]} id="skillset">
+      <header className={appStyles["main-header"]}>
+        <div className={appStyles["main-header__name"]}>SKILLSET</div>
         <img src={lines} alt="lines" />
       </header>
 
-      <section className="skillset-skills">
+      <section className={appStyles["skills-cnt"]}>
         {skillsetsArray?.map((skill) => {
           return (
-            <div className="skillset-skill">
+            <div className={appStyles.skill}>
               <img src={skill?.icon} alt={skill?.name} />
-              <div>{skill?.name}</div>
+              <div className={appStyles["skill-name"]}>{skill?.name}</div>
             </div>
           );
         })}
