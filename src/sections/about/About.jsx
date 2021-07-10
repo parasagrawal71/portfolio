@@ -1,109 +1,88 @@
 import React from "react";
+import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import TextButton from "subComponents/textButton/TextButton";
 
 // IMPORT OTHERS HERE //
-import "./About.scss";
+import { lines } from "assets/Images";
 import {
-  myPicture,
-  lines,
-  github,
-  linkedin,
-  mail,
-  instagram,
-  frontend,
-  backend,
-  halfAndroid,
-  halfiOS,
-} from "assets/Images";
-import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL } from "utils/constants";
-import myCV from "assets/pdfs/Paras-Agrawal_Full-Stack_CV.pdf";
-import { fullName } from "config";
+  aboutDescription,
+  RESUME_URL,
+  SELF_PICTURE_URL,
+  socialProfiles,
+  roles,
+} from "config/about";
+import appStyles from "./About.module.scss";
 
 const About = () => {
-  // const downloadCV = () => {
-  //   const link = window.document.createElement("a");
-  //   link.setAttribute("href", myCV);
-  //   // link.setAttribute("download", myCV);
-  //   link.click();
-  // };
-
   return (
-    <main className="about" id="about">
-      <header className="about-header">
-        <div>ABOUT</div>
+    <main className={appStyles["about-section"]} id="about">
+      <header className={appStyles["main-header"]}>
+        <div className={appStyles["main-header__name"]}>ABOUT</div>
         <img src={lines} alt="lines" />
       </header>
 
-      <section className="about--top">
-        <img src={myPicture} alt="profile-pic" className="profile-pic" />
-        <section className="about-descrp">
-          <p>
-            Hello! I&#39;m {fullName}, a full-stack developer, and a guy slightly obsessed with code
-            quality. I am currently working for a start-up, nference. I not only love to code also
-            like to solve problems.
-          </p>
-          <section>
-            <a href={`mailto:${MAIL_ID}`} className="social-link">
-              <img src={mail} alt="mail" />
-            </a>
-            <a href={GITHUB_URL} className="social-link" target="_blank" rel="noopener noreferrer">
-              <img src={github} alt="github" />
-            </a>
-            <a
-              href={LINKEDIN_URL}
-              className="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={linkedin} alt="linkedin" />
-            </a>
-            <a
-              href={INSTAGRAM_URL}
-              className="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <img src={instagram} alt="instagram" />
-            </a>
+      <section className={appStyles["about-section--top"]}>
+        <img src={SELF_PICTURE_URL} alt="Profile Pic" className={appStyles["profile-pic"]} />
+        <section className={appStyles.description}>
+          <p>{aboutDescription}</p>
+
+          <section className={appStyles["social-icons-cnt"]}>
+            {socialProfiles?.map((social) => {
+              return (
+                <a
+                  key={social?.name}
+                  href={social?.href}
+                  className={appStyles["social-link"]}
+                  target={social?.newTab && "_blank"}
+                  rel={social?.newTab && "noopener noreferrer"}
+                >
+                  <img src={social?.icon} alt={social?.name} />
+                </a>
+              );
+            })}
           </section>
+
           <TextButton
             btnText="download resume"
-            btnCallback={() => window.open(myCV, "_none")}
-            customBtnClass="download-resume"
+            btnCallback={() => window.open(RESUME_URL, "_none")}
+            customBtnClass={appStyles["download-resume"]}
           />
         </section>
       </section>
 
-      <section className="about--bottom">
-        <header>
-          <div>what i do</div>
-        </header>
-        <section className="about-whatIDo">
-          <section className="about-whatIDo-box frontend-container">
-            <img src={frontend} alt="frontend" />
-            <div>Front-end</div>
-            <p>As a javascript developer, I have experience in React JS and Vue JS libraries.</p>
-          </section>
-
-          <section className="about-whatIDo-box backend-container">
-            <img src={backend} alt="backend" className="backend" />
-            <div>Back-end</div>
-            <p>I&#39;m more back end focused and love to work with APIs in Node js and Python.</p>
-          </section>
-
-          <section className="about-whatIDo-box mobileapp-container">
-            <div className="mobileapp">
-              <img src={halfAndroid} alt="halfAndroid" className="halfAndroid" />
-              <img src={halfiOS} alt="halfiOS" className="halfiOS" />
-            </div>
-            <div>Mobile App</div>
-            <p>
-              I love building mobile app using React Native library for android as well as iOS
-              platform
-            </p>
-          </section>
+      <section className={appStyles["about-section--bottom"]}>
+        <header>what i do</header>
+        <section className={appStyles["about-whatIDo"]}>
+          {roles?.map((role) => {
+            return (
+              <section
+                className={cx(appStyles["about-whatIDo-box"], {
+                  [appStyles["frontend-container"]]: role?.name === "frontend",
+                  [appStyles["backend-container"]]: role?.name === "backend",
+                  [appStyles["mobileapp-container"]]: role?.name === "mobileapp",
+                })}
+              >
+                {role?.name === "mobileapp" ? (
+                  <div className={appStyles.mobileapp}>
+                    <img src={role?.icon1} alt="halfAndroid" className={appStyles.halfAndroid} />
+                    <img src={role?.icon2} alt="halfiOS" className={appStyles.halfiOS} />
+                  </div>
+                ) : (
+                  <img
+                    src={role?.icon}
+                    alt={role?.name}
+                    className={cx({
+                      [appStyles.backend]: role?.name === "backend",
+                    })}
+                  />
+                )}
+                <div>{role?.displayName}</div>
+                <p>{role?.description}</p>
+              </section>
+            );
+          })}
         </section>
       </section>
     </main>
