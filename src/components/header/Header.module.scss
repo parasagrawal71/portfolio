@@ -1,0 +1,79 @@
+@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/flex.scss";
+
+.header {
+  @include flex-row-sb;
+  padding: 12px 6%;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+
+  &.header-shadow {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
+    background-color: #26343d;
+  }
+
+  &.no-shadow {
+    box-shadow: none;
+    background-color: none;
+  }
+
+  .header--left {
+    img {
+      width: 70px;
+    }
+  }
+
+  .header--right-web {
+    @include flex-row-v-cen;
+    font-size: 15px;
+
+    a {
+      padding: 3px 0;
+      font-weight: bold;
+      color: $grey;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
+  }
+
+  .header--right-mobile {
+    display: none;
+
+    .header--right-mobile-btn {
+      background-color: inherit;
+    }
+
+    .header--right-mobile-menu-items {
+      @include flex-col;
+      text-align: right;
+      right: 5%;
+
+      a {
+        font-weight: bold;
+        color: $grey;
+        text-decoration: none;
+        padding: 12px 5px;
+        background-color: #26343d;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    padding: 20px 5%;
+
+    .header--right-web {
+      display: none;
+    }
+
+    .header--right-mobile {
+      display: block;
+    }
+  }
+}

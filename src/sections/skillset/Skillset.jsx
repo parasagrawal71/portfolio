@@ -16,7 +16,7 @@ const Skillset = () => {
       <section className={appStyles["skills-cnt"]}>
         {skillsetsArray?.map((skill) => {
           return (
-            <div className={appStyles.skill}>
+            <div className={appStyles.skill} key={skill?.name}>
               <img src={skill?.icon} alt={skill?.name} />
               <div className={appStyles["skill-name"]}>{skill?.name}</div>
             </div>

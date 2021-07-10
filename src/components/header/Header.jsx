@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from "react";
+import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import TextButton from "subComponents/textButton/TextButton";
 
 // IMPORT OTHERS HERE //
-import "./Header.scss";
 import { pLogo, hamBurger } from "assets/Images";
+import appStyles from "./Header.module.scss";
 
 const Header = () => {
   const [enableShadow, setEnableShadow] = useState(false);
 
   useEffect(() => {
     const headerShadowListener = window.addEventListener("scroll", enableHeaderShadow);
-    // const activeMenuItemListener = window.addEventListener("scroll", checkActiveMenuItem);
 
     return () => {
       window.removeEventListener("scroll", headerShadowListener);
-      // window.removeEventListener("scroll", activeMenuItemListener);
     };
   }, []);
 
@@ -29,68 +28,47 @@ const Header = () => {
     setEnableShadow(false);
   };
 
-  // const checkActiveMenuItem = () => {
-  //   const windowHeight = window.innerHeight;
-  //   const positionFromTop = window.pageYOffset;
-  //   if (positionFromTop < windowHeight) {
-  //     // window.location.hash = "";
-  //   } else if (positionFromTop > windowHeight && positionFromTop < 2 * windowHeight) {
-  //     // window.location.hash = "#about";
-  //   } else if (positionFromTop > 2 * windowHeight && positionFromTop < 3 * windowHeight) {
-  //     // window.location.hash = "#skillset";
-  //   } else if (positionFromTop > 3 * windowHeight) {
-  //     // window.location.hash = "#contact";
-  //   }
-  // };
-
-  // eslint-disable-next-line no-unused-vars
-  const enableBorderOfMenuItem = (hash) => {
-    // if (window.location.hash === hash) {
-    //   return "border-bottom";
-    // }
-    // return "border-none";
-  };
-
-  const renderMenuIcon = () => {
-    return <img src={hamBurger} alt="hamburger" />;
-  };
-
   const renderMenuItems = () => {
+    const menuItems = [
+      { name: "Home", href: "#", hash: "" },
+      { name: "About", href: "#about", hash: "#about" },
+      { name: "Skillset", href: "#skillset", hash: "#skillset" },
+      // { name: "Projects", href: "#projects", hash: "#projects" },
+      // { name: "Contact", href: "#contact", hash: "#contact" },
+    ];
+
     return (
       <>
-        <a href="#" className={enableBorderOfMenuItem("")}>
-          Home
-        </a>
-        <a href="#about" className={enableBorderOfMenuItem("#about")}>
-          About
-        </a>
-        {/* <a href="#projects" className={enableBorderOfMenuItem("#projects")}>
-          Projects
-        </a> */}
-        <a href="#skillset" className={enableBorderOfMenuItem("#skillset")}>
-          Skillset
-        </a>
-        {/* <a href="#contact" className={enableBorderOfMenuItem("#contact")}>
-          Contact
-        </a> */}
+        {menuItems?.map((menuItem) => {
+          return (
+            <a key={menuItem?.name} href={menuItem?.href}>
+              {menuItem?.name}
+            </a>
+          );
+        })}
       </>
     );
   };
 
   return (
-    <main className={`header ${enableShadow ? "header-shadow" : "no-shadow"}`}>
-      <section className="header--left">
-        <img src={pLogo} alt="p-logo" />
+    <main
+      className={cx(appStyles.header, {
+        [appStyles["header-shadow"]]: enableShadow,
+        [appStyles["no-shadow"]]: !enableShadow,
+      })}
+    >
+      <section className={appStyles["header--left"]}>
+        <img src={pLogo} alt="P Logo" />
       </section>
 
-      <section className="header--right-web">{renderMenuItems()}</section>
+      <section className={appStyles["header--right-web"]}>{renderMenuItems()}</section>
 
-      <section className="header--right-mobile">
+      <section className={appStyles["header--right-mobile"]}>
         <TextButton
           btnText={null}
-          iconOnRight={renderMenuIcon()}
-          customBtnClass="header--right-mobile-btn"
-          customDropdownClass="header--right-mobile-menu-items"
+          iconOnRight={<img src={hamBurger} alt="Menu" />}
+          customBtnClass={appStyles["header--right-mobile-btn"]}
+          customDropdownClass={appStyles["header--right-mobile-menu-items"]}
           onClickRequired
         >
           {renderMenuItems()}
