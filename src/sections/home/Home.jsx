@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Typical from "react-typical";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
-import ParticlesComponent from "components/particles/ParticlesComponent";
+import ParticlesComponent from "components/particles/Particles";
 
 // IMPORT OTHERS HERE //
 import { fullName } from "config";

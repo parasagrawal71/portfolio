@@ -1,13 +1,14 @@
 import React from "react";
 import Particles from "react-particles-js";
+import cx from "classnames";
 
 // IMPORT OTHERS HERE //
-import "./ParticlesComponent.scss";
+import appStyles from "./Particles.module.scss";
 
 const ParticlesComponent = ({ className }) => {
   return (
     <Particles
-      className={`${className} particles-comp`}
+      className={cx(appStyles["particles-cnt"], className)}
       params={{
         particles: {
           number: {
