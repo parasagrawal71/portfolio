@@ -1,12 +1,15 @@
 import React from "react";
 
+// IMPORT USER-DEFINED COMPONENTS HERE //
+import SectionHeaderComponent from "components/sectionHeader/SectionHeader";
+
 // IMPORT OTHERS HERE //
-import "./Projects.scss";
+import appStyles from "./Projects.module.scss";
 
 const Projects = () => {
   return (
-    <main className="projects" id="projects">
-      <div>Projects</div>
+    <main className={appStyles["main-cnt"]} id="projects">
+      <SectionHeaderComponent headerTitle="PROJECTS" />
     </main>
   );
 };
