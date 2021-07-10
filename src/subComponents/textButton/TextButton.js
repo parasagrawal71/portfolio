@@ -32,13 +32,13 @@ const TextButton = (props) => {
     }
 
     return () => {
-      window.removeEventListener(closeDropdownListener);
-      window.removeEventListener(clickOutsideListener);
+      window.removeEventListener("scroll", closeDropdownListener);
+      window.removeEventListener("click", clickOutsideListener);
     };
   }, [onClickRequired]);
 
   const checkClickOutside = (e) => {
-    if (!btnRef.current.contains(e.target)) {
+    if (!btnRef?.current?.contains(e.target)) {
       setIsDropdownVisble(false);
     }
   };

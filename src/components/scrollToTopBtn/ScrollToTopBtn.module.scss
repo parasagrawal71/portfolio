@@ -1,9 +1,9 @@
-.scrollTop {
+.scrollToTop-btn-cnt {
   position: fixed;
   bottom: 20px;
   right: calc(50% - 20px);
   align-items: center;
-  height: 20px;
+  height: 40px;
   justify-content: center;
   z-index: 1000;
   cursor: pointer;
@@ -11,8 +11,8 @@
   transition: opacity 0.4s;
   opacity: 0.5;
   outline: none;
-}
 
-.scrollTop:hover {
-  opacity: 1;
+  &:hover {
+    opacity: 1;
+  }
 }

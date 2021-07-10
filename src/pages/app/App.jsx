@@ -9,7 +9,7 @@ import SkillsetSection from "sections/skillset/Skillset";
 // import ExperienceSection from "sections/experience/Experience";
 // import ProjectsSection from "sections/projects/Projects";
 // import ContactSection from "sections/contact/Contact";
-import ScrollToTopBtn from "components/scrollToTopBtn/ScrollToTopBtn";
+import ScrollToTopBtnComponent from "components/scrollToTopBtn/ScrollToTopBtn";
 import FooterSection from "sections/footer/Footer";
 
 // IMPORT OTHERS HERE //
@@ -29,7 +29,7 @@ const App = () => {
       <SkillsetSection />
       <FooterSection />
 
-      <ScrollToTopBtn />
+      <ScrollToTopBtnComponent />
     </main>
   );
 };

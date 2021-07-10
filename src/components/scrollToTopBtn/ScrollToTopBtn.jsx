@@ -1,45 +1,44 @@
 import React, { useState, useEffect } from "react";
 
 // IMPORT OTHERS HERE //
-import "./ScrollToTopBtn.scss";
 import { scrollToTop } from "assets/Images";
+import appStyles from "./ScrollToTopBtn.module.scss";
 
-const ScrollArrow = () => {
-  const [showScroll, setShowScroll] = useState(false);
+const ScrollToTopBtn = () => {
+  const [showScrollBtn, setShowScrollBtn] = useState(false);
 
   useEffect(() => {
-    const scrollTopListener = window.addEventListener("scroll", checkScrollTop);
+    const scrollToTopListener = window.addEventListener("scroll", checkScrollToTop);
+
     return () => {
-      window.removeEventListener(scrollTopListener);
+      window.removeEventListener("scroll", scrollToTopListener);
     };
   }, []);
 
-  const checkScrollTop = () => {
+  const checkScrollToTop = () => {
     if (window.pageYOffset > 800) {
-      setShowScroll(true);
+      setShowScrollBtn(true);
       return;
     }
-    setShowScroll(false);
+    setShowScrollBtn(false);
   };
 
-  const scrollTop = () => {
+  const handleScrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-  window.addEventListener("scroll", checkScrollTop);
 
   return (
     <div
       role="button"
-      className="scrollTop"
-      onClick={scrollTop}
+      className={appStyles["scrollToTop-btn-cnt"]}
+      onClick={handleScrollToTop}
       onKeyDown={() => {}}
       tabIndex="0"
-      style={{ height: 40, display: showScroll ? "flex" : "none" }}
+      style={{ display: showScrollBtn ? "flex" : "none" }}
     >
-      <img src={scrollToTop} alt="scroll-to-top" />
+      <img src={scrollToTop} alt="Scroll To Top" />
     </div>
   );
 };
 
-export default ScrollArrow;
+export default ScrollToTopBtn;
