@@ -1,17 +1,16 @@
 import React from "react";
 
+// IMPORT USER-DEFINED COMPONENTS HERE //
+import SectionHeaderComponent from "components/sectionHeader/SectionHeader";
+
 // IMPORT OTHERS HERE //
-import { lines } from "assets/Images";
 import { skillsetsArray } from "config/skillset";
 import appStyles from "./Skillset.module.scss";
 
 const Skillset = () => {
   return (
     <main className={appStyles["main-cnt"]} id="skillset">
-      <header className={appStyles["main-header"]}>
-        <div className={appStyles["main-header__name"]}>SKILLSET</div>
-        <img src={lines} alt="lines" />
-      </header>
+      <SectionHeaderComponent headerTitle="SKILLSET" />
 
       <section className={appStyles["skills-cnt"]}>
         {skillsetsArray?.map((skill) => {

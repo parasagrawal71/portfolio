@@ -3,9 +3,9 @@ import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import TextButton from "subComponents/textButton/TextButton";
+import SectionHeaderComponent from "components/sectionHeader/SectionHeader";
 
 // IMPORT OTHERS HERE //
-import { lines } from "assets/Images";
 import {
   aboutDescription,
   RESUME_URL,
@@ -18,10 +18,7 @@ import appStyles from "./About.module.scss";
 const About = () => {
   return (
     <main className={appStyles["about-section"]} id="about">
-      <header className={appStyles["main-header"]}>
-        <div className={appStyles["main-header__name"]}>ABOUT</div>
-        <img src={lines} alt="lines" />
-      </header>
+      <SectionHeaderComponent headerTitle="ABOUT" />
 
       <section className={appStyles["about-section--top"]}>
         <img src={SELF_PICTURE_URL} alt="Profile Pic" className={appStyles["profile-pic"]} />
