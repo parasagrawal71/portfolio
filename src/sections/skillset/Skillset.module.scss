@@ -2,7 +2,7 @@
 @import "utils/commonStyles/flex.scss";
 
 .main-cnt {
-  height: 100vh;
+  min-height: 100vh; // min-height for last section
   padding: 85px 6%;
 
   .skills-cnt {
