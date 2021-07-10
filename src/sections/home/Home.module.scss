@@ -1,0 +1,53 @@
+@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/flex.scss";
+@import "utils/commonStyles/keyframes.scss";
+
+.main-cnt {
+  height: calc(100vh - 80px);
+  color: $white;
+
+  .home-content {
+    position: relative;
+    top: 35%;
+    letter-spacing: 1px;
+    text-align: center;
+
+    .greeting {
+      font-size: 15px;
+      animation: fadein-full 3s;
+    }
+
+    .name {
+      text-align: center;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-family: Montserrat-ExtraBold;
+      font-size: 50px;
+
+      .character {
+        animation: move-text-name 0.2s forwards;
+        position: relative;
+        top: 0;
+        opacity: 0;
+      }
+    }
+
+    .designation {
+      font-size: 18px;
+    }
+  }
+
+  .particles {
+    margin-top: -10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .particles {
+    margin-top: -30%;
+  }
+
+  .home-content {
+    top: 27%;
+  }
+}

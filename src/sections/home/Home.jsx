@@ -6,8 +6,9 @@ import ParticlesComponent from "components/particles/Particles";
 
 // IMPORT OTHERS HERE //
 import { fullName } from "config";
-import "./Home.scss";
 import { handleResize } from "utils/functions";
+import { designations } from "config/home";
+import appStyles from "./Home.module.scss";
 
 const Home = () => {
   // STATE Variables
@@ -27,29 +28,41 @@ const Home = () => {
     };
   }, []);
 
+  const getStepsForTypical = () => {
+    const stepsArr = [];
+    for (let i = 0; i < designations?.length; i += 1) {
+      stepsArr.push(designations[i]);
+      stepsArr.push(2000); // 2000ms after which typing starts again
+    }
+
+    return stepsArr;
+  };
+
   return (
-    <main className="home" id="#">
-      <section className="home-content">
-        <div className="home-hi">Hi there!, I&#39;m</div>
-        <div className="home-name">
+    <main className={appStyles["main-cnt"]} id="#">
+      <section className={appStyles["home-content"]}>
+        <div className={appStyles.greeting}>Hi there!, I&#39;m</div>
+        <div className={appStyles.name}>
           {fullNameArray?.map((char, index) => (
-            <span key={index} style={{ animationDelay: `${0.3 + index / 10}s` }}>
+            <span
+              className={appStyles.character}
+              key={index}
+              style={{ animationDelay: `${0.3 + index / 10}s` }}
+            >
               {char}
             </span>
           ))}
         </div>
+
         {enableTyping && (
-          <section className="home-designation">
-            <Typical
-              steps={["Front-end", 2000, "Back-end", 2000, "Mobile App", 2000]}
-              loop={Infinity}
-              wrapper="span"
-            />
+          <section className={appStyles.designation}>
+            <Typical steps={getStepsForTypical()} loop={Infinity} wrapper="span" />
             <span>Developer</span>
           </section>
         )}
       </section>
-      <ParticlesComponent className="particles" />
+
+      <ParticlesComponent className={appStyles.particles} />
     </main>
   );
 };

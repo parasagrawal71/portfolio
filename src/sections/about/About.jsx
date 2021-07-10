@@ -55,6 +55,7 @@ const About = () => {
           {roles?.map((role) => {
             return (
               <section
+                key={role?.name}
                 className={cx(appStyles["about-whatIDo-box"], {
                   [appStyles["frontend-container"]]: role?.name === "frontend",
                   [appStyles["backend-container"]]: role?.name === "backend",
