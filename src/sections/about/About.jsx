@@ -6,13 +6,7 @@ import TextButton from "subComponents/textButton/TextButton";
 import SectionHeaderComponent from "components/sectionHeader/SectionHeader";
 
 // IMPORT OTHERS HERE //
-import {
-  aboutDescription,
-  RESUME_URL,
-  SELF_PICTURE_URL,
-  socialProfiles,
-  roles,
-} from "config/about";
+import { aboutDescription, RESUME_URL, SELF_PICTURE_URL, socialProfiles, roles } from "config";
 import appStyles from "./About.module.scss";
 
 const About = () => {

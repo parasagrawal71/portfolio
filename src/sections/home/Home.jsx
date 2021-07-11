@@ -5,9 +5,8 @@ import Typical from "react-typical";
 import ParticlesComponent from "components/particles/Particles";
 
 // IMPORT OTHERS HERE //
-import { fullName } from "config";
+import { fullName, designations } from "config";
 import { handleResize } from "utils/functions";
-import { designations } from "config/home";
 import appStyles from "./Home.module.scss";
 
 const Home = () => {
