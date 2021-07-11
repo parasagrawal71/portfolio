@@ -14,11 +14,12 @@ import myCV from "assets/pdfs/Paras-Agrawal_Full-Stack_CV.pdf";
 
 // EXPORTs HERE
 export const fullName = "Paras Agrawal";
+export const companyName = "nference";
 export const designations = ["Front-end", "Back-end", "Mobile App"];
 export const RESUME_URL = myCV;
 export const SELF_PICTURE_URL = myPicture;
 export const aboutDescription = `Hello! I'm ${fullName}, a full-stack developer, and a guy slightly obsessed with code
-  quality. I am currently working for a start-up, nference. I not only love to code also
+  quality. I am currently working for a start-up, ${companyName}. I not only love to code also
   like to solve problems.`;
 
 export const socialProfiles = [
