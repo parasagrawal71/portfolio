@@ -32,22 +32,18 @@ const Header = () => {
     const menuItems = [
       { name: "Home", href: "#", hash: "" },
       { name: "About", href: "#about", hash: "#about" },
-      { name: "Skillset", href: "#skillset", hash: "#skillset" },
       // { name: "Projects", href: "#projects", hash: "#projects" },
+      { name: "Skillset", href: "#skillset", hash: "#skillset" },
       // { name: "Contact", href: "#contact", hash: "#contact" },
     ];
 
-    return (
-      <>
-        {menuItems?.map((menuItem) => {
-          return (
-            <a key={menuItem?.name} href={menuItem?.href}>
-              {menuItem?.name}
-            </a>
-          );
-        })}
-      </>
-    );
+    return menuItems?.map((menuItem) => {
+      return (
+        <a key={menuItem?.name} href={menuItem?.href}>
+          {menuItem?.name}
+        </a>
+      );
+    });
   };
 
   return (

@@ -5,8 +5,8 @@ import HeaderComponent from "components/header/Header";
 import HomeSection from "sections/home/Home";
 import AboutSection from "sections/about/About";
 import SkillsetSection from "sections/skillset/Skillset";
-// import ExperienceSection from "sections/experience/Experience";
 // import ProjectsSection from "sections/projects/Projects";
+// import ExperienceSection from "sections/experience/Experience";
 // import ContactSection from "sections/contact/Contact";
 import ScrollToTopBtnComponent from "components/scrollToTopBtn/ScrollToTopBtn";
 import FooterSection from "sections/footer/Footer";
@@ -19,6 +19,7 @@ const Main = () => {
       <HeaderComponent />
       <HomeSection />
       <AboutSection />
+      {/* <ProjectsSection /> */}
       <SkillsetSection />
       <FooterSection />
 
