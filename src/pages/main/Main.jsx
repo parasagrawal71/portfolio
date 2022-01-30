@@ -5,7 +5,7 @@ import HeaderComponent from "components/header/Header";
 import HomeSection from "sections/home/Home";
 import AboutSection from "sections/about/About";
 import SkillsetSection from "sections/skillset/Skillset";
-// import ProjectsSection from "sections/projects/Projects";
+import ProjectsSection from "sections/projects/Projects";
 // import ExperienceSection from "sections/experience/Experience";
 // import ContactSection from "sections/contact/Contact";
 import ScrollToTopBtnComponent from "components/scrollToTopBtn/ScrollToTopBtn";
@@ -19,7 +19,7 @@ const Main = () => {
       <HeaderComponent />
       <HomeSection />
       <AboutSection />
-      {/* <ProjectsSection /> */}
+      <ProjectsSection />
       <SkillsetSection />
       <FooterSection />
 
