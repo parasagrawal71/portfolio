@@ -7,3 +7,4 @@ export const GITHUB_URL = "https://github.com/parasagrawal71";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/parasagrawal71";
 export const MAIL_ID = "parasagrawal71@gmail.com";
 export const INSTAGRAM_URL = "https://www.instagram.com/paras__fbg";
+export const RESUME_URL = "https://drive.google.com/file/d/1teFr1xr-BEY2rxtjk_K7gsuRWKEex4Ot/view?usp=sharing";
