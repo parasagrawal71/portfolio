@@ -38,7 +38,10 @@ const About = () => {
 
             <TextButton
               btnText="download resume"
-              btnCallback={() => window.open(RESUME_URL, "_none")}
+              btnCallback={() => {
+                // window.open(RESUME_URL, "_none");
+                window.open(RESUME_URL, "_blank");
+              }}
               customBtnClass={appStyles["download-resume"]}
             />
           </section>
