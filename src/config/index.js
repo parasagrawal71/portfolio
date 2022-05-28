@@ -10,7 +10,7 @@ import {
   halfAndroid,
   halfiOS,
 } from "assets/Images";
-import myCV from "assets/pdfs/Paras-Agrawal_Full-Stack_CV.pdf";
+import myCV from "assets/pdfs/Paras-Agrawal_Senior-Engineer_Resume.pdf";
 
 // EXPORTs HERE
 export const fullName = "Paras Agrawal";
