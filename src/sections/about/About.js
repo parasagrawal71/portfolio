@@ -17,7 +17,7 @@ import {
   halfAndroid,
   halfiOS,
 } from "assets/Images";
-import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL } from "utils/constants";
+import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL, RESUME_URL } from "utils/constants";
 import myCV from "assets/pdfs/Paras-Agrawal_Full-Stack_CV.pdf";
 
 const About = () => {
@@ -69,7 +69,10 @@ const About = () => {
           </section>
           <TextButton
             btnText="download resume"
-            btnCallback={() => window.open(myCV, "_none")}
+            btnCallback={() => {
+              // window.open(myCV, "_none");
+              window.open(RESUME_URL, "_blank");
+            }}
             customBtnClass="download-resume"
           />
         </section>
