@@ -18,7 +18,7 @@ import {
   halfiOS,
 } from "assets/Images";
 import { GITHUB_URL, LINKEDIN_URL, MAIL_ID, INSTAGRAM_URL, RESUME_URL } from "utils/constants";
-import myCV from "assets/pdfs/Paras-Agrawal_Full-Stack_CV.pdf";
+import myCV from "assets/pdfs/Paras-Agrawal_Senior-Engineer_Resume.pdf";
 
 const About = () => {
   // const downloadCV = () => {
