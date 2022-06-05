@@ -10,15 +10,15 @@ import {
   halfAndroid,
   halfiOS,
 } from "assets/Images";
-import myCV from "assets/pdfs/Paras-Agrawal_Senior-Engineer_Resume.pdf";
+import myResume from "assets/pdfs/Paras-Agrawal_Senior-Engineer_Resume.pdf";
 
 // EXPORTs HERE
 export const fullName = "Paras Agrawal";
 export const companyName = "nference";
 export const designations = ["Front-end", "Back-end", "Mobile App"];
-// export const RESUME_URL = myCV;
-export const RESUME_URL =
-  "https://drive.google.com/file/d/1teFr1xr-BEY2rxtjk_K7gsuRWKEex4Ot/view?usp=sharing";
+export const RESUME_URL = myResume;
+// export const RESUME_URL =
+//   "https://drive.google.com/file/d/1teFr1xr-BEY2rxtjk_K7gsuRWKEex4Ot/view?usp=sharing";
 export const SELF_PICTURE_URL = myPicture;
 export const aboutDescription = `Hello! I'm ${fullName}, a full-stack developer, and a guy slightly obsessed with code
   quality. I am currently working for a start-up, ${companyName}. I not only love to code also

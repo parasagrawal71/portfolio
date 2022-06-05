@@ -6,6 +6,7 @@ import TextButton from "subComponents/textButton/TextButton";
 
 // IMPORT OTHERS HERE //
 import { pLogo, hamBurger } from "assets/Images";
+import { menuItems } from "config/header";
 import appStyles from "./Header.module.scss";
 
 const Header = () => {
@@ -29,14 +30,6 @@ const Header = () => {
   };
 
   const renderMenuItems = () => {
-    const menuItems = [
-      { name: "Home", href: "#", hash: "" },
-      { name: "About", href: "#about", hash: "#about" },
-      { name: "Projects", href: "#projects", hash: "#projects" },
-      { name: "Skillset", href: "#skillset", hash: "#skillset" },
-      // { name: "Contact", href: "#contact", hash: "#contact" },
-    ];
-
     return menuItems?.map((menuItem) => {
       return (
         <a key={menuItem?.name} href={menuItem?.href}>
