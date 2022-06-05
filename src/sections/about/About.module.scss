@@ -1,0 +1,155 @@
+@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/flex.scss";
+
+.about-section {
+  height: 100vh;
+  padding: 85px 6%;
+
+  .about-section--top {
+    @include flex-row-cen;
+    padding: 0 10%;
+
+    .profile-pic {
+      border-radius: 50%;
+      width: 200px;
+      height: auto;
+    }
+
+    .description {
+      @include flex-col-sb;
+      padding-left: 120px;
+
+      p {
+        text-align: justify;
+        letter-spacing: 1.2px;
+        margin-top: 2px;
+      }
+
+      .social-resume-cnt {
+        .social-icons-cnt {
+          @include flex-row;
+          padding-top: 10px;
+
+          .social-link {
+            img {
+              width: 26px;
+              background-color: inherit;
+            }
+
+            &:not(:last-child) {
+              margin-right: 15px;
+            }
+          }
+        }
+
+        .download-resume {
+          text-transform: capitalize;
+          font-size: 13px;
+          background-color: inherit;
+          border: 1px solid $grey;
+          padding: 10px;
+          margin-bottom: 2px;
+          border-radius: 10px;
+          width: fit-content;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+
+  .about-section--bottom {
+    header {
+      text-transform: uppercase;
+      text-align: center;
+      padding: 50px 0 15px 0;
+      font-size: 20px;
+    }
+
+    .about-whatIDo {
+      @include flex-row-cen;
+      padding: 0 calc(10% - 35px);
+
+      .about-whatIDo-box {
+        @include flex-col-h-cen;
+        padding: 25px;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        .backend {
+          width: 40px;
+          height: 40px;
+          margin-top: 6px;
+        }
+
+        .mobileapp {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .halfAndroid {
+          width: 22px;
+          height: auto;
+        }
+
+        .halfiOS {
+          width: 22px;
+          height: auto;
+          margin-left: 5px;
+        }
+
+        div {
+          padding-top: 8px;
+        }
+
+        p {
+          text-align: center;
+          letter-spacing: 1.2px;
+        }
+
+        &.backend-container p {
+          margin-top: 20px;
+        }
+
+        &.mobileapp-container p {
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .about-section {
+    height: auto;
+    padding-top: 90px;
+
+    .about-section--top {
+      @include flex-col-h-cen;
+
+      .description {
+        padding-left: 0;
+        padding-top: 30px;
+        margin-top: 10px;
+
+        p {
+          text-align: justify;
+        }
+
+        .social-resume-cnt {
+          .social-icons-cnt {
+            margin-top: 10px;
+          }
+        }
+      }
+    }
+
+    .about-section--bottom {
+      .about-whatIDo {
+        @include flex-col-h-cen;
+      }
+    }
+  }
+}

@@ -1,11 +1,11 @@
 import React from "react";
 
 // IMPORT OTHERS HERE //
-import "./Contact.scss";
+import appStyles from "./Contact.module.scss";
 
 const Contact = () => {
   return (
-    <main className="contact" id="contact">
+    <main className={appStyles["main-cnt"]} id="contact">
       <div>Contact</div>
     </main>
   );

@@ -19,35 +19,3 @@
   font-family: "Montserrat-ExtraBold";
   src: url(assets/fonts/Montserrat/Montserrat-Black.ttf) format("truetype");
 }
-
-/* ************ KEY-FRAMES ************ */
-@keyframes move-text-name {
-  0% {
-    top: -40px;
-    opacity: 0;
-  }
-
-  100% {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes fadein-half {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-
-@keyframes fadein-full {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
