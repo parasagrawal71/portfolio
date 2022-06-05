@@ -5,6 +5,7 @@
 .main-cnt {
   min-height: $section-height; // min-height for last section
   padding: $section-padding;
+  padding-bottom: calc($section-vertical-gap * 2);
 
   .skills-cnt {
     display: flex;
