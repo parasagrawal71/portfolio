@@ -13,17 +13,11 @@ import {
   linux,
   aws,
   api,
+  kafka,
+  sass,
 } from "assets/Images";
 
 export const skillsetsArray = [
-  {
-    name: "HTML",
-    icon: html5,
-  },
-  {
-    name: "CSS",
-    icon: css3,
-  },
   {
     name: "Javascript",
     icon: javascript,
@@ -33,28 +27,28 @@ export const skillsetsArray = [
     icon: react,
   },
   {
-    name: "React Native",
-    icon: reactNative,
-  },
-  {
-    name: "Redux",
-    icon: redux,
-  },
-  {
-    name: "Vue",
-    icon: vuejs,
-  },
-  {
     name: "Node JS",
     icon: nodejs,
   },
   {
-    name: "Python",
-    icon: python,
-  },
-  {
     name: "MongoDB",
     icon: mongodb,
+  },
+  {
+    name: "HTML",
+    icon: html5,
+  },
+  {
+    name: "CSS",
+    icon: css3,
+  },
+  {
+    name: "Sass",
+    icon: sass,
+  },
+  {
+    name: "Redux",
+    icon: redux,
   },
   {
     name: "Git",
@@ -65,11 +59,28 @@ export const skillsetsArray = [
     icon: linux,
   },
   {
-    name: "AWS",
-    icon: aws,
-  },
-  {
     name: "API",
     icon: api,
+  },
+  {
+    name: "Vue",
+    icon: vuejs,
+  },
+  {
+    name: "Python",
+    icon: python,
+  },
+  {
+    name: "React Native",
+    icon: reactNative,
+  },
+  {
+    name: "AWS",
+    icon: aws,
+    imgHeight: "30px",
+  },
+  {
+    name: "Kafka",
+    icon: kafka,
   },
 ];

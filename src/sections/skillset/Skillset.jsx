@@ -16,7 +16,7 @@ const Skillset = () => {
         {skillsetsArray?.map((skill) => {
           return (
             <div className={appStyles.skill} key={skill?.name}>
-              <img src={skill?.icon} alt={skill?.name} />
+              <img src={skill?.icon} alt={skill?.name} style={{ height: skill?.imgHeight }} />
               <div className={appStyles["skill-name"]}>{skill?.name}</div>
             </div>
           );
