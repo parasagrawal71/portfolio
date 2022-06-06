@@ -27,6 +27,12 @@ const Home = () => {
     };
   }, []);
 
+  // useEffect(() => {
+  //   if (enableTyping) {
+  //     customTypingEffect?.(designations, "typical")?.();
+  //   }
+  // }, [enableTyping]);
+
   const getStepsForTypical = () => {
     const stepsArr = [];
     for (let i = 0; i < designations?.length; i += 1) {
@@ -56,6 +62,8 @@ const Home = () => {
         {enableTyping && (
           <section className={appStyles.designation}>
             <Typical steps={getStepsForTypical()} loop={Infinity} wrapper="span" />
+            {/* <span id="typical" />
+            <span className="blinking-cursor">|</span> */}
             <span>Developer</span>
           </section>
         )}

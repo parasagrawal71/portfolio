@@ -28,7 +28,9 @@ const Main = () => {
     <>
       <HeaderComponent />
       {menuItems?.map((menuItem) => {
-        return nameComponentMap?.[menuItem?.name];
+        return (
+          <React.Fragment key={menuItem?.name}>{nameComponentMap?.[menuItem?.name]}</React.Fragment>
+        );
       })}
       <FooterSection />
       <ScrollToTopBtnComponent />

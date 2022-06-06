@@ -5,4 +5,17 @@
 .main-cnt {
   height: $section-height;
   padding: $section-padding;
+
+  .projects-cnt {
+    @include flex-row-sb;
+    flex-wrap: wrap;
+    padding: 0 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-cnt {
+    .projects-cnt {
+    }
+  }
 }

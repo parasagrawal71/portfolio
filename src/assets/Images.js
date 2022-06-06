@@ -26,6 +26,9 @@ import _git from "./img/git.png";
 import _linux from "./img/linux.png";
 import _aws from "./img/aws.png";
 import _api from "./img/api.png";
+import _apiDocumenterImage from "./img/api-documenter.png";
+import _shopAnywhereImage from "./img/shop-anywhere.png";
+import _twitterHelpdeskImage from "./img/twitter-helpdesk.png";
 
 // EXPORTS //
 export const pLogo = _pLogo;
@@ -58,6 +61,9 @@ export const api = _api;
 export const kafka =
   "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg";
 export const sass = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg";
+export const apiDocumenterImage = _apiDocumenterImage;
+export const shopAnywhereImage = _shopAnywhereImage;
+export const twitterHelpdeskImage = _twitterHelpdeskImage;
 
 /**
  * Get programmiong languages icons from this site "https://devicon.dev/"

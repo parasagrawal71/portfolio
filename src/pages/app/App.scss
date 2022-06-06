@@ -1,4 +1,5 @@
 @import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/keyframes.scss";
 
 body {
   margin: 0;
@@ -40,4 +41,16 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+/* ************ Animations ************ */
+.lineUp {
+  animation: anim-lineUp 3s ease-out normal;
+}
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 25px;
+  color: $white;
+  animation: 1s blink step-end infinite;
 }
