@@ -3,7 +3,7 @@
 @import "utils/commonStyles/constants.scss";
 
 .main-cnt {
-  height: $section-height;
+  min-height: $section-height; // min-height for last section
   padding: $section-padding;
 
   .projects-cnt {

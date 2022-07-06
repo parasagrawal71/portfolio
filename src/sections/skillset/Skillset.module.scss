@@ -3,7 +3,7 @@
 @import "utils/commonStyles/constants.scss";
 
 .main-cnt {
-  min-height: $section-height; // min-height for last section
+  height: $section-height;
   padding: $section-padding;
   padding-bottom: calc($section-vertical-gap * 2);
 
