@@ -1,9 +1,10 @@
 @import "utils/commonStyles/colors.scss";
 @import "utils/commonStyles/flex.scss";
+@import "utils/commonStyles/constants.scss";
 
 .about-section {
-  height: 100vh;
-  padding: 85px 6%;
+  height: $section-height;
+  padding: $section-padding;
 
   .about-section--top {
     @include flex-row-cen;

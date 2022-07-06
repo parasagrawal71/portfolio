@@ -32,7 +32,7 @@ const Header = () => {
   const renderMenuItems = () => {
     return menuItems?.map((menuItem) => {
       return (
-        <a key={menuItem?.name} href={menuItem?.href}>
+        <a key={menuItem?.name} href={menuItem?.href} className="lineUp">
           {menuItem?.name}
         </a>
       );

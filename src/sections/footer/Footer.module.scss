@@ -1,13 +1,16 @@
+@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/flex.scss";
+@import "utils/commonStyles/constants.scss";
+
 .main-cnt {
-  position: relative;
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   .footer-content {
     font-size: 13px;
-    position: absolute;
     text-align: center;
-    bottom: 0;
-    left: calc(50% - 140px);
-    padding-bottom: 80px;
   }
 }
 
@@ -18,7 +21,6 @@
     justify-content: center;
 
     .footer-content {
-      padding-bottom: 65px;
     }
   }
 }

@@ -1,9 +1,11 @@
 @import "utils/commonStyles/colors.scss";
 @import "utils/commonStyles/flex.scss";
+@import "utils/commonStyles/constants.scss";
 
 .main-cnt {
-  min-height: 100vh; // min-height for last section
-  padding: 85px 6%;
+  height: $section-height;
+  padding: $section-padding;
+  padding-bottom: calc($section-vertical-gap * 2);
 
   .skills-cnt {
     display: flex;

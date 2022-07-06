@@ -17,7 +17,7 @@ export const fullName = "Paras Agrawal";
 export const companyName = "nference";
 export const designation = "Senior Engineer";
 export const YOE = 3;
-export const designations = ["Front-end", "Back-end", "Mobile App"];
+export const designations = ["Back-end", "Front-end", "Mobile App"];
 export const RESUME_URL = myResume;
 // export const RESUME_URL =
 //   "https://drive.google.com/file/d/1teFr1xr-BEY2rxtjk_K7gsuRWKEex4Ot/view?usp=sharing";
@@ -55,16 +55,16 @@ export const socialProfiles = [
 
 export const roles = [
   {
-    name: "frontend",
-    displayName: "Front-end",
-    description: `As a javascript developer, I have experience in React JS and Vue JS libraries.`,
-    icon: frontend,
-  },
-  {
     name: "backend",
     displayName: "Back-end",
     description: `I'm more back end focused and love to work with APIs in Node js and Python.`,
     icon: backend,
+  },
+  {
+    name: "frontend",
+    displayName: "Front-end",
+    description: `As a javascript developer, I have experience in React JS and Vue JS libraries.`,
+    icon: frontend,
   },
   {
     name: "mobileapp",

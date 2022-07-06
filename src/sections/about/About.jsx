@@ -55,7 +55,7 @@ const About = () => {
             return (
               <section
                 key={role?.name}
-                className={cx(appStyles["about-whatIDo-box"], {
+                className={cx(appStyles["about-whatIDo-box"], "lineUp", {
                   [appStyles["frontend-container"]]: role?.name === "frontend",
                   [appStyles["backend-container"]]: role?.name === "backend",
                   [appStyles["mobileapp-container"]]: role?.name === "mobileapp",

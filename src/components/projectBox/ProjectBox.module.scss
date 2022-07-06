@@ -1,0 +1,93 @@
+@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/flex.scss";
+@import "utils/commonStyles/constants.scss";
+
+.project-box-cnt {
+  @include flex-col;
+  border: 1px solid #444242;
+  border-radius: 4px;
+  padding: 25px;
+  width: 400px;
+  margin-bottom: 40px;
+
+  &:hover {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .header {
+    padding-bottom: 10px;
+    @include flex-row-b-sb-cen;
+
+    .header--left {
+      @include flex-row-v-cen;
+      .header--left-left {
+        .icon {
+          @include flex-row-v-cen;
+          border: 1px solid #444242;
+          border-radius: 50%;
+          padding: 5px;
+          margin-right: 5px;
+        }
+      }
+      .header--left-right {
+        @include flex-col;
+        .name {
+          font-size: 18px;
+          color: $white;
+        }
+        .duration {
+          font-size: 14px;
+          font-style: italic;
+        }
+      }
+    }
+
+    .header--right {
+      @include flex-row-v-cen;
+      svg {
+        font-size: 20px;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  .content {
+    @include flex-col-sb;
+    flex: 1;
+    width: 100%;
+
+    .content--top {
+      width: 100%;
+      .overview-img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .descrp {
+        font-size: 14px;
+        text-align: justify;
+      }
+    }
+
+    .tech-list {
+      padding-top: 20px;
+      @include flex-row-v-cen;
+      flex-wrap: wrap;
+
+      .tech {
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .box-cnt {
+  }
+}

@@ -1,4 +1,24 @@
+@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/flex.scss";
+@import "utils/commonStyles/constants.scss";
+
 .main-cnt {
-  height: 100vh;
-  padding: 85px 6%;
+  min-height: $section-height; // min-height for last section
+  padding: $section-padding;
+
+  .projects-cnt {
+    @include flex-row-sb;
+    flex-wrap: wrap;
+    padding: 0 10%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-cnt {
+    height: auto;
+    padding-top: 90px;
+
+    .projects-cnt {
+    }
+  }
 }

@@ -1,5 +1,6 @@
 @import "utils/commonStyles/colors.scss";
 @import "utils/commonStyles/flex.scss";
+@import "utils/commonStyles/keyframes.scss";
 
 .header {
   @include flex-row-sb;
