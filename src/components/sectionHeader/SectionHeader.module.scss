@@ -1,8 +1,7 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
+@import "utils/commonStyles/index.scss";
 
 .main-header {
-  color: $white;
+  color: $color-primary-text;
   text-align: center;
   padding-bottom: 50px;
 

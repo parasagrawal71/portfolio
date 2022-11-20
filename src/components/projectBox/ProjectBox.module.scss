@@ -1,6 +1,4 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
-@import "utils/commonStyles/constants.scss";
+@import "utils/commonStyles/index.scss";
 
 .project-box-cnt {
   @include flex-col;
@@ -33,7 +31,7 @@
         @include flex-col;
         .name {
           font-size: 18px;
-          color: $white;
+          color: $color-primary-text;
         }
         .duration {
           font-size: 14px;

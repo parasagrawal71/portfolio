@@ -1,6 +1,4 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
-@import "utils/commonStyles/constants.scss";
+@import "utils/commonStyles/index.scss";
 
 .about-section {
   height: $section-height;
@@ -47,7 +45,7 @@
           text-transform: capitalize;
           font-size: 13px;
           background-color: inherit;
-          border: 1px solid $grey;
+          border: 1px solid $color-primary-border;
           padding: 10px;
           margin-bottom: 2px;
           border-radius: 10px;

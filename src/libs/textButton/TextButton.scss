@@ -1,11 +1,11 @@
-@import "utils/commonStyles/colors.scss";
+@import "utils/commonStyles/index.scss";
 
 .text-button {
   border: none;
   outline: none;
   cursor: pointer;
   text-transform: capitalize;
-  background-color: $white;
+  background-color: $color-primary-bg;
   padding: 0;
 }
 

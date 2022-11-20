@@ -1,0 +1,16 @@
+@use "sass:math";
+@import "utils/commonStyles/constants.scss";
+
+@mixin section-fullpage($headerHeight: 0px) {
+  height: calc($section-height - $headerHeight);
+}
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@function toRem($pxValue) {
+  @return math.div($pxValue, 16px) * 1rem;
+}

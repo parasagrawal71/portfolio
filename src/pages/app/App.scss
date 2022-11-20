@@ -1,5 +1,4 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/keyframes.scss";
+@import "utils/commonStyles/index.scss";
 
 body {
   margin: 0;
@@ -8,6 +7,7 @@ body {
 html {
   scroll-behavior: smooth;
   box-sizing: border-box;
+  @extend %scrollbar;
 }
 
 *,
@@ -17,40 +17,8 @@ html {
 }
 
 .app {
-  // background-color: #6daddb;
-  // background-image: linear-gradient(315deg, #6daddb 0%, #313131 74%);
-  background-color: #26343d;
-  // padding: 0 150px;
-  color: $grey;
-  font-family: Montserrat-Regular;
+  background: $color-primary-bg;
+  color: $color-primary-text;
+  font-family: "Roboto", sans-serif;
   position: relative;
-}
-
-::-webkit-scrollbar {
-  width: 5px;
-}
-
-::-webkit-scrollbar-track {
-  background: #26343d;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #989898;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-/* ************ Animations ************ */
-.lineUp {
-  animation: anim-lineUp 3s ease-out normal;
-}
-
-.blinking-cursor {
-  font-weight: 100;
-  font-size: 25px;
-  color: $white;
-  animation: 1s blink step-end infinite;
 }

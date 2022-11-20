@@ -25,10 +25,9 @@
     "tsparticles": "^2.0.6"
   },
   "scripts": {
-    "start": "BROWSER=none PORT=4000 react-scripts start",
+    "start": "BROWSER=none PORT=5000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "lint": "eslint ./ --fix",
     "deploy": "npm run build && firebase deploy",
     "prettier": "prettier -w ./src"

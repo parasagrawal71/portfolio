@@ -1,15 +1,68 @@
-$white: white;
-$black: black;
-$blue: blue;
-$darkBlue: #172337;
-$orange: #fbad4a;
+/*
+*******************************************************
+Private color variables: Never use these directly!
+Reference: https://akshayvjain.medium.com/managing-color-variables-in-front-end-project-3420903eecea
+*******************************************************
+*/
+/** Black colors till 80 ---------------------------------*/
+$_black-24: rgb(24, 24, 24);
+$_black-57: rgb(57, 62, 70);
+$_black-a20: rgba(0, 0, 0, 0.2);
+$_black-a20-72: rgba(72, 72, 72, 0.2);
 
-// GREY //
-$grey: #b7b7b7;
-$lighterGrey: #f5f5f6;
-$lightGrey: lightgrey;
-$darkGrey: #29303b;
+/** Gray colors from 80 - 160 and from 160 - 224 ---------------------------------*/
+$_gray-80: rgb(80, 80, 80);
+$_gray-224: rgb(224, 224, 224);
 
-$c-white: #ffffff;
-$c-gray-99: #fbfbfb;
-$c-black: #000000;
+/** White colors from 224 ---------------------------------*/
+$_white-a75-238: rgb(238, 238, 238, 0.75);
+$_white-238: rgb(238, 238, 238);
+$_white-255: rgb(255, 255, 255);
+
+/** Blue colors ---------------------------------*/
+$_blue-183: hsl(183, 100%, 35%);
+$_cyan-189: hsla(189, 71%, 49%, 0.051);
+$_blue-190: hsl(190, 71%, 40%);
+$_cyan-191: hsl(191, 67%, 87%);
+$_blue-195-2: hsl(195, 63%, 65%);
+$_blue-195-3: hsl(195, 100%, 44%);
+$_blue-216: hsl(216, 18%, 16%);
+$_purple-243: hsl(243, 49%, 68%);
+
+/* Green colors ---------------------------------*/
+$_green-89: hsl(89, 84%, 39%);
+$_lightGreen-120: hsl(120, 68%, 67%);
+$_green-123: hsl(123, 38%, 57%);
+
+/* Red colors ------------------------------------*/
+$_lightBrown-a20-169: rgba(169, 137, 144, 0.2);
+$_red-240: rgb(240, 64, 51);
+$_red-13: hsl(13, 96%, 53%);
+$_pink-13: rgb(254, 220, 210);
+$_orange-30: hsl(30, 100%, 56%);
+
+/*
+*
+*
+*
+*
+*******************************************************
+Only access colors through these “proxy”-variables
+*******************************************************
+*/
+$color-primary-bg: $_blue-216;
+$color-secondary-bg: "";
+$color-primary-text: $_white-a75-238;
+$color-secondary-text: $_white-238;
+$color-special-text: $_blue-183;
+$color-primary-btn-bg: "";
+$color-secondary-btn-bg: "";
+$color-primary-border: $_gray-80;
+$color-brand: "";
+$color-link: $_gray-80;
+$color-error: "";
+$color-warning: "";
+$color-disabled: "";
+$color-scrollbar-thumb: #989898;
+$color-scrollbar-bg: #26343d;
+$color-scrollbar-bg-hover: #555;
