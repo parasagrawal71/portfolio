@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
-import TextButton from "subComponents/textButton/TextButton";
+import { TextButton } from "libs";
 
 // IMPORT OTHERS HERE //
 import { pLogo, hamBurger } from "assets/Images";
