@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <main className={appStyles["main-cnt"]} id="#">
       <div className={appStyles.name}>{fullName}</div>
-      {/* TODO */}
+      <br />
       <div className={appStyles.role}>Engineer</div>
     </main>
   );

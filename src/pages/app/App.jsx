@@ -1,25 +1,32 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { BrowserRouter as Router } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
+
+// IMPORT ALL PAGES HERE //
+import MainPage from "pages/main/Main";
 
 // IMPORT OTHERS HERE //
 import { fullName } from "config";
 import history from "routes/history";
-import Routes from "routes/Routes";
 import "./App.scss";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainPage />,
+    },
+  ]);
+
   return (
     <main className="app">
-      <Router history={history}>
-        <Helmet>
-          <title>{fullName}</title>
-        </Helmet>
+      <Helmet>
+        <title>{fullName}</title>
+      </Helmet>
 
-        <Routes />
-      </Router>
+      <RouterProvider router={router} />
     </main>
   );
 };

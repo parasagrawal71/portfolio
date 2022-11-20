@@ -1,9 +1,6 @@
 import React from "react";
-import {
-  BsGithub as GithubIcon,
-  BiLinkExternal as WebsiteIcon,
-  BiVideo as VideoIcon,
-} from "react-icons/all";
+import { BsGithub as GithubIcon } from "react-icons/bs";
+import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons/bi";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 

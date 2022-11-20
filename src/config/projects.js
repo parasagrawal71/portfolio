@@ -1,8 +1,6 @@
-import {
-  BsTwitter as TwitterIcon,
-  TbApi as ApiIcon,
-  AiOutlineShoppingCart as ShopIcon,
-} from "react-icons/all";
+import { TbApi as ApiIcon } from "react-icons/tb";
+import { BsTwitter as TwitterIcon } from "react-icons/bs";
+import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
 
 import { apiDocumenterImage, shopAnywhereImage, twitterHelpdeskImage } from "assets/Images";
 

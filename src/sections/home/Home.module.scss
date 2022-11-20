@@ -3,11 +3,13 @@
 .main-cnt {
   @include section-fullpage($header-height);
   .name {
+    display: inline-block;
     font-size: toRem(60px);
     font-weight: bold;
-    color: $color-special-text;
+    color: $color-brand;
   }
   .role {
+    display: inline-block;
     text-transform: uppercase;
     font-size: toRem(30px);
     font-weight: bold;
