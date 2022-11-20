@@ -1,4 +1,9 @@
-// IMPORTS //
+import { TbApi as ApiIcon } from "react-icons/tb";
+import { BsTwitter as TwitterIcon, BsGithub as GithubIcon } from "react-icons/bs";
+import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
+import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons/bi";
+
+// LOCAL IMPORTS //
 import pLogo from "./img/p-logo.png";
 import scrollToTop from "./img/scroll-to-top.png";
 import hamBurger from "./img/hamburger.png";
@@ -68,6 +73,12 @@ export {
   twitterHelpdeskImage,
   kafka,
   sass,
+  ApiIcon,
+  TwitterIcon,
+  ShopIcon,
+  GithubIcon,
+  WebsiteIcon,
+  VideoIcon,
 };
 
 /**

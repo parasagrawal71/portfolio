@@ -1,8 +1,11 @@
-import { TbApi as ApiIcon } from "react-icons/tb";
-import { BsTwitter as TwitterIcon } from "react-icons/bs";
-import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
-
-import { apiDocumenterImage, shopAnywhereImage, twitterHelpdeskImage } from "assets/Images";
+import {
+  apiDocumenterImage,
+  shopAnywhereImage,
+  twitterHelpdeskImage,
+  ApiIcon,
+  TwitterIcon,
+  ShopIcon,
+} from "assets/Images";
 
 export const projectsList = [
   {

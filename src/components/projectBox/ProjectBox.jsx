@@ -1,8 +1,7 @@
 import React from "react";
-import { BsGithub as GithubIcon } from "react-icons/bs";
-import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons/bi";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
+import { GithubIcon, WebsiteIcon, VideoIcon } from "assets/Images";
 
 // IMPORT OTHERS HERE //
 import appStyles from "./ProjectBox.module.scss";
