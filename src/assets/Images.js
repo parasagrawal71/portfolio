@@ -2,6 +2,7 @@ import { TbApi as ApiIcon } from "react-icons/tb";
 import { BsTwitter as TwitterIcon, BsGithub as GithubIcon } from "react-icons/bs";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
 import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons/bi";
+import { GrFormNext as NextBtnIcon, GrFormPrevious as PreviousBtnIcon } from "react-icons/gr";
 
 // LOCAL IMPORTS //
 import pLogo from "./img/p-logo.png";
@@ -79,6 +80,8 @@ export {
   GithubIcon,
   WebsiteIcon,
   VideoIcon,
+  NextBtnIcon,
+  PreviousBtnIcon,
 };
 
 /**

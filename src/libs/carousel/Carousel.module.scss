@@ -1,3 +1,5 @@
+@import "utils/commonStyles/index.scss";
+
 .carousel {
   overflow: hidden;
 }
@@ -15,8 +17,7 @@
 }
 
 .indicators {
-  display: flex;
-  justify-content: center;
+  @include flex-row-b-cen;
 
   > button {
     margin: 5px;
@@ -24,6 +25,19 @@
     &.active {
       background-color: grey;
       color: #fff;
+    }
+  }
+
+  > svg {
+    margin: 5px;
+  }
+
+  .nextIcon,
+  .prevIcon {
+    cursor: pointer;
+    font-size: toRem(28px);
+    polyline {
+      stroke: #fff;
     }
   }
 }
