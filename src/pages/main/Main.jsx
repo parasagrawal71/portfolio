@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import HeaderComponent from "components/header/Header";
@@ -15,6 +15,9 @@ import FooterSection from "sections/footer/Footer";
 import { menuItems } from "config/header";
 
 const Main = () => {
+  // STATE VARIABLEs
+  const [currentSectionName, setCurrentSectionName] = useState(getSectionNameByHash());
+
   const nameComponentMap = {
     Home: <HomeSection />,
     About: <AboutSection />,
@@ -24,14 +27,18 @@ const Main = () => {
     Contact: <ContactSection />,
   };
 
+  function getSectionNameByHash() {
+    const { hash } = window.location || {};
+    return menuItems?.filter((mI) => mI.hash === hash)?.[0]?.name;
+  }
+
   return (
     <>
-      <HeaderComponent />
-      {menuItems?.map((menuItem) => {
-        return (
-          <React.Fragment key={menuItem?.name}>{nameComponentMap?.[menuItem?.name]}</React.Fragment>
-        );
-      })}
+      <HeaderComponent
+        currentSectionName={currentSectionName}
+        setCurrentSectionName={setCurrentSectionName}
+      />
+      {nameComponentMap?.[currentSectionName]}
       {/* <FooterSection /> */}
       {/* <ScrollToTopBtnComponent /> */}
     </>

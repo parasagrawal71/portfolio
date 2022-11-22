@@ -9,7 +9,11 @@ import { pLogo, hamBurger } from "assets/Images";
 import { menuItems } from "config/header";
 import appStyles from "./Header.module.scss";
 
-const Header = () => {
+const Header = (props) => {
+  // PROPs
+  const { currentSectionName, setCurrentSectionName } = props;
+
+  // STATE VARIABLEs
   const [enableShadow, setEnableShadow] = useState(false);
 
   useEffect(() => {
@@ -32,7 +36,14 @@ const Header = () => {
   const renderMenuItems = () => {
     return menuItems?.map((menuItem) => {
       return (
-        <a key={menuItem?.name} href={menuItem?.href} className="lineUp">
+        <a
+          key={menuItem?.name}
+          href={menuItem?.href}
+          className={cx(currentSectionName === menuItem?.name ? appStyles.active : "", "lineUp")}
+          onClick={() => {
+            setCurrentSectionName(menuItem?.name);
+          }}
+        >
           {menuItem?.name}
         </a>
       );

@@ -10,7 +10,7 @@
 
   &.header-shadow {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    background-color: #26343d;
+    background-color: $color-primary-bg;
   }
 
   &.no-shadow {
@@ -38,6 +38,10 @@
       &:not(:last-child) {
         margin-right: 30px;
       }
+
+      &.active {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -58,7 +62,11 @@
         color: $color-link;
         text-decoration: none;
         padding: 12px 5px;
-        background-color: #26343d;
+        background-color: $color-primary-bg;
+
+        &.active {
+          text-decoration: underline;
+        }
       }
     }
   }

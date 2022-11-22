@@ -5,6 +5,10 @@
   height: calc($section-height - $headerHeight);
 }
 
+@mixin section-padding() {
+  padding: 85px 6%;
+}
+
 @mixin ellipsis {
   text-overflow: ellipsis;
   overflow: hidden;

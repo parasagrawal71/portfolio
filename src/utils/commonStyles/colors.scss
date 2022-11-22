@@ -15,7 +15,7 @@ $_gray-80: rgb(80, 80, 80);
 $_gray-224: rgb(224, 224, 224);
 
 /** White colors from 224 ---------------------------------*/
-$_white-a75-238: rgb(238, 238, 238, 0.75);
+$_white-a75-238: rgba(238, 238, 238, 0.75);
 $_white-238: rgb(238, 238, 238);
 $_white-255: rgb(255, 255, 255);
 
@@ -58,7 +58,7 @@ $color-primary-btn-bg: "";
 $color-secondary-btn-bg: "";
 $color-primary-border: $_gray-80;
 $color-brand: $_blue-183;
-$color-link: $_gray-80;
+$color-link: $_white-a75-238;
 $color-error: "";
 $color-warning: "";
 $color-disabled: "";
