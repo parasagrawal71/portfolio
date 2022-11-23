@@ -44,8 +44,9 @@ export const projectsList = [
     externalUrls: [
       {
         type: "demovideo",
-        url: `https://drive.google.com/file/d/10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_/view`,
+        url: `https://drive.google.com/uc?id=10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_`,
         iconSize: "22px",
+        isVideo: true,
       },
       {
         type: "website",

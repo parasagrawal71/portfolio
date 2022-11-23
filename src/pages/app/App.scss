@@ -9,6 +9,8 @@ html {
   scroll-behavior: smooth;
   box-sizing: border-box;
   @extend %scrollbar;
+  overscroll-behavior: none;
+  overflow: overlay;
 }
 
 *,
@@ -22,4 +24,5 @@ html {
   color: $color-primary-text;
   font-family: "Roboto", sans-serif;
   position: relative;
+  overflow: overlay;
 }

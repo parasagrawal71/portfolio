@@ -21,7 +21,7 @@
 }
 
 .inner-vertical {
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 
   &.multiple-active-items {
     > :not(:last-child) {
@@ -62,5 +62,11 @@
     polyline {
       stroke: #fff;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .inner-vertical {
+    transition: transform 0.3s;
   }
 }

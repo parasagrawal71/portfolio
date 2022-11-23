@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 import _ from "lodash";
+import anime from "animejs";
 
 // IMPORT OTHERS HERE //
 import { NextBtnIcon, PreviousBtnIcon } from "assets/Images";
@@ -8,7 +9,7 @@ import { keyToCodeMap } from "utils/constants";
 import { useEventListener } from "hooks";
 import appStyles from "./Carousel.module.scss";
 
-const Carousel = (props) => {
+const Carousel = React.forwardRef((props, ref) => {
   // PROPs
   const {
     children,
@@ -16,7 +17,7 @@ const Carousel = (props) => {
     autoplayTime = 3000,
     numOfActiveItems = 1,
     direction = "vertical",
-    parentCntRef,
+    parentCntHeight,
   } = props;
 
   // STATE VARIABLEs
@@ -24,8 +25,12 @@ const Carousel = (props) => {
   const [paused, setPaused] = useState(false);
   const [mainCntHeight, setMainCntHeight] = useState();
   useEventListener("keydown", handleKeyPress);
-  const debouncedHandleOnScroll = useCallback(_.debounce(handleOnScroll, 50), [activeIndex]);
+  const throttledHandleOnScroll = useCallback(
+    _.throttle(handleOnScroll, 1200, { trailing: false }),
+    []
+  );
   const indicatorsCntRef = useRef(null);
+  const activeIndexRef = useRef(activeIndex);
 
   // To handle autoplay
   useEffect(() => {
@@ -33,7 +38,7 @@ const Carousel = (props) => {
     if (autoplay) {
       interval = setInterval(() => {
         if (!paused) {
-          updateIndex(activeIndex + 1);
+          updateIndex(activeIndexRef.current + 1);
         }
       }, autoplayTime);
     }
@@ -45,30 +50,17 @@ const Carousel = (props) => {
   });
 
   useEffect(() => {
-    // To compute the height of the parent container when the direction is vertical
-    if (direction === "vertical" && parentCntRef) {
-      const parentCntEle = parentCntRef?.current;
-      if (parentCntEle) {
-        // Parent container
-        const parentCntBoundingBox = parentCntEle?.getBoundingClientRect();
-        const nodeStyle = window.getComputedStyle(parentCntEle);
-        let topPadding = nodeStyle?.getPropertyValue("padding-top")?.replace("px", "");
-        topPadding = topPadding && typeof topPadding === "string" ? Number(topPadding) : 0;
-        let bottomPadding = nodeStyle?.getPropertyValue("padding-bottom")?.replace("px", "");
-        bottomPadding =
-          bottomPadding && typeof bottomPadding === "string" ? Number(bottomPadding) : 0;
+    activeIndexRef.current = activeIndex;
+  }, [activeIndex]);
 
-        // Indicators container
-        const indicatorsCntBoundingBox = indicatorsCntRef?.current?.getBoundingClientRect();
-        setMainCntHeight(
-          (parentCntBoundingBox?.height || 0) -
-            topPadding -
-            bottomPadding -
-            (indicatorsCntBoundingBox?.height || 0)
-        );
-      }
+  useEffect(() => {
+    // To compute the height of the main container when the direction is vertical
+    if (direction === "vertical") {
+      // Indicators container
+      const indicatorsCntBoundingBox = indicatorsCntRef?.current?.getBoundingClientRect();
+      setMainCntHeight(Number(parentCntHeight) - (indicatorsCntBoundingBox?.height || 0));
     }
-  }, [parentCntRef]);
+  }, [parentCntHeight]);
 
   // Function to update index of carousel item
   function updateIndex(newIndex) {
@@ -82,12 +74,12 @@ const Carousel = (props) => {
 
   // Function to handle click on the previous button
   function handleClickOnPreviousButton() {
-    updateIndex(activeIndex - 1);
+    updateIndex(activeIndexRef.current - 1);
   }
 
   // Function to handle click on the next button
   function handleClickOnNextButton() {
-    updateIndex(activeIndex + 1);
+    updateIndex(activeIndexRef.current + 1);
   }
 
   // Function to handle click on the item number
@@ -97,8 +89,8 @@ const Carousel = (props) => {
 
   // Function to handle swipe left and swipe right
   const swipeHandlers = useSwipeable({
-    onSwipedLeft: () => updateIndex(activeIndex + 1),
-    onSwipedRight: () => updateIndex(activeIndex - 1),
+    onSwipedLeft: () => updateIndex(activeIndexRef.current + 1),
+    onSwipedRight: () => updateIndex(activeIndexRef.current - 1),
   });
 
   // Function to handle key press
@@ -139,7 +131,7 @@ const Carousel = (props) => {
         style={{ maxHeight: `${mainCntHeight}px` }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
-        onWheel={debouncedHandleOnScroll.bind(this)}
+        onWheel={throttledHandleOnScroll.bind(this)}
       >
         {/* 
         Carousel items
@@ -164,9 +156,11 @@ const Carousel = (props) => {
               transform: `translateY(-${activeIndex * (mainCntHeight / numOfActiveItems)}px)`,
             }}
           >
-            {React.Children.map(children, (child) => {
+            {React.Children.map(children, (child, index) => {
               return React.cloneElement(child, {
                 height: `calc(${mainCntHeight}px / ${numOfActiveItems})`,
+                id: `carousel-item-${index}`,
+                activeIndex,
               });
             })}
           </div>
@@ -208,16 +202,32 @@ const Carousel = (props) => {
       </section>
     </>
   );
-};
+});
 
 // Carousel item component
-export const CarouselItem = ({ children, width, height }) => {
-  return (
-    <div className={appStyles["carousel-item"]} style={{ width, height }}>
-      {children}
-    </div>
-  );
-};
+export const CarouselItem = React.forwardRef(
+  ({ children, width, height, id, activeIndex }, ref) => {
+    useEffect(() => {
+      // anime({
+      //   targets: document.getElementById(id),
+      //   // translateX: 250,
+      //   scale: [0.2, 1],
+      //   delay(el, i) {
+      //     return i * 100;
+      //   },
+      //   loop: false,
+      //   direction: "alternate",
+      //   easing: "easeInOutSine",
+      // });
+    }, [activeIndex]);
+
+    return (
+      <div className={appStyles["carousel-item"]} style={{ width, height }} ref={ref} id={id}>
+        {children}
+      </div>
+    );
+  }
+);
 
 export default Carousel;
 

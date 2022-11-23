@@ -1,5 +1,11 @@
 import { TbApi as ApiIcon } from "react-icons/tb";
-import { BsTwitter as TwitterIcon, BsGithub as GithubIcon } from "react-icons/bs";
+import {
+  BsTwitter as TwitterIcon,
+  BsGithub as GithubIcon,
+  BsViewList as CarouselViewIcon,
+  BsGrid as GridViewIcon,
+  BsList as ListViewIcon,
+} from "react-icons/bs";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
 import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons/bi";
 import { GrFormNext as NextBtnIcon, GrFormPrevious as PreviousBtnIcon } from "react-icons/gr";
@@ -82,6 +88,9 @@ export {
   VideoIcon,
   NextBtnIcon,
   PreviousBtnIcon,
+  CarouselViewIcon,
+  GridViewIcon,
+  ListViewIcon,
 };
 
 /**

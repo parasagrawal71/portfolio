@@ -1,3 +1,4 @@
 import useEventListener from "./useEventListener";
+import usePrevious from "./usePrevious";
 
-export { useEventListener };
+export { useEventListener, usePrevious };

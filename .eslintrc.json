@@ -45,6 +45,8 @@
     "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
     "react/jsx-no-bind": "off",
-    "react/function-component-definition": "off"
+    "react/function-component-definition": "off",
+    "no-return-assign": "off",
+    "jsx-a11y/media-has-caption": "off"
   }
 }

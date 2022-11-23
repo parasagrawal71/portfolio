@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import { GithubIcon, WebsiteIcon, VideoIcon } from "assets/Images";
@@ -6,7 +6,8 @@ import { GithubIcon, WebsiteIcon, VideoIcon } from "assets/Images";
 // IMPORT OTHERS HERE //
 import appStyles from "./ProjectBox.module.scss";
 
-const ProjectBox = (props) => {
+const ProjectBox = React.forwardRef((props, ref) => {
+  // PROPs
   const {
     name,
     duration,
@@ -18,9 +19,16 @@ const ProjectBox = (props) => {
     overviewImg,
   } = props || {};
 
-  const openLinkInNewTab = (link, e) => {
-    e?.stopPropagation?.();
-    window.open(link, "_blank");
+  // STATE VARIABLEs
+  const [videoUrl, setVideoUrl] = useState(false);
+
+  const openLinkInNewTab = (link, isVideo, e) => {
+    if (!isVideo) {
+      e?.stopPropagation?.();
+      window.open(link, "_blank");
+    } else {
+      toggleShowVideo();
+    }
   };
 
   const typeIconMap = {
@@ -29,8 +37,17 @@ const ProjectBox = (props) => {
     demovideo: VideoIcon,
   };
 
+  function toggleShowVideo() {
+    const videoLink = externalUrls?.filter?.((e) => e.isVideo)?.[0]?.url;
+    if (videoUrl) {
+      setVideoUrl(null);
+    } else {
+      setVideoUrl(videoLink);
+    }
+  }
+
   return (
-    <section className={`${appStyles["project-box-cnt"]} lineUp`}>
+    <section className={`${appStyles["project-box-cnt"]} lineUp`} ref={ref}>
       <div className={appStyles.header}>
         <div className={appStyles["header--left"]}>
           <div className={appStyles["header--left-left"]}>
@@ -51,7 +68,7 @@ const ProjectBox = (props) => {
             return ExternalIcon ? (
               <React.Fragment key={external?.type}>
                 <ExternalIcon
-                  onClick={openLinkInNewTab.bind(this, external?.url)}
+                  onClick={openLinkInNewTab.bind(this, external?.url, external?.isVideo)}
                   style={{ fontSize: external?.iconSize }}
                 />
               </React.Fragment>
@@ -59,27 +76,30 @@ const ProjectBox = (props) => {
           })}
         </div>
       </div>
-      <div className={appStyles.content}>
-        <div className={appStyles["content--top"]}>
-          {overviewImg ? (
-            <img src={overviewImg} alt={name} className={appStyles["overview-img"]} />
-          ) : null}
-          <div className={appStyles.descrp}>{description}</div>
-        </div>
-        {techList?.length ? (
-          <div className={appStyles["tech-list"]}>
-            {techList?.map((tech) => {
-              return (
-                <span key={tech} className={appStyles.tech}>
-                  {tech}
-                </span>
-              );
-            })}
-          </div>
+      <div className={appStyles["content-img-cnt"]}>
+        {!videoUrl && overviewImg ? (
+          <img src={overviewImg} alt={name} className={appStyles["overview-img"]} />
+        ) : null}
+        {videoUrl ? (
+          <video className={appStyles["overview-video"]} controls autoPlay>
+            <source src={videoUrl} type="video/webm" />
+          </video>
         ) : null}
       </div>
+      <div className={appStyles.descrp}>{description}</div>
+      {techList?.length ? (
+        <div className={appStyles["tech-list"]}>
+          {techList?.map((tech) => {
+            return (
+              <span key={tech} className={appStyles.tech}>
+                {tech}
+              </span>
+            );
+          })}
+        </div>
+      ) : null}
     </section>
   );
-};
+});
 
 export default ProjectBox;
