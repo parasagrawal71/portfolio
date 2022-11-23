@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 import _ from "lodash";
-import anime from "animejs";
 
 // IMPORT OTHERS HERE //
+import animate from "utils/animate/Animate";
 import { NextBtnIcon, PreviousBtnIcon } from "assets/Images";
 import { keyToCodeMap } from "utils/constants";
 import { useEventListener } from "hooks";
@@ -208,17 +208,7 @@ const Carousel = React.forwardRef((props, ref) => {
 export const CarouselItem = React.forwardRef(
   ({ children, width, height, id, activeIndex }, ref) => {
     useEffect(() => {
-      // anime({
-      //   targets: document.getElementById(id),
-      //   // translateX: 250,
-      //   scale: [0.2, 1],
-      //   delay(el, i) {
-      //     return i * 100;
-      //   },
-      //   loop: false,
-      //   direction: "alternate",
-      //   easing: "easeInOutSine",
-      // });
+      animate.scaleUp({ targets: document.getElementById(id) });
     }, [activeIndex]);
 
     return (
