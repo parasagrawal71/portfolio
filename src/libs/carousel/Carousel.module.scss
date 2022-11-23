@@ -1,12 +1,33 @@
 @import "utils/commonStyles/index.scss";
 
-.carousel {
+.carousel-horizontal {
   overflow: hidden;
 }
 
-.inner {
+.carousel-vertical {
+  overflow: hidden;
+}
+
+.inner-horizontal {
   white-space: nowrap;
   transition: transform 0.3s;
+  height: 100%;
+
+  &.multiple-active-items {
+    > :not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.inner-vertical {
+  transition: transform 0.3s;
+
+  &.multiple-active-items {
+    > :not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .carousel-item {
@@ -14,10 +35,12 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+  width: 100%; // IMPORTANT: To fit the parent container
 }
 
 .indicators {
   @include flex-row-b-cen;
+  padding-top: 20px;
 
   > button {
     margin: 5px;

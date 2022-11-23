@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 import _ from "lodash";
 
@@ -10,13 +10,22 @@ import appStyles from "./Carousel.module.scss";
 
 const Carousel = (props) => {
   // PROPs
-  const { children, autoplay = false, autoplayTime = 3000 } = props;
+  const {
+    children,
+    autoplay = false,
+    autoplayTime = 3000,
+    numOfActiveItems = 1,
+    direction = "vertical",
+    parentCntRef,
+  } = props;
 
   // STATE VARIABLEs
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [mainCntHeight, setMainCntHeight] = useState();
   useEventListener("keydown", handleKeyPress);
   const debouncedHandleOnScroll = useCallback(_.debounce(handleOnScroll, 50), [activeIndex]);
+  const indicatorsCntRef = useRef(null);
 
   // To handle autoplay
   useEffect(() => {
@@ -34,6 +43,32 @@ const Carousel = (props) => {
       }
     };
   });
+
+  useEffect(() => {
+    // To compute the height of the parent container when the direction is vertical
+    if (direction === "vertical" && parentCntRef) {
+      const parentCntEle = parentCntRef?.current;
+      if (parentCntEle) {
+        // Parent container
+        const parentCntBoundingBox = parentCntEle?.getBoundingClientRect();
+        const nodeStyle = window.getComputedStyle(parentCntEle);
+        let topPadding = nodeStyle?.getPropertyValue("padding-top")?.replace("px", "");
+        topPadding = topPadding && typeof topPadding === "string" ? Number(topPadding) : 0;
+        let bottomPadding = nodeStyle?.getPropertyValue("padding-bottom")?.replace("px", "");
+        bottomPadding =
+          bottomPadding && typeof bottomPadding === "string" ? Number(bottomPadding) : 0;
+
+        // Indicators container
+        const indicatorsCntBoundingBox = indicatorsCntRef?.current?.getBoundingClientRect();
+        setMainCntHeight(
+          (parentCntBoundingBox?.height || 0) -
+            topPadding -
+            bottomPadding -
+            (indicatorsCntBoundingBox?.height || 0)
+        );
+      }
+    }
+  }, [parentCntRef]);
 
   // Function to update index of carousel item
   function updateIndex(newIndex) {
@@ -73,9 +108,9 @@ const Carousel = (props) => {
     } else if (e?.keyCode === keyToCodeMap.RIGHT_ARROW) {
       handleClickOnNextButton();
     } else if (e?.keyCode === keyToCodeMap.UP_ARROW) {
-      handleClickOnPreviousButton();
-    } else if (e?.keyCode === keyToCodeMap.DOWN_ARROW) {
       handleClickOnNextButton();
+    } else if (e?.keyCode === keyToCodeMap.DOWN_ARROW) {
+      handleClickOnPreviousButton();
     }
   }
 
@@ -93,30 +128,59 @@ const Carousel = (props) => {
   }
 
   return (
-    <section
-      {...swipeHandlers}
-      className={appStyles.carousel}
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onWheel={debouncedHandleOnScroll.bind(this)}
-    >
-      {/* 
-        Hidden carousel items
+    <>
+      <section
+        {...swipeHandlers}
+        className={
+          direction === "horizontal"
+            ? appStyles["carousel-horizontal"]
+            : appStyles["carousel-vertical"]
+        }
+        style={{ maxHeight: `${mainCntHeight}px` }}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onWheel={debouncedHandleOnScroll.bind(this)}
+      >
+        {/* 
+        Carousel items
        */}
-      <div className={appStyles.inner} style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-        {React.Children.map(children, (child) => {
-          return React.cloneElement(child, { width: "100%" });
-        })}
-      </div>
+        {direction === "horizontal" ? (
+          <div
+            className={`${appStyles["inner-horizontal"]} ${
+              numOfActiveItems > 1 ? appStyles["multiple-active-items"] : ""
+            }`}
+            style={{ transform: `translateX(-${activeIndex * (100 / numOfActiveItems)}%)` }}
+          >
+            {React.Children.map(children, (child) => {
+              return React.cloneElement(child, { width: `calc(100% / ${numOfActiveItems})` });
+            })}
+          </div>
+        ) : (
+          <div
+            className={`${appStyles["inner-vertical"]} ${
+              numOfActiveItems > 1 ? appStyles["multiple-active-items"] : ""
+            }`}
+            style={{
+              transform: `translateY(-${activeIndex * (mainCntHeight / numOfActiveItems)}px)`,
+            }}
+          >
+            {React.Children.map(children, (child) => {
+              return React.cloneElement(child, {
+                height: `calc(${mainCntHeight}px / ${numOfActiveItems})`,
+              });
+            })}
+          </div>
+        )}
+      </section>
 
       {/* 
         Indicators
        */}
-      <div className={appStyles.indicators}>
+      <section className={appStyles.indicators} ref={indicatorsCntRef}>
         {/* Previous button */}
         {/* <button type="button" onClick={handleClickOnPreviousButton.bind(this)}>
-          Prev
-        </button> */}
+         Prev
+       </button> */}
         <PreviousBtnIcon
           className={appStyles.prevIcon}
           onClick={handleClickOnPreviousButton.bind(this)}
@@ -124,32 +188,32 @@ const Carousel = (props) => {
 
         {/* All item numbers  */}
         {/* {React.Children.map(children, (child, index) => {
-          return (
-            <button
-              type="button"
-              className={`${index === activeIndex ? appStyles.active : ""}`}
-              onClick={handleClickOnItemNum.bind(this, index)}
-            >
-              {index + 1}
-            </button>
-          );
-        })} */}
+         return (
+           <button
+             type="button"
+             className={`${index === activeIndex ? appStyles.active : ""}`}
+             onClick={handleClickOnItemNum.bind(this, index)}
+           >
+             {index + 1}
+           </button>
+         );
+       })} */}
         {`${activeIndex + 1} / ${React.Children.count(children)}`}
 
         {/* Next button */}
         {/* <button type="button" onClick={handleClickOnNextButton.bind(this)}>
-          Next
-        </button> */}
+         Next
+       </button> */}
         <NextBtnIcon className={appStyles.nextIcon} onClick={handleClickOnNextButton.bind(this)} />
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
 // Carousel item component
-export const CarouselItem = ({ children, width, key }) => {
+export const CarouselItem = ({ children, width, height }) => {
   return (
-    <div key={key} className={appStyles["carousel-item"]} style={{ width }}>
+    <div className={appStyles["carousel-item"]} style={{ width, height }}>
       {children}
     </div>
   );
