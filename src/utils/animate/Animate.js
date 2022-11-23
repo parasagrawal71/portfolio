@@ -13,4 +13,16 @@ function scaleUp({ targets }) {
   });
 }
 
-export default { scaleUp };
+function jumpUp({ targets }) {
+  return anime({
+    targets,
+    translateY: -5,
+    delay: anime.stagger(0),
+    loop: 2,
+    direction: "alternate",
+    easing: "easeInOutSine",
+    duration: 200,
+  });
+}
+
+export default { scaleUp, jumpUp };

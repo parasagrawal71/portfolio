@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
+import animate from "utils/animate/Animate";
 import { GithubIcon, WebsiteIcon, VideoIcon } from "assets/Images";
 
 // IMPORT OTHERS HERE //
@@ -22,7 +23,8 @@ const ProjectBox = React.forwardRef((props, ref) => {
   // STATE VARIABLEs
   const [videoUrl, setVideoUrl] = useState(false);
 
-  const openLinkInNewTab = (link, isVideo, e) => {
+  const openLinkInNewTab = (link, isVideo, index, e) => {
+    animate.jumpUp({ targets: `#external-icon-${index}` });
     if (!isVideo) {
       e?.stopPropagation?.();
       window.open(link, "_blank");
@@ -63,13 +65,14 @@ const ProjectBox = React.forwardRef((props, ref) => {
           </div>
         </div>
         <div className={appStyles["header--right"]}>
-          {externalUrls?.map((external) => {
+          {externalUrls?.map((external, i) => {
             const ExternalIcon = typeIconMap?.[external?.type];
             return ExternalIcon ? (
               <React.Fragment key={external?.type}>
                 <ExternalIcon
-                  onClick={openLinkInNewTab.bind(this, external?.url, external?.isVideo)}
+                  onClick={openLinkInNewTab.bind(this, external?.url, external?.isVideo, i)}
                   style={{ fontSize: external?.iconSize }}
+                  id={`external-icon-${i}`}
                 />
               </React.Fragment>
             ) : null;
