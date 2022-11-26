@@ -5,13 +5,16 @@ import {
   BsViewList as CarouselViewIcon,
   BsGrid as GridViewIcon,
   BsList as ListViewIcon,
+  BsLinkedin as LinkedInIcon,
+  BsInstagram as InstagramIcon,
 } from "react-icons/bs";
+import { IoMdMail as MailIcon } from "react-icons/io";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
 import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons/bi";
 import { GrFormNext as NextBtnIcon, GrFormPrevious as PreviousBtnIcon } from "react-icons/gr";
 
 // LOCAL IMPORTS //
-import pLogo from "./img/p-logo.png";
+import { ReactComponent as BrandLogo } from "./img/p-logo.svg";
 import scrollToTop from "./img/scroll-to-top.png";
 import hamBurger from "./img/hamburger.png";
 import lines from "./img/lines.svg";
@@ -20,10 +23,6 @@ import frontend from "./img/frontend.svg";
 import backend from "./img/backend.svg";
 import halfAndroid from "./img/half-android.png";
 import halfiOS from "./img/half-iOS.png";
-import github from "./img/github.svg";
-import linkedin from "./img/linkedin.svg";
-import mail from "./img/mail.svg";
-import instagram from "./img/instagram.svg";
 import html5 from "./img/html5.png";
 import css3 from "./img/css3.png";
 import javascript from "./img/javascript.svg";
@@ -48,7 +47,7 @@ const sass = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-origi
 
 // EXPORTS //
 export {
-  pLogo,
+  BrandLogo,
   scrollToTop,
   hamBurger,
   lines,
@@ -57,10 +56,6 @@ export {
   backend,
   halfAndroid,
   halfiOS,
-  github,
-  linkedin,
-  mail,
-  instagram,
   html5,
   css3,
   javascript,
@@ -84,6 +79,9 @@ export {
   TwitterIcon,
   ShopIcon,
   GithubIcon,
+  LinkedInIcon,
+  MailIcon,
+  InstagramIcon,
   WebsiteIcon,
   VideoIcon,
   NextBtnIcon,

@@ -1,0 +1,28 @@
+.top {
+  animation: rotate 15s infinite linear;
+}
+
+.middle {
+  animation: rotate 18s infinite reverse linear;
+}
+
+.bottom {
+  animation: rotate 20s infinite linear;
+}
+
+.blobs {
+  transition: transform 5s;
+}
+
+.blobs:hover {
+  transform: translate(100px, 100px) scale(0);
+}
+
+@keyframes rotate {
+  0% {
+    transform: translate(100px, 100px) rotate(0deg);
+  }
+  100% {
+    transform: translate(100px, 100px) rotate(359deg);
+  }
+}

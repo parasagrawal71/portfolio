@@ -1,21 +1,66 @@
 @import "utils/commonStyles/index.scss";
 
 .main-cnt {
-  @include section-fullpage($header-height);
-  .name {
-    display: inline-block;
-    font-size: toRem(60px);
-    font-weight: bold;
-    color: $color-brand;
+  @include section-fullpage($header-height); // TODO:
+
+  .content {
+    z-index: 1;
+    padding: 30px;
+    padding-left: 100px;
+    position: relative;
+
+    .content--left {
+      @include flex-col-h-cen;
+      position: absolute;
+      gap: 50px;
+      z-index: 1;
+      margin-left: -50px;
+
+      .line {
+        width: 1px;
+        height: 500px; // todo:
+        background: linear-gradient(
+          180deg,
+          #08b6f9 0%,
+          #6c56ef 33.57%,
+          #1306dd 65.86%,
+          #aa0eb2 100%
+        );
+      }
+    }
+
+    .content--right {
+      display: inline-block;
+      padding-top: 100px;
+      .name {
+        font-size: toRem(60px);
+        font-weight: bold;
+        color: $color-primary-text;
+      }
+      .role {
+        text-transform: uppercase;
+        font-size: toRem(30px);
+        font-weight: bold;
+        color: $color-secondary-text;
+      }
+      .btnStyle {
+        margin-top: 50px;
+      }
+    }
   }
-  .role {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: toRem(30px);
-    font-weight: bold;
-    color: $color-secondary-text;
+
+  .blob {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 600px) {
+  .blob {
+    svg {
+      height: 600px !important; // todo:
+    }
+  }
 }

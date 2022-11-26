@@ -1,0 +1,16 @@
+@import "utils/commonStyles/index.scss";
+
+.social-icons-cnt {
+  @include flex-col;
+  gap: 30px;
+
+  .social-link {
+    @include flex-row-v-cen;
+    svg {
+      font-size: toRem(25px);
+      path {
+        fill: $color-primary-text;
+      }
+    }
+  }
+}

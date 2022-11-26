@@ -1,14 +1,14 @@
 // IMPORTs HERE
 import {
-  github,
-  linkedin,
-  mail,
-  instagram,
   myPicture,
   frontend,
   backend,
   halfAndroid,
   halfiOS,
+  GithubIcon,
+  MailIcon,
+  LinkedInIcon,
+  InstagramIcon,
 } from "assets/Images";
 import myResume from "assets/pdfs/Paras-Agrawal_Senior-Engineer_Resume.pdf";
 
@@ -31,24 +31,24 @@ export const socialProfiles = [
   {
     name: "Mail",
     href: `mailto:parasagrawal71@gmail.com`,
-    icon: mail,
+    Icon: MailIcon,
   },
   {
     name: "Github",
     href: `https://github.com/parasagrawal71`,
-    icon: github,
+    Icon: GithubIcon,
     newTab: true,
   },
   {
     name: "LinkedIn",
     href: `https://www.linkedin.com/in/parasagrawal71`,
-    icon: linkedin,
+    Icon: LinkedInIcon,
     newTab: true,
   },
   {
     name: "Instagram",
     href: `https://www.instagram.com/paras__fbg`,
-    icon: instagram,
+    Icon: InstagramIcon,
     newTab: true,
   },
 ];
