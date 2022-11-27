@@ -5,16 +5,18 @@ import cx from "classnames";
 import { TextButton } from "libs";
 
 // IMPORT OTHERS HERE //
+import { useGlobalState } from "contexts/GlobalContextProvider";
 import { HamBurgerIcon, BrandLogo } from "assets/Images";
 import { menuItems } from "config/header";
 import appStyles from "./Header.module.scss";
 
 const Header = React.forwardRef((props, ref) => {
   // PROPs
-  const { currentSectionName, setCurrentSectionName } = props;
+  // const {} = props;
 
   // STATE VARIABLEs
   const [enableShadow, setEnableShadow] = useState(false);
+  const { globalState, dispatchGlobalState } = useGlobalState();
 
   useEffect(() => {
     // To enable/disable header shadow on scroll
@@ -40,9 +42,12 @@ const Header = React.forwardRef((props, ref) => {
         <a
           key={menuItem?.name}
           href={menuItem?.href}
-          className={cx(currentSectionName === menuItem?.name ? appStyles.active : "", "lineUp")}
+          className={cx(
+            globalState?.activeSectionName === menuItem?.name ? appStyles.active : "",
+            "lineUp"
+          )}
           onClick={() => {
-            setCurrentSectionName(menuItem?.name);
+            dispatchGlobalState({ key: "activeSectionName", value: menuItem?.name });
           }}
         >
           {menuItem?.name}

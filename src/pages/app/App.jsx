@@ -6,9 +6,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // IMPORT ALL PAGES HERE //
 import MainPage from "pages/main/Main";
+import GlobalContextProvider from "contexts/GlobalContextProvider";
 
 // IMPORT OTHERS HERE //
 import { fullName } from "config";
+import { menuItems } from "config/header";
 import history from "routes/history";
 import "./App.scss";
 
@@ -20,13 +22,20 @@ const App = () => {
     },
   ]);
 
+  function getSectionNameByHash() {
+    const { hash } = window.location || {};
+    return menuItems?.filter((mI) => mI.hash === hash)?.[0]?.name;
+  }
+
   return (
     <main className="app">
-      <Helmet>
-        <title>{fullName}</title>
-      </Helmet>
+      <GlobalContextProvider initialState={{ activeSectionName: getSectionNameByHash() }}>
+        <Helmet>
+          <title>{fullName}</title>
+        </Helmet>
 
-      <RouterProvider router={router} />
+        <RouterProvider router={router} />
+      </GlobalContextProvider>
     </main>
   );
 };
