@@ -4,5 +4,15 @@ import TextFieldComponent from "./textInput/TextInput";
 import Toast from "./toast/Toast";
 import Carousel, { CarouselItem } from "./carousel/Carousel";
 import TransparentButton from "./transparentButton/TransparentButton";
+import Loader from "./loader/Loader";
 
-export { Button, TextButton, TextFieldComponent, Toast, Carousel, CarouselItem, TransparentButton };
+export {
+  Button,
+  TextButton,
+  TextFieldComponent,
+  Toast,
+  Carousel,
+  CarouselItem,
+  TransparentButton,
+  Loader,
+};

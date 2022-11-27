@@ -11,7 +11,7 @@ import ContactSection from "sections/contact/Contact";
 import ScrollToTopBtnComponent from "components/scrollToTopBtn/ScrollToTopBtn";
 import FooterSection from "sections/footer/Footer";
 import { useGlobalState } from "contexts/GlobalContextProvider";
-import Loader from "components/loader/Loader";
+import { Loader } from "libs";
 
 // IMPORT OTHERS HERE //
 
