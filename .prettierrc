@@ -3,7 +3,7 @@
   "printWidth": 100,
   "overrides": [
     {
-      "files": ["src/assets/SkillsetIcons.js"],
+      "files": ["src/assets/SkillSvgs.js", "src/assets/OtherSvgs.js"],
       "options": {
         "printWidth": 1000
       }

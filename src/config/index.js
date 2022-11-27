@@ -1,8 +1,8 @@
 // IMPORTs HERE
 import {
   myPicture,
-  frontend,
-  backend,
+  FrontendIcon,
+  BackendIcon,
   halfAndroid,
   halfiOS,
   GithubIcon,
@@ -58,13 +58,13 @@ export const roles = [
     name: "backend",
     displayName: "Back-end",
     description: `I'm more back end focused and love to work with APIs in Node js and Python.`,
-    icon: backend,
+    Icon: BackendIcon,
   },
   {
     name: "frontend",
     displayName: "Front-end",
     description: `As a javascript developer, I have experience in React JS and Vue JS libraries.`,
-    icon: frontend,
+    Icon: FrontendIcon,
   },
   {
     name: "mobileapp",

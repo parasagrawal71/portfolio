@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // IMPORT OTHERS HERE //
-import { scrollToTop } from "assets/Images";
+import { ScrollToTopIcon } from "assets/Images";
 import appStyles from "./ScrollToTopBtn.module.scss";
 
 const ScrollToTopBtn = () => {
@@ -36,7 +36,7 @@ const ScrollToTopBtn = () => {
       tabIndex="0"
       style={{ display: showScrollBtn ? "flex" : "none" }}
     >
-      <img src={scrollToTop} alt="Scroll To Top" />
+      <ScrollToTopIcon />
     </div>
   );
 };

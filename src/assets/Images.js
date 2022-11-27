@@ -7,6 +7,7 @@ import {
   BsList as ListViewIcon,
   BsLinkedin as LinkedInIcon,
   BsInstagram as InstagramIcon,
+  BsArrowUpCircle as ScrollToTopIcon,
 } from "react-icons/bs";
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
@@ -17,17 +18,13 @@ import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
 /**
  * * Local imports
  */
-import { ReactComponent as BrandLogo } from "./img/p-logo.svg";
-import scrollToTop from "./img/scroll-to-top.png";
-import lines from "./img/lines.svg";
 import myPicture from "./img/paras_formal.jpg";
-import frontend from "./img/frontend.svg";
-import backend from "./img/backend.svg";
 import halfAndroid from "./img/half-android.png";
 import halfiOS from "./img/half-iOS.png";
 import apiDocumenterImage from "./img/api-documenter.png";
 import shopAnywhereImage from "./img/shop-anywhere.png";
 import twitterHelpdeskImage from "./img/twitter-helpdesk.png";
+import { LinesIcon, FrontendIcon, BackendIcon, BrandLogoIcon } from "./OtherSvgs";
 
 /**
  * * Skillset icons
@@ -52,17 +49,17 @@ import {
   AwsIcon,
   ReactNativeIcon,
   ApiSkillIcon,
-} from "./SkillsetIcons";
+} from "./SkillSvgs";
 
 // ************************************ EXPORTS ************************************ //
 export {
-  BrandLogo,
-  scrollToTop,
+  BrandLogoIcon,
+  ScrollToTopIcon,
   HamBurgerIcon,
-  lines,
+  LinesIcon,
   myPicture,
-  frontend,
-  backend,
+  FrontendIcon,
+  BackendIcon,
   halfAndroid,
   halfiOS,
   apiDocumenterImage,

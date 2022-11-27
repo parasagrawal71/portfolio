@@ -7,7 +7,7 @@ import { TextButton } from "libs";
 
 // IMPORT OTHERS HERE //
 import { useGlobalState } from "contexts/GlobalContextProvider";
-import { HamBurgerIcon, BrandLogo } from "assets/Images";
+import { HamBurgerIcon, BrandLogoIcon } from "assets/Images";
 import { menuItems } from "config/header";
 import appStyles from "./Header.module.scss";
 
@@ -60,7 +60,7 @@ const Header = React.forwardRef((props, ref) => {
       ref={ref}
     >
       <section className={appStyles["header--left"]}>
-        <BrandLogo />
+        <BrandLogoIcon />
       </section>
 
       <section className={appStyles["header--right-web"]}>{renderMenuItems()}</section>

@@ -4,6 +4,7 @@ import cx from "classnames";
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import { TextButton } from "libs";
 import SectionHeaderComponent from "components/sectionHeader/SectionHeader";
+import SocialProfiles from "components/socialProfiles/SocialProfiles";
 
 // IMPORT OTHERS HERE //
 import { aboutDescription, RESUME_URL, SELF_PICTURE_URL, socialProfiles, roles } from "config";
@@ -20,21 +21,7 @@ const About = () => {
           <p>{aboutDescription}</p>
 
           <section className={appStyles["social-resume-cnt"]}>
-            <section className={appStyles["social-icons-cnt"]}>
-              {socialProfiles?.map((social) => {
-                return (
-                  <a
-                    key={social?.name}
-                    href={social?.href}
-                    className={appStyles["social-link"]}
-                    target={social?.newTab && "_blank"}
-                    rel={social?.newTab && "noopener noreferrer"}
-                  >
-                    <img src={social?.icon} alt={social?.name} />
-                  </a>
-                );
-              })}
-            </section>
+            <SocialProfiles />
 
             <TextButton
               btnText="download resume"
@@ -52,6 +39,7 @@ const About = () => {
         <header>what i do</header>
         <section className={appStyles["about-whatIDo"]}>
           {roles?.map((role) => {
+            const { Icon } = role;
             return (
               <section
                 key={role?.name}
@@ -67,9 +55,7 @@ const About = () => {
                     <img src={role?.icon2} alt="halfiOS" className={appStyles.halfiOS} />
                   </div>
                 ) : (
-                  <img
-                    src={role?.icon}
-                    alt={role?.name}
+                  <Icon
                     className={cx({
                       [appStyles.backend]: role?.name === "backend",
                     })}
