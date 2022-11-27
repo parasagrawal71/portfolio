@@ -1,4 +1,12 @@
 {
   "singleQuote": false,
-  "printWidth": 100
+  "printWidth": 100,
+  "overrides": [
+    {
+      "files": ["src/assets/SkillsetIcons.js"],
+      "options": {
+        "printWidth": 1000
+      }
+    }
+  ]
 }

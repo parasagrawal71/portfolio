@@ -14,7 +14,9 @@ import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons
 import { GrFormNext as NextBtnIcon, GrFormPrevious as PreviousBtnIcon } from "react-icons/gr";
 import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
 
-// LOCAL IMPORTS //
+/**
+ * * Local imports
+ */
 import { ReactComponent as BrandLogo } from "./img/p-logo.svg";
 import scrollToTop from "./img/scroll-to-top.png";
 import lines from "./img/lines.svg";
@@ -23,29 +25,36 @@ import frontend from "./img/frontend.svg";
 import backend from "./img/backend.svg";
 import halfAndroid from "./img/half-android.png";
 import halfiOS from "./img/half-iOS.png";
-import html5 from "./img/html5.png";
-import css3 from "./img/css3.png";
-import javascript from "./img/javascript.svg";
-import react from "./img/react.png";
-import reactNative from "./img/react-native.png";
-import redux from "./img/redux.svg";
-import vuejs from "./img/vuejs.png";
-import nodejs from "./img/nodejs.png";
-import python from "./img/python.png";
-import mongodb from "./img/mongodb.png";
-import git from "./img/git.png";
-import linux from "./img/linux.png";
-import aws from "./img/aws.png";
-import api from "./img/api.png";
 import apiDocumenterImage from "./img/api-documenter.png";
 import shopAnywhereImage from "./img/shop-anywhere.png";
 import twitterHelpdeskImage from "./img/twitter-helpdesk.png";
 
-const kafka =
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg";
-const sass = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg";
+/**
+ * * Skillset icons
+ * Get programmiong languages icons from this site "https://devicon.dev/"
+ * 2nd option: https://worldvectorlogo.com/search/aws
+ * Svg icons with animation on this site https://boxicons.com/?query=aws
+ */
+import {
+  JavaScriptIcon,
+  ReactIcon,
+  Html5Icon,
+  NodejsIcon,
+  MongoDBIcon,
+  CSS3Icon,
+  SassIcon,
+  ReduxIcon,
+  GitIcon,
+  LinuxIcon,
+  VueIcon,
+  PythonIcon,
+  KafkaIcon,
+  AwsIcon,
+  ReactNativeIcon,
+  ApiSkillIcon,
+} from "./SkillsetIcons";
 
-// EXPORTS //
+// ************************************ EXPORTS ************************************ //
 export {
   BrandLogo,
   scrollToTop,
@@ -56,25 +65,9 @@ export {
   backend,
   halfAndroid,
   halfiOS,
-  html5,
-  css3,
-  javascript,
-  react,
-  reactNative,
-  redux,
-  vuejs,
-  nodejs,
-  python,
-  mongodb,
-  git,
-  linux,
-  aws,
-  api,
   apiDocumenterImage,
   shopAnywhereImage,
   twitterHelpdeskImage,
-  kafka,
-  sass,
   ApiIcon,
   TwitterIcon,
   ShopIcon,
@@ -89,9 +82,22 @@ export {
   CarouselViewIcon,
   GridViewIcon,
   ListViewIcon,
-};
 
-/**
- * Get programmiong languages icons from this site "https://devicon.dev/"
- * Svg icons are also available in the same site
- */
+  // Skillset icons
+  JavaScriptIcon,
+  ReactIcon,
+  Html5Icon,
+  NodejsIcon,
+  MongoDBIcon,
+  CSS3Icon,
+  SassIcon,
+  ReduxIcon,
+  GitIcon,
+  LinuxIcon,
+  VueIcon,
+  PythonIcon,
+  KafkaIcon,
+  AwsIcon,
+  ReactNativeIcon,
+  ApiSkillIcon,
+};
