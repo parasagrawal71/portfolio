@@ -1,0 +1,13 @@
+@import "utils/commonStyles/index.scss";
+
+.loaderCnt {
+  height: 100%;
+  width: 100%;
+  @include flex-row-b-cen;
+
+  svg {
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+  }
+}

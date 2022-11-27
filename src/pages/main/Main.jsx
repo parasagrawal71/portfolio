@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import HeaderComponent from "components/header/Header";
@@ -11,12 +11,20 @@ import ContactSection from "sections/contact/Contact";
 import ScrollToTopBtnComponent from "components/scrollToTopBtn/ScrollToTopBtn";
 import FooterSection from "sections/footer/Footer";
 import { useGlobalState } from "contexts/GlobalContextProvider";
+import Loader from "components/loader/Loader";
 
 // IMPORT OTHERS HERE //
 
 const Main = () => {
   // STATE VARIABLEs
   const { globalState } = useGlobalState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
 
   const nameComponentMap = {
     Home: <HomeSection />,
@@ -27,7 +35,9 @@ const Main = () => {
     Contact: <ContactSection />,
   };
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
       <HeaderComponent />
       {nameComponentMap?.[globalState?.activeSectionName]}
