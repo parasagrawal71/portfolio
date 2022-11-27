@@ -3,6 +3,7 @@ import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import { TextButton } from "libs";
+// import { useEventListener } from "hooks";
 
 // IMPORT OTHERS HERE //
 import { useGlobalState } from "contexts/GlobalContextProvider";
@@ -17,24 +18,18 @@ const Header = React.forwardRef((props, ref) => {
   // STATE VARIABLEs
   const [enableShadow, setEnableShadow] = useState(false);
   const { globalState, dispatchGlobalState } = useGlobalState();
+  // useEventListener("scroll", enableHeaderShadow, document.getElementById("app"));
 
-  useEffect(() => {
-    // To enable/disable header shadow on scroll
-    const enableHeaderShadow = () => {
-      const positionFromTop = window.innerWidth > 600 ? 400 : 400;
-      if (window.pageYOffset > positionFromTop) {
-        setEnableShadow(true);
-        return;
-      }
-      setEnableShadow(false);
-    };
-
-    const headerShadowListener = window.addEventListener("scroll", enableHeaderShadow);
-
-    return () => {
-      window.removeEventListener("scroll", headerShadowListener);
-    };
-  }, []);
+  // To enable/disable header shadow on scroll
+  function enableHeaderShadow() {
+    const positionFromTop = window.innerWidth > 600 ? 400 : 400;
+    // pageYOffset not working
+    if (document.getElementById("app").pageYOffset > positionFromTop) {
+      setEnableShadow(true);
+      return;
+    }
+    setEnableShadow(false);
+  }
 
   const renderMenuItems = () => {
     return menuItems?.map((menuItem) => {

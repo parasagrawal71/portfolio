@@ -28,7 +28,7 @@ const App = () => {
   }
 
   return (
-    <main className="app">
+    <main className="app" id="app">
       <GlobalContextProvider initialState={{ activeSectionName: getSectionNameByHash() }}>
         <Helmet>
           <title>{fullName}</title>
