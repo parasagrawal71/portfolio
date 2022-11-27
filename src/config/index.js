@@ -15,6 +15,7 @@ import myResume from "assets/pdfs/Paras-Agrawal_Senior-Engineer_Resume.pdf";
 // EXPORTs HERE
 export const fullName = "Paras Agrawal";
 export const companyName = "nference";
+export const emailId = "parasagrawal71@gmail.com";
 export const designation = "Senior Engineer";
 export const YOE = 3;
 export const designations = ["Back-end", "Front-end", "Mobile App"];
@@ -28,11 +29,6 @@ export const aboutDescription = `Hello! I'm ${fullName}, a ${designation}, and a
   technologies like Kafka, Electron.js, AWS, and more. I enjoy developing applications and am always keen to learn new skills.`;
 
 export const socialProfiles = [
-  {
-    name: "Mail",
-    href: `mailto:parasagrawal71@gmail.com`,
-    Icon: MailIcon,
-  },
   {
     name: "Github",
     href: `https://github.com/parasagrawal71`,
@@ -50,6 +46,11 @@ export const socialProfiles = [
     href: `https://www.instagram.com/paras__fbg`,
     Icon: InstagramIcon,
     newTab: true,
+  },
+  {
+    name: "Mail",
+    href: `mailto:${emailId}`,
+    Icon: MailIcon,
   },
 ];
 
