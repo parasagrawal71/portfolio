@@ -21,9 +21,20 @@
       padding: 30px 0;
 
       svg {
-        font-size: toRem(40px);
-        height: 40px;
-        width: auto;
+        cursor: pointer;
+        font-size: toRem(50px);
+        height: 50px;
+        width: 50px;
+        animation: tada 0.3s;
+
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+        &:hover {
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+        }
       }
 
       .skill-name {
