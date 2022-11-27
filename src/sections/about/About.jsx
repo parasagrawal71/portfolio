@@ -39,7 +39,7 @@ const About = () => {
         <header>what i do</header>
         <section className={appStyles["about-whatIDo"]}>
           {roles?.map((role) => {
-            const { Icon } = role;
+            const { Icon, icon1, icon2 } = role;
             return (
               <section
                 key={role?.name}
@@ -51,8 +51,8 @@ const About = () => {
               >
                 {role?.name === "mobileapp" ? (
                   <div className={appStyles.mobileapp}>
-                    <img src={role?.icon1} alt="halfAndroid" className={appStyles.halfAndroid} />
-                    <img src={role?.icon2} alt="halfiOS" className={appStyles.halfiOS} />
+                    <img src={icon1} alt="halfAndroid" className={appStyles.halfAndroid} />
+                    <img src={icon2} alt="halfiOS" className={appStyles.halfiOS} />
                   </div>
                 ) : (
                   <Icon

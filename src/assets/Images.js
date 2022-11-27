@@ -24,7 +24,13 @@ import halfiOS from "./img/half-iOS.png";
 import apiDocumenterImage from "./img/api-documenter.png";
 import shopAnywhereImage from "./img/shop-anywhere.png";
 import twitterHelpdeskImage from "./img/twitter-helpdesk.png";
-import { LinesIcon, FrontendIcon, BackendIcon, BrandLogoIcon } from "./OtherSvgs";
+import {
+  LinesIcon,
+  FrontendIcon,
+  BackendIcon,
+  BrandLogoIcon,
+  CrossplatformMobileAppIcon,
+} from "./OtherSvgs";
 
 /**
  * * Skillset icons
@@ -62,6 +68,7 @@ export {
   BackendIcon,
   halfAndroid,
   halfiOS,
+  CrossplatformMobileAppIcon,
   apiDocumenterImage,
   shopAnywhereImage,
   twitterHelpdeskImage,
