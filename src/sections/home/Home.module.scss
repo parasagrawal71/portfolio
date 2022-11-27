@@ -1,24 +1,36 @@
 @import "utils/commonStyles/index.scss";
 
+$padding-vertical: 30px;
+
 .main-cnt {
-  @include section-fullpage($header-height); // TODO:
+  flex: 1;
+  position: relative;
+
+  .blob {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
 
   .content {
     z-index: 1;
-    padding: 30px;
+    padding: $padding-vertical 0;
     padding-left: 100px;
     position: relative;
+    @include flex-row;
+    height: calc(100% - (2 * $padding-vertical));
 
     .content--left {
       @include flex-col-h-cen;
       position: absolute;
       gap: 50px;
-      z-index: 1;
       margin-left: -50px;
+      height: 100%;
 
       .line {
+        height: 100%;
         width: 1px;
-        height: 500px; // todo:
         background: linear-gradient(
           180deg,
           #08b6f9 0%,
@@ -48,19 +60,7 @@
       }
     }
   }
-
-  .blob {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
-  }
 }
 
 @media only screen and (max-width: 600px) {
-  .blob {
-    svg {
-      height: 600px !important; // todo:
-    }
-  }
 }

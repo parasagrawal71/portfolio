@@ -1,9 +1,11 @@
+@import "utils/commonStyles/index.scss";
+
 .btn {
   background: rgba(0, 0, 0, 0.2);
   font-size: 16px;
   padding: 12px 30px;
   border-radius: 14px;
-  color: white;
+  color: $color-primary-text;
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   font-weight: 600;

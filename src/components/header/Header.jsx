@@ -5,11 +5,11 @@ import cx from "classnames";
 import { TextButton } from "libs";
 
 // IMPORT OTHERS HERE //
-import { pLogo, hamBurger } from "assets/Images";
+import { HamBurgerIcon, BrandLogo } from "assets/Images";
 import { menuItems } from "config/header";
 import appStyles from "./Header.module.scss";
 
-const Header = (props) => {
+const Header = React.forwardRef((props, ref) => {
   // PROPs
   const { currentSectionName, setCurrentSectionName } = props;
 
@@ -17,21 +17,22 @@ const Header = (props) => {
   const [enableShadow, setEnableShadow] = useState(false);
 
   useEffect(() => {
+    // To enable/disable header shadow on scroll
+    const enableHeaderShadow = () => {
+      const positionFromTop = window.innerWidth > 600 ? 400 : 400;
+      if (window.pageYOffset > positionFromTop) {
+        setEnableShadow(true);
+        return;
+      }
+      setEnableShadow(false);
+    };
+
     const headerShadowListener = window.addEventListener("scroll", enableHeaderShadow);
 
     return () => {
       window.removeEventListener("scroll", headerShadowListener);
     };
   }, []);
-
-  const enableHeaderShadow = () => {
-    const positionFromTop = window.innerWidth > 600 ? 400 : 400;
-    if (window.pageYOffset > positionFromTop) {
-      setEnableShadow(true);
-      return;
-    }
-    setEnableShadow(false);
-  };
 
   const renderMenuItems = () => {
     return menuItems?.map((menuItem) => {
@@ -56,9 +57,10 @@ const Header = (props) => {
         [appStyles["header-shadow"]]: enableShadow,
         [appStyles["no-shadow"]]: !enableShadow,
       })}
+      ref={ref}
     >
       <section className={appStyles["header--left"]}>
-        <img src={pLogo} alt="P Logo" />
+        <BrandLogo />
       </section>
 
       <section className={appStyles["header--right-web"]}>{renderMenuItems()}</section>
@@ -66,7 +68,7 @@ const Header = (props) => {
       <section className={appStyles["header--right-mobile"]}>
         <TextButton
           btnText={null}
-          iconOnRight={<img src={hamBurger} alt="Menu" />}
+          iconOnRight={<HamBurgerIcon className={appStyles.hamburgerIcon} />}
           customBtnClass={appStyles["header--right-mobile-btn"]}
           customDropdownClass={appStyles["header--right-mobile-menu-items"]}
           onClickRequired
@@ -76,6 +78,6 @@ const Header = (props) => {
       </section>
     </main>
   );
-};
+});
 
 export default Header;

@@ -12,11 +12,11 @@ import { IoMdMail as MailIcon } from "react-icons/io";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
 import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons/bi";
 import { GrFormNext as NextBtnIcon, GrFormPrevious as PreviousBtnIcon } from "react-icons/gr";
+import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
 
 // LOCAL IMPORTS //
 import { ReactComponent as BrandLogo } from "./img/p-logo.svg";
 import scrollToTop from "./img/scroll-to-top.png";
-import hamBurger from "./img/hamburger.png";
 import lines from "./img/lines.svg";
 import myPicture from "./img/paras_formal.jpg";
 import frontend from "./img/frontend.svg";
@@ -49,7 +49,7 @@ const sass = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-origi
 export {
   BrandLogo,
   scrollToTop,
-  hamBurger,
+  HamBurgerIcon,
   lines,
   myPicture,
   frontend,

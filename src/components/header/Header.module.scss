@@ -1,12 +1,15 @@
 @import "utils/commonStyles/index.scss";
 
+$gap-between-menu-items: 50px;
+
 .header {
-  @include flex-row-sb;
-  padding: 12px 6%;
-  height: $header-height;
+  @include flex-row-v-cen;
+  padding: 30px;
+  padding-left: 100px;
   position: sticky;
   top: 0;
   z-index: 9999;
+  gap: $gap-between-menu-items;
 
   &.header-shadow {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
@@ -19,28 +22,28 @@
   }
 
   .header--left {
-    img {
+    svg {
       width: 70px;
+      path {
+        fill: $color-brand !important;
+      }
     }
   }
 
   .header--right-web {
     @include flex-row-v-cen;
-    font-size: 15px;
+    font-size: toRem(16px);
+    gap: $gap-between-menu-items;
 
     a {
-      padding: 3px 0;
+      padding: 4px 10px;
       font-weight: bold;
-      color: $color-link;
+      color: $color-primary-text;
       text-decoration: none;
       border-bottom: 1px solid transparent;
 
-      &:not(:last-child) {
-        margin-right: 30px;
-      }
-
       &.active {
-        text-decoration: underline;
+        border-bottom: 1px solid $color-primary-text;
       }
     }
   }
@@ -48,24 +51,32 @@
   .header--right-mobile {
     display: none;
 
+    .hamburgerIcon {
+      color: $color-primary-text;
+      font-size: toRem(30px);
+    }
+
     .header--right-mobile-btn {
       background-color: inherit;
     }
 
     .header--right-mobile-menu-items {
       @include flex-col;
+      justify-content: flex-end;
+      align-items: flex-end;
       text-align: right;
-      right: 5%;
+      right: 15px;
 
       a {
         font-weight: bold;
-        color: $color-link;
+        color: $color-primary-text;
         text-decoration: none;
-        padding: 12px 5px;
+        padding: 2px 0;
+        margin: 10px 0;
         background-color: $color-primary-bg;
 
         &.active {
-          text-decoration: underline;
+          border-bottom: 1px solid $color-primary-text;
         }
       }
     }
@@ -74,7 +85,8 @@
 
 @media only screen and (max-width: 600px) {
   .header {
-    padding: 20px 5%;
+    padding: 20px 15px;
+    justify-content: space-between;
 
     .header--right-web {
       display: none;
