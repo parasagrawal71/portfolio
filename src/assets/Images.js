@@ -8,6 +8,7 @@ import {
   BsLinkedin as LinkedInIcon,
   BsInstagram as InstagramIcon,
   BsArrowUpCircle as ScrollToTopIcon,
+  BsBuilding as OfficeIcon,
 } from "react-icons/bs";
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
@@ -86,6 +87,7 @@ export {
   CarouselViewIcon,
   GridViewIcon,
   ListViewIcon,
+  OfficeIcon,
 
   // Skillset icons
   JavaScriptIcon,

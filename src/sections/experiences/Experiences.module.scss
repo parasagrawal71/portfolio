@@ -1,0 +1,29 @@
+@import "utils/commonStyles/index.scss";
+
+.main-cnt {
+  @include section-padding();
+
+  .experience-cnt {
+    display: grid;
+    grid-gap: 100px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+
+    // All childs
+    .experience-card:nth-child(n) {
+      min-height: 500px;
+    }
+
+    // To keep the even childs in the 2nd column
+    .experience-card:nth-child(2n) {
+      grid-column: span 1;
+    }
+
+    $n: 10;
+    @for $i from 1 through $n {
+      .experience-card:nth-child(#{$i}) {
+        grid-row: ((3 * $i) - 2) / span 4;
+      }
+    }
+  }
+}

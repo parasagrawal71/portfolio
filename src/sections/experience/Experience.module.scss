@@ -1,6 +1,0 @@
-@import "utils/commonStyles/index.scss";
-
-.main-cnt {
-  @include section-fullpage($header-height);
-  @include section-padding();
-}
