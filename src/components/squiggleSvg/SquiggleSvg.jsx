@@ -92,3 +92,7 @@ const SquiggleSvg = (props) => {
 };
 
 export default SquiggleSvg;
+
+/**
+ * Reference: https://stackoverflow.com/q/64567563
+ */
