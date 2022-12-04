@@ -17,7 +17,7 @@ const ScrollToTopBtn = () => {
   }, []);
 
   const checkScrollToTop = () => {
-    if (app.scrollTop > 800) {
+    if (app.scrollTop > 400) {
       setShowScrollBtn(true);
       return;
     }

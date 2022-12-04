@@ -29,3 +29,22 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .main-cnt {
+    .experience-cnt {
+      grid-gap: 120px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-auto-rows: 1fr;
+
+      .experience-card:nth-child(n) {
+        grid-column: 1;
+        grid-row: unset;
+      }
+
+      .experience-card:last-child {
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
