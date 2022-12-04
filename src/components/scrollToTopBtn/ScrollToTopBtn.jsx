@@ -6,17 +6,18 @@ import appStyles from "./ScrollToTopBtn.module.scss";
 
 const ScrollToTopBtn = () => {
   const [showScrollBtn, setShowScrollBtn] = useState(false);
+  const app = document.getElementById("app");
 
   useEffect(() => {
-    const scrollToTopListener = window.addEventListener("scroll", checkScrollToTop);
+    const scrollToTopListener = app.addEventListener("scroll", checkScrollToTop);
 
     return () => {
-      window.removeEventListener("scroll", scrollToTopListener);
+      app.removeEventListener("scroll", scrollToTopListener);
     };
   }, []);
 
   const checkScrollToTop = () => {
-    if (window.pageYOffset > 800) {
+    if (app.scrollTop > 800) {
       setShowScrollBtn(true);
       return;
     }
@@ -24,7 +25,7 @@ const ScrollToTopBtn = () => {
   };
 
   const handleScrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    app.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
