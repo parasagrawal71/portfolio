@@ -57,7 +57,7 @@ export function customTypingEffect(wordsList, id, speed = 200) {
   };
 }
 
-export function scrollToTop() {
+export function scrollToTop({ isSmooth = true }) {
   const app = document.getElementById("app");
-  app.scrollTo({ top: 0, behavior: "smooth" });
+  app.scrollTo({ top: 0, behavior: isSmooth ? "smooth" : "auto" });
 }

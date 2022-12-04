@@ -14,7 +14,9 @@ const Experience = () => {
   const experiencesRef = useRef(null);
 
   useEffect(() => {
-    scrollToTop();
+    setTimeout(() => {
+      scrollToTop({ isSmooth: false });
+    }, 0);
   }, []);
 
   return (

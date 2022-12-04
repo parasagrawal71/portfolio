@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
+import { scrollToTop } from "utils/functions";
 
 // IMPORT OTHERS HERE //
 import { skillsetsArray } from "config/skillset";
 import appStyles from "./Skillset.module.scss";
 
 const Skillset = () => {
+  useEffect(() => {
+    setTimeout(() => {
+      scrollToTop({ isSmooth: false });
+    }, 0);
+  }, []);
+
   return (
     <main className={appStyles["main-cnt"]} id="skillset">
       <section className={appStyles["skills-cnt"]}>
