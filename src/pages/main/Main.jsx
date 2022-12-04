@@ -41,8 +41,8 @@ const Main = () => {
     <>
       <HeaderComponent />
       {nameComponentMap?.[globalState?.activeSectionName]}
-      {/* <FooterSection />
-      <ScrollToTopBtnComponent /> */}
+      {/* <FooterSection /> */}
+      <ScrollToTopBtnComponent />
     </>
   );
 };

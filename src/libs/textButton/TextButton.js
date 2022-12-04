@@ -26,13 +26,14 @@ const TextButton = (props) => {
   useEffect(() => {
     let closeDropdownListener;
     let clickOutsideListener;
+    const app = document.getElementById("app");
     if (onClickRequired) {
-      closeDropdownListener = window.addEventListener("scroll", () => setIsDropdownVisble(false));
+      closeDropdownListener = app.addEventListener("scroll", () => setIsDropdownVisble(false));
       clickOutsideListener = window.addEventListener("click", checkClickOutside);
     }
 
     return () => {
-      window.removeEventListener("scroll", closeDropdownListener);
+      app.removeEventListener("scroll", closeDropdownListener);
       window.removeEventListener("click", clickOutsideListener);
     };
   }, [onClickRequired]);

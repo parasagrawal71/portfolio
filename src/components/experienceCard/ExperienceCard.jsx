@@ -9,10 +9,10 @@ import appStyles from "./ExperienceCard.module.scss";
 
 const ExperienceCard = (props) => {
   // PROPS
-  const { cntClassName, companyName, designation, duration } = props;
+  const { cntClassName, companyName, designation, duration, id } = props;
 
   return (
-    <div className={cx([appStyles["main-cnt"], cntClassName])}>
+    <div className={cx([appStyles["main-cnt"], cntClassName])} id={id}>
       <div className={cx([appStyles.wave])} />
       <OfficeIcon className={appStyles.icon} />
       <section className={appStyles.content}>

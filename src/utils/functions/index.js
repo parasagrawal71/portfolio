@@ -56,3 +56,8 @@ export function customTypingEffect(wordsList, id, speed = 200) {
     setTimeout(typeWriter, speed);
   };
 }
+
+export function scrollToTop() {
+  const app = document.getElementById("app");
+  app.scrollTo({ top: 0, behavior: "smooth" });
+}
