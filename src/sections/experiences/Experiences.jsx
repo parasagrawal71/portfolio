@@ -3,6 +3,8 @@ import React, { useEffect, useRef } from "react";
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import ExperienceCard from "components/experienceCard/ExperienceCard";
 import { experienceList } from "config/experiences";
+import { scrollToTop } from "utils/functions";
+import SquiggleSvg from "components/squiggleSvg/SquiggleSvg";
 
 // IMPORT OTHERS HERE //
 import appStyles from "./Experiences.module.scss";
@@ -12,11 +14,7 @@ const Experience = () => {
   const experiencesRef = useRef(null);
 
   useEffect(() => {
-    window.scroll({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    scrollToTop();
   }, []);
 
   return (
@@ -25,6 +23,7 @@ const Experience = () => {
         {experienceList?.map((experience, index) => {
           return (
             <ExperienceCard
+              id={`experience-card-${index + 1}`}
               cntClassName={appStyles["experience-card"]}
               key={index}
               {...experience}
@@ -32,6 +31,8 @@ const Experience = () => {
           );
         })}
       </section>
+
+      <SquiggleSvg customStyle={{ left: "calc(50% - 100px)", top: 300 }} />
     </main>
   );
 };

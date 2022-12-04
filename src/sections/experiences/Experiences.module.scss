@@ -2,6 +2,7 @@
 
 .main-cnt {
   @include section-padding();
+  position: relative;
 
   .experience-cnt {
     display: grid;
@@ -11,6 +12,7 @@
 
     // All childs
     .experience-card:nth-child(n) {
+      z-index: 99;
       min-height: 500px;
     }
 
