@@ -9,18 +9,28 @@ import appStyles from "./ExperienceCard.module.scss";
 
 const ExperienceCard = (props) => {
   // PROPS
-  const { cntClassName, companyName, designation, duration, id } = props;
+  const { cntClassName, companyName, designation, duration, id, works } = props;
 
   return (
-    <div className={cx([appStyles["main-cnt"], cntClassName])} id={id}>
-      <div className={cx([appStyles.wave])} />
-      <OfficeIcon className={appStyles.icon} />
-      <section className={appStyles.content}>
-        <div className={appStyles.companyName}>{companyName}</div>
-        <div className={appStyles.designation}>{designation}</div>
-        <div className={appStyles.duration}>{duration}</div>
+    <section className={cx([appStyles["main-cnt"], cntClassName])} id={id}>
+      <section className={appStyles.front}>
+        <div className={cx([appStyles.wave])} />
+        <OfficeIcon className={appStyles.icon} />
+        <div className={appStyles.content}>
+          <div className={appStyles.companyName}>{companyName}</div>
+          <div className={appStyles.designation}>{designation}</div>
+          <div className={appStyles.duration}>{duration}</div>
+        </div>
       </section>
-    </div>
+
+      <section className={appStyles.overlay}>
+        <ul className={appStyles.bulletPoints}>
+          {works?.map((work) => {
+            return <li className={appStyles.bulletPoint}>{work?.bulletPoint}</li>;
+          })}
+        </ul>
+      </section>
+    </section>
   );
 };
 

@@ -11,9 +11,53 @@ $shadow-color: rgba(0, 0, 0, 0.9);
   transform: translate3d(0, 0, 0);
   cursor: pointer;
 
+  .front {
+    @include flex-col;
+    flex: 1;
+    position: relative;
+    transition: 0.25s ease-in-out;
+  }
+
+  .overlay {
+    opacity: 0;
+    flex: 1;
+    @include flex-col;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    padding: 40px;
+
+    .bulletPoints {
+      padding-inline-start: 10px;
+      margin: 0;
+      .bulletPoint {
+        text-align: justify;
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    .front {
+      transform: scale(1.1);
+    }
+
+    .overlay {
+      z-index: 99;
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.6);
+      transition: 0.25s ease-in-out;
+    }
+  }
+
   .content {
-    padding: 15px;
-    margin-top: -50px;
+    padding: 30px;
+    margin-top: -65px;
     z-index: 10;
     color: $color-primary-bg;
     font-size: toRem(20px);
