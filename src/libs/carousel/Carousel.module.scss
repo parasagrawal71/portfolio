@@ -16,9 +16,6 @@
   height: 100%;
 
   &.multiple-active-items {
-    > :not(:last-child) {
-      margin-right: 20px;
-    }
   }
 }
 
@@ -27,9 +24,6 @@
   height: 100%;
 
   &.multiple-active-items {
-    > :not(:last-child) {
-      margin-bottom: 20px;
-    }
   }
 }
 
@@ -39,6 +33,7 @@
   justify-content: center;
   color: #fff;
   width: 100%; // IMPORTANT: To fit the parent container
+  height: 100%;
 }
 
 .indicators {

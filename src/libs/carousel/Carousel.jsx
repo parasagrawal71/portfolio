@@ -16,9 +16,7 @@ const Carousel = React.forwardRef((props, ref) => {
     autoplay = false,
     autoplayTime = 3000,
     numOfActiveItems = 1,
-    // numOfActiveItems = 2,
     direction = "vertical",
-    // direction = "horizontal",
   } = props;
 
   // STATE VARIABLEs
