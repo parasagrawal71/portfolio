@@ -63,8 +63,44 @@
   }
 }
 
+.controls {
+  $offwhite: rgba(238, 238, 238, 0.5);
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  color: $offwhite;
+  @include flex-row;
+  font-size: toRem(10px);
+  gap: 20px;
+  .arrowKeys {
+    @include flex-col;
+    gap: 5px;
+    svg {
+      fill: $offwhite;
+      height: toRem(40px);
+    }
+    .text {
+      padding-left: 8px;
+    }
+  }
+  .scroll {
+    @include flex-col;
+    gap: 5px;
+    svg {
+      height: toRem(40px);
+      fill: $offwhite;
+    }
+    .text {
+      padding-left: 8px;
+    }
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .inner-vertical {
     transition: transform 0.3s;
+  }
+  .controls {
+    display: none;
   }
 }

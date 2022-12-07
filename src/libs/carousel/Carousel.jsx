@@ -5,7 +5,7 @@ import cx from "classnames";
 
 // IMPORT OTHERS HERE //
 import animate from "utils/animate/Animate";
-import { NextBtnIcon, PreviousBtnIcon } from "assets/Images";
+import { NextBtnIcon, PreviousBtnIcon, ScrollMouse, ArrowKeys } from "assets/Images";
 import { keyToCodeMap } from "utils/constants";
 import { useEventListener } from "hooks";
 import appStyles from "./Carousel.module.scss";
@@ -199,6 +199,17 @@ const Carousel = React.forwardRef((props, ref) => {
          Next
        </button> */}
         <NextBtnIcon className={appStyles.nextIcon} onClick={handleClickOnNextButton.bind(this)} />
+      </section>
+
+      <section className={appStyles.controls}>
+        <div className={appStyles.arrowKeys}>
+          <ArrowKeys />
+          <div className={appStyles.text}>Press arrow keys</div>
+        </div>
+        <div className={appStyles.scroll}>
+          <ScrollMouse />
+          <div className={appStyles.text}>Scroll</div>
+        </div>
       </section>
     </>
   );

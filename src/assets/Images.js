@@ -32,6 +32,8 @@ import {
   BackendIcon,
   BrandLogoIcon,
   CrossplatformMobileAppIcon,
+  ScrollMouse,
+  ArrowKeys,
 } from "./OtherSvgs";
 
 /**
@@ -89,6 +91,8 @@ export {
   GridViewIcon,
   ListViewIcon,
   OfficeIcon,
+  ScrollMouse,
+  ArrowKeys,
 
   // Skillset icons
   JavaScriptIcon,

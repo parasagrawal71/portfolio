@@ -3,6 +3,8 @@
 $shadow-color: rgba(0, 0, 0, 0.9);
 .main-cnt {
   @include section-padding();
+  padding-left: 12%;
+  padding-right: 12%;
   &.carousel-view {
     flex: 1;
     height: calc(100% - (2 * 85px));
