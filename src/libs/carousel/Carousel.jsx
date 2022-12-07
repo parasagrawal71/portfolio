@@ -32,6 +32,7 @@ const Carousel = React.forwardRef((props, ref) => {
   );
   const activeIndexRef = useRef(activeIndex);
   const indicatorsCntRef = useRef(null);
+  useEventListener("wheel", throttledHandleOnScroll, document.getElementById("app"));
 
   // To handle autoplay
   useEffect(() => {
@@ -107,7 +108,7 @@ const Carousel = React.forwardRef((props, ref) => {
 
   // Function to handle scroll up and scroll down events
   function handleOnScroll(e) {
-    if (e.nativeEvent.wheelDelta > 0) {
+    if (e?.wheelDelta > 0) {
       // SCROLL UP
       // console.log(`file: Carousel.jsx ~ handleOnScroll ~ scroll up`);
       handleClickOnPreviousButton();
@@ -131,7 +132,6 @@ const Carousel = React.forwardRef((props, ref) => {
         style={{ height: `calc(100% - ${indicatorCntHeight}px)` }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
-        onWheel={throttledHandleOnScroll.bind(this)}
       >
         {/* 
         Carousel items
