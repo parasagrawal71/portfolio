@@ -50,6 +50,9 @@ const ProjectBox = React.forwardRef((props, ref) => {
 
   return (
     <section className={`${appStyles["project-box-cnt"]} lineUp`} ref={ref}>
+      {/*
+       * HEADER
+       */}
       <div className={appStyles.header}>
         <div className={appStyles["header--left"]}>
           <div className={appStyles["header--left-left"]}>
@@ -79,6 +82,10 @@ const ProjectBox = React.forwardRef((props, ref) => {
           })}
         </div>
       </div>
+
+      {/*
+       * Content Image
+       */}
       <div className={appStyles["content-img-cnt"]}>
         {!videoUrl && overviewImg ? (
           <img src={overviewImg} alt={name} className={appStyles["overview-img"]} />
@@ -89,6 +96,10 @@ const ProjectBox = React.forwardRef((props, ref) => {
           </video>
         ) : null}
       </div>
+
+      {/*
+       * Description
+       */}
       <div className={appStyles.descrp}>{description}</div>
       {techList?.length ? (
         <div className={appStyles["tech-list"]}>

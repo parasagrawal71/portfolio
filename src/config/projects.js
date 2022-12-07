@@ -23,11 +23,11 @@ export const projectsList = [
       {
         type: "website",
         url: `https://api-documenter.web.app`,
-        iconSize: "20px",
       },
       {
         type: "github",
         url: `https://github.com/parasagrawal71/api-documenter`,
+        iconSize: "23px",
       },
     ],
   },
@@ -45,17 +45,16 @@ export const projectsList = [
       {
         type: "demovideo",
         url: `https://drive.google.com/uc?id=10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_`,
-        iconSize: "22px",
         isVideo: true,
       },
       {
         type: "website",
         url: `https://twitter--helpdesk.herokuapp.com/`,
-        iconSize: "20px",
       },
       {
         type: "github",
         url: `https://github.com/parasagrawal71/twitter-helpdesk`,
+        iconSize: "23px",
       },
     ],
   },
@@ -85,11 +84,11 @@ export const projectsList = [
       {
         type: "website",
         url: `https://shop-anywhere.web.app/`,
-        iconSize: "20px",
       },
       {
         type: "github",
         url: `https://github.com/parasagrawal71/shop-anywhere`,
+        iconSize: "23px",
       },
     ],
   },

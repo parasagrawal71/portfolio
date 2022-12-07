@@ -37,13 +37,10 @@
 
     .header--right {
       @include flex-row-v-cen;
+      gap: 15px;
       svg {
-        font-size: toRem(20px);
+        font-size: toRem(25px);
         cursor: pointer;
-
-        &:not(:last-child) {
-          margin-right: 10px;
-        }
       }
     }
   }

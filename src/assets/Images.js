@@ -12,9 +12,10 @@ import {
 } from "react-icons/bs";
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
-import { BiLinkExternal as WebsiteIcon, BiVideo as VideoIcon } from "react-icons/bi";
+import { BiLinkExternal as WebsiteIcon } from "react-icons/bi";
 import { GrFormNext as NextBtnIcon, GrFormPrevious as PreviousBtnIcon } from "react-icons/gr";
 import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
+import { MdOndemandVideo as VideoIcon } from "react-icons/md";
 
 /**
  * * Local imports
