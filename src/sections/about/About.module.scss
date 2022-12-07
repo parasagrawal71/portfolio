@@ -1,7 +1,7 @@
 @import "utils/commonStyles/index.scss";
 
 .about-section {
-  height: $section-height;
+  height: 100vh; // Use 100%
   padding: $section-padding;
 
   .about-section--top {

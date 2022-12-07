@@ -3,7 +3,8 @@
 .main-cnt {
   @include section-padding();
   &.carousel-view {
-    @include section-fullpage($header-height);
+    flex: 1;
+    height: calc(100% - (2 * 85px));
   }
   &.grid-view {
   }
@@ -12,13 +13,11 @@
     @include flex-row-v-cen;
     justify-content: flex-end;
     padding: 20px;
+    gap: 10px;
 
     svg {
       font-size: toRem(20px);
       cursor: pointer;
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
       &.active {
         fill: $color-active !important;
       }
@@ -29,12 +28,11 @@
   }
 
   .content-cnt {
+    height: 100%;
     .projects-grid-cnt {
       @include flex-row;
       flex-wrap: wrap;
-      > :not(:last-child) {
-        margin-bottom: 50px;
-      }
+      gap: 50px;
     }
   }
 }

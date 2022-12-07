@@ -1,10 +1,6 @@
 @use "sass:math";
 @import "utils/commonStyles/constants.scss";
 
-@mixin section-fullpage($headerHeight: 0px) {
-  height: calc($section-height - $headerHeight);
-}
-
 @mixin section-padding() {
   padding: 85px 6%;
 }

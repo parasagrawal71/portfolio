@@ -16,20 +16,19 @@ const Carousel = React.forwardRef((props, ref) => {
     autoplay = false,
     autoplayTime = 3000,
     numOfActiveItems = 1,
+    // numOfActiveItems = 2,
     direction = "vertical",
-    parentCntHeight,
+    // direction = "horizontal",
   } = props;
 
   // STATE VARIABLEs
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [mainCntHeight, setMainCntHeight] = useState();
   useEventListener("keydown", handleKeyPress);
   const throttledHandleOnScroll = useCallback(
     _.throttle(handleOnScroll, 1200, { trailing: false }),
     []
   );
-  const indicatorsCntRef = useRef(null);
   const activeIndexRef = useRef(activeIndex);
 
   // To handle autoplay
@@ -53,20 +52,12 @@ const Carousel = React.forwardRef((props, ref) => {
     activeIndexRef.current = activeIndex;
   }, [activeIndex]);
 
-  useEffect(() => {
-    // To compute the height of the main container when the direction is vertical
-    if (direction === "vertical") {
-      // Indicators container
-      const indicatorsCntBoundingBox = indicatorsCntRef?.current?.getBoundingClientRect();
-      setMainCntHeight(Number(parentCntHeight) - (indicatorsCntBoundingBox?.height || 0));
-    }
-  }, [parentCntHeight]);
-
   // Function to update index of carousel item
   function updateIndex(newIndex) {
+    const totalPages = Math.ceil(React.Children.count(children) / numOfActiveItems);
     if (newIndex < 0) {
-      newIndex = React.Children.count(children) - 1;
-    } else if (newIndex >= React.Children.count(children)) {
+      newIndex = totalPages - 1;
+    } else if (newIndex >= totalPages) {
       newIndex = 0;
     }
     setActiveIndex(newIndex);
@@ -128,7 +119,6 @@ const Carousel = React.forwardRef((props, ref) => {
             ? appStyles["carousel-horizontal"]
             : appStyles["carousel-vertical"]
         }
-        style={{ maxHeight: `${mainCntHeight}px` }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onWheel={throttledHandleOnScroll.bind(this)}
@@ -141,7 +131,7 @@ const Carousel = React.forwardRef((props, ref) => {
             className={`${appStyles["inner-horizontal"]} ${
               numOfActiveItems > 1 ? appStyles["multiple-active-items"] : ""
             }`}
-            style={{ transform: `translateX(-${activeIndex * (100 / numOfActiveItems)}%)` }}
+            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
           >
             {React.Children.map(children, (child) => {
               return React.cloneElement(child, { width: `calc(100% / ${numOfActiveItems})` });
@@ -153,12 +143,12 @@ const Carousel = React.forwardRef((props, ref) => {
               numOfActiveItems > 1 ? appStyles["multiple-active-items"] : ""
             }`}
             style={{
-              transform: `translateY(-${activeIndex * (mainCntHeight / numOfActiveItems)}px)`,
+              transform: `translateY(-${activeIndex * 100}%)`,
             }}
           >
             {React.Children.map(children, (child, index) => {
               return React.cloneElement(child, {
-                height: `calc(${mainCntHeight}px / ${numOfActiveItems})`,
+                height: `calc(100% / ${numOfActiveItems})`,
                 id: `carousel-item-${index}`,
                 activeIndex,
               });
@@ -170,7 +160,7 @@ const Carousel = React.forwardRef((props, ref) => {
       {/* 
         Indicators
        */}
-      <section className={appStyles.indicators} ref={indicatorsCntRef}>
+      <section className={appStyles.indicators}>
         {/* Previous button */}
         {/* <button type="button" onClick={handleClickOnPreviousButton.bind(this)}>
          Prev
@@ -192,7 +182,7 @@ const Carousel = React.forwardRef((props, ref) => {
            </button>
          );
        })} */}
-        {`${activeIndex + 1} / ${React.Children.count(children)}`}
+        {`${activeIndex + 1} / ${Math.ceil(React.Children.count(children) / numOfActiveItems)}`}
 
         {/* Next button */}
         {/* <button type="button" onClick={handleClickOnNextButton.bind(this)}>

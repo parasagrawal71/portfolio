@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import ProjectBox from "components/projectBox/ProjectBox";
 import { Carousel, CarouselItem } from "libs";
 import { usePrevious } from "hooks";
+import { useGlobalState } from "contexts/GlobalContextProvider";
 
 // IMPORT OTHERS HERE //
 import { CarouselViewIcon, GridViewIcon, ListViewIcon } from "assets/Images";
@@ -15,8 +16,8 @@ const Projects = () => {
   // STATE VARIABLEs
   const [currentView, setCurrentView] = useState("carousel");
   const oldValueOfCurrentView = usePrevious(currentView);
-  const [contentCntHeight, setContentCntHeight] = useState(0);
   const contentCntRef = useRef(null);
+  const { globalState } = useGlobalState();
 
   function handleToggleView(view) {
     if (view === "carousel") {
@@ -26,29 +27,6 @@ const Projects = () => {
     } else if (view === "list") {
       setCurrentView("list");
     }
-  }
-
-  useEffect(() => {
-    if (oldValueOfCurrentView !== currentView) {
-      // calculateCarouselParentHeight();
-    }
-  }, [currentView]);
-
-  function calculateCarouselParentHeight(ele) {
-    const carouselParentEle = ele || contentCntRef?.current;
-    let parentHeight = 0;
-    if (carouselParentEle) {
-      const carouselParentBoundingBox = carouselParentEle?.getBoundingClientRect();
-      const nodeStyle = window.getComputedStyle(carouselParentEle);
-      let topPadding = nodeStyle?.getPropertyValue("padding-top")?.replace("px", "");
-      topPadding = topPadding && typeof topPadding === "string" ? Number(topPadding) : 0;
-      let bottomPadding = nodeStyle?.getPropertyValue("padding-bottom")?.replace("px", "");
-      bottomPadding =
-        bottomPadding && typeof bottomPadding === "string" ? Number(bottomPadding) : 0;
-      parentHeight = (carouselParentBoundingBox?.height || 0) - topPadding - bottomPadding;
-    }
-    // console.log(`Calculated parentHeight: `, parentHeight);
-    setContentCntHeight(parentHeight);
   }
 
   return (
@@ -93,12 +71,11 @@ const Projects = () => {
         className={appStyles["content-cnt"]}
         ref={(el) => {
           if (!el) return;
-          calculateCarouselParentHeight(el);
           return contentCntRef;
         }}
       >
         {currentView === "carousel" ? (
-          <Carousel parentCntHeight={contentCntHeight}>
+          <Carousel>
             {projectsList?.map((project) => {
               return (
                 <CarouselItem key={project?.name}>

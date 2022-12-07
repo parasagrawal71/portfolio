@@ -2,10 +2,12 @@
 
 .carousel-horizontal {
   overflow: hidden;
+  height: 100%;
 }
 
 .carousel-vertical {
   overflow: hidden;
+  height: 100%;
 }
 
 .inner-horizontal {
@@ -22,6 +24,7 @@
 
 .inner-vertical {
   transition: transform 0.2s;
+  height: 100%;
 
   &.multiple-active-items {
     > :not(:last-child) {
