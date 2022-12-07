@@ -21,6 +21,7 @@ const Carousel = React.forwardRef((props, ref) => {
 
   // STATE VARIABLEs
   const [activeIndex, setActiveIndex] = useState(0);
+  const [indicatorCntHeight, setIndicatorCntHeight] = useState(0);
   const [paused, setPaused] = useState(false);
   useEventListener("keydown", handleKeyPress);
   const throttledHandleOnScroll = useCallback(
@@ -28,6 +29,7 @@ const Carousel = React.forwardRef((props, ref) => {
     []
   );
   const activeIndexRef = useRef(activeIndex);
+  const indicatorsCntRef = useRef(null);
 
   // To handle autoplay
   useEffect(() => {
@@ -45,6 +47,12 @@ const Carousel = React.forwardRef((props, ref) => {
       }
     };
   });
+
+  useEffect(() => {
+    // To compute the height of the indicator container
+    const indicatorsCntBoundingBox = indicatorsCntRef?.current?.getBoundingClientRect();
+    setIndicatorCntHeight(indicatorsCntBoundingBox?.height || 0);
+  }, []);
 
   useEffect(() => {
     activeIndexRef.current = activeIndex;
@@ -117,6 +125,7 @@ const Carousel = React.forwardRef((props, ref) => {
             ? appStyles["carousel-horizontal"]
             : appStyles["carousel-vertical"]
         }
+        style={{ height: `calc(100% - ${indicatorCntHeight}px)` }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onWheel={throttledHandleOnScroll.bind(this)}
@@ -158,7 +167,7 @@ const Carousel = React.forwardRef((props, ref) => {
       {/* 
         Indicators
        */}
-      <section className={appStyles.indicators}>
+      <section className={appStyles.indicators} ref={indicatorsCntRef}>
         {/* Previous button */}
         {/* <button type="button" onClick={handleClickOnPreviousButton.bind(this)}>
          Prev
