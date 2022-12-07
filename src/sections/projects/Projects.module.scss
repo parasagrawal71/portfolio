@@ -1,5 +1,6 @@
 @import "utils/commonStyles/index.scss";
 
+$shadow-color: rgba(0, 0, 0, 0.9);
 .main-cnt {
   @include section-padding();
   &.carousel-view {
@@ -29,6 +30,10 @@
 
   .content-cnt {
     height: 100%;
+    .carousel {
+      box-shadow: $shadow-color 0px 1px 0px, $shadow-color 0px 8px 24px, $shadow-color 0px 16px 48px;
+    }
+
     .projects-grid-cnt {
       @include flex-row;
       flex-wrap: wrap;

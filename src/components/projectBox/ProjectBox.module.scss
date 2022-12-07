@@ -2,15 +2,10 @@
 
 .project-box-cnt {
   @include flex-col;
-  border: 1px solid #444242;
   border-radius: 4px;
   padding: 25px;
   width: 100%; // IMPORTANT: To spread out in the parent container
   height: 100%; // IMPORTANT: To spread out in the parent container and To keep the overview image contained.
-
-  &:hover {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
 
   .header {
     padding-bottom: 10px;

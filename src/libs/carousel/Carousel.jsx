@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { useSwipeable } from "react-swipeable";
 import _ from "lodash";
+import cx from "classnames";
 
 // IMPORT OTHERS HERE //
 import animate from "utils/animate/Animate";
@@ -17,6 +18,7 @@ const Carousel = React.forwardRef((props, ref) => {
     autoplayTime = 3000,
     numOfActiveItems = 1,
     direction = "vertical",
+    carouselClassName,
   } = props;
 
   // STATE VARIABLEs
@@ -120,11 +122,12 @@ const Carousel = React.forwardRef((props, ref) => {
     <>
       <section
         {...swipeHandlers}
-        className={
+        className={cx([
           direction === "horizontal"
             ? appStyles["carousel-horizontal"]
-            : appStyles["carousel-vertical"]
-        }
+            : appStyles["carousel-vertical"],
+          carouselClassName,
+        ])}
         style={{ height: `calc(100% - ${indicatorCntHeight}px)` }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
@@ -203,13 +206,18 @@ const Carousel = React.forwardRef((props, ref) => {
 
 // Carousel item component
 export const CarouselItem = React.forwardRef(
-  ({ children, width, height, id, activeIndex }, ref) => {
+  ({ children, width, height, id, activeIndex, carouselItemClassName }, ref) => {
     useEffect(() => {
       animate.scaleUp({ targets: document.getElementById(id) });
     }, [activeIndex]);
 
     return (
-      <div className={appStyles["carousel-item"]} style={{ width, height }} ref={ref} id={id}>
+      <div
+        className={cx([appStyles["carousel-item"], carouselItemClassName])}
+        style={{ width, height }}
+        ref={ref}
+        id={id}
+      >
         {children}
       </div>
     );

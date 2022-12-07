@@ -75,10 +75,10 @@ const Projects = () => {
         }}
       >
         {currentView === "carousel" ? (
-          <Carousel>
+          <Carousel carouselClassName={appStyles.carousel}>
             {projectsList?.map((project) => {
               return (
-                <CarouselItem key={project?.name}>
+                <CarouselItem key={project?.name} carouselItemClassName="">
                   <ProjectBox {...project} />
                 </CarouselItem>
               );
