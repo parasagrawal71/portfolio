@@ -1,7 +1,12 @@
 @import "utils/commonStyles/index.scss";
 
-$shadow-color: rgba(0, 0, 0, 0.9);
+@mixin project-box-style {
+  box-shadow: rgba(0, 0, 0, 0.32) 0px 2px 4px 0px, rgba(0, 0, 0, 0.52) 0px 2px 16px 0px;
+  border-radius: 8px;
+}
+
 .main-cnt {
+  position: relative;
   @include section-padding();
   padding-left: 12%;
   padding-right: 12%;
@@ -9,23 +14,27 @@ $shadow-color: rgba(0, 0, 0, 0.9);
     flex: 1;
     height: calc(100% - (2 * 85px));
   }
-  &.grid-view {
+  &.list-view {
+    margin-bottom: 50px;
   }
 
   .header {
+    position: absolute;
+    right: 12%;
+    top: 0;
     @include flex-row-v-cen;
     justify-content: flex-end;
     padding: 20px;
-    gap: 10px;
+    gap: 15px;
 
     svg {
-      font-size: toRem(20px);
+      font-size: toRem(22px);
       cursor: pointer;
       &.active {
         fill: $color-active !important;
       }
       &.listIcon {
-        font-size: toRem(24px);
+        font-size: toRem(26px);
       }
     }
   }
@@ -33,13 +42,17 @@ $shadow-color: rgba(0, 0, 0, 0.9);
   .content-cnt {
     height: 100%;
     .carousel {
-      box-shadow: $shadow-color 0px 1px 0px, $shadow-color 0px 8px 24px, $shadow-color 0px 16px 48px;
+      @include project-box-style;
     }
 
-    .projects-grid-cnt {
-      @include flex-row;
-      flex-wrap: wrap;
-      gap: 50px;
+    .projects-list-cnt {
+      @include flex-col;
+      gap: 100px;
+
+      .listViewProjectBoxCnt {
+        @include project-box-style;
+        height: 610px; // IMPORTANT: To make overview image responsive in the list view.
+      }
     }
   }
 }

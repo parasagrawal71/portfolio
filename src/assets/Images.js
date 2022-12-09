@@ -59,6 +59,8 @@ import {
   AwsIcon,
   ReactNativeIcon,
   ApiSkillIcon,
+  ExpressJsIcon,
+  SocketIoIcon,
 } from "./SkillSvgs";
 
 // ************************************ EXPORTS ************************************ //
@@ -111,4 +113,6 @@ export {
   AwsIcon,
   ReactNativeIcon,
   ApiSkillIcon,
+  ExpressJsIcon,
+  SocketIoIcon,
 };

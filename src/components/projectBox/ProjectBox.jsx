@@ -1,8 +1,23 @@
 import React, { useState } from "react";
+import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import animate from "utils/animate/Animate";
-import { GithubIcon, WebsiteIcon, VideoIcon } from "assets/Images";
+import {
+  GithubIcon,
+  WebsiteIcon,
+  VideoIcon,
+  JavaScriptIcon,
+  ReactIcon,
+  ReduxIcon,
+  NodejsIcon,
+  MongoDBIcon,
+  Html5Icon,
+  CSS3Icon,
+  SassIcon,
+  ExpressJsIcon,
+  SocketIoIcon,
+} from "assets/Images";
 
 // IMPORT OTHERS HERE //
 import appStyles from "./ProjectBox.module.scss";
@@ -18,6 +33,7 @@ const ProjectBox = React.forwardRef((props, ref) => {
     techList,
     externalUrls,
     overviewImg,
+    mainCntClassname,
   } = props || {};
 
   // STATE VARIABLEs
@@ -33,10 +49,20 @@ const ProjectBox = React.forwardRef((props, ref) => {
     }
   };
 
-  const typeIconMap = {
+  const iconMap = {
     github: GithubIcon,
     website: WebsiteIcon,
     demovideo: VideoIcon,
+    javascript: JavaScriptIcon,
+    react: ReactIcon,
+    redux: ReduxIcon,
+    nodejs: NodejsIcon,
+    express: ExpressJsIcon,
+    mongo: MongoDBIcon,
+    html: Html5Icon,
+    css: CSS3Icon,
+    sass: SassIcon,
+    websocket: SocketIoIcon,
   };
 
   function toggleShowVideo() {
@@ -49,7 +75,7 @@ const ProjectBox = React.forwardRef((props, ref) => {
   }
 
   return (
-    <section className={`${appStyles["project-box-cnt"]} lineUp`} ref={ref}>
+    <section className={cx([appStyles["project-box-cnt"], "lineUp", mainCntClassname])} ref={ref}>
       {/*
        * HEADER
        */}
@@ -69,7 +95,7 @@ const ProjectBox = React.forwardRef((props, ref) => {
         </div>
         <div className={appStyles["header--right"]}>
           {externalUrls?.map((external, i) => {
-            const ExternalIcon = typeIconMap?.[external?.type];
+            const ExternalIcon = iconMap?.[external?.type];
             return ExternalIcon ? (
               <React.Fragment key={external?.type}>
                 <ExternalIcon
@@ -104,10 +130,12 @@ const ProjectBox = React.forwardRef((props, ref) => {
       {techList?.length ? (
         <div className={appStyles["tech-list"]}>
           {techList?.map((tech) => {
+            const SkillIcon = iconMap?.[tech?.id];
             return (
-              <span key={tech} className={appStyles.tech}>
-                {tech}
-              </span>
+              <div className={appStyles.tech}>
+                {iconMap?.[tech?.id] ? <SkillIcon /> : null}
+                <div key={tech?.displayName}>{tech?.displayName}</div>
+              </div>
             );
           })}
         </div>

@@ -8,7 +8,7 @@ import { usePrevious } from "hooks";
 import { useGlobalState } from "contexts/GlobalContextProvider";
 
 // IMPORT OTHERS HERE //
-import { CarouselViewIcon, GridViewIcon, ListViewIcon } from "assets/Images";
+import { CarouselViewIcon, ListViewIcon } from "assets/Images";
 import { projectsList } from "config/projects";
 import appStyles from "./Projects.module.scss";
 
@@ -22,8 +22,6 @@ const Projects = () => {
   function handleToggleView(view) {
     if (view === "carousel") {
       setCurrentView("carousel");
-    } else if (view === "grid") {
-      setCurrentView("grid");
     } else if (view === "list") {
       setCurrentView("list");
     }
@@ -35,7 +33,7 @@ const Projects = () => {
         appStyles["main-cnt"],
         {
           [appStyles["carousel-view"]]: currentView === "carousel",
-          [appStyles["grid-view"]]: currentView === "grid",
+          [appStyles["list-view"]]: currentView === "list",
         },
       ])}
       id="projects"
@@ -43,17 +41,11 @@ const Projects = () => {
       {/* 
         HEADER
       */}
-      {/* <section className={appStyles.header}>
+      <section className={appStyles.header}>
         <CarouselViewIcon
           onClick={handleToggleView.bind(this, "carousel")}
           className={cx({
             [appStyles.active]: currentView === "carousel",
-          })}
-        />
-        <GridViewIcon
-          onClick={handleToggleView.bind(this, "grid")}
-          className={cx({
-            [appStyles.active]: currentView === "grid",
           })}
         />
         <ListViewIcon
@@ -62,7 +54,7 @@ const Projects = () => {
             [appStyles.active]: currentView === "list",
           })}
         />
-      </section> */}
+      </section>
 
       {/* 
         CONTENT
@@ -86,10 +78,16 @@ const Projects = () => {
           </Carousel>
         ) : null}
 
-        {currentView === "grid" ? (
-          <section className={appStyles["projects-grid-cnt"]}>
+        {currentView === "list" ? (
+          <section className={appStyles["projects-list-cnt"]}>
             {projectsList?.map((project) => {
-              return <ProjectBox {...project} key={project?.name} />;
+              return (
+                <ProjectBox
+                  {...project}
+                  key={project?.name}
+                  mainCntClassname={appStyles.listViewProjectBoxCnt}
+                />
+              );
             })}
           </section>
         ) : null}

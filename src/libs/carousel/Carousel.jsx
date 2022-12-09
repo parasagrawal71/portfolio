@@ -192,7 +192,11 @@ const Carousel = React.forwardRef((props, ref) => {
            </button>
          );
        })} */}
-        {`${activeIndex + 1} / ${Math.ceil(React.Children.count(children) / numOfActiveItems)}`}
+        <span className={appStyles.activePage}>{activeIndex + 1}</span>
+        <span>/</span>
+        <span className={appStyles.totalPages}>
+          {Math.ceil(React.Children.count(children) / numOfActiveItems)}
+        </span>
 
         {/* Next button */}
         {/* <button type="button" onClick={handleClickOnNextButton.bind(this)}>

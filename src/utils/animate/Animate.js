@@ -3,7 +3,7 @@ import anime from "animejs";
 function scaleUp({ targets }) {
   return anime({
     targets,
-    scale: [0.9, 1],
+    scale: [0.97, 1],
     delay(el, i) {
       return i * 100;
     },

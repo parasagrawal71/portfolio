@@ -2,13 +2,12 @@
 
 .project-box-cnt {
   @include flex-col;
-  border-radius: 4px;
   padding: 25px;
   width: 100%; // IMPORTANT: To spread out in the parent container
   height: 100%; // IMPORTANT: To spread out in the parent container and To keep the overview image contained.
 
   .header {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     @include flex-row-b-sb-cen;
 
     .header--left {
@@ -19,7 +18,7 @@
           border: 1px solid #444242;
           border-radius: 50%;
           padding: 5px;
-          margin-right: 5px;
+          margin-right: 10px;
         }
       }
       .header--left-right {
@@ -46,7 +45,7 @@
   }
 
   .content-img-cnt {
-    max-height: 550px; // IMPORTANT: To keep the overview image contained
+    max-height: 400px; // IMPORTANT: To keep the overview image contained
     overflow: hidden; // IMPORTANT: In case the overview image overflows, keep the overflowed part hidden.
 
     .overview-img,
@@ -75,13 +74,16 @@
   }
 
   .tech-list {
-    padding-top: 20px;
+    padding-top: 40px;
     @include flex-row-v-cen;
     flex-wrap: wrap;
+    gap: 20px;
 
     .tech {
-      &:not(:last-child) {
-        margin-right: 15px;
+      gap: 5px;
+      @include flex-row-v-cen;
+      svg {
+        height: 15px;
       }
     }
   }
