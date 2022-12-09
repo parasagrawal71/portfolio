@@ -10,21 +10,20 @@ import {
   LinkedInIcon,
   InstagramIcon,
 } from "assets/Images";
-import myResume from "assets/pdfs/Paras-Agrawal_Senior-Engineer_Resume.pdf";
+import { findYearsOfExperience } from "utils/functions";
 
 // EXPORTs HERE
 export const fullName = "Paras Agrawal";
 export const companyName = "nference";
 export const emailId = "parasagrawal71@gmail.com";
 export const designation = "Senior Engineer";
-export const YOE = 3;
+export const careerStartDate = "07-15-2019"; // 15 July 2019
+export const YOE = findYearsOfExperience(careerStartDate);
 export const designations = ["Back-end", "Front-end", "Mobile App"];
-export const RESUME_URL = myResume;
-// export const RESUME_URL =
-//   "https://drive.google.com/file/d/1teFr1xr-BEY2rxtjk_K7gsuRWKEex4Ot/view?usp=sharing";
+export const RESUME_URL = "https://drive.google.com/uc?id=1yBdmFvsmzKpEB2c203g0rK8oOWWqU8DQ";
 export const SELF_PICTURE_URL = myPicture;
 export const aboutDescription = `Hello! I'm ${fullName}, a ${designation}, and a guy slightly obsessed with code
-  quality. I have 3 years of experience in full-stack development. I am currently working at ${companyName}, a healthcare-based company.
+  quality. I have ${YOE} years of experience in full-stack development. I am currently working at ${companyName}, a healthcare-based company.
   I have very good knowledge of JavaScript, ReactJS, NodeJS, MongoDB, API Development, and Git. In addition, I have worked with and implemented 
   technologies like Kafka, Electron.js, AWS, and more. I enjoy developing applications and am always keen to learn new skills.`;
 

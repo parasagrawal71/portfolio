@@ -41,7 +41,7 @@ const Main = () => {
     <>
       <HeaderComponent />
       {nameComponentMap?.[globalState?.activeSectionName]}
-      {/* <FooterSection /> */}
+      {globalState?.activeSectionName === "Home" ? <FooterSection /> : null}
       <ScrollToTopBtnComponent />
     </>
   );

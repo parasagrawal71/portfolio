@@ -7,7 +7,7 @@ import appStyles from "./Footer.module.scss";
 const Footer = () => {
   return (
     <main className={appStyles["main-cnt"]}>
-      <div className={appStyles["footer-content"]}>Designed and Developed by {fullName}</div>
+      <div className={appStyles["footer-content"]}>Developed by {fullName}</div>
     </main>
   );
 };
