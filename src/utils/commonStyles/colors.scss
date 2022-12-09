@@ -27,7 +27,9 @@ $_cyan-191: hsl(191, 67%, 87%);
 $_blue-195-2: hsl(195, 63%, 65%);
 $_blue-195-3: hsl(195, 100%, 44%);
 $_blue-216: hsl(216, 18%, 16%);
+$_blue-233: #0e1129;
 $_purple-243: hsl(243, 49%, 68%);
+$_purple-256: hsla(256, 100%, 63%, 0.6);
 
 /* Green colors ---------------------------------*/
 $_green-89: hsl(89, 84%, 39%);
@@ -50,14 +52,14 @@ $_orange-30: hsl(30, 100%, 56%);
 Only access colors through these “proxy”-variables
 *******************************************************
 */
-$color-primary-bg: $_blue-216;
+$color-primary-bg: $_blue-233;
 $color-secondary-bg: "";
-$color-primary-text: $_white-a75-238;
-$color-secondary-text: $_white-238;
+$color-primary-text: $_white-238;
+$color-secondary-text: $_white-a75-238;
 $color-primary-btn-bg: "";
 $color-secondary-btn-bg: "";
 $color-primary-border: $_gray-80;
-$color-brand: $_blue-183;
+$color-brand: $_purple-256;
 $color-link: $_white-a75-238;
 $color-error: "";
 $color-warning: "";

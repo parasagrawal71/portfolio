@@ -61,6 +61,7 @@ import {
   ApiSkillIcon,
   ExpressJsIcon,
   SocketIoIcon,
+  MaterialUiIcon,
 } from "./SkillSvgs";
 
 // ************************************ EXPORTS ************************************ //
@@ -115,4 +116,5 @@ export {
   ApiSkillIcon,
   ExpressJsIcon,
   SocketIoIcon,
+  MaterialUiIcon,
 };

@@ -2,6 +2,26 @@
 
 .main-cnt {
   padding: $section-padding;
+  position: relative;
+
+  .header {
+    position: absolute;
+    right: 85px;
+    top: 0;
+    @include flex-row-v-cen;
+    justify-content: flex-end;
+    padding: 0 100px;
+    gap: 30px;
+    .skill-category {
+      padding: 10px;
+      color: $color-primary-text;
+      border: 1px solid $color-secondary-text;
+      border-radius: 10px;
+      &.active {
+        border-color: $color-brand;
+      }
+    }
+  }
 
   .skills-cnt {
     @include flex-row;
