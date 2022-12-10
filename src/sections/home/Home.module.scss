@@ -41,23 +41,34 @@ $padding-vertical: 30px;
       }
     }
 
-    .content--right {
+    .content--mid {
       display: inline-block;
       padding-top: 100px;
-      .name {
-        font-size: toRem(60px);
-        font-weight: bold;
-        color: $color-primary-text;
-      }
-      .role {
-        text-transform: uppercase;
-        font-size: toRem(30px);
-        font-weight: bold;
-        color: $color-secondary-text;
-      }
-      .btnStyle {
-        margin-top: 50px;
-      }
+    }
+
+    .content--right {
+      padding-top: 100px;
+      padding-left: 30px;
+    }
+
+    .name {
+      font-size: toRem(60px);
+      font-weight: bold;
+      color: $color-primary-text;
+    }
+    .role {
+      text-transform: uppercase;
+      font-size: toRem(30px);
+      font-weight: bold;
+      color: $color-secondary-text;
+    }
+    .btnStyle {
+      margin-top: 50px;
+    }
+    .descrp {
+      padding-top: 30px;
+      max-width: 500px;
+      text-align: justify;
     }
   }
 }

@@ -62,7 +62,7 @@ export function scrollToTop({ isSmooth = true }) {
   app.scrollTo({ top: 0, behavior: isSmooth ? "smooth" : "auto" });
 }
 
-export function findYearsOfExperience(startDateStr) {
+export function calculateYearsOfExperience(startDateStr) {
   const startDate = new Date(startDateStr);
   const startMonth = startDate.getFullYear() * 12 + startDate.getMonth();
   const currentDate = new Date();
@@ -71,8 +71,9 @@ export function findYearsOfExperience(startDateStr) {
 
   const yearsOfExperience = Math.floor(monthInterval / 12);
   const monthsOfExperience = monthInterval % 12;
+  const monthsInDecimal = (monthsOfExperience / 12).toFixed(1);
   if (Number.isNaN(yearsOfExperience) || Number.isNaN(monthsOfExperience)) {
     return "0";
   }
-  return `${yearsOfExperience}.${monthsOfExperience}`;
+  return `${Number(yearsOfExperience) + Number(monthsInDecimal)}`;
 }

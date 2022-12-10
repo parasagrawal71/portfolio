@@ -48,11 +48,6 @@ export const skillsetsArray = [
     categories: [FRONTEND, BACKEND],
   },
   {
-    name: "React",
-    Icon: ReactIcon,
-    categories: [FRONTEND],
-  },
-  {
     name: "Node JS",
     Icon: NodejsIcon,
     categories: [BACKEND],
@@ -66,6 +61,16 @@ export const skillsetsArray = [
     name: "MongoDB",
     Icon: MongoDBIcon,
     categories: [BACKEND],
+  },
+  {
+    name: "API",
+    Icon: ApiSkillIcon,
+    categories: [BACKEND],
+  },
+  {
+    name: "React",
+    Icon: ReactIcon,
+    categories: [FRONTEND],
   },
   {
     name: "HTML",
@@ -101,11 +106,6 @@ export const skillsetsArray = [
     name: "Linux",
     Icon: LinuxIcon,
     categories: [OTHERS],
-  },
-  {
-    name: "API",
-    Icon: ApiSkillIcon,
-    categories: [BACKEND],
   },
   {
     name: "Vue",
