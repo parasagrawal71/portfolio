@@ -65,8 +65,28 @@
   }
 }
 
+.skillDetails {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  .detailsRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .detailsKey {
+    }
+
+    .detailsValue {
+      text-align: right;
+    }
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .main-cnt {
+    .header {
+      padding: 0;
+    }
+
     .skills-cnt {
       justify-content: center;
       padding: 0;

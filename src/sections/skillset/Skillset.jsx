@@ -3,9 +3,9 @@ import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import { scrollToTop } from "utils/functions";
+import { MouseOverPopover, TextButton } from "libs";
 
 // IMPORT OTHERS HERE //
-import { TextButton } from "libs";
 import { skillsetsArray, skillCategory } from "config/skillset";
 import appStyles from "./Skillset.module.scss";
 
@@ -21,6 +21,11 @@ const Skillset = () => {
     }, 0);
   }, []);
 
+  useEffect(() => {
+    filterSkills(currentCategory);
+    currentCategoryRef.current = currentCategory;
+  }, [currentCategory]);
+
   function filterSkills(category = "") {
     if (category) {
       setSkills(skillsetsArray?.filter((sk) => sk?.categories?.includes(category)));
@@ -28,11 +33,6 @@ const Skillset = () => {
       setSkills(skillsetsArray);
     }
   }
-
-  useEffect(() => {
-    filterSkills(currentCategory);
-    currentCategoryRef.current = currentCategory;
-  }, [currentCategory]);
 
   function toggleSkillCategory(category) {
     if (category) {
@@ -57,6 +57,7 @@ const Skillset = () => {
           ?.map((skCategory) => {
             return (
               <TextButton
+                key={skCategory.id}
                 btnText={skCategory.displayName}
                 customBtnClass={cx([
                   appStyles["skill-category"],
@@ -74,17 +75,38 @@ const Skillset = () => {
        */}
       <section className={appStyles["skills-cnt"]}>
         {skills?.map((skill) => {
-          const { Icon } = skill;
+          const { Icon, details, name } = skill;
           return (
-            <div className={appStyles.skill} key={skill?.name}>
-              <Icon />
-              <div className={appStyles["skill-name"]}>{skill?.name}</div>
-            </div>
+            <MouseOverPopover
+              PopoverComponent={SkillDetailsComponent({ details })}
+              key={name}
+              arrowPosition="bottomCenter"
+            >
+              <div className={appStyles.skill}>
+                <Icon />
+                <div className={appStyles["skill-name"]}>{name}</div>
+              </div>
+            </MouseOverPopover>
           );
         })}
       </section>
     </main>
   );
 };
+
+function SkillDetailsComponent({ details = [] }) {
+  return (
+    <section className={appStyles.skillDetails}>
+      {details?.map((row) => {
+        return (
+          <div key={row.id} className={appStyles.detailsRow}>
+            <div className={appStyles.detailsKey}>{row?.displayName}</div>
+            <div className={appStyles.detailsValue}>{row?.value}</div>
+          </div>
+        );
+      })}
+    </section>
+  );
+}
 
 export default Skillset;

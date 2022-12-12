@@ -15,6 +15,7 @@ import {
   SassIcon,
   ExpressJsIcon,
   SocketIoIcon,
+  VueIcon,
 } from "assets/Images";
 
 // GLOBAL VARIABLEs
@@ -22,6 +23,7 @@ const allTechList = [
   { id: "javascript", displayName: "JavaScript", Icon: JavaScriptIcon },
   { id: "react", displayName: "React", Icon: ReactIcon },
   { id: "redux", displayName: "Redux", Icon: ReduxIcon },
+  { id: "vuejs", displayName: "Vue", Icon: VueIcon },
   { id: "nodejs", displayName: "Node.js", Icon: NodejsIcon },
   { id: "express", displayName: "Express", Icon: ExpressJsIcon },
   { id: "websocket", displayName: "Websocket", Icon: SocketIoIcon },
@@ -64,7 +66,7 @@ export const projectsList = [
     iconSize: "28px",
     duration: `Nov 2020`,
     techList: allTechList.filter((tech) =>
-      ["javascript", "react", "nodejs", "websocket", "html", "css", "sass"].includes(tech.id)
+      ["javascript", "vuejs", "nodejs", "websocket", "html", "css", "sass"].includes(tech.id)
     ),
     description: `An application that displays all the tweets in which someone is
       mentioned in one place. OAuth login. Mention and reply in real-time
