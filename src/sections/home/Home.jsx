@@ -6,7 +6,7 @@ import SocialProfiles from "components/socialProfiles/SocialProfiles";
 import DownloadResume from "components/downloadResume/DownloadResume";
 
 // IMPORT OTHERS HERE //
-import { fullName, designation, shortDescription } from "config";
+import { fullName, designation, shortDescriptionHtml } from "config";
 import appStyles from "./Home.module.scss";
 
 const Home = () => {
@@ -24,7 +24,12 @@ const Home = () => {
         <div className={appStyles["content--mid"]}>
           <div className={appStyles.name}>{fullName}</div>
           <div className={appStyles.role}>{designation}</div>
-          <div className={appStyles.descrp}>{shortDescription}</div>
+          <div
+            className={appStyles.descrp}
+            dangerouslySetInnerHTML={{
+              __html: shortDescriptionHtml,
+            }}
+          />
           <DownloadResume className={appStyles.btnStyle} />
         </div>
         {/* <div className={appStyles["content--right"]}></div> */}
