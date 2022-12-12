@@ -1,6 +1,6 @@
 import React from "react";
 
-import { socialProfiles } from "config";
+import { socialProfiles } from "config/socialProfiles";
 import appStyles from "./SocialProfiles.module.scss";
 
 const SocialProfiles = () => {

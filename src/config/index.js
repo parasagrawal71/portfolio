@@ -1,15 +1,5 @@
 // IMPORTs HERE
-import {
-  myPicture,
-  FrontendIcon,
-  BackendIcon,
-  halfAndroid,
-  halfiOS,
-  GithubIcon,
-  MailIcon,
-  LinkedInIcon,
-  InstagramIcon,
-} from "assets/Images";
+import { myPicture, FrontendIcon, BackendIcon, halfAndroid, halfiOS } from "assets/Images";
 import { calculateYearsOfExperience } from "utils/functions";
 
 // GLOBAL VARIABLEs
@@ -26,37 +16,11 @@ export const designations = ["Back-end", "Front-end", "Mobile App"];
 export const RESUME_URL = "https://drive.google.com/uc?id=1yBdmFvsmzKpEB2c203g0rK8oOWWqU8DQ";
 export const SELF_PICTURE_URL = myPicture;
 export const shortDescription = `Hello! 👋🏼${space.repeat(2)}I'm a guy slightly obsessed with code
-  quality. I have ${YOE} years of experience in full-stack development. I am currently working at ${companyName}, a healthcare-based company.`;
+  quality. I have ${YOE} years of experience in full-stack development. I am currently working at ${companyName}.`;
 export const aboutDescription = `Hello! I'm ${fullName}, a ${designation}, and a guy slightly obsessed with code
   quality. I have ${YOE} years of experience in full-stack development. I am currently working at ${companyName}, a healthcare-based company.
   I have very good knowledge of JavaScript, ReactJS, NodeJS, MongoDB, API Development, and Git. In addition, I have worked with and implemented 
   technologies like Kafka, Electron.js, AWS, and more. I enjoy developing applications and am always keen to learn new skills.`;
-
-export const socialProfiles = [
-  {
-    name: "Github",
-    href: `https://github.com/parasagrawal71`,
-    Icon: GithubIcon,
-    newTab: true,
-  },
-  {
-    name: "LinkedIn",
-    href: `https://www.linkedin.com/in/parasagrawal71`,
-    Icon: LinkedInIcon,
-    newTab: true,
-  },
-  {
-    name: "Instagram",
-    href: `https://www.instagram.com/paras__fbg`,
-    Icon: InstagramIcon,
-    newTab: true,
-  },
-  {
-    name: "Mail",
-    href: `mailto:${emailId}`,
-    Icon: MailIcon,
-  },
-];
 
 export const roles = [
   {

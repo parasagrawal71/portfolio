@@ -3,7 +3,6 @@ import {
   JavaScriptIcon,
   ReactIcon,
   Html5Icon,
-  ReactNativeIcon,
   ReduxIcon,
   VueIcon,
   NodejsIcon,

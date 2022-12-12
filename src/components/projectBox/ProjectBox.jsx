@@ -3,21 +3,7 @@ import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import animate from "utils/animate/Animate";
-import {
-  GithubIcon,
-  WebsiteIcon,
-  VideoIcon,
-  JavaScriptIcon,
-  ReactIcon,
-  ReduxIcon,
-  NodejsIcon,
-  MongoDBIcon,
-  Html5Icon,
-  CSS3Icon,
-  SassIcon,
-  ExpressJsIcon,
-  SocketIoIcon,
-} from "assets/Images";
+import { GithubIcon, WebsiteIcon, VideoIcon } from "assets/Images";
 
 // IMPORT OTHERS HERE //
 import appStyles from "./ProjectBox.module.scss";
@@ -53,16 +39,6 @@ const ProjectBox = React.forwardRef((props, ref) => {
     github: GithubIcon,
     website: WebsiteIcon,
     demovideo: VideoIcon,
-    javascript: JavaScriptIcon,
-    react: ReactIcon,
-    redux: ReduxIcon,
-    nodejs: NodejsIcon,
-    express: ExpressJsIcon,
-    mongo: MongoDBIcon,
-    html: Html5Icon,
-    css: CSS3Icon,
-    sass: SassIcon,
-    websocket: SocketIoIcon,
   };
 
   function toggleShowVideo() {
@@ -130,10 +106,10 @@ const ProjectBox = React.forwardRef((props, ref) => {
       {techList?.length ? (
         <div className={appStyles["tech-list"]}>
           {techList?.map((tech) => {
-            const SkillIcon = iconMap?.[tech?.id];
+            const SkillIcon = tech?.Icon || null;
             return (
               <div className={appStyles.tech}>
-                {iconMap?.[tech?.id] ? <SkillIcon /> : null}
+                <SkillIcon />
                 <div key={tech?.displayName}>{tech?.displayName}</div>
               </div>
             );

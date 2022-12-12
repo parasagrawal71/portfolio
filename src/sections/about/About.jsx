@@ -7,7 +7,7 @@ import SectionHeaderComponent from "components/sectionHeader/SectionHeader";
 import SocialProfiles from "components/socialProfiles/SocialProfiles";
 
 // IMPORT OTHERS HERE //
-import { aboutDescription, RESUME_URL, SELF_PICTURE_URL, socialProfiles, roles } from "config";
+import { aboutDescription, RESUME_URL, SELF_PICTURE_URL, roles } from "config";
 import appStyles from "./About.module.scss";
 
 const About = () => {
