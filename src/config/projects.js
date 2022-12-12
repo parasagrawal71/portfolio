@@ -5,33 +5,11 @@ import {
   ApiIcon,
   TwitterIcon,
   ShopIcon,
-  JavaScriptIcon,
-  ReactIcon,
-  ReduxIcon,
-  NodejsIcon,
-  MongoDBIcon,
-  Html5Icon,
-  CSS3Icon,
-  SassIcon,
-  ExpressJsIcon,
-  SocketIoIcon,
-  VueIcon,
 } from "assets/Images";
+import { techListArray } from "./techList";
 
-// GLOBAL VARIABLEs
-const allTechList = [
-  { id: "javascript", displayName: "JavaScript", Icon: JavaScriptIcon },
-  { id: "react", displayName: "React", Icon: ReactIcon },
-  { id: "redux", displayName: "Redux", Icon: ReduxIcon },
-  { id: "vuejs", displayName: "Vue", Icon: VueIcon },
-  { id: "nodejs", displayName: "Node.js", Icon: NodejsIcon },
-  { id: "express", displayName: "Express", Icon: ExpressJsIcon },
-  { id: "websocket", displayName: "Websocket", Icon: SocketIoIcon },
-  { id: "mongo", displayName: "Mongo", Icon: MongoDBIcon },
-  { id: "html", displayName: "HTML", Icon: Html5Icon },
-  { id: "css", displayName: "CSS", Icon: CSS3Icon },
-  { id: "sass", displayName: "SASS", Icon: SassIcon },
-];
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
 
 export const projectsList = [
   {
@@ -40,8 +18,10 @@ export const projectsList = [
     overviewImg: apiDocumenterImage,
     iconSize: "32px",
     duration: `Apr - June 2021`,
-    techList: allTechList.filter((tech) =>
-      ["javascript", "react", "nodejs", "express", "mongo", "html", "css", "sass"].includes(tech.id)
+    techList: techListArray.filter((tech) =>
+      ["javascript", "react", "nodejs", "expressjs", "mongo", "html", "css", "sass"].includes(
+        tech.id
+      )
     ),
     description: `An application for documenting all APIs for all microservices in an
     organization. One can also call the API from here and see the results.
@@ -65,7 +45,7 @@ export const projectsList = [
     overviewImg: twitterHelpdeskImage,
     iconSize: "28px",
     duration: `Nov 2020`,
-    techList: allTechList.filter((tech) =>
+    techList: techListArray.filter((tech) =>
       ["javascript", "vuejs", "nodejs", "websocket", "html", "css", "sass"].includes(tech.id)
     ),
     description: `An application that displays all the tweets in which someone is
@@ -94,13 +74,13 @@ export const projectsList = [
     overviewImg: shopAnywhereImage,
     iconSize: "30px",
     duration: `Apr - Sep 2020`,
-    techList: allTechList.filter((tech) =>
+    techList: techListArray.filter((tech) =>
       [
         "javascript",
         "react",
         "redux",
         "nodejs",
-        "express",
+        "expressjs",
         "mongo",
         "html",
         "css",

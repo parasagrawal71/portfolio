@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+// todo: This only works for one event handler
 
 // Hook
 export default function useEventListener(eventName, handler, element = window) {

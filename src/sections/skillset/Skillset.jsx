@@ -12,7 +12,7 @@ import appStyles from "./Skillset.module.scss";
 const Skillset = () => {
   // STATE VARIABLEs HERE
   const [currentCategory, setCurrentCategory] = useState("");
-  const [skills, setSkills] = useState(skillsetsArray);
+  const [skills, setSkills] = useState(skillsetsArray?.filter((s) => s.show));
   const currentCategoryRef = useRef(null);
 
   useEffect(() => {
@@ -28,9 +28,9 @@ const Skillset = () => {
 
   function filterSkills(category = "") {
     if (category) {
-      setSkills(skillsetsArray?.filter((sk) => sk?.categories?.includes(category)));
+      setSkills(skillsetsArray?.filter((sk) => sk?.categories?.includes(category) && sk.show));
     } else {
-      setSkills(skillsetsArray);
+      setSkills(skillsetsArray?.filter((s) => s.show));
     }
   }
 
@@ -75,16 +75,16 @@ const Skillset = () => {
        */}
       <section className={appStyles["skills-cnt"]}>
         {skills?.map((skill) => {
-          const { Icon, details, name } = skill;
+          const { Icon, details, displayName } = skill;
           return (
             <MouseOverPopover
               PopoverComponent={SkillDetailsComponent({ details })}
-              key={name}
+              key={displayName}
               arrowPosition="bottomCenter"
             >
               <div className={appStyles.skill}>
                 <Icon />
-                <div className={appStyles["skill-name"]}>{name}</div>
+                <div className={appStyles["skill-name"]}>{displayName}</div>
               </div>
             </MouseOverPopover>
           );
@@ -97,14 +97,16 @@ const Skillset = () => {
 function SkillDetailsComponent({ details = [] }) {
   return (
     <section className={appStyles.skillDetails}>
-      {details?.map((row) => {
-        return (
-          <div key={row.id} className={appStyles.detailsRow}>
-            <div className={appStyles.detailsKey}>{row?.displayName}</div>
-            <div className={appStyles.detailsValue}>{row?.value}</div>
-          </div>
-        );
-      })}
+      {details
+        ?.filter((s) => s.show)
+        ?.map((row) => {
+          return (
+            <div key={row.id} className={appStyles.detailsRow}>
+              <div className={appStyles.detailsKey}>{row?.displayName}</div>
+              <div className={appStyles.detailsValue}>{row?.value}</div>
+            </div>
+          );
+        })}
     </section>
   );
 }
