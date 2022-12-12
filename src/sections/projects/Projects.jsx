@@ -4,8 +4,6 @@ import cx from "classnames";
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import ProjectBox from "components/projectBox/ProjectBox";
 import { Carousel, CarouselItem } from "libs";
-import { usePrevious } from "hooks";
-import { useGlobalState } from "contexts/GlobalContextProvider";
 
 // IMPORT OTHERS HERE //
 import { CarouselViewIcon, ListViewIcon } from "assets/Images";
@@ -15,9 +13,7 @@ import appStyles from "./Projects.module.scss";
 const Projects = () => {
   // STATE VARIABLEs
   const [currentView, setCurrentView] = useState("carousel");
-  const oldValueOfCurrentView = usePrevious(currentView);
   const contentCntRef = useRef(null);
-  const { globalState } = useGlobalState();
 
   function handleToggleView(view) {
     if (view === "carousel") {

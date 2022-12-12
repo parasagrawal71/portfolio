@@ -83,9 +83,9 @@ const Carousel = React.forwardRef((props, ref) => {
   }
 
   // Function to handle click on the item number
-  function handleClickOnItemNum(index) {
-    updateIndex(index);
-  }
+  // function handleClickOnItemNum(index) {
+  //   updateIndex(index);
+  // }
 
   // Function to handle swipe left and swipe right
   const swipeHandlers = useSwipeable({
@@ -132,6 +132,7 @@ const Carousel = React.forwardRef((props, ref) => {
         style={{ height: `calc(100% - ${indicatorCntHeight}px)` }}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
+        ref={ref}
       >
         {/* 
         Carousel items

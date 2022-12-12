@@ -11,7 +11,6 @@ import GlobalContextProvider from "contexts/GlobalContextProvider";
 // IMPORT OTHERS HERE //
 import { fullName } from "config";
 import { menuItems } from "config/header";
-import history from "routes/history";
 import "./App.scss";
 
 const App = () => {

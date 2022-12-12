@@ -27,15 +27,15 @@ const SquiggleSvg = (props) => {
   }, []);
 
   function handleSvgPathInitially() {
-    const path = document.getElementById("thePath");
-    const mask = document.getElementById("maskPath");
-    const pathLength = path.getTotalLength(); // todo: Use pathLength?
+    // const path = document.getElementById("thePath");
+    // const mask = document.getElementById("maskPath");
+    // const pathLength = path.getTotalLength(); // todo: Use pathLength?
     setStrokeDashoffset(maskLength);
   }
 
   function makeSvgAppear() {
     const path = document.getElementById("thePath");
-    const mask = document.getElementById("maskPath");
+    // const mask = document.getElementById("maskPath");
     const pathLength = path.getTotalLength();
 
     /**
