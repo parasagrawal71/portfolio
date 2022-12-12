@@ -2,6 +2,9 @@
 import { emailId } from "config";
 import { GithubIcon, MailIcon, LinkedInIcon, InstagramIcon } from "assets/Images";
 
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+
 export const socialProfiles = [
   {
     name: "Github",

@@ -4,7 +4,9 @@ import { calculateYearsOfExperience } from "utils/functions";
 // GLOBAL VARIABLEs
 const space = `\u00A0`;
 
-// EXPORTs HERE
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
+
 export const fullName = "Paras Agrawal";
 export const currentCompanyName = "nference";
 export const currentCompanySite = "https://nference.com/";
