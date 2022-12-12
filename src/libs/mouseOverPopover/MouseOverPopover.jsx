@@ -42,7 +42,7 @@ export default function MouseOverPopover(props) {
   return (
     <>
       {React.cloneElement(children, {
-        onMouseEnter: handlePopoverOpen,
+        onMouseOver: handlePopoverOpen,
         onMouseLeave: handlePopoverClose,
         "aria-owns": open ? "mouse-over-popover" : undefined,
         "aria-haspopup": "true",
