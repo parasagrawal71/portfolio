@@ -2,6 +2,8 @@
 
 .main-cnt {
   @include section-padding();
+  padding-left: 12%;
+  padding-right: 12%;
   position: relative;
 
   .experience-cnt {

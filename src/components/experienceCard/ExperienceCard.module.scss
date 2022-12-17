@@ -123,3 +123,21 @@ $shadow-color: rgba(0, 0, 0, 0.9);
     transform: translate3d(0, 0, 0);
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .main-cnt {
+    .content {
+      font-size: toRem(18px);
+      grid-column-gap: 15px;
+      .companyName {
+        font-size: toRem(28px);
+      }
+      .duration {
+        font-size: toRem(18px);
+        grid-row: span 2;
+        align-self: start;
+        padding-top: 14px;
+      }
+    }
+  }
+}
