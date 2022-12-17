@@ -5,6 +5,7 @@ $padding-vertical: 30px;
 .main-cnt {
   flex: 1;
   position: relative;
+  overflow: hidden;
 
   .blob {
     position: absolute;
@@ -17,6 +18,7 @@ $padding-vertical: 30px;
     z-index: 1;
     padding: $padding-vertical 0;
     padding-left: 100px;
+    padding-right: 20px;
     position: relative;
     @include flex-row;
     height: calc(100% - (2 * $padding-vertical));
@@ -69,9 +71,30 @@ $padding-vertical: 30px;
       padding-top: 30px;
       max-width: 500px;
       text-align: justify;
+      font-size: toRem(16px);
+
+      a {
+        color: $color-secondary-text;
+      }
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
+  .main-cnt {
+    .content {
+      .content--left {
+        margin-left: -60px;
+      }
+      .name {
+        font-size: toRem(50px);
+      }
+      .role {
+        font-size: toRem(20px);
+      }
+      .descrp {
+        font-size: toRem(13px);
+      }
+    }
+  }
 }

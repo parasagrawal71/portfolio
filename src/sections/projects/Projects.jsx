@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import ProjectBox from "components/projectBox/ProjectBox";
 import { Carousel, CarouselItem } from "libs";
+import { useCheckMobileScreen } from "hooks";
 
 // IMPORT OTHERS HERE //
 import { CarouselViewIcon, ListViewIcon } from "assets/Images";
@@ -13,7 +14,19 @@ import appStyles from "./Projects.module.scss";
 const Projects = () => {
   // STATE VARIABLEs
   const [currentView, setCurrentView] = useState("carousel");
+  const [isViewOptions, setIsViewOptions] = useState(false);
   const contentCntRef = useRef(null);
+  const isMobile = useCheckMobileScreen();
+
+  useEffect(() => {
+    if (isMobile) {
+      setCurrentView("list");
+      setIsViewOptions(false);
+    }
+    if (!isMobile) {
+      setIsViewOptions(true);
+    }
+  }, []);
 
   function handleToggleView(view) {
     if (view === "carousel") {
@@ -37,20 +50,22 @@ const Projects = () => {
       {/* 
         HEADER
       */}
-      <section className={appStyles.header}>
-        <CarouselViewIcon
-          onClick={handleToggleView.bind(this, "carousel")}
-          className={cx({
-            [appStyles.active]: currentView === "carousel",
-          })}
-        />
-        <ListViewIcon
-          onClick={handleToggleView.bind(this, "list")}
-          className={cx(appStyles.listIcon, {
-            [appStyles.active]: currentView === "list",
-          })}
-        />
-      </section>
+      {isViewOptions ? (
+        <section className={appStyles.header}>
+          <CarouselViewIcon
+            onClick={handleToggleView.bind(this, "carousel")}
+            className={cx({
+              [appStyles.active]: currentView === "carousel",
+            })}
+          />
+          <ListViewIcon
+            onClick={handleToggleView.bind(this, "list")}
+            className={cx(appStyles.listIcon, {
+              [appStyles.active]: currentView === "list",
+            })}
+          />
+        </section>
+      ) : null}
 
       {/* 
         CONTENT

@@ -27,7 +27,7 @@ const Experience = () => {
             <ExperienceCard
               id={`experience-card-${index + 1}`}
               cntClassName={appStyles["experience-card"]}
-              key={index}
+              key={`experience-card-${index + 1}`}
               {...experience}
             />
           );

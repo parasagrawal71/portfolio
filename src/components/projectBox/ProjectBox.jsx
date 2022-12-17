@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
@@ -20,10 +20,17 @@ const ProjectBox = React.forwardRef((props, ref) => {
     externalUrls,
     overviewImg,
     mainCntClassname,
+    isVisible,
   } = props || {};
 
   // STATE VARIABLEs
-  const [videoUrl, setVideoUrl] = useState(false);
+  const [videoUrl, setVideoUrl] = useState(null);
+
+  useEffect(() => {
+    if (isVisible) {
+      setVideoUrl(null);
+    }
+  }, [isVisible]);
 
   const openLinkInNewTab = (link, isVideo, index, e) => {
     animate.jumpUp({ targets: `#external-icon-${index}` });
@@ -106,11 +113,12 @@ const ProjectBox = React.forwardRef((props, ref) => {
       {techList?.length ? (
         <div className={appStyles["tech-list"]}>
           {techList?.map((tech) => {
+            const { displayName } = tech || {};
             const SkillIcon = tech?.Icon || null;
             return (
-              <div className={appStyles.tech}>
+              <div key={displayName} className={appStyles.tech}>
                 <SkillIcon />
-                <div key={tech?.displayName}>{tech?.displayName}</div>
+                <div>{displayName}</div>
               </div>
             );
           })}

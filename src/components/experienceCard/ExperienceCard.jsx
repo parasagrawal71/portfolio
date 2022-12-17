@@ -25,8 +25,12 @@ const ExperienceCard = (props) => {
 
       <section className={appStyles.overlay}>
         <ul className={appStyles.bulletPoints}>
-          {works?.map((work) => {
-            return <li className={appStyles.bulletPoint}>{work?.bulletPoint}</li>;
+          {works?.map((work, index) => {
+            return (
+              <li key={`${work?.companyName}-${index}`} className={appStyles.bulletPoint}>
+                {work?.bulletPoint}
+              </li>
+            );
           })}
         </ul>
       </section>

@@ -150,6 +150,7 @@ const Carousel = React.forwardRef((props, ref) => {
                 id: `carousel-item-${index}`,
                 activeIndex,
                 key: child.key,
+                isVisible: activeIndex === index,
               });
             })}
           </div>
@@ -168,6 +169,7 @@ const Carousel = React.forwardRef((props, ref) => {
                 id: `carousel-item-${index}`,
                 activeIndex,
                 key: child.key,
+                isVisible: activeIndex === index,
               });
             })}
           </div>
@@ -228,7 +230,7 @@ const Carousel = React.forwardRef((props, ref) => {
 
 // Carousel item component
 export const CarouselItem = React.forwardRef(
-  ({ children, width, height, id, activeIndex, carouselItemClassName, key }, ref) => {
+  ({ children, width, height, id, activeIndex, carouselItemClassName, key, isVisible }, ref) => {
     useEffect(() => {
       animate.scaleUp({ targets: document.getElementById(id) });
     }, [activeIndex]);
@@ -241,7 +243,9 @@ export const CarouselItem = React.forwardRef(
         id={id}
         key={key}
       >
-        {children}
+        {React.cloneElement(children, {
+          isVisible,
+        })}
       </div>
     );
   }

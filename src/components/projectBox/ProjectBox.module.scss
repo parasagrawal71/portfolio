@@ -23,6 +23,7 @@
       }
       .header--left-right {
         @include flex-col;
+        padding-right: 10px;
         .name {
           font-size: toRem(18px);
           color: $color-primary-text;

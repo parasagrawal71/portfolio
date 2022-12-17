@@ -219,7 +219,7 @@ function getSkillDetails({ industryExperience, level, usedInProjects }) {
       show: true,
     },
     {
-      displayName: "Level:",
+      displayName: "Proficiency:",
       id: "level",
       value: level,
       show: true,
@@ -228,7 +228,7 @@ function getSkillDetails({ industryExperience, level, usedInProjects }) {
       displayName: "Used In Projects:",
       id: "usedInProjects",
       value: usedInProjects,
-      show: false,
+      show: true,
     },
   ];
 }

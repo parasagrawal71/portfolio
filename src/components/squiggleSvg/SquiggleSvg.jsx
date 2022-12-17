@@ -36,7 +36,7 @@ const SquiggleSvg = (props) => {
   function makeSvgAppear() {
     const path = document.getElementById("thePath");
     // const mask = document.getElementById("maskPath");
-    const pathLength = path.getTotalLength();
+    const pathLength = path?.getTotalLength();
 
     /**
      * App is the scrollable element

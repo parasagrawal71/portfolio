@@ -19,9 +19,19 @@ export const projectsList = [
     iconSize: "32px",
     duration: `Apr - June 2021`,
     techList: techListArray.filter((tech) =>
-      ["javascript", "react", "nodejs", "expressjs", "mongo", "html", "css", "sass"].includes(
-        tech.id
-      )
+      [
+        "javascript",
+        "react",
+        "nodejs",
+        "expressjs",
+        "mongo",
+        "html",
+        "css",
+        "sass",
+        "git",
+        "api",
+        "materialUi",
+      ].includes(tech.id)
     ),
     description: `An application for documenting all APIs for all microservices in an
     organization. One can also call the API from here and see the results.
@@ -46,7 +56,9 @@ export const projectsList = [
     iconSize: "28px",
     duration: `Nov 2020`,
     techList: techListArray.filter((tech) =>
-      ["javascript", "vuejs", "nodejs", "websocket", "html", "css", "sass"].includes(tech.id)
+      ["javascript", "vuejs", "nodejs", "websocket", "html", "css", "sass", "git", "api"].includes(
+        tech.id
+      )
     ),
     description: `An application that displays all the tweets in which someone is
       mentioned in one place. OAuth login. Mention and reply in real-time
@@ -85,6 +97,9 @@ export const projectsList = [
         "html",
         "css",
         "sass",
+        "git",
+        "api",
+        "materialUi",
       ].includes(tech.id)
     ),
     description: `Built a simple e-commerce website to learn and apply different
