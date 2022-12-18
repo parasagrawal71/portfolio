@@ -43,7 +43,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3.5,
       level: LEVEL.advanced,
-      usedInProjects: calNoOfProjectsSkillUsedIn("javascript"),
+      id: techListMap.javascript.id,
     }),
   },
   {
@@ -53,7 +53,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3,
       level: LEVEL.advanced,
-      usedInProjects: calNoOfProjectsSkillUsedIn("nodejs"),
+      id: techListMap.nodejs.id,
     }),
   },
   {
@@ -63,7 +63,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3,
       level: LEVEL.advanced,
-      usedInProjects: calNoOfProjectsSkillUsedIn("expressjs"),
+      id: techListMap.expressjs.id,
     }),
   },
   {
@@ -73,7 +73,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3.5,
       level: LEVEL.advanced,
-      usedInProjects: calNoOfProjectsSkillUsedIn("mongo"),
+      id: techListMap.mongo.id,
     }),
   },
   {
@@ -83,7 +83,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3.5,
       level: LEVEL.advanced,
-      usedInProjects: calNoOfProjectsSkillUsedIn("api"),
+      id: techListMap.api.id,
     }),
   },
   {
@@ -93,7 +93,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3,
       level: LEVEL.advanced,
-      usedInProjects: calNoOfProjectsSkillUsedIn("react"),
+      id: techListMap.react.id,
     }),
   },
   {
@@ -103,7 +103,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3.5,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("html"),
+      id: techListMap.html.id,
     }),
   },
   {
@@ -113,7 +113,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3.5,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("css"),
+      id: techListMap.css.id,
     }),
   },
   {
@@ -124,7 +124,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 2,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("sass"),
+      id: techListMap.sass.id,
     }),
   },
   {
@@ -134,7 +134,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 2,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("materialUi"),
+      id: techListMap.materialUi.id,
     }),
   },
   {
@@ -144,7 +144,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("redux"),
+      id: techListMap.redux.id,
     }),
   },
   {
@@ -154,7 +154,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3.5,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("git"),
+      id: techListMap.git.id,
     }),
   },
   {
@@ -164,7 +164,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 3,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("linux"),
+      id: techListMap.linux.id,
     }),
   },
   {
@@ -174,7 +174,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 1,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("vuejs"),
+      id: techListMap.vuejs.id,
     }),
   },
   {
@@ -184,7 +184,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 1,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("python"),
+      id: techListMap.python.id,
     }),
   },
   {
@@ -194,7 +194,7 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 1,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("aws"),
+      id: techListMap.aws.id,
     }),
   },
   {
@@ -204,13 +204,13 @@ export const skillsetsArray = [
     details: getSkillDetails({
       industryExperience: 1,
       level: LEVEL.intermediate,
-      usedInProjects: calNoOfProjectsSkillUsedIn("kafka"),
+      id: techListMap.kafka.id,
     }),
   },
 ];
 
 // Function to get skill details
-function getSkillDetails({ industryExperience, level, usedInProjects }) {
+function getSkillDetails({ industryExperience, level, id }) {
   return [
     {
       displayName: "Industry YOE:",
@@ -227,7 +227,7 @@ function getSkillDetails({ industryExperience, level, usedInProjects }) {
     {
       displayName: "Used In Projects:",
       id: "usedInProjects",
-      value: usedInProjects,
+      value: calNoOfProjectsSkillUsedIn(id),
       show: true,
     },
   ];
