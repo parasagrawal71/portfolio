@@ -22,9 +22,9 @@ export const skillCategory = [
     show: false,
   },
 ];
-const FRONTEND = skillCategory?.filter((s) => s.id === "frontend")?.[0]?.id;
-const BACKEND = skillCategory?.filter((s) => s.id === "backend")?.[0]?.id;
-const OTHERS = skillCategory?.filter((s) => s.id === "others")?.[0]?.id;
+const FRONTEND = skillCategory?.find((s) => s.id === "frontend")?.id;
+const BACKEND = skillCategory?.find((s) => s.id === "backend")?.id;
+const OTHERS = skillCategory?.find((s) => s.id === "others")?.id;
 
 // Skill levels
 const LEVEL = {
