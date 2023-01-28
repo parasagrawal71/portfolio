@@ -28,13 +28,27 @@ $shadow-color: rgba(0, 0, 0, 0.9);
     height: 100%;
     width: 100%;
     z-index: -1;
-    padding: 40px;
+    padding: 20px;
+    overflow-y: overlay;
+    @extend %scrollbar;
+
+    .groupCnt {
+      margin: 0px;
+      margin-bottom: 1.2rem;
+    }
+
+    .group {
+      font-size: 1.1rem;
+      color: $color-secondary-text;
+      text-decoration: underline;
+    }
 
     .bulletPoints {
+      font-size: 0.9rem;
       padding-inline-start: 10px;
       margin: 0;
       display: grid;
-      gap: 12px;
+      gap: 8px;
       .bulletPoint {
         text-align: justify;
       }
@@ -49,7 +63,7 @@ $shadow-color: rgba(0, 0, 0, 0.9);
     .overlay {
       z-index: 99;
       opacity: 1;
-      background-color: rgba(0, 0, 0, 0.6);
+      background-color: rgba(0, 0, 0, 0.7);
       transition: 0.25s ease-in-out;
     }
   }

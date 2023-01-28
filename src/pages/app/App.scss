@@ -34,6 +34,7 @@ body {
   // font-family: "Roboto", sans-serif;
   font-family: "Spline Sans", sans-serif;
   position: relative;
+  @extend %scrollbar;
   overflow: overlay;
   width: 100%;
   height: 100%;
