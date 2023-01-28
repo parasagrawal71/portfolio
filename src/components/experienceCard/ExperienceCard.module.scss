@@ -1,0 +1,156 @@
+@import "utils/commonStyles/index.scss";
+
+$shadow-color: rgba(0, 0, 0, 0.9);
+.main-cnt {
+  box-shadow: $shadow-color 0px 1px 0px, $shadow-color 0px 8px 24px, $shadow-color 0px 16px 48px;
+  @include flex-col;
+  border-radius: 10px;
+  background: lighten(#f0f4c3, 10%);
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  cursor: pointer;
+
+  .front {
+    @include flex-col;
+    flex: 1;
+    position: relative;
+    transition: 0.25s ease-in-out;
+  }
+
+  .overlay {
+    opacity: 0;
+    flex: 1;
+    @include flex-col;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    padding: 20px;
+    overflow-y: overlay;
+    @extend %scrollbar;
+
+    .groupCnt {
+      margin: 0px;
+      margin-bottom: 1.2rem;
+    }
+
+    .group {
+      font-size: 1.1rem;
+      color: $color-secondary-text;
+      text-decoration: underline;
+    }
+
+    .bulletPoints {
+      font-size: 0.9rem;
+      padding-inline-start: 10px;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      .bulletPoint {
+        text-align: justify;
+      }
+    }
+  }
+
+  &:hover {
+    .front {
+      transform: scale(1.05);
+    }
+
+    .overlay {
+      z-index: 99;
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.7);
+      transition: 0.25s ease-in-out;
+    }
+  }
+
+  .content {
+    padding: 30px;
+    margin-top: -65px;
+    z-index: 10;
+    color: $color-primary-bg;
+    font-size: toRem(20px);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    align-items: center;
+    justify-items: start;
+    .companyName {
+      font-size: toRem(30px);
+      grid-row: 1;
+    }
+    .designation {
+      grid-row: 2;
+      align-self: start;
+    }
+    .duration {
+      grid-row: 1;
+      grid-column: span 1;
+      align-self: center;
+      justify-self: end;
+    }
+  }
+
+  .icon {
+    z-index: 10;
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    font-size: toRem(100px);
+    fill: $color-brand;
+    color: $color-brand;
+  }
+
+  .wave {
+    opacity: 0.4;
+    background: #0af;
+    width: 100%;
+    height: 75%;
+
+    // To make it wave
+    // position: absolute;
+    // top: 0px;
+    // bottom: 0px;
+    // border-bottom-left-radius: 50%;
+    // border-bottom-right-radius: 50%;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      to bottom,
+      rgba(rgb(224, 198, 207), 1),
+      rgba(#def, 0) 80%,
+      rgba(white, 0.5)
+    );
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-cnt {
+    .content {
+      font-size: toRem(18px);
+      grid-column-gap: 15px;
+      .companyName {
+        font-size: toRem(28px);
+      }
+      .duration {
+        font-size: toRem(18px);
+        grid-row: span 2;
+        align-self: start;
+        padding-top: 14px;
+      }
+    }
+  }
+}

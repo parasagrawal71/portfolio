@@ -1,0 +1,41 @@
+@import "utils/commonStyles/index.scss";
+
+.text-button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-transform: capitalize;
+  background-color: $color-primary-bg;
+  padding: 0;
+}
+
+.dropdown-content {
+  position: absolute;
+  z-index: 1;
+  opacity: 0;
+  transition: visibility 0.1s, opacity 0.3s linear;
+  border-radius: 0 0 4px 4px;
+  text-transform: capitalize;
+}
+
+.dropdown-hover-content {
+  visibility: hidden;
+}
+
+.text-button:hover .dropdown-hover-content {
+  visibility: visible;
+  opacity: 1;
+}
+
+.dropdown-click-content {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.nonvisible {
+  visibility: hidden;
+}

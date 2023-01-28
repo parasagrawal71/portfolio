@@ -1,19 +1,38 @@
 import {
-  BsTwitter as TwitterIcon,
-  TbApi as ApiIcon,
-  AiOutlineShoppingCart as ShopIcon,
-} from "react-icons/all";
+  apiDocumenterImage,
+  shopAnywhereImage,
+  twitterHelpdeskImage,
+  ApiIcon,
+  TwitterIcon,
+  ShopIcon,
+} from "assets/Images";
+import { techListArray } from "./techList";
 
-import { apiDocumenterImage, shopAnywhereImage, twitterHelpdeskImage } from "assets/Images";
+/* *********************************************************************************************************** */
+/* *********************************************************************************************************** */
 
 export const projectsList = [
   {
     name: "API Documenter",
     icon: ApiIcon,
     overviewImg: apiDocumenterImage,
-    iconSize: "27px",
+    iconSize: "32px",
     duration: `Apr - June 2021`,
-    techList: ["JavaScript", "React", "Node.js", "Express", "Mongo", "HTML", "CSS", "SASS"],
+    techList: techListArray.filter((tech) =>
+      [
+        "javascript",
+        "react",
+        "nodejs",
+        "expressjs",
+        "mongo",
+        "html",
+        "css",
+        "sass",
+        "git",
+        "api",
+        "materialUi",
+      ].includes(tech.id)
+    ),
     description: `An application for documenting all APIs for all microservices in an
     organization. One can also call the API from here and see the results.
     It provides controls to maintain different levels of access to a user
@@ -22,11 +41,11 @@ export const projectsList = [
       {
         type: "website",
         url: `https://api-documenter.web.app`,
-        iconSize: "20px",
       },
       {
         type: "github",
         url: `https://github.com/parasagrawal71/api-documenter`,
+        iconSize: "23px",
       },
     ],
   },
@@ -34,26 +53,30 @@ export const projectsList = [
     name: "Twitter Helpdesk",
     icon: TwitterIcon,
     overviewImg: twitterHelpdeskImage,
-    iconSize: "23px",
+    iconSize: "28px",
     duration: `Nov 2020`,
-    techList: ["JavaScript", "React", "Node.js", "Websocket", "HTML", "CSS", "SASS"],
+    techList: techListArray.filter((tech) =>
+      ["javascript", "vuejs", "nodejs", "websocket", "html", "css", "sass", "git", "api"].includes(
+        tech.id
+      )
+    ),
     description: `An application that displays all the tweets in which someone is
       mentioned in one place. OAuth login. Mention and reply in real-time
       without refreshing the page (WebSockets).`,
     externalUrls: [
       {
         type: "demovideo",
-        url: `https://drive.google.com/file/d/10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_/view`,
-        iconSize: "22px",
+        url: `https://drive.google.com/uc?id=10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_`,
+        isVideo: true,
       },
       {
         type: "website",
         url: `https://twitter--helpdesk.herokuapp.com/`,
-        iconSize: "20px",
       },
       {
         type: "github",
         url: `https://github.com/parasagrawal71/twitter-helpdesk`,
+        iconSize: "23px",
       },
     ],
   },
@@ -61,19 +84,24 @@ export const projectsList = [
     name: "Shop Anywhere",
     icon: ShopIcon,
     overviewImg: shopAnywhereImage,
-    iconSize: "25px",
+    iconSize: "30px",
     duration: `Apr - Sep 2020`,
-    techList: [
-      "JavaScript",
-      "React",
-      "Redux",
-      "Node.js",
-      "Express",
-      "Mongo",
-      "HTML",
-      "CSS",
-      "SASS",
-    ],
+    techList: techListArray.filter((tech) =>
+      [
+        "javascript",
+        "react",
+        "redux",
+        "nodejs",
+        "expressjs",
+        "mongo",
+        "html",
+        "css",
+        "sass",
+        "git",
+        "api",
+        "materialUi",
+      ].includes(tech.id)
+    ),
     description: `Built a simple e-commerce website to learn and apply different
       concepts from React, Redux, NodeJS, and Mongo. This project was
       my experiment to learn good folder structure, git best practices like
@@ -83,11 +111,11 @@ export const projectsList = [
       {
         type: "website",
         url: `https://shop-anywhere.web.app/`,
-        iconSize: "20px",
       },
       {
         type: "github",
         url: `https://github.com/parasagrawal71/shop-anywhere`,
+        iconSize: "23px",
       },
     ],
   },

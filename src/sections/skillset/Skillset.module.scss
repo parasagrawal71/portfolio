@@ -1,15 +1,30 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
-@import "utils/commonStyles/constants.scss";
+@import "utils/commonStyles/index.scss";
 
 .main-cnt {
-  height: $section-height;
   padding: $section-padding;
-  padding-bottom: calc($section-vertical-gap * 2);
+  position: relative;
+
+  .header {
+    position: absolute;
+    right: 85px;
+    top: 0;
+    @include flex-row-v-cen;
+    justify-content: flex-end;
+    padding: 0 100px;
+    gap: 30px;
+    .skill-category {
+      padding: 10px;
+      color: $color-primary-text;
+      border: 1px solid $color-secondary-text;
+      border-radius: 10px;
+      &.active {
+        border-color: $color-brand;
+      }
+    }
+  }
 
   .skills-cnt {
-    display: flex;
-    flex-direction: row;
+    @include flex-row;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 100px;
@@ -19,30 +34,58 @@
     }
 
     .skill {
-      display: flex;
-      flex-direction: column;
+      @include flex-col;
       align-items: center;
       justify-content: space-between;
       min-width: 200px;
       padding: 30px 0;
 
-      img {
-        height: 40px;
-        width: auto;
+      svg {
+        cursor: pointer;
+        font-size: toRem(50px);
+        height: 50px;
+        width: 50px;
+        animation: tada 0.3s;
+
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+        &:hover {
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+        }
       }
 
       .skill-name {
         padding-top: 12px;
-        font-size: 12px;
+        font-size: toRem(12px);
       }
+    }
+  }
+}
+
+.skillDetails {
+  display: grid;
+  gap: 10px;
+  padding: 20px;
+  .detailsRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .detailsKey {
+    }
+
+    .detailsValue {
+      text-align: right;
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
   .main-cnt {
-    height: auto;
-    padding-top: 90px;
+    .header {
+      padding: 0;
+    }
 
     .skills-cnt {
       justify-content: center;

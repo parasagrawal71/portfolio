@@ -1,10 +1,8 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
-@import "utils/commonStyles/constants.scss";
+@import "utils/commonStyles/index.scss";
 
 .main-cnt {
   position: absolute;
-  bottom: 60px;
+  bottom: 30px;
   left: 50%;
   transform: translate(-50%, -50%);
 

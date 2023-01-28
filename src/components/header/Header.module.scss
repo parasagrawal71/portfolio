@@ -1,17 +1,20 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
-@import "utils/commonStyles/keyframes.scss";
+@import "utils/commonStyles/index.scss";
+
+$gap-between-menu-items: 50px;
 
 .header {
-  @include flex-row-sb;
-  padding: 12px 6%;
+  @include flex-row-v-cen;
+  padding: 30px;
+  padding-left: 100px;
   position: sticky;
   top: 0;
-  z-index: 9999;
+  z-index: 999;
+  gap: $gap-between-menu-items;
+  background-color: $color-primary-bg;
 
   &.header-shadow {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    background-color: #26343d;
+    background-color: $color-primary-bg;
   }
 
   &.no-shadow {
@@ -20,24 +23,28 @@
   }
 
   .header--left {
-    img {
+    svg {
       width: 70px;
+      path {
+        fill: $color-brand !important;
+      }
     }
   }
 
   .header--right-web {
     @include flex-row-v-cen;
-    font-size: 15px;
+    font-size: toRem(16px);
+    gap: $gap-between-menu-items;
 
     a {
-      padding: 3px 0;
+      padding: 4px 10px;
       font-weight: bold;
-      color: $grey;
+      color: $color-primary-text;
       text-decoration: none;
       border-bottom: 1px solid transparent;
 
-      &:not(:last-child) {
-        margin-right: 30px;
+      &.active {
+        border-bottom: 1px solid $color-primary-text;
       }
     }
   }
@@ -45,21 +52,33 @@
   .header--right-mobile {
     display: none;
 
+    .hamburgerIcon {
+      color: $color-primary-text;
+      font-size: toRem(30px);
+    }
+
     .header--right-mobile-btn {
       background-color: inherit;
     }
 
     .header--right-mobile-menu-items {
       @include flex-col;
+      justify-content: flex-end;
+      align-items: flex-end;
       text-align: right;
-      right: 5%;
+      right: 15px;
 
       a {
         font-weight: bold;
-        color: $grey;
+        color: $color-primary-text;
         text-decoration: none;
-        padding: 12px 5px;
-        background-color: #26343d;
+        padding: 2px 0;
+        margin: 10px 0;
+        background-color: $color-primary-bg;
+
+        &.active {
+          border-bottom: 1px solid $color-primary-text;
+        }
       }
     }
   }
@@ -67,7 +86,8 @@
 
 @media only screen and (max-width: 600px) {
   .header {
-    padding: 20px 5%;
+    padding: 20px 15px;
+    justify-content: space-between;
 
     .header--right-web {
       display: none;

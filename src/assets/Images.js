@@ -1,71 +1,120 @@
-// IMPORTS //
-import _pLogo from "./img/p-logo.png";
-import _scrollToTop from "./img/scroll-to-top.png";
-import _hamBurger from "./img/hamburger.png";
-import _lines from "./img/lines.svg";
-import _myPicture from "./img/paras_formal.jpg";
-import _frontend from "./img/frontend.svg";
-import _backend from "./img/backend.svg";
-import _halfAndroid from "./img/half-android.png";
-import _halfiOS from "./img/half-iOS.png";
-import _github from "./img/github.svg";
-import _linkedin from "./img/linkedin.svg";
-import _mail from "./img/mail.svg";
-import _instagram from "./img/instagram.svg";
-import _html5 from "./img/html5.png";
-import _css3 from "./img/css3.png";
-import _javascript from "./img/javascript.svg";
-import _react from "./img/react.png";
-import _reactNative from "./img/react-native.png";
-import _redux from "./img/redux.svg";
-import _vuejs from "./img/vuejs.png";
-import _nodejs from "./img/nodejs.png";
-import _python from "./img/python.png";
-import _mongodb from "./img/mongodb.png";
-import _git from "./img/git.png";
-import _linux from "./img/linux.png";
-import _aws from "./img/aws.png";
-import _api from "./img/api.png";
-import _apiDocumenterImage from "./img/api-documenter.png";
-import _shopAnywhereImage from "./img/shop-anywhere.png";
-import _twitterHelpdeskImage from "./img/twitter-helpdesk.png";
-
-// EXPORTS //
-export const pLogo = _pLogo;
-export const scrollToTop = _scrollToTop;
-export const hamBurger = _hamBurger;
-export const lines = _lines;
-export const myPicture = _myPicture;
-export const frontend = _frontend;
-export const backend = _backend;
-export const halfAndroid = _halfAndroid;
-export const halfiOS = _halfiOS;
-export const github = _github;
-export const linkedin = _linkedin;
-export const mail = _mail;
-export const instagram = _instagram;
-export const html5 = _html5;
-export const css3 = _css3;
-export const javascript = _javascript;
-export const react = _react;
-export const reactNative = _reactNative;
-export const redux = _redux;
-export const vuejs = _vuejs;
-export const nodejs = _nodejs;
-export const python = _python;
-export const mongodb = _mongodb;
-export const git = _git;
-export const linux = _linux;
-export const aws = _aws;
-export const api = _api;
-export const kafka =
-  "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg";
-export const sass = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg";
-export const apiDocumenterImage = _apiDocumenterImage;
-export const shopAnywhereImage = _shopAnywhereImage;
-export const twitterHelpdeskImage = _twitterHelpdeskImage;
+import { TbApi as ApiIcon } from "react-icons/tb";
+import {
+  BsTwitter as TwitterIcon,
+  BsGithub as GithubIcon,
+  BsViewList as CarouselViewIcon,
+  BsGrid as GridViewIcon,
+  BsList as ListViewIcon,
+  BsLinkedin as LinkedInIcon,
+  BsInstagram as InstagramIcon,
+  BsArrowUpCircle as ScrollToTopIcon,
+  BsBuilding as OfficeIcon,
+} from "react-icons/bs";
+import { IoMdMail as MailIcon } from "react-icons/io";
+import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
+import { BiLinkExternal as WebsiteIcon } from "react-icons/bi";
+import { GrFormNext as NextBtnIcon, GrFormPrevious as PreviousBtnIcon } from "react-icons/gr";
+import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
+import { MdOndemandVideo as VideoIcon } from "react-icons/md";
 
 /**
- * Get programmiong languages icons from this site "https://devicon.dev/"
- * Svg icons are also available in the same site
+ * * Local imports
  */
+import myPicture from "./img/paras_formal.jpg";
+import halfAndroid from "./img/half-android.png";
+import halfiOS from "./img/half-iOS.png";
+import apiDocumenterImage from "./img/api-documenter.png";
+import shopAnywhereImage from "./img/shop-anywhere.png";
+import twitterHelpdeskImage from "./img/twitter-helpdesk.png";
+import {
+  LinesIcon,
+  FrontendIcon,
+  BackendIcon,
+  BrandLogoIcon,
+  CrossplatformMobileAppIcon,
+  ScrollMouse,
+  ArrowKeys,
+} from "./OtherSvgs";
+
+/**
+ * * Skillset icons
+ * Get programmiong languages icons from this site "https://devicon.dev/"
+ * 2nd option: https://worldvectorlogo.com/search/aws
+ * Svg icons with animation on this site https://boxicons.com/?query=aws
+ */
+import {
+  JavaScriptIcon,
+  ReactIcon,
+  Html5Icon,
+  NodejsIcon,
+  MongoDBIcon,
+  CSS3Icon,
+  SassIcon,
+  ReduxIcon,
+  GitIcon,
+  LinuxIcon,
+  VueIcon,
+  PythonIcon,
+  KafkaIcon,
+  AwsIcon,
+  ReactNativeIcon,
+  ApiSkillIcon,
+  ExpressJsIcon,
+  SocketIoIcon,
+  MaterialUiIcon,
+} from "./SkillSvgs";
+
+// ************************************ EXPORTS ************************************ //
+export {
+  BrandLogoIcon,
+  ScrollToTopIcon,
+  HamBurgerIcon,
+  LinesIcon,
+  myPicture,
+  FrontendIcon,
+  BackendIcon,
+  halfAndroid,
+  halfiOS,
+  CrossplatformMobileAppIcon,
+  apiDocumenterImage,
+  shopAnywhereImage,
+  twitterHelpdeskImage,
+  ApiIcon,
+  TwitterIcon,
+  ShopIcon,
+  GithubIcon,
+  LinkedInIcon,
+  MailIcon,
+  InstagramIcon,
+  WebsiteIcon,
+  VideoIcon,
+  NextBtnIcon,
+  PreviousBtnIcon,
+  CarouselViewIcon,
+  GridViewIcon,
+  ListViewIcon,
+  OfficeIcon,
+  ScrollMouse,
+  ArrowKeys,
+
+  // Skillset icons
+  JavaScriptIcon,
+  ReactIcon,
+  Html5Icon,
+  NodejsIcon,
+  MongoDBIcon,
+  CSS3Icon,
+  SassIcon,
+  ReduxIcon,
+  GitIcon,
+  LinuxIcon,
+  VueIcon,
+  PythonIcon,
+  KafkaIcon,
+  AwsIcon,
+  ReactNativeIcon,
+  ApiSkillIcon,
+  ExpressJsIcon,
+  SocketIoIcon,
+  MaterialUiIcon,
+};

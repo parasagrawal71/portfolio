@@ -1,0 +1,116 @@
+@import "utils/commonStyles/index.scss";
+
+.carousel-horizontal {
+  overflow: hidden;
+  height: 100%;
+}
+
+.carousel-vertical {
+  overflow: hidden;
+  height: 100%;
+}
+
+.inner-horizontal {
+  white-space: nowrap;
+  transition: transform 0.3s;
+  height: 100%;
+
+  &.multiple-active-items {
+  }
+}
+
+.inner-vertical {
+  transition: transform 0.2s;
+  height: 100%;
+
+  &.multiple-active-items {
+  }
+}
+
+.carousel-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  width: 100%; // IMPORTANT: To fit the parent container
+  height: 100%; // IMPORTANT: To fit the parent container
+}
+
+.indicators {
+  @include flex-row-b-cen;
+  padding-top: 20px;
+
+  > button {
+    margin: 5px;
+
+    &.active {
+      background-color: grey;
+      color: #fff;
+    }
+  }
+
+  > svg {
+    margin: 5px;
+  }
+
+  .nextIcon,
+  .prevIcon {
+    cursor: pointer;
+    font-size: toRem(28px);
+    polyline {
+      stroke: #fff;
+    }
+  }
+
+  .activePage {
+    margin-right: 10px;
+    width: 15px;
+    text-align: right;
+  }
+
+  .totalPages {
+    margin-left: 10px;
+  }
+}
+
+.controls {
+  $offwhite: rgba(238, 238, 238, 0.5);
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+  color: $offwhite;
+  @include flex-row;
+  font-size: toRem(10px);
+  gap: 20px;
+  .arrowKeys {
+    @include flex-col;
+    gap: 5px;
+    svg {
+      fill: $offwhite;
+      height: toRem(40px);
+    }
+    .text {
+      padding-left: 8px;
+    }
+  }
+  .scroll {
+    @include flex-col;
+    gap: 5px;
+    svg {
+      height: toRem(40px);
+      fill: $offwhite;
+    }
+    .text {
+      padding-left: 8px;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .inner-vertical {
+    transition: transform 0.3s;
+  }
+  .controls {
+    display: none;
+  }
+}

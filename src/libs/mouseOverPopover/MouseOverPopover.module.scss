@@ -1,0 +1,66 @@
+.popover {
+  pointer-events: none;
+  z-index: 9999999 !important;
+
+  .paper {
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .popoverChildren {
+    background-color: white;
+    box-shadow: 0px 5px 5px -3px rgb(0 0 0 / 20%), 0px 8px 10px 1px rgb(0 0 0 / 14%),
+      0px 3px 14px 2px rgb(0 0 0 / 12%);
+    border-radius: 4px;
+  }
+
+  .arrowPointer {
+    position: relative;
+    &::before {
+      background-color: white;
+      content: "";
+      display: block;
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      transform: rotate(45deg);
+    }
+  }
+
+  &.topCenter {
+    .arrowPointer {
+      margin-top: 10px;
+    }
+    .arrowPointer::before {
+      top: -6px;
+      left: calc(50% - 6px);
+    }
+  }
+
+  &.leftCenter {
+    .paper {
+      display: flex;
+    }
+    .arrowPointer {
+      margin-left: 10px;
+    }
+    .arrowPointer::before {
+      left: -6px;
+      top: calc(50% - 6px);
+    }
+  }
+
+  &.bottomCenter {
+    .paper {
+      padding-bottom: 40px;
+    }
+    .arrowPointer {
+      margin-bottom: 10px;
+    }
+    .arrowPointer::before {
+      bottom: -6px;
+      left: calc(50% - 6px);
+    }
+  }
+}

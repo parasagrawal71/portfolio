@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import HeaderComponent from "components/header/Header";
@@ -6,15 +6,26 @@ import HomeSection from "sections/home/Home";
 import AboutSection from "sections/about/About";
 import SkillsetSection from "sections/skillset/Skillset";
 import ProjectsSection from "sections/projects/Projects";
-import ExperienceSection from "sections/experience/Experience";
+import ExperienceSection from "sections/experiences/Experiences";
 import ContactSection from "sections/contact/Contact";
 import ScrollToTopBtnComponent from "components/scrollToTopBtn/ScrollToTopBtn";
 import FooterSection from "sections/footer/Footer";
+import { useGlobalState } from "contexts/GlobalContextProvider";
+import { Loader } from "libs";
 
 // IMPORT OTHERS HERE //
-import { menuItems } from "config/header";
 
 const Main = () => {
+  // STATE VARIABLEs
+  const { globalState } = useGlobalState();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  }, []);
+
   const nameComponentMap = {
     Home: <HomeSection />,
     About: <AboutSection />,
@@ -24,15 +35,13 @@ const Main = () => {
     Contact: <ContactSection />,
   };
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : (
     <>
       <HeaderComponent />
-      {menuItems?.map((menuItem) => {
-        return (
-          <React.Fragment key={menuItem?.name}>{nameComponentMap?.[menuItem?.name]}</React.Fragment>
-        );
-      })}
-      <FooterSection />
+      {nameComponentMap?.[globalState?.activeSectionName]}
+      {globalState?.activeSectionName === "Home" ? <FooterSection /> : null}
       <ScrollToTopBtnComponent />
     </>
   );

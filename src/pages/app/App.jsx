@@ -1,25 +1,40 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { BrowserRouter as Router } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 
+// IMPORT ALL PAGES HERE //
+import MainPage from "pages/main/Main";
+import GlobalContextProvider from "contexts/GlobalContextProvider";
+
 // IMPORT OTHERS HERE //
 import { fullName } from "config";
-import history from "routes/history";
-import Routes from "routes/Routes";
+import { menuItems } from "config/header";
 import "./App.scss";
 
 const App = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainPage />,
+    },
+  ]);
+
+  function getSectionNameByHash() {
+    const { hash } = window.location || {};
+    return menuItems?.filter((mI) => mI.hash === hash)?.[0]?.name;
+  }
+
   return (
-    <main className="app">
-      <Router history={history}>
+    <main className="app" id="app">
+      <GlobalContextProvider initialState={{ activeSectionName: getSectionNameByHash() }}>
         <Helmet>
           <title>{fullName}</title>
         </Helmet>
 
-        <Routes />
-      </Router>
+        <RouterProvider router={router} />
+      </GlobalContextProvider>
     </main>
   );
 };

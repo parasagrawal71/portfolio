@@ -1,53 +1,100 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
-@import "utils/commonStyles/keyframes.scss";
+@import "utils/commonStyles/index.scss";
+
+$padding-vertical: 30px;
 
 .main-cnt {
-  height: calc(100vh - 80px);
-  color: $white;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
 
-  .home-content {
+  .blob {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .content {
+    z-index: 1;
+    padding: $padding-vertical 0;
+    padding-left: 100px;
+    padding-right: 20px;
     position: relative;
-    top: 35%;
-    letter-spacing: 1px;
-    text-align: center;
+    @include flex-row;
+    height: calc(100% - (2 * $padding-vertical));
 
-    .greeting {
-      font-size: 15px;
-      animation: fadein-full 3s;
-    }
+    .content--left {
+      @include flex-col-h-cen;
+      position: absolute;
+      gap: 50px;
+      margin-left: -50px;
+      height: 100%;
 
-    .name {
-      text-align: center;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      font-family: Montserrat-ExtraBold;
-      font-size: 50px;
-
-      .character {
-        animation: move-text-name 0.2s forwards;
-        position: relative;
-        top: 0;
-        opacity: 0;
+      .line {
+        height: 100%;
+        width: 1px;
+        background: linear-gradient(
+          180deg,
+          #08b6f9 0%,
+          #6c56ef 33.57%,
+          #1306dd 65.86%,
+          #aa0eb2 100%
+        );
       }
     }
 
-    .designation {
-      font-size: 18px;
+    .content--mid {
+      display: inline-block;
+      padding-top: 100px;
     }
-  }
 
-  .particles {
-    margin-top: -10%;
+    .content--right {
+      padding-top: 100px;
+      padding-left: 30px;
+    }
+
+    .name {
+      font-size: toRem(60px);
+      font-weight: bold;
+      color: $color-primary-text;
+    }
+    .role {
+      text-transform: uppercase;
+      font-size: toRem(30px);
+      font-weight: bold;
+      color: $color-secondary-text;
+    }
+    .btnStyle {
+      margin-top: 50px;
+    }
+    .descrp {
+      padding-top: 30px;
+      max-width: 500px;
+      text-align: justify;
+      font-size: toRem(16px);
+
+      a {
+        color: $color-secondary-text;
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .particles {
-    margin-top: -30%;
-  }
-
-  .home-content {
-    top: 27%;
+  .main-cnt {
+    .content {
+      .content--left {
+        margin-left: -60px;
+      }
+      .name {
+        font-size: toRem(50px);
+      }
+      .role {
+        font-size: toRem(20px);
+      }
+      .descrp {
+        font-size: toRem(13px);
+      }
+    }
   }
 }

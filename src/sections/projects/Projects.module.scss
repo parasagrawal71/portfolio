@@ -1,24 +1,61 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
-@import "utils/commonStyles/constants.scss";
+@import "utils/commonStyles/index.scss";
+
+@mixin project-box-style {
+  box-shadow: rgba(0, 0, 0, 0.32) 0px 2px 4px 0px, rgba(0, 0, 0, 0.52) 0px 2px 16px 0px;
+  border-radius: 8px;
+}
 
 .main-cnt {
-  min-height: $section-height; // min-height for last section
-  padding: $section-padding;
+  position: relative;
+  @include section-padding();
+  padding-left: 12%;
+  padding-right: 12%;
+  &.carousel-view {
+    flex: 1;
+    height: calc(100% - (2 * 85px));
+  }
+  &.list-view {
+    margin-bottom: 50px;
+  }
 
-  .projects-cnt {
-    @include flex-row-sb;
-    flex-wrap: wrap;
-    padding: 0 10%;
+  .header {
+    position: absolute;
+    right: 12%;
+    top: 0;
+    @include flex-row-v-cen;
+    justify-content: flex-end;
+    padding: 20px;
+    gap: 15px;
+
+    svg {
+      font-size: toRem(22px);
+      cursor: pointer;
+      &.active {
+        fill: $color-active !important;
+      }
+      &.listIcon {
+        font-size: toRem(26px);
+      }
+    }
+  }
+
+  .content-cnt {
+    height: 100%;
+    .carousel {
+      @include project-box-style;
+    }
+
+    .projects-list-cnt {
+      @include flex-col;
+      gap: 100px;
+
+      .listViewProjectBoxCnt {
+        @include project-box-style;
+        height: 610px; // IMPORTANT: To make overview image responsive in the list view.
+      }
+    }
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .main-cnt {
-    height: auto;
-    padding-top: 90px;
-
-    .projects-cnt {
-    }
-  }
 }

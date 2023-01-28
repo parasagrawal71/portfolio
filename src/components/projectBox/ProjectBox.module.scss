@@ -1,21 +1,13 @@
-@import "utils/commonStyles/colors.scss";
-@import "utils/commonStyles/flex.scss";
-@import "utils/commonStyles/constants.scss";
+@import "utils/commonStyles/index.scss";
 
 .project-box-cnt {
   @include flex-col;
-  border: 1px solid #444242;
-  border-radius: 4px;
   padding: 25px;
-  width: 400px;
-  margin-bottom: 40px;
-
-  &:hover {
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  }
+  width: 100%; // IMPORTANT: To spread out in the parent container
+  height: 100%; // IMPORTANT: To spread out in the parent container and To keep the overview image contained.
 
   .header {
-    padding-bottom: 10px;
+    padding-bottom: 20px;
     @include flex-row-b-sb-cen;
 
     .header--left {
@@ -26,17 +18,18 @@
           border: 1px solid #444242;
           border-radius: 50%;
           padding: 5px;
-          margin-right: 5px;
+          margin-right: 10px;
         }
       }
       .header--left-right {
         @include flex-col;
+        padding-right: 10px;
         .name {
-          font-size: 18px;
-          color: $white;
+          font-size: toRem(18px);
+          color: $color-primary-text;
         }
         .duration {
-          font-size: 14px;
+          font-size: toRem(14px);
           font-style: italic;
         }
       }
@@ -44,50 +37,58 @@
 
     .header--right {
       @include flex-row-v-cen;
+      gap: 15px;
       svg {
-        font-size: 20px;
+        font-size: toRem(25px);
         cursor: pointer;
-
-        &:not(:last-child) {
-          margin-right: 10px;
-        }
       }
     }
   }
 
-  .content {
-    @include flex-col-sb;
-    flex: 1;
-    width: 100%;
+  .content-img-cnt {
+    max-height: 400px; // IMPORTANT: To keep the overview image contained
+    overflow: hidden; // IMPORTANT: In case the overview image overflows, keep the overflowed part hidden.
 
-    .content--top {
-      width: 100%;
-      .overview-img {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-
-      .descrp {
-        font-size: 14px;
-        text-align: justify;
-      }
+    .overview-img,
+    .overview-video {
+      width: 100%; // IMPORTANT: To fit the parent container
+      height: 100%; // IMPORTANT: To fit the parent container
+      object-fit: contain; // IMPORTANT: To maintain the aspect ratio when height & width is adjusted to fit the container.
+      /*
+      * IMPORTANT: "height: 100%" will only make sense when parent height is set to some absolute 
+      * value. Otherwise, image will overflow the container to maintain the aspect ratio.
+      */
     }
 
-    .tech-list {
-      padding-top: 20px;
-      @include flex-row-v-cen;
-      flex-wrap: wrap;
+    .overview-video {
+      border: none !important;
+      outline: none !important;
+    }
+  }
 
-      .tech {
-        &:not(:last-child) {
-          margin-right: 15px;
-        }
+  .descrp {
+    font-size: toRem(14px);
+    text-align: justify;
+    white-space: normal;
+    padding-top: 20px;
+    flex: 1;
+  }
+
+  .tech-list {
+    padding-top: 40px;
+    @include flex-row-v-cen;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .tech {
+      gap: 5px;
+      @include flex-row-v-cen;
+      svg {
+        height: 15px;
       }
     }
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .box-cnt {
-  }
 }

@@ -56,3 +56,24 @@ export function customTypingEffect(wordsList, id, speed = 200) {
     setTimeout(typeWriter, speed);
   };
 }
+
+export function scrollToTop({ isSmooth = true }) {
+  const app = document.getElementById("app");
+  app.scrollTo({ top: 0, behavior: isSmooth ? "smooth" : "auto" });
+}
+
+export function calculateYearsOfExperience(startDateStr) {
+  const startDate = new Date(startDateStr);
+  const startMonth = startDate.getFullYear() * 12 + startDate.getMonth();
+  const currentDate = new Date();
+  const endMonth = currentDate.getFullYear() * 12 + currentDate.getMonth();
+  const monthInterval = endMonth - startMonth;
+
+  const yearsOfExperience = Math.floor(monthInterval / 12);
+  const monthsOfExperience = monthInterval % 12;
+  const monthsInDecimal = (monthsOfExperience / 12).toFixed(1);
+  if (Number.isNaN(yearsOfExperience) || Number.isNaN(monthsOfExperience)) {
+    return "0";
+  }
+  return `${Number(yearsOfExperience) + Number(monthsInDecimal)}`;
+}

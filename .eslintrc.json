@@ -1,23 +1,14 @@
 {
-  "extends": [
-    "airbnb",
-    "prettier"
-  ],
-  "plugins": [
-    "prettier",
-    "react",
-    "react-hooks"
-  ],
-  "parser": "babel-eslint",
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier", "react", "react-hooks"],
+  "parser": "@babel/eslint-parser",
   "env": {
     "browser": true
   },
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": [
-          "src"
-        ]
+        "paths": ["src"]
       }
     }
   },
@@ -31,17 +22,12 @@
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
+        "extensions": [".js", ".jsx"]
       }
     ],
     "react/prop-types": 0,
-    "no-console": [
-      "warn"
-    ],
-    "react-hooks/exhaustive-deps": "error",
+    "no-console": ["warn"],
+    "react-hooks/exhaustive-deps": "off",
     "no-use-before-define": "off",
     "import/prefer-default-export": "off",
     "jsx-a11y/anchor-is-valid": "off",
@@ -58,6 +44,9 @@
     "no-underscore-dangle": "off",
     "jsx-a11y/label-has-associated-control": "off",
     "jsx-a11y/no-noninteractive-element-to-interactive-role": "off",
-    "react/jsx-no-bind": "off"
+    "react/jsx-no-bind": "off",
+    "react/function-component-definition": "off",
+    "no-return-assign": "off",
+    "jsx-a11y/media-has-caption": "off"
   }
 }

@@ -1,0 +1,24 @@
+@import "utils/commonStyles/index.scss";
+
+.btn {
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  padding: 12px 30px;
+  border-radius: 14px;
+  color: $color-primary-text;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  font-weight: 600;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2);
+  transition: 1s;
+  cursor: pointer;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    transform: translateY(-3px);
+  }
+}

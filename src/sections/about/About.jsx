@@ -2,11 +2,13 @@ import React from "react";
 import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
-import TextButton from "subComponents/textButton/TextButton";
+import { TextButton } from "libs";
 import SectionHeaderComponent from "components/sectionHeader/SectionHeader";
+import SocialProfiles from "components/socialProfiles/SocialProfiles";
 
 // IMPORT OTHERS HERE //
-import { aboutDescription, RESUME_URL, SELF_PICTURE_URL, socialProfiles, roles } from "config";
+import { RESUME_URL, SELF_PICTURE_URL } from "config";
+import { roles, aboutDescription } from "config/backup";
 import appStyles from "./About.module.scss";
 
 const About = () => {
@@ -20,21 +22,7 @@ const About = () => {
           <p>{aboutDescription}</p>
 
           <section className={appStyles["social-resume-cnt"]}>
-            <section className={appStyles["social-icons-cnt"]}>
-              {socialProfiles?.map((social) => {
-                return (
-                  <a
-                    key={social?.name}
-                    href={social?.href}
-                    className={appStyles["social-link"]}
-                    target={social?.newTab && "_blank"}
-                    rel={social?.newTab && "noopener noreferrer"}
-                  >
-                    <img src={social?.icon} alt={social?.name} />
-                  </a>
-                );
-              })}
-            </section>
+            <SocialProfiles />
 
             <TextButton
               btnText="download resume"
@@ -52,6 +40,7 @@ const About = () => {
         <header>what i do</header>
         <section className={appStyles["about-whatIDo"]}>
           {roles?.map((role) => {
+            const { Icon, icon1, icon2 } = role;
             return (
               <section
                 key={role?.name}
@@ -63,13 +52,11 @@ const About = () => {
               >
                 {role?.name === "mobileapp" ? (
                   <div className={appStyles.mobileapp}>
-                    <img src={role?.icon1} alt="halfAndroid" className={appStyles.halfAndroid} />
-                    <img src={role?.icon2} alt="halfiOS" className={appStyles.halfiOS} />
+                    <img src={icon1} alt="halfAndroid" className={appStyles.halfAndroid} />
+                    <img src={icon2} alt="halfiOS" className={appStyles.halfiOS} />
                   </div>
                 ) : (
-                  <img
-                    src={role?.icon}
-                    alt={role?.name}
+                  <Icon
                     className={cx({
                       [appStyles.backend]: role?.name === "backend",
                     })}
