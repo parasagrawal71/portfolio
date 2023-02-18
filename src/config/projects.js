@@ -71,7 +71,7 @@ export const projectsList = [
       },
       {
         type: "website",
-        url: `https://twitter--helpdesk.herokuapp.com/`,
+        url: `https://twitter-helpdesk-app.web.app/`,
       },
       {
         type: "github",
