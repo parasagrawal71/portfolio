@@ -10,7 +10,7 @@ const DownloadResume = (props) => {
 
   return (
     <TransparentButton
-      btnText="Download Resume"
+      btnText="View Resume"
       className={`${appStyles.btn} ${className}`}
       btnCallback={() => {
         // window.open(RESUME_URL, "_none");
