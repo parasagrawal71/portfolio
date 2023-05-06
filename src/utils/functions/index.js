@@ -77,3 +77,21 @@ export function calculateYearsOfExperience(startDateStr) {
   }
   return `${Number(yearsOfExperience) + Number(monthsInDecimal)}`;
 }
+
+export function calculateYearsAndMonthsOfExperience(startDateStr) {
+  const result = { years: 0, months: 0 };
+  const startDate = new Date(startDateStr);
+  const startMonth = startDate.getFullYear() * 12 + startDate.getMonth();
+  const currentDate = new Date();
+  const endMonth = currentDate.getFullYear() * 12 + currentDate.getMonth();
+  const monthInterval = endMonth - startMonth;
+
+  const yearsOfExperience = Math.floor(monthInterval / 12);
+  const monthsOfExperience = monthInterval % 12;
+  if (Number.isNaN(yearsOfExperience) || Number.isNaN(monthsOfExperience)) {
+    return result;
+  }
+  result.years = Number(yearsOfExperience);
+  result.months = Number(monthsOfExperience);
+  return result;
+}

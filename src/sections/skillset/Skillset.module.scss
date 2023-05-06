@@ -2,15 +2,15 @@
 
 .main-cnt {
   padding: $section-padding;
+  padding-top: 0px;
+  padding-bottom: 0px;
   position: relative;
 
   .header {
-    position: absolute;
-    right: 85px;
-    top: 0;
     @include flex-row-v-cen;
     justify-content: flex-end;
-    padding: 0 100px;
+    padding: 0 75px;
+    padding-bottom: 20px;
     gap: 30px;
     .skill-category {
       padding: 10px;
@@ -27,7 +27,6 @@
     @include flex-row;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 0 100px;
 
     &:last-child {
       justify-content: space-evenly;
@@ -83,8 +82,12 @@
 
 @media only screen and (max-width: 600px) {
   .main-cnt {
+    padding: $section-padding;
+    padding-top: 0px;
     .header {
       padding: 0;
+      justify-content: flex-start;
+      padding-left: 25px;
     }
 
     .skills-cnt {

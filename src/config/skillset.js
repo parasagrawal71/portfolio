@@ -1,5 +1,7 @@
+import { calculateYearsAndMonthsOfExperience } from "utils/functions";
 import { techListMap } from "./techList";
 import { projectsList } from "./projects";
+import { careerStartDate } from ".";
 
 /* *********************************************************************************************************** */
 /* *********************************************************************************************************** */
@@ -21,10 +23,16 @@ export const skillCategory = [
     displayName: "Others",
     show: false,
   },
+  {
+    id: "devops",
+    displayName: "DevOps",
+    show: false,
+  },
 ];
 const FRONTEND = skillCategory?.find((s) => s.id === "frontend")?.id;
 const BACKEND = skillCategory?.find((s) => s.id === "backend")?.id;
 const OTHERS = skillCategory?.find((s) => s.id === "others")?.id;
+const DEVOPS = skillCategory?.find((s) => s.id === "devops")?.id;
 
 // Skill levels
 const LEVEL = {
@@ -41,7 +49,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND, BACKEND],
     details: getSkillDetails({
-      industryExperience: 3.5,
+      industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.advanced,
       id: techListMap.javascript.id,
     }),
@@ -51,7 +59,7 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 3,
+      industryExperience: calYoeForASkill("diff_month", { value: 6 }),
       level: LEVEL.advanced,
       id: techListMap.nodejs.id,
     }),
@@ -61,7 +69,7 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 3,
+      industryExperience: calYoeForASkill("diff_month", { value: 6 }),
       level: LEVEL.advanced,
       id: techListMap.expressjs.id,
     }),
@@ -71,7 +79,7 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 3.5,
+      industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.advanced,
       id: techListMap.mongo.id,
     }),
@@ -81,7 +89,7 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 3.5,
+      industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.advanced,
       id: techListMap.api.id,
     }),
@@ -91,7 +99,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND],
     details: getSkillDetails({
-      industryExperience: 3,
+      industryExperience: calYoeForASkill("diff_month", { value: 6 }),
       level: LEVEL.advanced,
       id: techListMap.react.id,
     }),
@@ -101,7 +109,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND],
     details: getSkillDetails({
-      industryExperience: 3.5,
+      industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.html.id,
     }),
@@ -111,7 +119,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND],
     details: getSkillDetails({
-      industryExperience: 3.5,
+      industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.css.id,
     }),
@@ -122,7 +130,7 @@ export const skillsetsArray = [
     categories: [FRONTEND],
 
     details: getSkillDetails({
-      industryExperience: 2,
+      industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.sass.id,
     }),
@@ -132,7 +140,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND],
     details: getSkillDetails({
-      industryExperience: 2,
+      industryExperience: calYoeForASkill("diff_month", { value: 12 }),
       level: LEVEL.intermediate,
       id: techListMap.materialUi.id,
     }),
@@ -142,7 +150,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND],
     details: getSkillDetails({
-      industryExperience: 3,
+      industryExperience: calYoeForASkill("", { value: 2 }),
       level: LEVEL.intermediate,
       id: techListMap.redux.id,
     }),
@@ -152,7 +160,7 @@ export const skillsetsArray = [
     show: true,
     categories: [OTHERS],
     details: getSkillDetails({
-      industryExperience: 3.5,
+      industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.git.id,
     }),
@@ -162,7 +170,7 @@ export const skillsetsArray = [
     show: true,
     categories: [OTHERS],
     details: getSkillDetails({
-      industryExperience: 3,
+      industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.linux.id,
     }),
@@ -172,7 +180,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND],
     details: getSkillDetails({
-      industryExperience: 1,
+      industryExperience: calYoeForASkill("", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.vuejs.id,
     }),
@@ -182,7 +190,7 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 1,
+      industryExperience: calYoeForASkill("", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.python.id,
     }),
@@ -192,7 +200,7 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 1,
+      industryExperience: calYoeForASkill("", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.aws.id,
     }),
@@ -202,11 +210,31 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 1,
+      industryExperience: calYoeForASkill("diff_month", { value: 18 }),
       level: LEVEL.intermediate,
       id: techListMap.kafka.id,
     }),
   },
+  // {
+  //   ...techListMap.graphql,
+  //   show: true,
+  //   categories: [BACKEND],
+  //   details: getSkillDetails({
+  //     industryExperience: calYoeForASkill("", { value: 1 }),
+  //     level: LEVEL.intermediate,
+  //     id: techListMap.graphql.id,
+  //   }),
+  // },
+  // {
+  //   ...techListMap.docker,
+  //   show: true,
+  //   categories: [BACKEND],
+  //   details: getSkillDetails({
+  //     industryExperience: calYoeForASkill("", { value: 1 }),
+  //     level: LEVEL.intermediate,
+  //     id: techListMap.docker.id,
+  //   }),
+  // },
 ];
 
 // Function to get skill details
@@ -244,4 +272,29 @@ function calNoOfProjectsSkillUsedIn(skillId) {
     return project;
   });
   return noOfProjects;
+}
+
+// Function to calculate the years of experience for a skill
+function calYoeForASkill(type, { value }) {
+  const { years, months } = calculateYearsAndMonthsOfExperience(careerStartDate);
+
+  if (type === "fraction") {
+    return formatResult(value * formatYoE(years, months));
+  } else if (type === "diff_month") {
+    return formatResult(formatYoE(years, months - value));
+  } else {
+    return formatResult(value);
+  }
+
+  function formatYoE(yrs, mnths) {
+    const monthsInDecimal = (mnths / 12).toFixed(1);
+    if (Number.isNaN(yrs) || Number.isNaN(mnths)) {
+      return 0;
+    }
+    return Number(`${Number(yrs) + Number(monthsInDecimal)}`);
+  }
+
+  function formatResult(result) {
+    return result > 1 ? `${result} yrs` : `${result} yr`;
+  }
 }

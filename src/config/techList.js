@@ -16,6 +16,10 @@ import {
   ApiSkillIcon,
   ExpressJsIcon,
   MaterialUiIcon,
+  GraphQLIcon,
+  DockerIcon,
+  KubernetesIcon,
+  TypescriptIcon,
 } from "assets/Images";
 
 /* *********************************************************************************************************** */
@@ -106,6 +110,26 @@ export const techListMap = {
     displayName: "Kafka",
     Icon: KafkaIcon,
     id: "kafka",
+  },
+  graphql: {
+    displayName: "GraphQL",
+    Icon: GraphQLIcon,
+    id: "graphql",
+  },
+  docker: {
+    displayName: "Docker",
+    Icon: DockerIcon,
+    id: "docker",
+  },
+  kubernetes: {
+    displayName: "Kubernetes",
+    Icon: KubernetesIcon,
+    id: "kubernetes",
+  },
+  typescript: {
+    displayName: "Typescript",
+    Icon: TypescriptIcon,
+    id: "typescript",
   },
 };
 
