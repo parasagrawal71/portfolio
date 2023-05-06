@@ -16,6 +16,7 @@ const ProjectBox = React.forwardRef((props, ref) => {
     description,
     icon: Icon,
     iconSize,
+    iconColor,
     techList,
     externalUrls,
     overviewImg,
@@ -67,7 +68,7 @@ const ProjectBox = React.forwardRef((props, ref) => {
           <div className={appStyles["header--left-left"]}>
             {Icon ? (
               <span className={appStyles.icon}>
-                <Icon style={{ fontSize: iconSize }} />
+                <Icon style={{ fontSize: iconSize, color: iconColor }} />
               </span>
             ) : null}
           </div>

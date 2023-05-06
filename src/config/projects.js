@@ -2,9 +2,11 @@ import {
   apiDocumenterImage,
   shopAnywhereImage,
   twitterHelpdeskImage,
+  graphqlAppImage,
   ApiIcon,
   TwitterIcon,
   ShopIcon,
+  GraphQLAppIcon,
 } from "assets/Images";
 import { techListArray } from "./techList";
 
@@ -115,6 +117,27 @@ export const projectsList = [
       {
         type: "github",
         url: `https://github.com/parasagrawal71/shop-anywhere`,
+        iconSize: "23px",
+      },
+    ],
+  },
+  {
+    name: "GraphQL App",
+    icon: GraphQLAppIcon,
+    overviewImg: graphqlAppImage,
+    iconSize: "30px",
+    iconColor: "#C52E95",
+    duration: `May 2023`,
+    techList: techListArray.filter((tech) => ["graphql", "javascript", "nodejs"].includes(tech.id)),
+    description: `A server based on GraphQL that provides the capability to perform queries on posts, comments on a post, and their associated users. Additionally, it allows one to add new users and modify existing user data.`,
+    externalUrls: [
+      {
+        type: "website",
+        url: `https://graphql-app.up.railway.app/`,
+      },
+      {
+        type: "github",
+        url: `https://github.com/parasagrawal71/graphql-app`,
         iconSize: "23px",
       },
     ],

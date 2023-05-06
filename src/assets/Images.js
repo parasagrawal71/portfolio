@@ -13,7 +13,11 @@ import {
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
 import { BiLinkExternal as WebsiteIcon } from "react-icons/bi";
-import { GrFormNext as NextBtnIcon, GrFormPrevious as PreviousBtnIcon } from "react-icons/gr";
+import {
+  GrFormNext as NextBtnIcon,
+  GrFormPrevious as PreviousBtnIcon,
+  GrGraphQl as GraphQLAppIcon,
+} from "react-icons/gr";
 import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
 import { MdOndemandVideo as VideoIcon } from "react-icons/md";
 
@@ -26,6 +30,7 @@ import halfiOS from "./img/half-iOS.png";
 import apiDocumenterImage from "./img/api-documenter.png";
 import shopAnywhereImage from "./img/shop-anywhere.png";
 import twitterHelpdeskImage from "./img/twitter-helpdesk.png";
+import graphqlAppImage from "./img/graphql-app.png";
 import {
   LinesIcon,
   FrontendIcon,
@@ -83,8 +88,10 @@ export {
   apiDocumenterImage,
   shopAnywhereImage,
   twitterHelpdeskImage,
+  graphqlAppImage,
   ApiIcon,
   TwitterIcon,
+  GraphQLAppIcon,
   ShopIcon,
   GithubIcon,
   LinkedInIcon,
