@@ -7,6 +7,7 @@ import { MouseOverPopover, TextButton } from "libs";
 
 // IMPORT OTHERS HERE //
 import { skillsetsArray, skillCategory } from "config/skillset";
+import { HoverIllustration } from "assets/Images";
 import appStyles from "./Skillset.module.scss";
 
 const Skillset = () => {
@@ -47,50 +48,56 @@ const Skillset = () => {
   }
 
   return (
-    <main className={appStyles["main-cnt"]} id="skillset">
-      {/*
-       * Skill category
-       */}
-      <section className={appStyles.header}>
-        {skillCategory
-          ?.filter((sc) => sc.show)
-          ?.map((skCategory) => {
+    <>
+      <main className={appStyles["main-cnt"]} id="skillset">
+        {/*
+         * Skill category
+         */}
+        <section className={appStyles.header}>
+          {skillCategory
+            ?.filter((sc) => sc.show)
+            ?.map((skCategory) => {
+              return (
+                <TextButton
+                  key={skCategory.id}
+                  btnText={skCategory.displayName}
+                  customBtnClass={cx([
+                    appStyles["skill-category"],
+                    {
+                      [appStyles.active]: currentCategory === skCategory.id,
+                    },
+                  ])}
+                  btnCallback={toggleSkillCategory.bind(this, skCategory.id)}
+                />
+              );
+            })}
+        </section>
+        {/*
+         * Skills
+         */}
+        <section className={appStyles["skills-cnt"]}>
+          {skills?.map((skill) => {
+            const { Icon, details, displayName } = skill;
             return (
-              <TextButton
-                key={skCategory.id}
-                btnText={skCategory.displayName}
-                customBtnClass={cx([
-                  appStyles["skill-category"],
-                  {
-                    [appStyles.active]: currentCategory === skCategory.id,
-                  },
-                ])}
-                btnCallback={toggleSkillCategory.bind(this, skCategory.id)}
-              />
+              <MouseOverPopover
+                PopoverComponent={SkillDetailsComponent({ details })}
+                key={displayName}
+                arrowPosition="bottomCenter"
+              >
+                <div className={appStyles.skill}>
+                  <Icon />
+                  <div className={appStyles["skill-name"]}>{displayName}</div>
+                </div>
+              </MouseOverPopover>
             );
           })}
+        </section>
+      </main>
+      <section className={appStyles.hoverIllustration}>
+        <HoverIllustration />
+        <div>Hover</div>
       </section>
-      {/*
-       * Skills
-       */}
-      <section className={appStyles["skills-cnt"]}>
-        {skills?.map((skill) => {
-          const { Icon, details, displayName } = skill;
-          return (
-            <MouseOverPopover
-              PopoverComponent={SkillDetailsComponent({ details })}
-              key={displayName}
-              arrowPosition="bottomCenter"
-            >
-              <div className={appStyles.skill}>
-                <Icon />
-                <div className={appStyles["skill-name"]}>{displayName}</div>
-              </div>
-            </MouseOverPopover>
-          );
-        })}
-      </section>
-    </main>
+    </>
   );
 };
 

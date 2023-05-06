@@ -39,6 +39,7 @@ import {
   CrossplatformMobileAppIcon,
   ScrollMouse,
   ArrowKeys,
+  HoverIllustration,
 } from "./OtherSvgs";
 
 /**
@@ -107,6 +108,7 @@ export {
   OfficeIcon,
   ScrollMouse,
   ArrowKeys,
+  HoverIllustration,
 
   // Skillset icons
   JavaScriptIcon,

@@ -64,6 +64,22 @@
   }
 }
 
+.hoverIllustration {
+  $offwhite: rgba(238, 238, 238, 0.5);
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  @include flex-col-h-cen;
+  svg {
+    fill: $offwhite;
+    height: toRem(50px);
+  }
+  color: $offwhite;
+  div {
+    padding-left: 10px;
+  }
+}
+
 .skillDetails {
   display: grid;
   gap: 10px;
