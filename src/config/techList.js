@@ -19,6 +19,7 @@ import {
   GraphQLIcon,
   DockerIcon,
   KubernetesIcon,
+  TypescriptIcon,
 } from "assets/Images";
 
 /* *********************************************************************************************************** */
@@ -124,6 +125,11 @@ export const techListMap = {
     displayName: "Kubernetes",
     Icon: KubernetesIcon,
     id: "kubernetes",
+  },
+  typescript: {
+    displayName: "Typescript",
+    Icon: TypescriptIcon,
+    id: "typescript",
   },
 };
 

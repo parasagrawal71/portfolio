@@ -65,6 +65,7 @@ import {
   GraphQLIcon,
   DockerIcon,
   KubernetesIcon,
+  TypescriptIcon,
 } from "./SkillSvgs";
 
 // ************************************ EXPORTS ************************************ //
@@ -123,4 +124,5 @@ export {
   GraphQLIcon,
   DockerIcon,
   KubernetesIcon,
+  TypescriptIcon,
 };
