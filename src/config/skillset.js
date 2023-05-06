@@ -150,7 +150,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND],
     details: getSkillDetails({
-      industryExperience: 2,
+      industryExperience: calYoeForASkill("", { value: 2 }),
       level: LEVEL.intermediate,
       id: techListMap.redux.id,
     }),
@@ -180,7 +180,7 @@ export const skillsetsArray = [
     show: true,
     categories: [FRONTEND],
     details: getSkillDetails({
-      industryExperience: 1,
+      industryExperience: calYoeForASkill("", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.vuejs.id,
     }),
@@ -190,7 +190,7 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 1,
+      industryExperience: calYoeForASkill("", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.python.id,
     }),
@@ -200,7 +200,7 @@ export const skillsetsArray = [
     show: true,
     categories: [BACKEND],
     details: getSkillDetails({
-      industryExperience: 1,
+      industryExperience: calYoeForASkill("", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.aws.id,
     }),
@@ -259,11 +259,11 @@ function calYoeForASkill(type, { value }) {
   const { years, months } = calculateYearsAndMonthsOfExperience(careerStartDate);
 
   if (type === "fraction") {
-    return value * formatYoE(years, months);
+    return formatResult(value * formatYoE(years, months));
   } else if (type === "diff_month") {
-    return formatYoE(years, months - value);
+    return formatResult(formatYoE(years, months - value));
   } else {
-    return value;
+    return formatResult(value);
   }
 
   function formatYoE(yrs, mnths) {
@@ -272,5 +272,9 @@ function calYoeForASkill(type, { value }) {
       return 0;
     }
     return Number(`${Number(yrs) + Number(monthsInDecimal)}`);
+  }
+
+  function formatResult(result) {
+    return result > 1 ? `${result} yrs` : `${result} yr`;
   }
 }
