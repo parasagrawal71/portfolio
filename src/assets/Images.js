@@ -62,6 +62,9 @@ import {
   ExpressJsIcon,
   SocketIoIcon,
   MaterialUiIcon,
+  GraphQLIcon,
+  DockerIcon,
+  KubernetesIcon,
 } from "./SkillSvgs";
 
 // ************************************ EXPORTS ************************************ //
@@ -117,4 +120,7 @@ export {
   ExpressJsIcon,
   SocketIoIcon,
   MaterialUiIcon,
+  GraphQLIcon,
+  DockerIcon,
+  KubernetesIcon,
 };

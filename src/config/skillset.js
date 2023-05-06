@@ -215,6 +215,26 @@ export const skillsetsArray = [
       id: techListMap.kafka.id,
     }),
   },
+  // {
+  //   ...techListMap.graphql,
+  //   show: true,
+  //   categories: [BACKEND],
+  //   details: getSkillDetails({
+  //     industryExperience: calYoeForASkill("", { value: 1 }),
+  //     level: LEVEL.intermediate,
+  //     id: techListMap.graphql.id,
+  //   }),
+  // },
+  // {
+  //   ...techListMap.docker,
+  //   show: true,
+  //   categories: [BACKEND],
+  //   details: getSkillDetails({
+  //     industryExperience: calYoeForASkill("", { value: 1 }),
+  //     level: LEVEL.intermediate,
+  //     id: techListMap.docker.id,
+  //   }),
+  // },
 ];
 
 // Function to get skill details
