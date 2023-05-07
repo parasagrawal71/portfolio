@@ -128,8 +128,10 @@ export const projectsList = [
     iconSize: "30px",
     iconColor: "#C52E95",
     duration: `May 2023`,
-    techList: techListArray.filter((tech) => ["graphql", "javascript", "nodejs"].includes(tech.id)),
-    description: `A server based on GraphQL that provides the capability to perform queries on posts, comments on a post, and their associated users. Additionally, it allows one to add new users and modify existing user data.`,
+    techList: techListArray.filter((tech) =>
+      ["graphql", "javascript", "nodejs", "mongo"].includes(tech.id)
+    ),
+    description: `A server based on GraphQL that provides the capability to perform queries on posts, comments related to the posts, and users. Additionally, it allows one to add new users and modify existing user data.`,
     externalUrls: [
       {
         type: "website",
