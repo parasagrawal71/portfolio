@@ -26,7 +26,7 @@ export const skillCategory = [
   {
     id: "devops",
     displayName: "DevOps",
-    show: false,
+    show: true,
   },
 ];
 const FRONTEND = skillCategory?.find((s) => s.id === "frontend")?.id;
@@ -198,7 +198,7 @@ export const skillsetsArray = [
   {
     ...techListMap.aws,
     show: true,
-    categories: [BACKEND],
+    categories: [BACKEND, DEVOPS],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("", { value: 1 }),
       level: LEVEL.intermediate,
@@ -225,16 +225,16 @@ export const skillsetsArray = [
       id: techListMap.graphql.id,
     }),
   },
-  // {
-  //   ...techListMap.docker,
-  //   show: true,
-  //   categories: [BACKEND],
-  //   details: getSkillDetails({
-  //     industryExperience: calYoeForASkill("", { value: 1 }),
-  //     level: LEVEL.intermediate,
-  //     id: techListMap.docker.id,
-  //   }),
-  // },
+  {
+    ...techListMap.docker,
+    show: true,
+    categories: [BACKEND, DEVOPS],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 1 }),
+      level: LEVEL.intermediate,
+      id: techListMap.docker.id,
+    }),
+  },
 ];
 
 // Function to get skill details

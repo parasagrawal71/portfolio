@@ -33,6 +33,7 @@ export const projectsList = [
         "git",
         "api",
         "materialUi",
+        "docker",
       ].includes(tech.id)
     ),
     description: `An application for documenting all APIs for all microservices in an
@@ -58,9 +59,18 @@ export const projectsList = [
     iconSize: "28px",
     duration: `Nov 2020`,
     techList: techListArray.filter((tech) =>
-      ["javascript", "vuejs", "nodejs", "websocket", "html", "css", "sass", "git", "api"].includes(
-        tech.id
-      )
+      [
+        "javascript",
+        "vuejs",
+        "nodejs",
+        "websocket",
+        "html",
+        "css",
+        "sass",
+        "git",
+        "api",
+        "docker",
+      ].includes(tech.id)
     ),
     description: `An application that displays all the tweets in which someone is
       mentioned in one place. OAuth login. Mention and reply in real-time
