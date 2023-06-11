@@ -24,7 +24,7 @@
     "sass": "1.56.1"
   },
   "scripts": {
-    "start": "BROWSER=none PORT=5001 react-scripts start",
+    "start": "PORT=5001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "eslint ./ --fix",
