@@ -42,6 +42,11 @@ export const projectsList = [
     for a microservice.`,
     externalUrls: [
       {
+        type: "demovideo",
+        url: `https://drive.google.com/uc?id=1oqpiK_GMw-hmTxofoCppJiHeh9y7X5y7`,
+        isVideo: true,
+      },
+      {
         type: "website",
         url: `https://api-documenter.web.app`,
       },
