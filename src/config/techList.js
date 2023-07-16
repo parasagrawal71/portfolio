@@ -20,7 +20,9 @@ import {
   DockerIcon,
   KubernetesIcon,
   TypescriptIcon,
+  FastAPIIcon,
 } from "assets/Images";
+import { GoogleCloudIcon } from "assets/SkillSvgs";
 
 /* *********************************************************************************************************** */
 /* *********************************************************************************************************** */
@@ -130,6 +132,16 @@ export const techListMap = {
     displayName: "Typescript",
     Icon: TypescriptIcon,
     id: "typescript",
+  },
+  fastapi: {
+    displayName: "FastAPI",
+    Icon: FastAPIIcon,
+    id: "fastapi",
+  },
+  googlecloud: {
+    displayName: "Google Cloud",
+    Icon: GoogleCloudIcon,
+    id: "googlecloud",
   },
 };
 

@@ -7,6 +7,8 @@ import {
   TwitterIcon,
   ShopIcon,
   GraphQLAppIcon,
+  FastAPIIcon,
+  fastapiAppImage,
 } from "assets/Images";
 import { techListArray } from "./techList";
 
@@ -155,6 +157,29 @@ export const projectsList = [
       {
         type: "github",
         url: `https://github.com/parasagrawal71/graphql-app`,
+        iconSize: "23px",
+      },
+    ],
+  },
+  {
+    name: "FastAPI App",
+    icon: FastAPIIcon,
+    overviewImg: fastapiAppImage,
+    iconSize: "30px",
+    iconColor: "#009688",
+    duration: `July 2023`,
+    techList: techListArray.filter((tech) =>
+      ["fastapi", "python", "mongo", "docker", "googlecloud"].includes(tech.id)
+    ),
+    description: `A FastAPI-based CRUD application.`,
+    externalUrls: [
+      {
+        type: "website",
+        url: `https://fastapi-app-bp2sirryrq-uc.a.run.app/docs`,
+      },
+      {
+        type: "github",
+        url: `https://github.com/parasagrawal71/fastapi-app`,
         iconSize: "23px",
       },
     ],

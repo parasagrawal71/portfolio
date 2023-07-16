@@ -20,6 +20,7 @@ import {
 } from "react-icons/gr";
 import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
 import { MdOndemandVideo as VideoIcon } from "react-icons/md";
+import { SiFastapi as FastAPIIcon } from "react-icons/si";
 
 /**
  * * Local imports
@@ -31,6 +32,7 @@ import apiDocumenterImage from "./img/api-documenter.png";
 import shopAnywhereImage from "./img/shop-anywhere.png";
 import twitterHelpdeskImage from "./img/twitter-helpdesk.png";
 import graphqlAppImage from "./img/graphql-app.png";
+import fastapiAppImage from "./img/fastapi-app.png";
 import {
   LinesIcon,
   FrontendIcon,
@@ -90,6 +92,7 @@ export {
   shopAnywhereImage,
   twitterHelpdeskImage,
   graphqlAppImage,
+  fastapiAppImage,
   ApiIcon,
   TwitterIcon,
   GraphQLAppIcon,
@@ -134,4 +137,5 @@ export {
   DockerIcon,
   KubernetesIcon,
   TypescriptIcon,
+  FastAPIIcon,
 };
