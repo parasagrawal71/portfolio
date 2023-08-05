@@ -152,7 +152,7 @@ export const projectsList = [
     externalUrls: [
       {
         type: "website",
-        url: `https://graphql-app-bp2sirryrq-uc.a.run.app/`,
+        url: `https://graphql-app-production.up.railway.app/`,
       },
       {
         type: "github",
