@@ -8,10 +8,10 @@ const space = `\u00A0`;
 /* *********************************************************************************************************** */
 
 export const fullName = "Paras Agrawal";
-export const currentCompanyName = "nference";
-export const currentCompanySite = "https://nference.com/";
+export const currentCompanyName = "C2FO";
+export const currentCompanySite = "https://c2fo.com/";
 export const emailId = "parasagrawal71@gmail.com";
-export const designation = "Senior Engineer";
+export const designation = "Software Engineer II";
 export const careerStartDate = "07-15-2019"; // 15 July 2019; Format: MM-DD-YYYY;
 export const YOE = calculateYearsOfExperience(careerStartDate);
 export const RESUME_URL = "https://drive.google.com/uc?id=1yBdmFvsmzKpEB2c203g0rK8oOWWqU8DQ";
