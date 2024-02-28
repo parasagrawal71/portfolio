@@ -30,6 +30,7 @@ $_blue-216: hsl(216, 18%, 16%);
 $_blue-233: #0e1129;
 $_purple-243: hsl(243, 49%, 68%);
 $_purple-256: hsla(256, 100%, 63%, 0.6);
+$_purple-256-1: hsla(256, 100%, 63%, 1);
 
 /* Green colors ---------------------------------*/
 $_green-89: hsl(89, 84%, 39%);
@@ -54,12 +55,15 @@ Only access colors through these “proxy”-variables
 */
 $color-primary-bg: $_blue-233;
 $color-secondary-bg: "";
-$color-primary-text: $_white-238;
+$color-primary-text: #8a8a8a;
 $color-secondary-text: $_white-a75-238;
+$color-ternary-text: $_white-238;
 $color-primary-btn-bg: "";
 $color-secondary-btn-bg: "";
 $color-primary-border: $_gray-80;
 $color-brand: $_purple-256;
+$color-brand-secondary: hsla(256, 100%, 63%, 0.2);
+$color-brand-full: $_purple-256-1;
 $color-link: $_white-a75-238;
 $color-error: "";
 $color-warning: "";
@@ -68,3 +72,4 @@ $color-active: $_blue-183;
 $color-scrollbar-thumb: #989898;
 $color-scrollbar-bg: #26343d;
 $color-scrollbar-bg-hover: #555;
+$color-white: white;
