@@ -35,10 +35,20 @@ const OTHERS = categories?.find((s) => s.id === "others");
 
 export const experienceList = [
   {
+    companyName: "C2FO",
+    employmentType: "Full-Time",
+    designation: "Senior Engineer II",
+    duration: "Sep 2023 - Present",
+    companyType: "Product-based",
+    companyWebsite: "",
+    companyIntro: "",
+    works: [],
+  },
+  {
     companyName: "Nference",
     employmentType: "Full-Time",
     designation: "Senior Engineer",
-    duration: "Apr 2022 - Present",
+    duration: "Apr 2022 - Aug 2023",
     companyType: "Product-based",
     companyWebsite: "",
     companyIntro: "",
@@ -127,19 +137,19 @@ export const experienceList = [
       },
     ],
   },
-  {
-    companyName: "Keitai Technologies",
-    employmentType: "Internship",
-    designation: "Intern",
-    duration: "Dec 2018 - Jan 2019",
-    companyType: "Product-based",
-    companyWebsite: "",
-    companyIntro: "",
-    works: [
-      {
-        bulletPoint: `Worked as a full-stack developer at this company on various websites, acquiring proficiency in diverse technologies such as JavaScript, HTML, CSS, Bootstrap, and PHP.`,
-        category: FRONTEND,
-      },
-    ],
-  },
+  // {
+  //   companyName: "Keitai Technologies",
+  //   employmentType: "Internship",
+  //   designation: "Intern",
+  //   duration: "Dec 2018 - Jan 2019",
+  //   companyType: "Product-based",
+  //   companyWebsite: "",
+  //   companyIntro: "",
+  //   works: [
+  //     {
+  //       bulletPoint: `Worked as a full-stack developer at this company on various websites, acquiring proficiency in diverse technologies such as JavaScript, HTML, CSS, Bootstrap, and PHP.`,
+  //       category: FRONTEND,
+  //     },
+  //   ],
+  // },
 ];
