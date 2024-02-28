@@ -4,8 +4,8 @@ $gap-between-menu-items: 50px;
 
 .header {
   @include flex-row-v-cen;
-  padding: 30px;
-  padding-left: 100px;
+  padding: 15px;
+  padding-left: 6%;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -39,12 +39,12 @@ $gap-between-menu-items: 50px;
     a {
       padding: 4px 10px;
       font-weight: bold;
-      color: $color-primary-text;
+      color: $color-ternary-text;
       text-decoration: none;
       border-bottom: 1px solid transparent;
 
       &.active {
-        border-bottom: 1px solid $color-primary-text;
+        border-bottom: 1px solid $color-ternary-text;
       }
     }
   }
@@ -53,7 +53,7 @@ $gap-between-menu-items: 50px;
     display: none;
 
     .hamburgerIcon {
-      color: $color-primary-text;
+      color: $color-ternary-text;
       font-size: toRem(30px);
     }
 
@@ -70,14 +70,14 @@ $gap-between-menu-items: 50px;
 
       a {
         font-weight: bold;
-        color: $color-primary-text;
+        color: $color-ternary-text;
         text-decoration: none;
         padding: 2px 0;
         margin: 10px 0;
         background-color: $color-primary-bg;
 
         &.active {
-          border-bottom: 1px solid $color-primary-text;
+          border-bottom: 1px solid $color-ternary-text;
         }
       }
     }
