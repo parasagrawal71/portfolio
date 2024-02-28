@@ -4,6 +4,7 @@ import cx from "classnames";
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import { scrollToTop } from "utils/functions";
 import { MouseOverPopover, TextButton } from "libs";
+import { useCheckMobileScreen } from "hooks";
 
 // IMPORT OTHERS HERE //
 import { skillsetsArray, skillCategory } from "config/skillset";
@@ -15,6 +16,9 @@ const Skillset = () => {
   const [currentCategory, setCurrentCategory] = useState("");
   const [skills, setSkills] = useState(skillsetsArray?.filter((s) => s.show));
   const currentCategoryRef = useRef(null);
+
+  // HOOKs
+  const isMobile = useCheckMobileScreen();
 
   useEffect(() => {
     setTimeout(() => {
@@ -95,7 +99,7 @@ const Skillset = () => {
       </main>
       <section className={appStyles.hoverIllustration}>
         <HoverIllustration />
-        <div>Hover</div>
+        <div>{isMobile ? "Tap" : "Hover"}</div>
       </section>
     </>
   );
