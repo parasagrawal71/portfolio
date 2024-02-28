@@ -9,6 +9,7 @@ import {
   BsInstagram as InstagramIcon,
   BsArrowUpCircle as ScrollToTopIcon,
   BsBuilding as OfficeIcon,
+  BsFillGrid3X3GapFill as Menu3x3Icon,
 } from "react-icons/bs";
 import { IoMdMail as MailIcon } from "react-icons/io";
 import { AiOutlineShoppingCart as ShopIcon } from "react-icons/ai";
@@ -17,6 +18,8 @@ import {
   GrFormNext as NextBtnIcon,
   GrFormPrevious as PreviousBtnIcon,
   GrGraphQl as GraphQLAppIcon,
+  GrFormPreviousLink as PreviousItemIcon,
+  GrFormNextLink as NextItemIcon,
 } from "react-icons/gr";
 import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
 import { MdOndemandVideo as VideoIcon } from "react-icons/md";
@@ -74,6 +77,10 @@ import {
   DockerIcon,
   KubernetesIcon,
   TypescriptIcon,
+  GoogleCloudIcon,
+  NextJSIcon,
+  NestJSIcon,
+  PostgreSQLIcon,
 } from "./SkillSvgs";
 
 // ************************************ EXPORTS ************************************ //
@@ -112,6 +119,9 @@ export {
   ScrollMouse,
   ArrowKeys,
   HoverIllustration,
+  Menu3x3Icon,
+  PreviousItemIcon,
+  NextItemIcon,
 
   // Skillset icons
   JavaScriptIcon,
@@ -138,4 +148,8 @@ export {
   KubernetesIcon,
   TypescriptIcon,
   FastAPIIcon,
+  GoogleCloudIcon,
+  NextJSIcon,
+  NestJSIcon,
+  PostgreSQLIcon,
 };

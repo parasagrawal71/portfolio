@@ -21,8 +21,11 @@ import {
   KubernetesIcon,
   TypescriptIcon,
   FastAPIIcon,
+  GoogleCloudIcon,
+  NextJSIcon,
+  NestJSIcon,
+  PostgreSQLIcon,
 } from "assets/Images";
-import { GoogleCloudIcon } from "assets/SkillSvgs";
 
 /* *********************************************************************************************************** */
 /* *********************************************************************************************************** */
@@ -134,7 +137,7 @@ export const techListMap = {
     id: "typescript",
   },
   fastapi: {
-    displayName: "FastAPI",
+    displayName: "Fast API",
     Icon: FastAPIIcon,
     id: "fastapi",
   },
@@ -142,6 +145,21 @@ export const techListMap = {
     displayName: "Google Cloud",
     Icon: GoogleCloudIcon,
     id: "googlecloud",
+  },
+  nextjs: {
+    displayName: "Next JS",
+    Icon: NextJSIcon,
+    id: "nextjs",
+  },
+  nestjs: {
+    displayName: "Nest JS",
+    Icon: NestJSIcon,
+    id: "nestjs",
+  },
+  postgresql: {
+    displayName: "PostgreSQL",
+    Icon: PostgreSQLIcon,
+    id: "postgresql",
   },
 };
 
