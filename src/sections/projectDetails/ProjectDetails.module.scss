@@ -85,7 +85,7 @@
   .btns-cnt {
     @include flex-row-v-cen;
     justify-content: space-between;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 
     .btns-cnt--left {
       @include flex-row-v-cen;
@@ -137,13 +137,13 @@
     .overview-video {
       width: 100%; // IMPORTANT: To fit the parent container
       height: 100%; // IMPORTANT: To fit the parent container
-      object-fit: contain; // IMPORTANT: To maintain the aspect ratio when height & width is adjusted to fit the container.
+      // object-fit: contain; // IMPORTANT: To maintain the aspect ratio when height & width is adjusted to fit the container.
     }
 
     .overview-img {
       width: 100%; // IMPORTANT: To fit the parent container
       height: 100%; // IMPORTANT: To fit the parent container
-      object-fit: contain;
+      // object-fit: contain;
     }
   }
 
@@ -182,7 +182,6 @@
       flex-direction: column;
       gap: 20px;
       align-items: flex-start;
-      padding-bottom: 40px;
     }
 
     .demovideo {

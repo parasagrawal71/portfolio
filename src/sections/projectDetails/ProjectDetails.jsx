@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import { createSearchParams, useNavigate, useSearchParams } from "react-router-dom";
 
-// todo: FIX for mobile screen
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import {
   GithubIcon,

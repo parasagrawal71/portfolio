@@ -44,11 +44,12 @@ const projectsList = [
     It provides controls to maintain different levels of access to a user
     for a microservice.`,
     externalUrls: [
-      {
-        type: "demovideo",
-        url: `https://drive.google.com/uc?id=1oqpiK_GMw-hmTxofoCppJiHeh9y7X5y7`,
-        isVideo: true,
-      },
+      // TODO: Uncomment demovideo entries when the video urls are accessible
+      // {
+      //   type: "demovideo",
+      //   url: `https://drive.google.com/uc?id=1oqpiK_GMw-hmTxofoCppJiHeh9y7X5y7`,
+      //   isVideo: true,
+      // },
       {
         type: "website",
         url: `https://api-documenter.web.app`,
@@ -85,11 +86,11 @@ const projectsList = [
       mentioned in one place. OAuth login. Mention and reply in real-time
       without refreshing the page (WebSockets).`,
     externalUrls: [
-      {
-        type: "demovideo",
-        url: `https://drive.google.com/uc?id=10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_`,
-        isVideo: true,
-      },
+      // {
+      //   type: "demovideo",
+      //   url: `https://drive.google.com/uc?id=10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_`,
+      //   isVideo: true,
+      // },
       {
         type: "website",
         url: `https://twitter-helpdesk-app.web.app/`,
