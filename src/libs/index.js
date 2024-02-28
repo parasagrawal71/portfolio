@@ -5,6 +5,7 @@ import Toast from "./toast/Toast";
 import Carousel, { CarouselItem } from "./carousel/Carousel";
 import TransparentButton from "./transparentButton/TransparentButton";
 import Loader from "./loader/Loader";
+import SecondaryLoader from "./secondaryLoader/SecondaryLoader";
 import MouseOverPopover from "./mouseOverPopover/MouseOverPopover";
 
 export {
@@ -16,5 +17,6 @@ export {
   CarouselItem,
   TransparentButton,
   Loader,
+  SecondaryLoader,
   MouseOverPopover,
 };
