@@ -2,91 +2,126 @@
 
 .project-box-cnt {
   @include flex-col;
-  padding: 25px;
-  width: 100%; // IMPORTANT: To spread out in the parent container
-  height: 100%; // IMPORTANT: To spread out in the parent container and To keep the overview image contained.
+  border: 1px solid $color-secondary-text;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
 
   .header {
-    padding-bottom: 20px;
-    @include flex-row-b-sb-cen;
+    background-color: $color-white;
+    @include flex-row-v-cen;
+    justify-content: center;
+    padding: 6px 0;
+    opacity: 0.8;
+    position: relative;
 
     .header--left {
       @include flex-row-v-cen;
-      .header--left-left {
-        .icon {
-          @include flex-row-v-cen;
-          border: 1px solid #444242;
-          border-radius: 50%;
-          padding: 5px;
-          margin-right: 10px;
-        }
-      }
-      .header--left-right {
-        @include flex-col;
-        padding-right: 10px;
-        .name {
-          font-size: toRem(18px);
-          color: $color-primary-text;
-        }
-        .duration {
-          font-size: toRem(14px);
-          font-style: italic;
-        }
-      }
+      opacity: 0;
     }
 
     .header--right {
+      position: absolute;
+      right: 15px;
       @include flex-row-v-cen;
       gap: 15px;
       svg {
         font-size: toRem(25px);
+        color: rgba(0, 0, 0, 0.6);
         cursor: pointer;
+        transition: 0.3s all ease-in-out;
+        &:hover {
+          scale: 1.2;
+        }
       }
     }
   }
 
   .content-img-cnt {
-    max-height: 400px; // IMPORTANT: To keep the overview image contained
-    overflow: hidden; // IMPORTANT: In case the overview image overflows, keep the overflowed part hidden.
+    height: 320px;
+    position: relative;
+    display: flex;
 
     .overview-img,
     .overview-video {
       width: 100%; // IMPORTANT: To fit the parent container
       height: 100%; // IMPORTANT: To fit the parent container
       object-fit: contain; // IMPORTANT: To maintain the aspect ratio when height & width is adjusted to fit the container.
-      /*
-      * IMPORTANT: "height: 100%" will only make sense when parent height is set to some absolute 
-      * value. Otherwise, image will overflow the container to maintain the aspect ratio.
-      */
+    }
+
+    .overview-img {
+      opacity: 0.5;
+      transition: 0.3s all ease-in-out;
+
+      &:hover {
+        opacity: 0.3;
+      }
     }
 
     .overview-video {
       border: none !important;
       outline: none !important;
     }
-  }
 
-  .descrp {
-    font-size: toRem(14px);
-    text-align: justify;
-    white-space: normal;
-    padding-top: 20px;
-    flex: 1;
-  }
-
-  .tech-list {
-    padding-top: 40px;
-    @include flex-row-v-cen;
-    flex-wrap: wrap;
-    gap: 20px;
-
-    .tech {
-      gap: 5px;
-      @include flex-row-v-cen;
-      svg {
-        height: 15px;
+    &:hover {
+      .skills-outer-cnt {
+        opacity: 1;
       }
     }
+    .skills-outer-cnt {
+      transition: 0.3s all ease-in-out;
+      opacity: 0;
+      z-index: -10;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      @include flex-col-b-cen;
+      .skills-cnt {
+        @include flex-row-b-cen;
+        flex-wrap: wrap;
+        gap: 15px 20px;
+        max-width: 400px;
+        .skill {
+          color: $color-secondary-text;
+          @include flex-row-v-cen;
+          gap: 5px;
+          svg {
+            height: 25px;
+          }
+        }
+      }
+
+      .more {
+        color: $color-secondary-text;
+        padding-top: 25px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .banner-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+  }
+
+  .banner {
+    width: 200px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 15px;
+    background-color: $color-brand;
+    color: #fff;
+    text-align: center;
+    transform: rotate(-45deg) translate(-28%, -35%);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1px;
   }
 }
 

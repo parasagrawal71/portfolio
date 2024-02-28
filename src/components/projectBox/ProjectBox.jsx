@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
@@ -9,29 +10,23 @@ import { GithubIcon, WebsiteIcon, VideoIcon } from "assets/Images";
 import appStyles from "./ProjectBox.module.scss";
 
 const ProjectBox = React.forwardRef((props, ref) => {
-  // PROPs
-  const {
-    name,
-    duration,
-    description,
-    icon: Icon,
-    iconSize,
-    iconColor,
-    techList,
-    externalUrls,
-    overviewImg,
-    mainCntClassname,
-    isVisible,
-  } = props || {};
+  // PROPS HERE
+  const { project } = props || {};
+  const { overviewImg, name, externalUrls, techList } = project || {};
+  const navigate = useNavigate();
 
   // STATE VARIABLEs
   const [videoUrl, setVideoUrl] = useState(null);
 
-  useEffect(() => {
-    if (isVisible) {
-      setVideoUrl(null);
-    }
-  }, [isVisible]);
+  function handleClickOnProject() {
+    navigate(`/project?name=${name}`);
+  }
+
+  const iconMap = {
+    github: GithubIcon,
+    website: WebsiteIcon,
+    demovideo: VideoIcon,
+  };
 
   const openLinkInNewTab = (link, isVideo, index, e) => {
     animate.jumpUp({ targets: `#external-icon-${index}` });
@@ -39,14 +34,9 @@ const ProjectBox = React.forwardRef((props, ref) => {
       e?.stopPropagation?.();
       window.open(link, "_blank");
     } else {
+      e?.stopPropagation?.();
       toggleShowVideo();
     }
-  };
-
-  const iconMap = {
-    github: GithubIcon,
-    website: WebsiteIcon,
-    demovideo: VideoIcon,
   };
 
   function toggleShowVideo() {
@@ -59,24 +49,15 @@ const ProjectBox = React.forwardRef((props, ref) => {
   }
 
   return (
-    <section className={cx([appStyles["project-box-cnt"], "lineUp", mainCntClassname])} ref={ref}>
-      {/*
-       * HEADER
-       */}
+    <section
+      className={appStyles["project-box-cnt"]}
+      onClick={handleClickOnProject}
+      role="button"
+      onKeyDown={() => {}}
+      tabIndex="0"
+    >
       <div className={appStyles.header}>
-        <div className={appStyles["header--left"]}>
-          <div className={appStyles["header--left-left"]}>
-            {Icon ? (
-              <span className={appStyles.icon}>
-                <Icon style={{ fontSize: iconSize, color: iconColor }} />
-              </span>
-            ) : null}
-          </div>
-          <div className={appStyles["header--left-right"]}>
-            <span className={appStyles.name}>{name}</span>
-            <span className={appStyles.duration}>{duration}</span>
-          </div>
-        </div>
+        <div className={appStyles["header--left"]}>{name}</div>
         <div className={appStyles["header--right"]}>
           {externalUrls?.map((external, i) => {
             const ExternalIcon = iconMap?.[external?.type];
@@ -93,9 +74,6 @@ const ProjectBox = React.forwardRef((props, ref) => {
         </div>
       </div>
 
-      {/*
-       * Content Image
-       */}
       <div className={appStyles["content-img-cnt"]}>
         {!videoUrl && overviewImg ? (
           <img src={overviewImg} alt={name} className={appStyles["overview-img"]} />
@@ -105,26 +83,29 @@ const ProjectBox = React.forwardRef((props, ref) => {
             <source src={videoUrl} type="video/webm" />
           </video>
         ) : null}
+
+        {techList?.length ? (
+          <div className={appStyles["skills-outer-cnt"]}>
+            <div className={appStyles["skills-cnt"]}>
+              {techList?.slice(0, 5)?.map((tech) => {
+                const { displayName } = tech || {};
+                const SkillIcon = tech?.Icon || null;
+                return (
+                  <div key={displayName} className={appStyles.skill}>
+                    <SkillIcon />
+                    <div>{displayName}</div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className={appStyles.more}>More ...</div>
+          </div>
+        ) : null}
       </div>
 
-      {/*
-       * Description
-       */}
-      <div className={appStyles.descrp}>{description}</div>
-      {techList?.length ? (
-        <div className={appStyles["tech-list"]}>
-          {techList?.map((tech) => {
-            const { displayName } = tech || {};
-            const SkillIcon = tech?.Icon || null;
-            return (
-              <div key={displayName} className={appStyles.tech}>
-                <SkillIcon />
-                <div>{displayName}</div>
-              </div>
-            );
-          })}
-        </div>
-      ) : null}
+      <div className={appStyles["banner-container"]}>
+        <div className={appStyles.banner}>{name}</div>
+      </div>
     </section>
   );
 });

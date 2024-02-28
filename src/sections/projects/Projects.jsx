@@ -3,105 +3,70 @@ import cx from "classnames";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import ProjectBox from "components/projectBox/ProjectBox";
-import { Carousel, CarouselItem } from "libs";
-import { useCheckMobileScreen } from "hooks";
 
 // IMPORT OTHERS HERE //
-import { CarouselViewIcon, ListViewIcon } from "assets/Images";
-import { projectsList } from "config/projects";
+import { projectsList, techFilters } from "config/projects";
+import { TextButton } from "libs";
 import appStyles from "./Projects.module.scss";
 
 const Projects = () => {
   // STATE VARIABLEs
-  const [currentView, setCurrentView] = useState("carousel");
-  const [isViewOptions, setIsViewOptions] = useState(false);
-  const contentCntRef = useRef(null);
-  const isMobile = useCheckMobileScreen();
+  const [currentFilter, setCurrentFilter] = useState("");
+  const [filteredProjects, setFilteredProjects] = useState([]);
 
   useEffect(() => {
-    if (isMobile) {
-      setCurrentView("list");
-      setIsViewOptions(false);
-    }
-    if (!isMobile) {
-      setIsViewOptions(true);
-    }
-  }, []);
+    filterProjects(currentFilter);
+  }, [currentFilter]);
 
-  function handleToggleView(view) {
-    if (view === "carousel") {
-      setCurrentView("carousel");
-    } else if (view === "list") {
-      setCurrentView("list");
+  function toggleFilter(tech) {
+    if (tech) {
+      if (currentFilter === tech.id) {
+        setCurrentFilter("");
+      } else {
+        setCurrentFilter(tech.id);
+      }
+    } else {
+      setCurrentFilter("");
     }
   }
 
+  function filterProjects(currentSelectedTech) {
+    let projects = projectsList;
+    if (currentSelectedTech) {
+      projects = projectsList.filter((p) => {
+        const techListIds = p.techList.map((tech) => tech.id);
+        return techListIds.includes(currentSelectedTech);
+      });
+    }
+    setFilteredProjects(projects);
+  }
+
   return (
-    <main
-      className={cx([
-        appStyles["main-cnt"],
-        {
-          [appStyles["carousel-view"]]: currentView === "carousel",
-          [appStyles["list-view"]]: currentView === "list",
-        },
-      ])}
-      id="projects"
-    >
-      {/* 
-        HEADER
-      */}
-      {isViewOptions ? (
-        <section className={appStyles.header}>
-          <CarouselViewIcon
-            onClick={handleToggleView.bind(this, "carousel")}
-            className={cx({
-              [appStyles.active]: currentView === "carousel",
-            })}
-          />
-          <ListViewIcon
-            onClick={handleToggleView.bind(this, "list")}
-            className={cx(appStyles.listIcon, {
-              [appStyles.active]: currentView === "list",
-            })}
-          />
-        </section>
-      ) : null}
+    <main className={appStyles["main-cnt"]}>
+      {/* ************ HEADER CONTAINER: Filters ************ */}
+      <section className={appStyles["header-cnt"]}>
+        {techFilters?.map((aTech) => {
+          return (
+            <TextButton
+              key={aTech.id}
+              btnText={aTech.displayName}
+              customBtnClass={cx([
+                appStyles.filter,
+                {
+                  [appStyles.active]: currentFilter === aTech.id,
+                },
+              ])}
+              btnCallback={toggleFilter.bind(this, aTech)}
+            />
+          );
+        })}
+      </section>
 
-      {/* 
-        CONTENT
-      */}
-      <section
-        className={appStyles["content-cnt"]}
-        ref={(el) => {
-          if (!el) return;
-          return contentCntRef;
-        }}
-      >
-        {currentView === "carousel" ? (
-          <Carousel carouselClassName={appStyles.carousel}>
-            {projectsList?.map((project) => {
-              return (
-                <CarouselItem key={project?.name} carouselItemClassName="">
-                  <ProjectBox {...project} />
-                </CarouselItem>
-              );
-            })}
-          </Carousel>
-        ) : null}
-
-        {currentView === "list" ? (
-          <section className={appStyles["projects-list-cnt"]}>
-            {projectsList?.map((project) => {
-              return (
-                <ProjectBox
-                  {...project}
-                  key={project?.name}
-                  mainCntClassname={appStyles.listViewProjectBoxCnt}
-                />
-              );
-            })}
-          </section>
-        ) : null}
+      {/* ************ CONTENT CONTAINER: Projects ************ */}
+      <section className={appStyles["content-cnt"]}>
+        {filteredProjects?.map((project) => {
+          return <ProjectBox key={project.name} project={project} />;
+        })}
       </section>
     </main>
   );

@@ -10,14 +10,15 @@ import {
   FastAPIIcon,
   fastapiAppImage,
 } from "assets/Images";
-import { techListArray } from "./techList";
+import { techListArray, techListMap } from "./techList";
 
 /* *********************************************************************************************************** */
 /* *********************************************************************************************************** */
 
-export const projectsList = [
+const projectsList = [
   {
     name: "API Documenter",
+    sortOrder: 1,
     icon: ApiIcon,
     overviewImg: apiDocumenterImage,
     iconSize: "32px",
@@ -61,6 +62,7 @@ export const projectsList = [
   },
   {
     name: "Twitter Helpdesk",
+    sortOrder: 2,
     icon: TwitterIcon,
     overviewImg: twitterHelpdeskImage,
     iconSize: "28px",
@@ -101,6 +103,7 @@ export const projectsList = [
   },
   {
     name: "Shop Anywhere",
+    sortOrder: 3,
     icon: ShopIcon,
     overviewImg: shopAnywhereImage,
     iconSize: "30px",
@@ -140,6 +143,7 @@ export const projectsList = [
   },
   {
     name: "GraphQL App",
+    sortOrder: 4,
     icon: GraphQLAppIcon,
     overviewImg: graphqlAppImage,
     iconSize: "30px",
@@ -163,6 +167,7 @@ export const projectsList = [
   },
   {
     name: "FastAPI App",
+    sortOrder: 5,
     icon: FastAPIIcon,
     overviewImg: fastapiAppImage,
     iconSize: "30px",
@@ -185,3 +190,8 @@ export const projectsList = [
     ],
   },
 ];
+
+projectsList.sort((p1, p2) => p1.sortOrder - p2.sortOrder);
+const techFilters = Object.values(techListMap);
+
+export { projectsList, techFilters };

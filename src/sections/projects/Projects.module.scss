@@ -1,61 +1,77 @@
 @import "utils/commonStyles/index.scss";
 
-@mixin project-box-style {
-  box-shadow: rgba(0, 0, 0, 0.32) 0px 2px 4px 0px, rgba(0, 0, 0, 0.52) 0px 2px 16px 0px;
-  border-radius: 8px;
-}
-
 .main-cnt {
-  position: relative;
-  @include section-padding();
-  padding-left: 12%;
-  padding-right: 12%;
-  &.carousel-view {
-    flex: 1;
-    height: calc(100% - (2 * 85px));
-  }
-  &.list-view {
-    margin-bottom: 50px;
-  }
+  @include flex-col;
+  padding: $section-padding-vertical $section-padding-horizontal;
 
-  .header {
-    position: absolute;
-    right: 12%;
-    top: 0;
+  .header-cnt {
     @include flex-row-v-cen;
-    justify-content: flex-end;
-    padding: 20px;
+    flex-wrap: wrap;
     gap: 15px;
 
-    svg {
-      font-size: toRem(22px);
-      cursor: pointer;
+    .filter {
       &.active {
-        fill: $color-active !important;
+        border-color: $color-brand;
+        background-color: $color-brand;
       }
-      &.listIcon {
-        font-size: toRem(26px);
+
+      // Reference: https://css-tricks.com/cool-hover-effects-using-background-properties/
+      background: linear-gradient($color-brand 0 0) var(--p, 0) / var(--p, 0) no-repeat;
+      transition: 0.4s, background-position 0s;
+      &:hover {
+        --p: 100%;
       }
+
+      display: inline-block;
+      padding: 6px 5px;
+      background-color: $color-brand-secondary;
+      color: #999;
+      border-width: 1px 1px 2px 1px;
+      border-style: solid;
+      border-color: #222;
+      border-radius: 3px;
+      text-transform: uppercase;
+      font-family: MontSerrat, Tahoma, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 0.75rem;
+      box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.25);
+      opacity: 1;
+      cursor: pointer;
     }
   }
 
   .content-cnt {
-    height: 100%;
-    .carousel {
-      @include project-box-style;
+    padding: 40px 0;
+    @include flex-row-v-cen;
+    flex-wrap: wrap;
+    gap: 50px;
+
+    > * {
+      width: calc(50% - 25px);
     }
 
-    .projects-list-cnt {
-      @include flex-col;
-      gap: 100px;
+    animation: fadein 0.8s ease-out forwards;
+  }
+}
 
-      .listViewProjectBoxCnt {
-        @include project-box-style;
-        height: 610px; // IMPORTANT: To make overview image responsive in the list view.
+@media only screen and (max-width: 800px) {
+  .main-cnt {
+    .content-cnt {
+      > * {
+        width: calc(100%);
       }
     }
   }
 }
 
-@media only screen and (max-width: 600px) {
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
 }
