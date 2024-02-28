@@ -1,0 +1,205 @@
+@import "utils/commonStyles/index.scss";
+
+.project-details-cnt {
+  padding: $section-padding-vertical 15%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  position: relative;
+  @include flex-col;
+
+  .loaderCnt {
+    @include flex-row-b-cen;
+    flex: 1;
+    align-self: center;
+  }
+
+  &.height100 {
+    height: 100%;
+  }
+
+  .menu3x3Icon {
+    font-size: toRem(30px);
+    position: absolute;
+    left: 50px;
+    top: 50px;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+
+    &:hover {
+      scale: 1.5;
+    }
+  }
+
+  .previousIcon {
+    font-size: toRem(50px);
+    position: absolute;
+    left: 50px;
+    top: calc(50vh - 25px);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    box-shadow: $color-brand 0px 3px 8px;
+    path {
+      stroke: $color-brand;
+    }
+    &.disabled {
+      cursor: default;
+      box-shadow: none;
+    }
+  }
+
+  .nextIcon {
+    font-size: toRem(50px);
+    position: absolute;
+    right: 50px;
+    top: calc(50vh - 25px);
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    box-shadow: $color-brand 0px 3px 8px;
+    path {
+      stroke: $color-brand;
+    }
+    &.disabled {
+      cursor: default;
+      box-shadow: none;
+    }
+  }
+
+  .projectName {
+    font-size: toRem(30px);
+    color: white;
+    padding-bottom: 5px;
+  }
+
+  .duration {
+    font-size: toRem(20px);
+    padding-bottom: 20px;
+  }
+
+  .description {
+    font-size: toRem(16px);
+    padding-bottom: 20px;
+  }
+
+  .btns-cnt {
+    @include flex-row-v-cen;
+    justify-content: space-between;
+    padding-bottom: 30px;
+
+    .btns-cnt--left {
+      @include flex-row-v-cen;
+    }
+
+    .btns-cnt--right {
+      @include flex-row-v-cen;
+    }
+
+    .btn {
+      // Reference: https://css-tricks.com/cool-hover-effects-using-background-properties/
+      background: linear-gradient($color-brand 0 0) var(--p, 0) / var(--p, 0) no-repeat;
+      transition: 0.4s, background-position 0s;
+      &:hover {
+        --p: 100%;
+      }
+
+      padding: 6px 12px;
+      background-color: $color-brand;
+      border: 1px solid $color-brand;
+      color: $color-primary-text;
+      border-radius: 2px;
+      width: fit-content;
+      text-transform: uppercase;
+
+      font-weight: 500;
+      text-transform: uppercase;
+      font-family: MontSerrat, Tahoma, Arial, sans-serif;
+      color: white;
+      font-size: toRem(14px);
+      line-height: 1.75rem;
+      color: rgb(235, 241, 248);
+      letter-spacing: 1px;
+
+      svg {
+        font-size: 1.5rem;
+      }
+    }
+
+    .visitWebsite {
+    }
+
+    .github {
+    }
+  }
+
+  .demovideo {
+    height: 500px;
+    .overview-video {
+      width: 100%; // IMPORTANT: To fit the parent container
+      height: 100%; // IMPORTANT: To fit the parent container
+      object-fit: contain; // IMPORTANT: To maintain the aspect ratio when height & width is adjusted to fit the container.
+    }
+
+    .overview-img {
+      width: 100%; // IMPORTANT: To fit the parent container
+      height: 100%; // IMPORTANT: To fit the parent container
+      object-fit: contain;
+    }
+  }
+
+  .tech-list-cnt {
+    @include flex-col;
+    padding-top: 50px;
+    .tech-list-header {
+      font-size: toRem(30px);
+      color: white;
+    }
+
+    .tech-list {
+      padding-top: 20px;
+      @include flex-col;
+      gap: 20px;
+
+      .tech {
+        gap: 10px;
+        @include flex-row-v-cen;
+        svg {
+          height: 25px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .project-details-cnt {
+    .menu3x3Icon {
+      left: 25px;
+      top: 25px;
+    }
+
+    .btns-cnt {
+      flex-direction: column;
+      gap: 20px;
+      align-items: flex-start;
+      padding-bottom: 40px;
+    }
+
+    .demovideo {
+      height: 250px;
+      position: relative;
+    }
+
+    .previousIcon {
+      font-size: toRem(40px);
+      left: -50px;
+      top: calc(50% - 20px);
+    }
+
+    .nextIcon {
+      font-size: toRem(40px);
+      right: -50px;
+      top: calc(50% - 20px);
+    }
+  }
+}

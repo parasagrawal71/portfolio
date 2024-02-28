@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // IMPORT ALL PAGES HERE //
 import MainPage from "pages/main/Main";
 import GlobalContextProvider from "contexts/GlobalContextProvider";
+import ProjectDetails from "sections/projectDetails/ProjectDetails";
 
 // IMPORT OTHERS HERE //
 import { fullName } from "config";
@@ -18,6 +19,10 @@ const App = () => {
     {
       path: "/",
       element: <MainPage />,
+    },
+    {
+      path: "/project",
+      element: <ProjectDetails />,
     },
   ]);
 
