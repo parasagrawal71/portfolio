@@ -38,9 +38,9 @@
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-    box-shadow: $color-brand 0px 3px 8px;
+    box-shadow: $color-secondary 0px 3px 8px;
     path {
-      stroke: $color-brand;
+      stroke: $color-secondary;
     }
     &.disabled {
       cursor: default;
@@ -56,9 +56,9 @@
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
-    box-shadow: $color-brand 0px 3px 8px;
+    box-shadow: $color-secondary 0px 3px 8px;
     path {
-      stroke: $color-brand;
+      stroke: $color-secondary;
     }
     &.disabled {
       cursor: default;
@@ -97,15 +97,16 @@
 
     .btn {
       // Reference: https://css-tricks.com/cool-hover-effects-using-background-properties/
-      background: linear-gradient($color-brand 0 0) var(--p, 0) / var(--p, 0) no-repeat;
+      background: linear-gradient($color-30-6 0 0) var(--p, 0) / var(--p, 0) no-repeat;
       transition: 0.4s, background-position 0s;
       &:hover {
         --p: 100%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px; // TODO: Modify if required. Upto #28
       }
 
       padding: 6px 12px;
-      background-color: $color-brand;
-      border: 1px solid $color-brand;
+      background-color: $color-30-6;
+      border: 1px solid $color-30-6;
       color: $color-primary-text;
       border-radius: 2px;
       width: fit-content;
@@ -123,6 +124,7 @@
       svg {
         font-size: 1.5rem;
       }
+      box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
     }
 
     .visitWebsite {

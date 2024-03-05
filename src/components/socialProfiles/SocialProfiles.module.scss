@@ -9,7 +9,12 @@
     svg {
       font-size: toRem(25px);
       path {
-        fill: $color-primary-text;
+        fill: $color-action;
+      }
+      &:hover {
+        path {
+          fill: $color-action-hover;
+        }
       }
     }
   }

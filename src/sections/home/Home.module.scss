@@ -34,10 +34,10 @@ $padding-vertical: 30px;
         width: 1px;
         background: linear-gradient(
           180deg,
-          #08b6f9 0%,
-          #6c56ef 33.57%,
-          #1306dd 65.86%,
-          #aa0eb2 100%
+          #aa0eb2 0%,
+          $color-10 33.57%,
+          $color-30 65.86%,
+          $color-60 100%
         );
       }
     }

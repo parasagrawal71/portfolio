@@ -18,7 +18,7 @@
   align-items: center;
 
   &:hover {
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid $color-action;
     transform: translateY(-3px);
   }
 }

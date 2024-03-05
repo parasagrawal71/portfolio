@@ -10,11 +10,11 @@ $gap-between-menu-items: 50px;
   top: 0;
   z-index: 999;
   gap: $gap-between-menu-items;
-  background-color: $color-primary-bg;
+  background-color: $color-primary;
 
   &.header-shadow {
     box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 10px;
-    background-color: $color-primary-bg;
+    background-color: $color-primary;
   }
 
   &.no-shadow {
@@ -26,7 +26,7 @@ $gap-between-menu-items: 50px;
     svg {
       width: 70px;
       path {
-        fill: $color-brand !important;
+        fill: $color-white-text !important;
       }
     }
   }
@@ -39,12 +39,12 @@ $gap-between-menu-items: 50px;
     a {
       padding: 4px 10px;
       font-weight: bold;
-      color: $color-ternary-text;
+      color: $color-primary-text;
       text-decoration: none;
       border-bottom: 1px solid transparent;
 
       &.active {
-        border-bottom: 1px solid $color-ternary-text;
+        border-bottom: 1px solid $color-action;
       }
     }
   }
@@ -53,7 +53,7 @@ $gap-between-menu-items: 50px;
     display: none;
 
     .hamburgerIcon {
-      color: $color-ternary-text;
+      color: $color-primary-text;
       font-size: toRem(30px);
     }
 
@@ -70,14 +70,14 @@ $gap-between-menu-items: 50px;
 
       a {
         font-weight: bold;
-        color: $color-ternary-text;
+        color: $color-primary-text;
         text-decoration: none;
         padding: 2px 0;
         margin: 10px 0;
-        background-color: $color-primary-bg;
+        background-color: $color-primary;
 
         &.active {
-          border-bottom: 1px solid $color-ternary-text;
+          border-bottom: 1px solid $color-action;
         }
       }
     }

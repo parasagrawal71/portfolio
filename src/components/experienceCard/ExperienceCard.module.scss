@@ -72,7 +72,7 @@ $shadow-color: rgba(0, 0, 0, 0.9);
     padding: 30px;
     margin-top: -65px;
     z-index: 10;
-    color: $color-primary-bg;
+    color: $color-primary;
     font-size: toRem(20px);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -101,8 +101,8 @@ $shadow-color: rgba(0, 0, 0, 0.9);
     right: 25px;
     top: 25px;
     font-size: toRem(100px);
-    fill: $color-brand;
-    color: $color-brand;
+    fill: $color-secondary;
+    color: $color-secondary;
   }
 
   .wave {

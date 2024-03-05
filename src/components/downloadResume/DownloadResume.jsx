@@ -13,7 +13,6 @@ const DownloadResume = (props) => {
       btnText="View Resume"
       className={`${appStyles.btn} ${className}`}
       btnCallback={() => {
-        // window.open(RESUME_URL, "_none");
         window.open(RESUME_URL, "_blank");
       }}
     />
