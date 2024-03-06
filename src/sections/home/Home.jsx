@@ -30,7 +30,9 @@ const Home = () => {
               __html: shortDescriptionHtml,
             }}
           />
-          <DownloadResume className={appStyles.btnStyle} />
+          <div className={appStyles.btnsWrapper}>
+            <DownloadResume />
+          </div>
         </div>
         {/* <div className={appStyles["content--right"]}></div> */}
       </section>

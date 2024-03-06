@@ -64,9 +64,6 @@ $padding-vertical: 30px;
       font-weight: bold;
       color: $color-secondary-text;
     }
-    .btnStyle {
-      margin-top: 50px;
-    }
     .descrp {
       padding-top: 30px;
       max-width: 500px;
@@ -76,6 +73,11 @@ $padding-vertical: 30px;
       a {
         color: $color-secondary-text;
       }
+    }
+    .btnsWrapper {
+      margin-top: 50px;
+      @include flex-row-v-cen;
+      gap: 30;
     }
   }
 }
