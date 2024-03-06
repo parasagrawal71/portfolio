@@ -56,7 +56,14 @@ $gap-between-menu-items: 50px;
     flex: 1;
   }
 
-  .header--mid-mobile {
+  .getInTouchBtn {
+    background-color: $color-secondary;
+    &:hover {
+      background-color: $color-action;
+    }
+  }
+
+  .header--right-mobile {
     display: none;
 
     .hamburgerIcon {
@@ -64,11 +71,11 @@ $gap-between-menu-items: 50px;
       font-size: toRem(30px);
     }
 
-    .header--mid-mobile-btn {
+    .header--right-mobile-btn {
       background-color: inherit;
     }
 
-    .header--mid-mobile-menu-items {
+    .header--right-mobile-menu-items {
       @include flex-col;
       justify-content: flex-end;
       align-items: flex-end;
@@ -95,12 +102,13 @@ $gap-between-menu-items: 50px;
   .header {
     padding: 20px 15px;
     justify-content: space-between;
+    gap: 20px;
 
     .header--mid-web {
       display: none;
     }
 
-    .header--mid-mobile {
+    .header--right-mobile {
       display: block;
     }
   }

@@ -9,6 +9,7 @@ import { TextButton } from "libs";
 import { useGlobalState } from "contexts/GlobalContextProvider";
 import { HamBurgerIcon, BrandLogoIcon } from "assets/Images";
 import { menuItems } from "config/header";
+import GetInTouch from "components/getInTouch/GetInTouch";
 import appStyles from "./Header.module.scss";
 
 const Header = React.forwardRef((props, ref) => {
@@ -65,14 +66,16 @@ const Header = React.forwardRef((props, ref) => {
 
       <section className={appStyles["header--mid-web"]}>{renderMenuItems()}</section>
 
-      {/* <section className={appStyles["header--right-web"]}></section> */}
+      <section className={appStyles["header--right-web"]}>
+        <GetInTouch className={appStyles.getInTouchBtn} />
+      </section>
 
-      <section className={appStyles["header--mid-mobile"]}>
+      <section className={appStyles["header--right-mobile"]}>
         <TextButton
           btnText={null}
           iconOnRight={<HamBurgerIcon className={appStyles.hamburgerIcon} />}
-          customBtnClass={appStyles["header--mid-mobile-btn"]}
-          customDropdownClass={appStyles["header--mid-mobile-menu-items"]}
+          customBtnClass={appStyles["header--right-mobile-btn"]}
+          customDropdownClass={appStyles["header--right-mobile-menu-items"]}
           onClickRequired
         >
           {renderMenuItems()}
