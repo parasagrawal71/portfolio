@@ -6,6 +6,7 @@ $gap-between-menu-items: 50px;
   @include flex-row-v-cen;
   padding: 15px;
   padding-left: 6%;
+  padding-right: 6%;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -47,6 +48,12 @@ $gap-between-menu-items: 50px;
         border-bottom: 1px solid $color-action;
       }
     }
+  }
+
+  .header--right-web {
+    @include flex-row-v-cen;
+    justify-content: flex-end;
+    flex: 1;
   }
 
   .header--mid-mobile {

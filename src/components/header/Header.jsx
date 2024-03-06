@@ -65,6 +65,8 @@ const Header = React.forwardRef((props, ref) => {
 
       <section className={appStyles["header--mid-web"]}>{renderMenuItems()}</section>
 
+      {/* <section className={appStyles["header--right-web"]}></section> */}
+
       <section className={appStyles["header--mid-mobile"]}>
         <TextButton
           btnText={null}
