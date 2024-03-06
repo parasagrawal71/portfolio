@@ -63,14 +63,14 @@ const Header = React.forwardRef((props, ref) => {
         <BrandLogoIcon />
       </section>
 
-      <section className={appStyles["header--right-web"]}>{renderMenuItems()}</section>
+      <section className={appStyles["header--mid-web"]}>{renderMenuItems()}</section>
 
-      <section className={appStyles["header--right-mobile"]}>
+      <section className={appStyles["header--mid-mobile"]}>
         <TextButton
           btnText={null}
           iconOnRight={<HamBurgerIcon className={appStyles.hamburgerIcon} />}
-          customBtnClass={appStyles["header--right-mobile-btn"]}
-          customDropdownClass={appStyles["header--right-mobile-menu-items"]}
+          customBtnClass={appStyles["header--mid-mobile-btn"]}
+          customDropdownClass={appStyles["header--mid-mobile-menu-items"]}
           onClickRequired
         >
           {renderMenuItems()}
