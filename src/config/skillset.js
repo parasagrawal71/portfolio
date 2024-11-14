@@ -19,6 +19,11 @@ export const skillCategory = [
     show: true,
   },
   {
+    id: "database",
+    displayName: "Database",
+    show: true,
+  },
+  {
     id: "others",
     displayName: "Others",
     show: false,
@@ -31,6 +36,7 @@ export const skillCategory = [
 ];
 const FRONTEND = skillCategory?.find((s) => s.id === "frontend")?.id;
 const BACKEND = skillCategory?.find((s) => s.id === "backend")?.id;
+const DATABASE = skillCategory?.find((s) => s.id === "database")?.id;
 const OTHERS = skillCategory?.find((s) => s.id === "others")?.id;
 const DEVOPS = skillCategory?.find((s) => s.id === "devops")?.id;
 
@@ -52,6 +58,16 @@ export const skillsetsArray = [
       industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.advanced,
       id: techListMap.javascript.id,
+    }),
+  },
+  {
+    ...techListMap.typescript,
+    show: true,
+    categories: [FRONTEND, BACKEND],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 0 }),
+      level: LEVEL.advanced,
+      id: techListMap.typescript.id,
     }),
   },
   {
@@ -77,7 +93,7 @@ export const skillsetsArray = [
   {
     ...techListMap.mongo,
     show: true,
-    categories: [BACKEND],
+    categories: [BACKEND, DATABASE],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("fraction", { value: 1 }),
       level: LEVEL.advanced,
@@ -233,6 +249,76 @@ export const skillsetsArray = [
       industryExperience: calYoeForASkill("", { value: 1 }),
       level: LEVEL.intermediate,
       id: techListMap.docker.id,
+    }),
+  },
+  {
+    ...techListMap.nextjs,
+    show: false,
+    categories: [FRONTEND],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 0 }),
+      level: LEVEL.intermediate,
+      id: techListMap.nextjs.id,
+    }),
+  },
+  {
+    ...techListMap.nestjs,
+    show: false,
+    categories: [BACKEND],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 0 }),
+      level: LEVEL.intermediate,
+      id: techListMap.nestjs.id,
+    }),
+  },
+  {
+    ...techListMap.postgresql,
+    show: false,
+    categories: [BACKEND, DATABASE],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 0 }),
+      level: LEVEL.intermediate,
+      id: techListMap.postgresql.id,
+    }),
+  },
+  {
+    ...techListMap.sql,
+    show: true,
+    categories: [BACKEND, DATABASE],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 0 }),
+      level: LEVEL.intermediate,
+      id: techListMap.sql.id,
+    }),
+  },
+  {
+    ...techListMap.golang,
+    show: false,
+    categories: [BACKEND],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 0 }),
+      level: LEVEL.beginner,
+      id: techListMap.golang.id,
+    }),
+  },
+  {
+    ...techListMap.redis,
+    show: false,
+    categories: [BACKEND],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 0 }),
+      level: LEVEL.intermediate,
+      id: techListMap.redis.id,
+    }),
+  },
+  {
+    ...techListMap.typeorm,
+    show: false,
+    categories: [BACKEND],
+    details: getSkillDetails({
+      industryExperience: calYoeForASkill("", { value: 0 }),
+      level: LEVEL.intermediate,
+      id: techListMap.typeorm.id,
     }),
   },
 ];

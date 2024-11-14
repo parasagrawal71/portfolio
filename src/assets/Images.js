@@ -81,6 +81,10 @@ import {
   NextJSIcon,
   NestJSIcon,
   PostgreSQLIcon,
+  SQLIcon,
+  GolangIcon,
+  RedisIcon,
+  TypeormIcon,
 } from "./SkillSvgs";
 
 // ************************************ EXPORTS ************************************ //
@@ -152,4 +156,8 @@ export {
   NextJSIcon,
   NestJSIcon,
   PostgreSQLIcon,
+  SQLIcon,
+  GolangIcon,
+  RedisIcon,
+  TypeormIcon,
 };

@@ -25,6 +25,10 @@ import {
   NextJSIcon,
   NestJSIcon,
   PostgreSQLIcon,
+  SQLIcon,
+  GolangIcon,
+  RedisIcon,
+  TypeormIcon,
 } from "assets/Images";
 
 /* *********************************************************************************************************** */
@@ -160,6 +164,26 @@ export const techListMap = {
     displayName: "PostgreSQL",
     Icon: PostgreSQLIcon,
     id: "postgresql",
+  },
+  sql: {
+    displayName: "SQL",
+    Icon: SQLIcon,
+    id: "sql",
+  },
+  golang: {
+    displayName: "Golang",
+    Icon: GolangIcon,
+    id: "golang",
+  },
+  redis: {
+    displayName: "Redis",
+    Icon: RedisIcon,
+    id: "redis",
+  },
+  typeorm: {
+    displayName: "TypeORM",
+    Icon: TypeormIcon,
+    id: "typeorm",
   },
 };
 
