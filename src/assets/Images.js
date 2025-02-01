@@ -23,7 +23,6 @@ import {
 } from "react-icons/gr";
 import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
 import { MdOndemandVideo as VideoIcon } from "react-icons/md";
-import { SiFastapi as FastAPIIcon } from "react-icons/si";
 
 /**
  * * Local imports
@@ -47,47 +46,6 @@ import {
   HoverIllustration,
 } from "./OtherSvgs";
 
-/**
- * * Skillset icons
- * Get programmiong languages icons from this site "https://devicon.dev/"
- * 2nd option: https://worldvectorlogo.com/search/aws
- * Svg icons with animation on this site https://boxicons.com/?query=aws
- */
-import {
-  JavaScriptIcon,
-  ReactIcon,
-  Html5Icon,
-  NodejsIcon,
-  MongoDBIcon,
-  CSS3Icon,
-  SassIcon,
-  ReduxIcon,
-  GitIcon,
-  LinuxIcon,
-  VueIcon,
-  PythonIcon,
-  KafkaIcon,
-  AwsIcon,
-  ReactNativeIcon,
-  ApiSkillIcon,
-  ExpressJsIcon,
-  SocketIoIcon,
-  MaterialUiIcon,
-  GraphQLIcon,
-  DockerIcon,
-  KubernetesIcon,
-  TypescriptIcon,
-  GoogleCloudIcon,
-  NextJSIcon,
-  NestJSIcon,
-  PostgreSQLIcon,
-  SQLIcon,
-  GolangIcon,
-  RedisIcon,
-  TypeormIcon,
-} from "./SkillSvgs";
-
-// ************************************ EXPORTS ************************************ //
 export {
   BrandLogoIcon,
   ScrollToTopIcon,
@@ -126,8 +84,17 @@ export {
   Menu3x3Icon,
   PreviousItemIcon,
   NextItemIcon,
+};
 
-  // Skillset icons
+// ************************************ Skillset icons ************************************ //
+
+/**
+ * * Skillset icons
+ * Get programming languages icons from this site "https://devicon.dev/"
+ * 2nd option: https://worldvectorlogo.com/search/aws
+ * Svg icons with animation on this site https://boxicons.com/?query=aws
+ */
+export {
   JavaScriptIcon,
   ReactIcon,
   Html5Icon,
@@ -151,7 +118,6 @@ export {
   DockerIcon,
   KubernetesIcon,
   TypescriptIcon,
-  FastAPIIcon,
   GoogleCloudIcon,
   NextJSIcon,
   NestJSIcon,
@@ -160,4 +126,5 @@ export {
   GolangIcon,
   RedisIcon,
   TypeormIcon,
-};
+} from "./SkillSvgs";
+export { SiFastapi as FastAPIIcon } from "react-icons/si";

@@ -62,6 +62,13 @@ export function scrollToTop({ isSmooth = true }) {
   app.scrollTo({ top: 0, behavior: isSmooth ? "smooth" : "auto" });
 }
 
+/**
+ * Calculates the total years of experience from the given start date to the current date.
+ * The result is returned as a string in years with one decimal point precision.
+ *
+ * @param {string} startDateStr Start date in "YYYY-MM-DD" format.
+ * @returns {string} Total years of experience as a string in decimal format.
+ */
 export function calculateYearsOfExperience(startDateStr) {
   const startDate = new Date(startDateStr);
   const startMonth = startDate.getFullYear() * 12 + startDate.getMonth();
@@ -78,6 +85,11 @@ export function calculateYearsOfExperience(startDateStr) {
   return `${Number(yearsOfExperience) + Number(monthsInDecimal)}`;
 }
 
+/**
+ * Calculates the difference in years and months between the given start date and the current date.
+ * @param {string} startDateStr Start date in "YYYY-MM-DD" format.
+ * @returns {{years: number, months: number}} Difference in years and months between the given start and current dates.
+ */
 export function calculateYearsAndMonthsOfExperience(startDateStr) {
   const result = { years: 0, months: 0 };
   const startDate = new Date(startDateStr);
@@ -94,4 +106,30 @@ export function calculateYearsAndMonthsOfExperience(startDateStr) {
   result.years = Number(yearsOfExperience);
   result.months = Number(monthsOfExperience);
   return result;
+}
+
+/**
+ * Calculates the difference in months between the given start and end dates.
+ * @param {string} startDateStr Start date in "YYYY-MM-DD" or "YYYY-MM"  format.
+ * @param {string} endDateStr End date in "YYYY-MM-DD" or "YYYY-MM" format.
+ * @returns {number} Difference in months between the given start and end dates.
+ */
+export function calculateDiffInMonths(startDateStr, endDateStr) {
+  const startDate = new Date(startDateStr);
+  const startMonth = startDate.getFullYear() * 12 + startDate.getMonth();
+  const endDate = new Date(endDateStr);
+  const endMonth = endDate.getFullYear() * 12 + endDate.getMonth();
+  const monthInterval = endMonth - startMonth;
+  return monthInterval;
+}
+
+/**
+ * Converts given number of months into years and months in decimal.
+ * @param {number} months Number of months to convert.
+ * @returns {number} Number of years and months in decimal (e.g. 1.5 for 1 year and 6 months).
+ */
+export function convertMonthsToYears(months) {
+  const years = Math.floor(months / 12);
+  const monthsInDecimal = ((months % 12) / 12).toFixed(1);
+  return Number(`${Number(years) + Number(monthsInDecimal)}`);
 }

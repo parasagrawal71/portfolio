@@ -4,6 +4,12 @@
 // Skill category
 export const categories = [
   {
+    id: "responsibility",
+    displayName: "Responsibilities",
+    show: true,
+    sortOrder: 0,
+  },
+  {
     id: "backend",
     displayName: "Backend",
     show: true,
@@ -28,6 +34,7 @@ export const categories = [
     sortOrder: 4,
   },
 ];
+const RESPONSIBILITY = categories?.find((s) => s.id === "responsibility");
 const FRONTEND = categories?.find((s) => s.id === "frontend");
 const BACKEND = categories?.find((s) => s.id === "backend");
 const DEVOPS = categories?.find((s) => s.id === "devops");
@@ -42,7 +49,12 @@ export const experienceList = [
     companyType: "Product-based",
     companyWebsite: "",
     companyIntro: "",
-    works: [],
+    works: [
+      // {
+      //   bulletPoint: "Responsible for",
+      //   category: RESPONSIBILITY,
+      // },
+    ],
   },
   {
     companyName: "Nference",
@@ -152,4 +164,25 @@ export const experienceList = [
   //     },
   //   ],
   // },
+];
+
+export const companyExperiences = [
+  {
+    companyNo: 1,
+    companyName: "Piktorlabs",
+    startDate: "2019-07-15",
+    endDate: "2021-01-15",
+  },
+  {
+    companyNo: 2,
+    companyName: "Nference",
+    startDate: "2021-01-18",
+    endDate: "2023-09-01",
+  },
+  {
+    companyNo: 3,
+    companyName: "C2FO",
+    startDate: "2023-09-03",
+    endDate: "Present",
+  },
 ];
