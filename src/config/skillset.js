@@ -399,6 +399,10 @@ function calYoeForASkill(type, { value = 0, months = 0, companyNos = [] } = {}) 
   return result > 1 ? `${result} yrs` : `${result} yr`;
 }
 
+/**
+ * Returns an object where the keys are the company numbers and the values are
+ * the years of experience in that company.
+ */
 function calCompanyWiseExperience() {
   const map = {};
   companyExperiences.map((exp) => {
