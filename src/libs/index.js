@@ -7,6 +7,7 @@ import TransparentButton from "./transparentButton/TransparentButton";
 import Loader from "./loader/Loader";
 import SecondaryLoader from "./secondaryLoader/SecondaryLoader";
 import MouseOverPopover from "./mouseOverPopover/MouseOverPopover";
+import SelectInput from "./selectInput/SelectInput";
 
 export {
   Button,
@@ -19,4 +20,5 @@ export {
   Loader,
   SecondaryLoader,
   MouseOverPopover,
+  SelectInput,
 };

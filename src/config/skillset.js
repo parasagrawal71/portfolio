@@ -312,3 +312,5 @@ export const skillsetsArray = [
     }),
   },
 ];
+
+export const sortByOptions = [{ id: "experience", name: "Experience" }];

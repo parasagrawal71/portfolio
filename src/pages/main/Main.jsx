@@ -12,6 +12,7 @@ import ScrollToTopBtnComponent from "components/scrollToTopBtn/ScrollToTopBtn";
 import FooterSection from "sections/footer/Footer";
 import { useGlobalState } from "contexts/GlobalContextProvider";
 import { Loader } from "libs";
+import { createTheme, ThemeProvider } from "@material-ui/core";
 
 // IMPORT OTHERS HERE //
 
@@ -19,12 +20,23 @@ const Main = () => {
   // STATE VARIABLEs
   const { globalState } = useGlobalState();
   const [isLoading, setIsLoading] = useState(true);
+  const [prefersDarkMode] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
     }, 1500);
   }, []);
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          type: prefersDarkMode ? "dark" : "light",
+        },
+      }),
+    [prefersDarkMode]
+  );
 
   const nameComponentMap = {
     Home: <HomeSection />,
@@ -38,12 +50,12 @@ const Main = () => {
   return isLoading ? (
     <Loader />
   ) : (
-    <>
+    <ThemeProvider theme={theme}>
       <HeaderComponent />
       {nameComponentMap?.[globalState?.activeSectionName]}
       {globalState?.activeSectionName === "Home" ? <FooterSection /> : null}
       <ScrollToTopBtnComponent />
-    </>
+    </ThemeProvider>
   );
 };
 

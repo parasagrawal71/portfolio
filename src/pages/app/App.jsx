@@ -12,6 +12,7 @@ import ProjectDetails from "sections/projectDetails/ProjectDetails";
 // IMPORT OTHERS HERE //
 import { fullName } from "config";
 import { menuItems } from "config/header";
+import "utils/commonStyles/material-ui.scss";
 import "./App.scss";
 
 const App = () => {
