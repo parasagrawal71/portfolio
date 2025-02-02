@@ -1,13 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
 import cx from "classnames";
+import { cloneDeep } from "lodash";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import { scrollToTop } from "utils/functions";
-import { MouseOverPopover, TextButton } from "libs";
+import { MouseOverPopover, SelectInput, TextButton } from "libs";
 import { useCheckMobileScreen } from "hooks";
 
 // IMPORT OTHERS HERE //
-import { skillsetsArray, skillCategory } from "config/skillset";
+import { skillsetsArray, skillCategory, sortByOptions } from "config/skillset";
 import { HoverIllustration } from "assets/Images";
 import appStyles from "./Skillset.module.scss";
 
@@ -16,6 +17,7 @@ const Skillset = () => {
   const [currentCategory, setCurrentCategory] = useState("");
   const [skills, setSkills] = useState(skillsetsArray?.filter((s) => s.show));
   const currentCategoryRef = useRef(null);
+  const [sortBy, setSortBy] = useState("");
 
   // HOOKs
   const isMobile = useCheckMobileScreen();
@@ -31,11 +33,26 @@ const Skillset = () => {
     currentCategoryRef.current = currentCategory;
   }, [currentCategory]);
 
+  useEffect(() => {
+    sortSkills();
+  }, [sortBy]);
+
   function filterSkills(category = "") {
     if (category) {
       setSkills(skillsetsArray?.filter((sk) => sk?.categories?.includes(category) && sk.show));
     } else {
       setSkills(skillsetsArray?.filter((s) => s.show));
+    }
+  }
+
+  function sortSkills() {
+    if (sortBy) {
+      const sortedSkills =
+        skills?.sort((skill1, skill2) => skill2.industryExperience - skill1.industryExperience) ||
+        [];
+      setSkills(cloneDeep(sortedSkills));
+    } else {
+      setSkills(skills);
     }
   }
 
@@ -54,6 +71,15 @@ const Skillset = () => {
   return (
     <>
       <main className={appStyles["main-cnt"]} id="skillset">
+        {/* <SelectInput
+          label="Sort by"
+          options={sortByOptions}
+          handleChange={(value) => {
+            setSortBy(value);
+          }}
+          value={sortBy}
+        /> */}
+
         {/*
          * Skill category
          */}

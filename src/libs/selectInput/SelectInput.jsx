@@ -27,6 +27,17 @@ const SelectInput = (props) => {
         value={value}
         onChange={(e) => handleChange(e.target.value)}
         label={label}
+        MenuProps={{
+          anchorOrigin: {
+            vertical: "bottom",
+            horizontal: "left",
+          },
+          transformOrigin: {
+            vertical: "top",
+            horizontal: "left",
+          },
+          getContentAnchorEl: null,
+        }}
       >
         {options.map((option) => {
           return (

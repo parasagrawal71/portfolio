@@ -87,6 +87,20 @@ export function calYoeForASkill(type, { value = 0, months = 0, companyNos = [] }
   return result > 1 ? `${result} yrs` : `${result} yr`;
 }
 
+/**
+ * Transforms list of skills
+ * - Add industryExperience property to each skill
+ */
+
+export function transformSkills(skills) {
+  return skills?.map((skill) => {
+    let val = skill.details.find((d) => d.id === "industryExperience").value;
+    val = Number(val.replace(/ yrs| yr/gi, "") || 0);
+    skill.industryExperience = val;
+    return skill;
+  });
+}
+
 // ****************************** HELPER METHODS and CONSTANTS ****************************************
 
 // Skill levels

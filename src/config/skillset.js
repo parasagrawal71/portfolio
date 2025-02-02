@@ -1,5 +1,5 @@
 import { techListMap } from "./techList";
-import { calYoeForASkill, getSkillDetails, LEVEL } from "./skillsetHelper";
+import { calYoeForASkill, getSkillDetails, LEVEL, transformSkills } from "./skillsetHelper";
 
 /* *********************************************************************************************************** */
 /* *********************************************************************************************************** */
@@ -39,7 +39,7 @@ const OTHERS = skillCategory?.find((s) => s.id === "others")?.id;
 const DEVOPS = skillCategory?.find((s) => s.id === "devops")?.id;
 
 // Skills list
-export const skillsetsArray = [
+export const skillsetsArray = transformSkills([
   {
     ...techListMap.javascript,
     show: true,
@@ -311,6 +311,6 @@ export const skillsetsArray = [
       id: techListMap.typeorm.id,
     }),
   },
-];
+]);
 
 export const sortByOptions = [{ id: "experience", name: "Experience" }];
