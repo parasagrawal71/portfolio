@@ -1,12 +1,5 @@
-import {
-  calculateDiffInMonths,
-  calculateYearsAndMonthsOfExperience,
-  convertMonthsToYears,
-} from "utils/functions";
 import { techListMap } from "./techList";
-import { projectsList } from "./projects";
-import { careerStartDate } from ".";
-import { companyExperiences } from "./experiences";
+import { calYoeForASkill, getSkillDetails, LEVEL } from "./skillsetHelper";
 
 /* *********************************************************************************************************** */
 /* *********************************************************************************************************** */
@@ -44,14 +37,6 @@ const BACKEND = skillCategory?.find((s) => s.id === "backend")?.id;
 const DATABASE = skillCategory?.find((s) => s.id === "database")?.id;
 const OTHERS = skillCategory?.find((s) => s.id === "others")?.id;
 const DEVOPS = skillCategory?.find((s) => s.id === "devops")?.id;
-
-// Skill levels
-const LEVEL = {
-  beginner: "Beginner",
-  intermediate: "Intermediate",
-  advanced: "Advanced",
-  expert: "Expert",
-};
 
 // Skills list
 export const skillsetsArray = [
@@ -327,91 +312,3 @@ export const skillsetsArray = [
     }),
   },
 ];
-
-// Function to get skill details
-function getSkillDetails({ industryExperience, level, id }) {
-  return [
-    {
-      displayName: "Industry YOE:",
-      id: "industryExperience",
-      value: industryExperience,
-      show: true,
-    },
-    {
-      displayName: "Proficiency:",
-      id: "level",
-      value: level,
-      show: true,
-    },
-    {
-      displayName: "Used In Projects:",
-      id: "usedInProjects",
-      value: calNoOfProjectsSkillUsedIn(id),
-      show: true,
-    },
-  ];
-}
-
-// Function to calculate the number of projects skills used in
-function calNoOfProjectsSkillUsedIn(skillId) {
-  let noOfProjects = 0;
-  projectsList.map((project) => {
-    const techIds = project?.techList?.map((tech) => tech.id);
-    if (techIds?.includes(skillId)) {
-      noOfProjects += 1;
-    }
-    return project;
-  });
-  return noOfProjects;
-}
-
-// Function to calculate the years of experience for a skill
-function calYoeForASkill(type, { value = 0, months = 0, companyNos = [] } = {}) {
-  let result = 0;
-
-  const companyWiseExperience = calCompanyWiseExperience();
-
-  const { years: careerTotalYears, months: careerTotalMonths } =
-    calculateYearsAndMonthsOfExperience(careerStartDate);
-
-  if (type === "full_experience") {
-    // Same as total experience
-    result = formatYoE(careerTotalYears, careerTotalMonths);
-  } else if (type === "exclude_months") {
-    // Exclude number of months from total experience
-    result = formatYoE(careerTotalYears, careerTotalMonths - months);
-  } else if (type === "same_as_given_companies") {
-    // Same as given companies
-    result = companyNos.reduce((acc, companyNo) => acc + companyWiseExperience[companyNo], 0);
-  } else {
-    // Same as given value
-    result = value;
-  }
-
-  function formatYoE(yrs, mnths) {
-    const monthsInDecimal = (mnths / 12).toFixed(1);
-    if (Number.isNaN(yrs) || Number.isNaN(mnths)) {
-      return 0;
-    }
-    return Number(`${Number(yrs) + Number(monthsInDecimal)}`);
-  }
-
-  return result > 1 ? `${result} yrs` : `${result} yr`;
-}
-
-/**
- * Returns an object where the keys are the company numbers and the values are
- * the years of experience in that company.
- */
-function calCompanyWiseExperience() {
-  const map = {};
-  companyExperiences.map((exp) => {
-    if (exp.endDate === "Present") {
-      exp.endDate = new Date().toISOString();
-    }
-    const months = calculateDiffInMonths(exp.startDate, exp.endDate);
-    map[exp.companyNo] = convertMonthsToYears(months);
-    return exp;
-  });
-  return map;
-}
