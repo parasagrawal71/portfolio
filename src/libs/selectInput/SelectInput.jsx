@@ -1,32 +1,41 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { ClearIcon } from "assets/Images";
+import appStyles from "./SelectInput.module.scss";
 
-const useStyles = makeStyles((theme) => ({
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 120,
+const useStyles = makeStyles(() => ({
+  capitalize: {
+    textTransform: "capitalize",
   },
 }));
 
 const SelectInput = (props) => {
   // PROPS
-  const { label = "", options = [], handleChange = () => {}, value } = props;
+  const {
+    label = "",
+    options = [],
+    handleChange = () => {},
+    value,
+    startAdornment = React.Fragment,
+    handleClear = () => {},
+  } = props;
 
   const classes = useStyles();
 
   return (
-    <FormControl variant="outlined" className={classes.formControl}>
-      <InputLabel id="simple-select-outlined-label">{label}</InputLabel>
+    <FormControl variant="outlined">
       <Select
         labelId="simple-select-outlined-label"
         id="simple-select-outlined"
         value={value}
         onChange={(e) => handleChange(e.target.value)}
-        label={label}
+        displayEmpty
+        renderValue={(val) => {
+          return !val ? <span className={appStyles.label}>{label}</span> : val;
+        }}
         MenuProps={{
           anchorOrigin: {
             vertical: "bottom",
@@ -38,11 +47,24 @@ const SelectInput = (props) => {
           },
           getContentAnchorEl: null,
         }}
+        startAdornment={<div className={appStyles.startAdornment}>{startAdornment}</div>}
+        endAdornment={
+          <div
+            role="button"
+            onClick={handleClear}
+            onKeyDown={() => {}}
+            tabIndex="0"
+            className={appStyles.clearIconCnt}
+          >
+            <ClearIcon />
+          </div>
+        }
+        className={classes.capitalize}
       >
         {options.map((option) => {
           return (
             <MenuItem key={option?.id} value={option?.id}>
-              {option?.name}
+              {option?.displayName}
             </MenuItem>
           );
         })}

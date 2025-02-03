@@ -83,7 +83,7 @@ export const skillsetsArray = transformSkills([
   {
     ...techListMap.sql,
     show: true,
-    categories: [BACKEND, DATABASE],
+    categories: [DATABASE],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("same_as_given_companies", { companyNos: [3] }),
       level: LEVEL.intermediate,
@@ -93,7 +93,7 @@ export const skillsetsArray = transformSkills([
   {
     ...techListMap.mongo,
     show: true,
-    categories: [BACKEND, DATABASE],
+    categories: [DATABASE],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("full_experience"),
       level: LEVEL.advanced,
@@ -274,7 +274,7 @@ export const skillsetsArray = transformSkills([
   {
     ...techListMap.postgresql,
     show: true,
-    categories: [BACKEND, DATABASE],
+    categories: [DATABASE],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("same_as_given_companies", { companyNos: [3] }),
       level: LEVEL.intermediate,
@@ -313,4 +313,4 @@ export const skillsetsArray = transformSkills([
   },
 ]);
 
-export const sortByOptions = [{ id: "experience", name: "Experience" }];
+export const sortByOptions = [{ id: "experience", displayName: "Experience" }];

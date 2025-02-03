@@ -1,0 +1,21 @@
+@import "utils/commonStyles/index.scss";
+
+.clearIconCnt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+  color: $color-secondary-text;
+}
+
+.label {
+  color: $color-secondary-text;
+}
+
+.startAdornment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-secondary-text;
+}

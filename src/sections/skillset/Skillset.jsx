@@ -9,7 +9,7 @@ import { useCheckMobileScreen } from "hooks";
 
 // IMPORT OTHERS HERE //
 import { skillsetsArray, skillCategory, sortByOptions } from "config/skillset";
-import { HoverIllustration } from "assets/Images";
+import { FilterIcon, HoverIllustration, SortIcon } from "assets/Images";
 import appStyles from "./Skillset.module.scss";
 
 const Skillset = () => {
@@ -71,19 +71,31 @@ const Skillset = () => {
   return (
     <>
       <main className={appStyles["main-cnt"]} id="skillset">
-        {/* <SelectInput
-          label="Sort by"
-          options={sortByOptions}
-          handleChange={(value) => {
-            setSortBy(value);
-          }}
-          value={sortBy}
-        /> */}
-
         {/*
          * Skill category
          */}
         <section className={appStyles.header}>
+          {/* <SelectInput
+            label="Sort by"
+            options={sortByOptions}
+            handleChange={(value) => {
+              setSortBy(value);
+            }}
+            handleClear={() => setSortBy("")}
+            value={sortBy}
+            startAdornment={<SortIcon />}
+          />
+
+          <SelectInput
+            label="Filter by"
+            options={skillCategory?.filter((sc) => sc.show)}
+            handleChange={(value) => {
+              setCurrentCategory(value);
+            }}
+            handleClear={() => setCurrentCategory("")}
+            value={currentCategory}
+            startAdornment={<FilterIcon />}
+          /> */}
           {skillCategory
             ?.filter((sc) => sc.show)
             ?.map((skCategory) => {

@@ -22,7 +22,12 @@ import {
   GrFormNextLink as NextItemIcon,
 } from "react-icons/gr";
 import { GiHamburgerMenu as HamBurgerIcon } from "react-icons/gi";
-import { MdOndemandVideo as VideoIcon } from "react-icons/md";
+import {
+  MdOndemandVideo as VideoIcon,
+  MdOutlineSort as SortIcon,
+  MdOutlineClear as ClearIcon,
+} from "react-icons/md";
+import { CiFilter as FilterIcon } from "react-icons/ci";
 
 /**
  * * Local imports
@@ -84,6 +89,9 @@ export {
   Menu3x3Icon,
   PreviousItemIcon,
   NextItemIcon,
+  SortIcon,
+  FilterIcon,
+  ClearIcon,
 };
 
 // ************************************ Skillset icons ************************************ //

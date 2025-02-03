@@ -1,15 +1,36 @@
-// .MuiFormControl-root {
-//   label {
-//     color: #fff;
-//   }
+@import "utils/commonStyles/index.scss";
 
-//   .MuiInputBase-root {
-//     .MuiSelect-root {
-//       color: #fff;
-//     }
+.MuiFormControl-root {
+  // Focused MuiInputLabel
+  .MuiInputLabel-root.Mui-focused {
+    color: rgba(255, 255, 255, 0.23);
+  }
 
-//     fieldset {
-//       border-color: #fff;
-//     }
-//   }
-// }
+  // Focused OutlinedInput
+  .MuiOutlinedInput-root.Mui-focused {
+    fieldset {
+      border: 1px solid rgba(255, 255, 255, 0.23);
+    }
+  }
+
+  // Hover on OutlinedInput
+  .MuiOutlinedInput-root:hover {
+    fieldset {
+      border: 1px solid rgba(255, 255, 255, 0.23);
+    }
+  }
+
+  .MuiSelect-root {
+    padding: 8px !important;
+    width: 100px;
+  }
+
+  // Focused MuiSelect
+  .MuiSelect-root:focus {
+    background: none;
+  }
+
+  .MuiSvgIcon-root {
+    color: $color-secondary-text;
+  }
+}
