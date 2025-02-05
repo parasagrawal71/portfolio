@@ -1,10 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import cx from "classnames";
 import { cloneDeep } from "lodash";
 
 // IMPORT USER-DEFINED COMPONENTS HERE //
 import { scrollToTop } from "utils/functions";
-import { MouseOverPopover, SelectInput, TextButton } from "libs";
+import { MouseOverPopover, SelectInput } from "libs";
 import { useCheckMobileScreen } from "hooks";
 
 // IMPORT OTHERS HERE //
@@ -60,17 +59,17 @@ const Skillset = () => {
     setSkills(skillsList);
   }
 
-  function toggleSkillCategory(category) {
-    if (category) {
-      if (currentCategoryRef.current === category) {
-        setCurrentCategory("");
-      } else {
-        setCurrentCategory(category);
-      }
-    } else {
-      setCurrentCategory("");
-    }
-  }
+  // function toggleSkillCategory(category) {
+  //   if (category) {
+  //     if (currentCategoryRef.current === category) {
+  //       setCurrentCategory("");
+  //     } else {
+  //       setCurrentCategory(category);
+  //     }
+  //   } else {
+  //     setCurrentCategory("");
+  //   }
+  // }
 
   return (
     <>
