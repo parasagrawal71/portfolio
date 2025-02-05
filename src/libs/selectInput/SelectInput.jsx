@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
@@ -23,6 +23,8 @@ const SelectInput = (props) => {
     handleClear = () => {},
   } = props;
 
+  const [selectedOption, setSelectedOption] = useState({});
+
   const classes = useStyles();
 
   return (
@@ -31,10 +33,18 @@ const SelectInput = (props) => {
         labelId="simple-select-outlined-label"
         id="simple-select-outlined"
         value={value}
-        onChange={(e) => handleChange(e.target.value)}
+        onChange={(e) => {
+          const selectedValue = e.target.value;
+          setSelectedOption(options.find((option) => option.id === selectedValue));
+          handleChange(selectedValue);
+        }}
         displayEmpty
         renderValue={(val) => {
-          return !val ? <span className={appStyles.label}>{label}</span> : val;
+          return !val ? (
+            <span className={appStyles.label}>{label}</span>
+          ) : (
+            selectedOption?.displayName
+          );
         }}
         MenuProps={{
           anchorOrigin: {

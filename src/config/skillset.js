@@ -313,4 +313,7 @@ export const skillsetsArray = transformSkills([
   },
 ]);
 
-export const sortByOptions = [{ id: "experience", displayName: "Experience", show: true }];
+export const sortByOptions = [
+  { id: "industryExperience", displayName: "Experience", show: true },
+  { id: "level", displayName: "Proficiency", show: true },
+];

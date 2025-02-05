@@ -10,6 +10,7 @@ import { useCheckMobileScreen } from "hooks";
 // IMPORT OTHERS HERE //
 import { skillsetsArray, skillCategory, sortByOptions } from "config/skillset";
 import { FilterIcon, HoverIllustration, SortIcon } from "assets/Images";
+import { LEVEL } from "config/skillsetHelper";
 import appStyles from "./Skillset.module.scss";
 
 const Skillset = () => {
@@ -43,7 +44,17 @@ const Skillset = () => {
 
     if (sortBy) {
       skillsList =
-        skillsList?.sort((s1, s2) => s2.industryExperience - s1.industryExperience) || [];
+        skillsList?.sort((s1, s2) => {
+          if (sortBy === "level") {
+            return LEVEL[s1[sortBy]].orderId - LEVEL[s2[sortBy]].orderId;
+          }
+
+          if (typeof s1[sortBy] === "string") {
+            return s1[sortBy]?.localeCompare(s2[sortBy]);
+          }
+
+          return s2[sortBy] - s1[sortBy];
+        }) || [];
     }
 
     setSkills(skillsList);

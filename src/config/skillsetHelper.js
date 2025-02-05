@@ -25,18 +25,21 @@ export function getSkillDetails({ industryExperience, level, id }) {
       displayName: "Industry YOE:",
       id: "industryExperience",
       value: industryExperience,
+      data: Number(industryExperience.replace(/ yrs| yr/gi, "") || 0),
       show: true,
     },
     {
       displayName: "Proficiency:",
       id: "level",
-      value: level,
+      value: level.displayName,
+      data: level,
       show: true,
     },
     {
       displayName: "Used In Projects:",
       id: "usedInProjects",
       value: calNoOfProjectsSkillUsedIn(id),
+      data: null,
       show: true,
     },
   ];
@@ -94,9 +97,13 @@ export function calYoeForASkill(type, { value = 0, months = 0, companyNos = [] }
 
 export function transformSkills(skills) {
   return skills?.map((skill) => {
-    let val = skill.details.find((d) => d.id === "industryExperience").value;
-    val = Number(val.replace(/ yrs| yr/gi, "") || 0);
-    skill.industryExperience = val;
+    // Find the industry experience value and add it to the skill object
+    const industryExperienceVal = skill.details.find((d) => d.id === "industryExperience").data;
+    skill.industryExperience = industryExperienceVal;
+
+    // Find the proficiency level value and add it to the skill object
+    const levelObj = skill.details.find((d) => d.id === "level").data;
+    skill.level = levelObj.id;
     return skill;
   });
 }
@@ -105,10 +112,10 @@ export function transformSkills(skills) {
 
 // Skill levels
 export const LEVEL = {
-  beginner: "Beginner",
-  intermediate: "Intermediate",
-  advanced: "Advanced",
-  expert: "Expert",
+  beginner: { id: "beginner", displayName: "Beginner", orderId: 4 },
+  intermediate: { id: "intermediate", displayName: "Intermediate", orderId: 3 },
+  advanced: { id: "advanced", displayName: "Advanced", orderId: 2 },
+  expert: { id: "expert", displayName: "Expert", orderId: 1 },
 };
 
 /**
