@@ -9,7 +9,7 @@ const space = `\u00A0`;
 
 export const fullName = "Paras Agrawal";
 export const currentCompanyName = "C2FO";
-export const currentCompanySite = "https://c2fo.com/";
+export const currentCompanySite = "https://c2treds.com/";
 export const emailId = "parasagrawal71+app@gmail.com";
 export const designation = "Software Engineer II";
 export const careerStartDate = "2019-07-15"; // 15 July 2019; Format: YYYY-MM-DD;

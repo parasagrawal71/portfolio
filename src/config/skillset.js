@@ -216,7 +216,7 @@ export const skillsetsArray = transformSkills([
     show: true,
     categories: [BACKEND, DEVOPS],
     details: getSkillDetails({
-      industryExperience: calYoeForASkill("", { value: 1 }),
+      industryExperience: calYoeForASkill("same_as_given_companies", { companyNos: [1, 3] }),
       level: LEVEL.intermediate,
       id: techListMap.aws.id,
     }),
@@ -313,4 +313,4 @@ export const skillsetsArray = transformSkills([
   },
 ]);
 
-export const sortByOptions = [{ id: "experience", displayName: "Experience" }];
+export const sortByOptions = [{ id: "experience", displayName: "Experience", show: true }];

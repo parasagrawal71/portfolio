@@ -15,7 +15,8 @@ import appStyles from "./Skillset.module.scss";
 const Skillset = () => {
   // STATE VARIABLEs HERE
   const [currentCategory, setCurrentCategory] = useState("");
-  const [skills, setSkills] = useState(skillsetsArray?.filter((s) => s.show));
+  const [allSkills] = useState(skillsetsArray?.filter((s) => s.show));
+  const [skills, setSkills] = useState([]);
   const currentCategoryRef = useRef(null);
   const [sortBy, setSortBy] = useState("");
 
@@ -29,31 +30,23 @@ const Skillset = () => {
   }, []);
 
   useEffect(() => {
-    filterSkills(currentCategory);
+    filterAndSortSkills();
     currentCategoryRef.current = currentCategory;
-  }, [currentCategory]);
+  }, [currentCategory, sortBy]);
 
-  useEffect(() => {
-    sortSkills();
-  }, [sortBy]);
+  function filterAndSortSkills() {
+    let skillsList = cloneDeep(allSkills);
 
-  function filterSkills(category = "") {
-    if (category) {
-      setSkills(skillsetsArray?.filter((sk) => sk?.categories?.includes(category) && sk.show));
-    } else {
-      setSkills(skillsetsArray?.filter((s) => s.show));
+    if (currentCategory) {
+      skillsList = allSkills?.filter((sk) => sk?.categories?.includes(currentCategory)) || [];
     }
-  }
 
-  function sortSkills() {
     if (sortBy) {
-      const sortedSkills =
-        skills?.sort((skill1, skill2) => skill2.industryExperience - skill1.industryExperience) ||
-        [];
-      setSkills(cloneDeep(sortedSkills));
-    } else {
-      setSkills(skills);
+      skillsList =
+        skillsList?.sort((s1, s2) => s2.industryExperience - s1.industryExperience) || [];
     }
+
+    setSkills(skillsList);
   }
 
   function toggleSkillCategory(category) {
@@ -75,9 +68,9 @@ const Skillset = () => {
          * Skill category
          */}
         <section className={appStyles.header}>
-          {/* <SelectInput
+          <SelectInput
             label="Sort by"
-            options={sortByOptions}
+            options={sortByOptions?.filter((sc) => sc.show)}
             handleChange={(value) => {
               setSortBy(value);
             }}
@@ -95,8 +88,8 @@ const Skillset = () => {
             handleClear={() => setCurrentCategory("")}
             value={currentCategory}
             startAdornment={<FilterIcon />}
-          /> */}
-          {skillCategory
+          />
+          {/* {skillCategory
             ?.filter((sc) => sc.show)
             ?.map((skCategory) => {
               return (
@@ -112,7 +105,7 @@ const Skillset = () => {
                   btnCallback={toggleSkillCategory.bind(this, skCategory.id)}
                 />
               );
-            })}
+            })} */}
         </section>
         {/*
          * Skills
