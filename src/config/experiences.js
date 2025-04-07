@@ -54,6 +54,31 @@ export const experienceList = [
       //   bulletPoint: "Responsible for",
       //   category: RESPONSIBILITY,
       // },
+      {
+        bulletPoint:
+          "Built a full-fledged system to handle invoice adjustments accurately, leveraging database transactions and event-driven design with SQS.",
+        category: BACKEND,
+      },
+      {
+        bulletPoint:
+          "Contributed to critical RBI Audit compliance efforts, including building API documentation and implementing automation to improve security",
+        category: BACKEND,
+      },
+      {
+        bulletPoint:
+          "Developed responsive front-end interfaces using Next.js and GraphQL for financial dashboards and admin tools.",
+        category: FRONTEND,
+      },
+      {
+        bulletPoint:
+          "Optimized performance of data-heavy operations through query tuning and caching strategies, cutting response times by up to 90%.",
+        category: BACKEND,
+      },
+      {
+        bulletPoint:
+          "Mentored junior developers and conducted code reviews to uphold code quality and system design standards.",
+        category: OTHERS,
+      },
     ],
   },
   {
