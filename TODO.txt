@@ -1,0 +1,20 @@
+https://www.heteroclito.fr/modules/Hover/
+
+Animation for Social Icons on Dashboard
+https://codepen.io/gianmichelle/pen/WNjzMR
+
+
+Ideas for work experience section
+- Sliding box appears from underneath with details on click of the experience card box
+
+
+Ideas for skillset section
+-> Add sort by recent too? (sort by which year I learnt it)
+-> View Change or A button to show all skills list with details beside of it
+    (SkillIcon) Skill -> Details [Progress bar for yoe, star for proficiency]
+    (Faded Line in between?) (List design after the skeleton is ready)
+    (SkillIcon) Skill -> Details
+    (SkillIcon) Skill -> Details
+    ...
+-> More details on AWS components
+    AWS SQS, ECS, etc
