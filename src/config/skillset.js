@@ -106,7 +106,7 @@ const primarySkillList = [
     categories: [DATABASE],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("same_as_given_companies", { companyNos: [3] }),
-      level: LEVEL.intermediate,
+      level: LEVEL.advanced,
       id: techListMap.sql.id,
     }),
   },
@@ -126,7 +126,7 @@ const primarySkillList = [
     categories: [DATABASE],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("same_as_given_companies", { companyNos: [3] }),
-      level: LEVEL.intermediate,
+      level: LEVEL.advanced,
       id: techListMap.postgresql.id,
     }),
   },
@@ -196,7 +196,7 @@ const primarySkillList = [
     categories: [FRONTEND, BACKEND],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("same_as_given_companies", { companyNos: [3] }),
-      level: LEVEL.beginner,
+      level: LEVEL.intermediate,
       id: techListMap.graphql.id,
     }),
   },
@@ -259,7 +259,7 @@ const secondarySkillList = [
     categories: [FRONTEND],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("full_experience"),
-      level: LEVEL.intermediate,
+      level: LEVEL.advanced,
       id: techListMap.materialUi.id,
     }),
   },
@@ -269,7 +269,7 @@ const secondarySkillList = [
     categories: [FRONTEND],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("full_experience"),
-      level: LEVEL.intermediate,
+      level: LEVEL.advanced,
       id: techListMap.html.id,
     }),
   },
@@ -279,7 +279,7 @@ const secondarySkillList = [
     categories: [FRONTEND],
     details: getSkillDetails({
       industryExperience: calYoeForASkill("full_experience"),
-      level: LEVEL.intermediate,
+      level: LEVEL.advanced,
       id: techListMap.css.id,
     }),
   },
