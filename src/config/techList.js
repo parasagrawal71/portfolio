@@ -29,6 +29,7 @@ import {
   GolangIcon,
   RedisIcon,
   TypeormIcon,
+  RabbitMQIcon,
 } from "assets/Images";
 
 /* *********************************************************************************************************** */
@@ -184,6 +185,11 @@ export const techListMap = {
     displayName: "TypeORM",
     Icon: TypeormIcon,
     id: "typeorm",
+  },
+  rabbitmq: {
+    displayName: "RabbitMQ",
+    Icon: RabbitMQIcon,
+    id: "rabbitmq",
   },
 };
 

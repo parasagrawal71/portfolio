@@ -134,5 +134,6 @@ export {
   GolangIcon,
   RedisIcon,
   TypeormIcon,
+  RabbitMQIcon,
 } from "./SkillSvgs";
 export { SiFastapi as FastAPIIcon } from "react-icons/si";
