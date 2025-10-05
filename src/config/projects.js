@@ -157,7 +157,7 @@ const projectsList = [
     externalUrls: [
       {
         type: "website",
-        url: `https://graphql-app-production.up.railway.app/`,
+        url: `https://graphql-app-enrf.onrender.com/graphql`,
       },
       {
         type: "github",
@@ -181,7 +181,7 @@ const projectsList = [
     externalUrls: [
       {
         type: "website",
-        url: `https://fastapi-app-bp2sirryrq-uc.a.run.app/docs`,
+        url: `https://fastapi-app-l1dx.onrender.com/docs`,
       },
       {
         type: "github",
