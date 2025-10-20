@@ -42,7 +42,7 @@ const Main = () => {
     Home: <HomeSection />,
     About: <AboutSection />,
     Experience: <ExperienceSection />,
-    Projects: <ProjectsSection />,
+    "Side Projects": <ProjectsSection />,
     Skillset: <SkillsetSection />,
     Contact: <ContactSection />,
   };

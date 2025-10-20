@@ -44,7 +44,7 @@ export const experienceList = [
   {
     companyName: "C2FO",
     employmentType: "Full-Time",
-    designation: "Senior Engineer II",
+    designation: "Software Engineer II",
     duration: "Sep 2023 - Present",
     companyType: "Product-based",
     companyWebsite: "",

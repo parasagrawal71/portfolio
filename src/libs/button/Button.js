@@ -17,6 +17,7 @@ const Button = (props) => {
     customContainerStyle,
     customBtnStyle,
     iconOnLeft,
+    disabled,
   } = props;
 
   const returnBtnClasses = () => {
@@ -40,6 +41,7 @@ const Button = (props) => {
           color: btnTextColor,
           ...customBtnStyle,
         }}
+        disabled={disabled}
       >
         {iconOnLeft || null}
         {btnText}

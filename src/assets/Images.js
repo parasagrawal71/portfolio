@@ -40,6 +40,7 @@ import shopAnywhereImage from "./img/shop-anywhere.png";
 import twitterHelpdeskImage from "./img/twitter-helpdesk.png";
 import graphqlAppImage from "./img/graphql-app.png";
 import fastapiAppImage from "./img/fastapi-app.png";
+import bankSettlementSystemImage from "./img/bank-settlement-system.png";
 import {
   LinesIcon,
   FrontendIcon,
@@ -67,6 +68,7 @@ export {
   twitterHelpdeskImage,
   graphqlAppImage,
   fastapiAppImage,
+  bankSettlementSystemImage,
   ApiIcon,
   TwitterIcon,
   GraphQLAppIcon,
@@ -135,5 +137,6 @@ export {
   RedisIcon,
   TypeormIcon,
   RabbitMQIcon,
+  grpcIcon,
 } from "./SkillSvgs";
 export { SiFastapi as FastAPIIcon } from "react-icons/si";

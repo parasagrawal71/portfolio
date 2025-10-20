@@ -41,9 +41,9 @@ const ExperienceCard = (props) => {
       </section>
 
       <section className={appStyles.overlay}>
-        {Object.keys(groupedWorks)?.map((group) => {
+        {Object.keys(groupedWorks)?.map((group, ind) => {
           return (
-            <dl className={appStyles.groupCnt}>
+            <dl className={appStyles.groupCnt} key={ind}>
               <dt className={appStyles.group}>{group}</dt>
               <ul className={appStyles.bulletPoints}>
                 {groupedWorks[group]?.map((work, index) => {

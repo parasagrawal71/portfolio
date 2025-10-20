@@ -80,7 +80,7 @@ const ProjectBox = React.forwardRef((props, ref) => {
         ) : null}
         {videoUrl ? (
           <video className={appStyles["overview-video"]} controls autoPlay>
-            <source src={videoUrl} type="video/webm" />
+            <source src={videoUrl} type="video/mp4" />
           </video>
         ) : null}
 

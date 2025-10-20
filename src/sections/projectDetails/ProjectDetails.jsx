@@ -141,6 +141,7 @@ const ProjectDetails = React.forwardRef((props, ref) => {
                 customBtnClass={cx([appStyles.btn, appStyles.visitWebsite])}
                 btnCallback={openUrl.bind(this, "website")}
                 iconOnLeft={<WebsiteIcon />}
+                // disabled={!externalUrls?.find((e) => e.type === "website")?.url}
               />
             </div>
             <div className={appStyles["btns-cnt--right"]}>
@@ -165,7 +166,7 @@ const ProjectDetails = React.forwardRef((props, ref) => {
             />
             {videoUrl ? (
               <video className={appStyles["overview-video"]} controls>
-                <source src={videoUrl} type="video/webm" />
+                <source src={videoUrl} type="video/mp4" />
               </video>
             ) : null}
 

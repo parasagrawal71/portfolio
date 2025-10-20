@@ -3,6 +3,7 @@ import {
   shopAnywhereImage,
   twitterHelpdeskImage,
   graphqlAppImage,
+  bankSettlementSystemImage,
   ApiIcon,
   TwitterIcon,
   ShopIcon,
@@ -16,6 +17,29 @@ import { techListArray, techListMap } from "./techList";
 /* *********************************************************************************************************** */
 
 const projectsList = [
+  {
+    name: "Bank Settlement System",
+    sortOrder: 0,
+    icon: null,
+    overviewImg: bankSettlementSystemImage,
+    iconSize: "",
+    duration: `Oct 2025`,
+    techList: techListArray.filter((tech) =>
+      ["golang", "postgresql", "grpc", "kafka", "docker"].includes(tech.id)
+    ),
+    description: `A microservices-based financial transaction system that simulates how real-world payment networks process, capture, and settle payments.`,
+    externalUrls: [
+      {
+        type: "website",
+        url: `https://github.com/parasagrawal71/bank-settlement-system/blob/main/README.md`,
+      },
+      {
+        type: "github",
+        url: `https://github.com/parasagrawal71/bank-settlement-system`,
+        iconSize: "23px",
+      },
+    ],
+  },
   {
     name: "API Documenter",
     sortOrder: 1,
@@ -44,12 +68,12 @@ const projectsList = [
     It provides controls to maintain different levels of access to a user
     for a microservice.`,
     externalUrls: [
-      // TODO: Uncomment demovideo entries when the video urls are accessible
-      // {
-      //   type: "demovideo",
-      //   url: `https://drive.google.com/uc?id=1oqpiK_GMw-hmTxofoCppJiHeh9y7X5y7`,
-      //   isVideo: true,
-      // },
+      {
+        type: "demovideo",
+        url: "/demo-videos/API_Documenter_Application_Demo.mp4",
+        // url: `https://drive.google.com/uc?id=1oqpiK_GMw-hmTxofoCppJiHeh9y7X5y7`,
+        isVideo: true,
+      },
       {
         type: "website",
         url: `https://api-documenter.web.app`,
@@ -86,11 +110,12 @@ const projectsList = [
       mentioned in one place. OAuth login. Mention and reply in real-time
       without refreshing the page (WebSockets).`,
     externalUrls: [
-      // {
-      //   type: "demovideo",
-      //   url: `https://drive.google.com/uc?id=10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_`,
-      //   isVideo: true,
-      // },
+      {
+        type: "demovideo",
+        url: "/demo-videos/Twitter_Helpdesk_tested_with_two_ids.mp4",
+        // url: `https://drive.google.com/uc?id=10yPXMO4IyYN8l1xC6_fzNEaGxLOrtCc_`,
+        isVideo: true,
+      },
       {
         type: "website",
         url: `https://twitter-helpdesk-app.web.app/`,

@@ -30,6 +30,7 @@ import {
   RedisIcon,
   TypeormIcon,
   RabbitMQIcon,
+  grpcIcon,
 } from "assets/Images";
 
 /* *********************************************************************************************************** */
@@ -190,6 +191,11 @@ export const techListMap = {
     displayName: "RabbitMQ",
     Icon: RabbitMQIcon,
     id: "rabbitmq",
+  },
+  grpc: {
+    displayName: "gRPC",
+    Icon: grpcIcon,
+    id: "grpc",
   },
 };
 
