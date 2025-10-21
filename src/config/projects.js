@@ -10,6 +10,7 @@ import {
   GraphQLAppIcon,
   FastAPIIcon,
   fastapiAppImage,
+  goEventsApiImage,
 } from "assets/Images";
 import { filterInSameOrder } from "utils/functions";
 import { techListArray, techListMap } from "./techList";
@@ -20,7 +21,7 @@ import { techListArray, techListMap } from "./techList";
 const projectsList = [
   {
     name: "Bank Settlement System",
-    sortOrder: 0,
+    sortOrder: 1,
     icon: null,
     overviewImg: bankSettlementSystemImage,
     iconSize: "",
@@ -35,49 +36,6 @@ const projectsList = [
       {
         type: "github",
         url: `https://github.com/parasagrawal71/bank-settlement-system`,
-        iconSize: "23px",
-      },
-    ],
-  },
-  {
-    name: "API Documenter",
-    sortOrder: 1,
-    icon: ApiIcon,
-    overviewImg: apiDocumenterImage,
-    iconSize: "32px",
-    duration: `Apr - June 2021`,
-    techList: filterInSameOrder(techListArray, [
-      "javascript",
-      "react",
-      "nodejs",
-      "expressjs",
-      "mongo",
-      "html",
-      "css",
-      "sass",
-      "git",
-      "api",
-      "materialUi",
-      "docker",
-    ]),
-    description: `An application for documenting all APIs for all microservices in an
-    organization. One can also call the API from here and see the results.
-    It provides controls to maintain different levels of access to a user
-    for a microservice.`,
-    externalUrls: [
-      {
-        type: "demovideo",
-        url: "/demo-videos/API_Documenter_Application_Demo.mp4",
-        // url: `https://drive.google.com/uc?id=1oqpiK_GMw-hmTxofoCppJiHeh9y7X5y7`,
-        isVideo: true,
-      },
-      {
-        type: "website",
-        url: `https://api-documenter.web.app`,
-      },
-      {
-        type: "github",
-        url: `https://github.com/parasagrawal71/api-documenter`,
         iconSize: "23px",
       },
     ],
@@ -123,8 +81,72 @@ const projectsList = [
     ],
   },
   {
-    name: "Shop Anywhere",
+    name: "API Documenter",
     sortOrder: 3,
+    icon: ApiIcon,
+    overviewImg: apiDocumenterImage,
+    iconSize: "32px",
+    duration: `Apr - June 2021`,
+    techList: filterInSameOrder(techListArray, [
+      "javascript",
+      "react",
+      "nodejs",
+      "expressjs",
+      "mongo",
+      "html",
+      "css",
+      "sass",
+      "git",
+      "api",
+      "materialUi",
+      "docker",
+    ]),
+    description: `An application for documenting all APIs for all microservices in an
+    organization. One can also call the API from here and see the results.
+    It provides controls to maintain different levels of access to a user
+    for a microservice.`,
+    externalUrls: [
+      {
+        type: "demovideo",
+        url: "/demo-videos/API_Documenter_Application_Demo.mp4",
+        // url: `https://drive.google.com/uc?id=1oqpiK_GMw-hmTxofoCppJiHeh9y7X5y7`,
+        isVideo: true,
+      },
+      {
+        type: "website",
+        url: `https://api-documenter.web.app`,
+      },
+      {
+        type: "github",
+        url: `https://github.com/parasagrawal71/api-documenter`,
+        iconSize: "23px",
+      },
+    ],
+  },
+  // {
+  //   name: "Expense Tracking",
+  //   sortOrder: 0,
+  //   icon: null,
+  //   overviewImg: goEventsApiImage,
+  //   iconSize: "",
+  //   duration: `Feb 2025`,
+  //   techList: filterInSameOrder(techListArray, ["nestjs", "typescript", "postgresql", "graphql", "typeorm"]),
+  //   description: ``,
+  //   externalUrls: [
+  //     {
+  //       type: "website",
+  //       url: ``,
+  //     },
+  //     {
+  //       type: "github",
+  //       url: `https://github.com/parasagrawal71/expense-tracking`,
+  //       iconSize: "23px",
+  //     },
+  //   ],
+  // },
+  {
+    name: "Shop Anywhere",
+    sortOrder: 4,
     icon: ShopIcon,
     overviewImg: shopAnywhereImage,
     iconSize: "30px",
@@ -161,8 +183,29 @@ const projectsList = [
     ],
   },
   {
+    name: "Go Events API",
+    sortOrder: 5,
+    icon: null,
+    overviewImg: goEventsApiImage,
+    iconSize: "",
+    duration: `Sep 2025`,
+    techList: filterInSameOrder(techListArray, ["golang", "postgresql"]),
+    description: `A RESTful API built with GoLang, providing secure authentication (register & login) endpoints and full CRUD operations for event management. Implements structured request validation, token-based authentication, and clean architecture principles.`,
+    externalUrls: [
+      {
+        type: "website",
+        url: `https://github.com/parasagrawal71/go-events-api/blob/master/README.md`,
+      },
+      {
+        type: "github",
+        url: `https://github.com/parasagrawal71/go-events-api`,
+        iconSize: "23px",
+      },
+    ],
+  },
+  {
     name: "GraphQL App",
-    sortOrder: 4,
+    sortOrder: 6,
     icon: GraphQLAppIcon,
     overviewImg: graphqlAppImage,
     iconSize: "30px",
@@ -190,7 +233,7 @@ const projectsList = [
   },
   {
     name: "FastAPI App",
-    sortOrder: 5,
+    sortOrder: 7,
     icon: FastAPIIcon,
     overviewImg: fastapiAppImage,
     iconSize: "30px",

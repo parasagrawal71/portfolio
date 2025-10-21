@@ -40,6 +40,7 @@ import shopAnywhereImage from "./img/shop-anywhere.png";
 import twitterHelpdeskImage from "./img/twitter-helpdesk.png";
 import graphqlAppImage from "./img/graphql-app.png";
 import fastapiAppImage from "./img/fastapi-app.png";
+import goEventsApiImage from "./img/go_events_api_screenshot.png";
 import bankSettlementSystemImage from "./img/bank-settlement-system.png";
 import {
   LinesIcon,
@@ -69,6 +70,7 @@ export {
   graphqlAppImage,
   fastapiAppImage,
   bankSettlementSystemImage,
+  goEventsApiImage,
   ApiIcon,
   TwitterIcon,
   GraphQLAppIcon,
