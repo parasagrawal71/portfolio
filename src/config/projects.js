@@ -11,6 +11,7 @@ import {
   FastAPIIcon,
   fastapiAppImage,
 } from "assets/Images";
+import { filterInSameOrder } from "utils/functions";
 import { techListArray, techListMap } from "./techList";
 
 /* *********************************************************************************************************** */
@@ -24,9 +25,7 @@ const projectsList = [
     overviewImg: bankSettlementSystemImage,
     iconSize: "",
     duration: `Oct 2025`,
-    techList: techListArray.filter((tech) =>
-      ["golang", "postgresql", "grpc", "kafka", "docker"].includes(tech.id)
-    ),
+    techList: filterInSameOrder(techListArray, ["golang", "postgresql", "grpc", "kafka", "docker"]),
     description: `A microservices-based financial transaction system that simulates how real-world payment networks process, capture, and settle payments.`,
     externalUrls: [
       {
@@ -47,22 +46,20 @@ const projectsList = [
     overviewImg: apiDocumenterImage,
     iconSize: "32px",
     duration: `Apr - June 2021`,
-    techList: techListArray.filter((tech) =>
-      [
-        "javascript",
-        "react",
-        "nodejs",
-        "expressjs",
-        "mongo",
-        "html",
-        "css",
-        "sass",
-        "git",
-        "api",
-        "materialUi",
-        "docker",
-      ].includes(tech.id)
-    ),
+    techList: filterInSameOrder(techListArray, [
+      "javascript",
+      "react",
+      "nodejs",
+      "expressjs",
+      "mongo",
+      "html",
+      "css",
+      "sass",
+      "git",
+      "api",
+      "materialUi",
+      "docker",
+    ]),
     description: `An application for documenting all APIs for all microservices in an
     organization. One can also call the API from here and see the results.
     It provides controls to maintain different levels of access to a user
@@ -92,20 +89,18 @@ const projectsList = [
     overviewImg: twitterHelpdeskImage,
     iconSize: "28px",
     duration: `Nov 2020`,
-    techList: techListArray.filter((tech) =>
-      [
-        "javascript",
-        "vuejs",
-        "nodejs",
-        "websocket",
-        "html",
-        "css",
-        "sass",
-        "git",
-        "api",
-        "docker",
-      ].includes(tech.id)
-    ),
+    techList: filterInSameOrder(techListArray, [
+      "javascript",
+      "vuejs",
+      "nodejs",
+      "websocket",
+      "html",
+      "css",
+      "sass",
+      "git",
+      "api",
+      "docker",
+    ]),
     description: `An application that displays all the tweets in which someone is
       mentioned in one place. OAuth login. Mention and reply in real-time
       without refreshing the page (WebSockets).`,
@@ -134,22 +129,20 @@ const projectsList = [
     overviewImg: shopAnywhereImage,
     iconSize: "30px",
     duration: `Apr - Sep 2020`,
-    techList: techListArray.filter((tech) =>
-      [
-        "javascript",
-        "react",
-        "redux",
-        "nodejs",
-        "expressjs",
-        "mongo",
-        "html",
-        "css",
-        "sass",
-        "git",
-        "api",
-        "materialUi",
-      ].includes(tech.id)
-    ),
+    techList: filterInSameOrder(techListArray, [
+      "javascript",
+      "react",
+      "redux",
+      "nodejs",
+      "expressjs",
+      "mongo",
+      "html",
+      "css",
+      "sass",
+      "git",
+      "api",
+      "materialUi",
+    ]),
     description: `Built a simple e-commerce website to learn and apply different
       concepts from React, Redux, NodeJS, and Mongo. This project was
       my experiment to learn good folder structure, git best practices like
@@ -175,9 +168,13 @@ const projectsList = [
     iconSize: "30px",
     iconColor: "#C52E95",
     duration: `May 2023`,
-    techList: techListArray.filter((tech) =>
-      ["graphql", "javascript", "nodejs", "mongo", "docker"].includes(tech.id)
-    ),
+    techList: filterInSameOrder(techListArray, [
+      "graphql",
+      "javascript",
+      "nodejs",
+      "mongo",
+      "docker",
+    ]),
     description: `A server based on GraphQL that provides the capability to perform queries on posts, comments related to the posts, and users. Additionally, it allows one to add new users and modify existing user data.`,
     externalUrls: [
       {
@@ -199,9 +196,13 @@ const projectsList = [
     iconSize: "30px",
     iconColor: "#009688",
     duration: `July 2023`,
-    techList: techListArray.filter((tech) =>
-      ["fastapi", "python", "mongo", "docker", "googlecloud"].includes(tech.id)
-    ),
+    techList: filterInSameOrder(techListArray, [
+      "fastapi",
+      "python",
+      "mongo",
+      "docker",
+      "googlecloud",
+    ]),
     description: `A FastAPI-based CRUD application.`,
     externalUrls: [
       {

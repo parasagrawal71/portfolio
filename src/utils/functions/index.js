@@ -133,3 +133,10 @@ export function convertMonthsToYears(months) {
   const monthsInDecimal = ((months % 12) / 12).toFixed(1);
   return Number(`${Number(years) + Number(monthsInDecimal)}`);
 }
+
+// Filter list in the same order as given in the 'list'
+export function filterInSameOrder(parentList, filterIds) {
+  return filterIds
+    .map((filterId) => parentList.find((item) => item.id === filterId))
+    .filter(Boolean);
+}
