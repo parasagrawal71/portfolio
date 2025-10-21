@@ -11,6 +11,7 @@ import {
   FastAPIIcon,
   fastapiAppImage,
   goEventsApiImage,
+  expenseTrackingExpenseMgmtApi,
 } from "assets/Images";
 import { filterInSameOrder } from "utils/functions";
 import { techListArray, techListMap } from "./techList";
@@ -123,30 +124,36 @@ const projectsList = [
       },
     ],
   },
-  // {
-  //   name: "Expense Tracking",
-  //   sortOrder: 0,
-  //   icon: null,
-  //   overviewImg: goEventsApiImage,
-  //   iconSize: "",
-  //   duration: `Feb 2025`,
-  //   techList: filterInSameOrder(techListArray, ["nestjs", "typescript", "postgresql", "graphql", "typeorm"]),
-  //   description: ``,
-  //   externalUrls: [
-  //     {
-  //       type: "website",
-  //       url: ``,
-  //     },
-  //     {
-  //       type: "github",
-  //       url: `https://github.com/parasagrawal71/expense-tracking`,
-  //       iconSize: "23px",
-  //     },
-  //   ],
-  // },
+  {
+    name: "Expense Tracking",
+    sortOrder: 4,
+    icon: null,
+    overviewImg: expenseTrackingExpenseMgmtApi,
+    iconSize: "",
+    duration: `Feb 2025`,
+    techList: filterInSameOrder(techListArray, [
+      "nestjs",
+      "typescript",
+      "postgresql",
+      "graphql",
+      "typeorm",
+    ]),
+    description: `A modular monorepo built with Nest.js and pnpm workspaces, designed to manage expenses efficiently. It follows a microservices architecture with dedicated services for authentication and expense management.`,
+    externalUrls: [
+      {
+        type: "website",
+        url: `https://github.com/parasagrawal71/expense-tracking/blob/master/README.md`,
+      },
+      {
+        type: "github",
+        url: `https://github.com/parasagrawal71/expense-tracking`,
+        iconSize: "23px",
+      },
+    ],
+  },
   {
     name: "Shop Anywhere",
-    sortOrder: 4,
+    sortOrder: 5,
     icon: ShopIcon,
     overviewImg: shopAnywhereImage,
     iconSize: "30px",
@@ -184,7 +191,7 @@ const projectsList = [
   },
   {
     name: "Go Events API",
-    sortOrder: 5,
+    sortOrder: 6,
     icon: null,
     overviewImg: goEventsApiImage,
     iconSize: "",
@@ -205,7 +212,7 @@ const projectsList = [
   },
   {
     name: "GraphQL App",
-    sortOrder: 6,
+    sortOrder: 7,
     icon: GraphQLAppIcon,
     overviewImg: graphqlAppImage,
     iconSize: "30px",
@@ -233,7 +240,7 @@ const projectsList = [
   },
   {
     name: "FastAPI App",
-    sortOrder: 7,
+    sortOrder: 8,
     icon: FastAPIIcon,
     overviewImg: fastapiAppImage,
     iconSize: "30px",

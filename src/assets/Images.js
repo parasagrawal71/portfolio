@@ -42,6 +42,8 @@ import graphqlAppImage from "./img/graphql-app.png";
 import fastapiAppImage from "./img/fastapi-app.png";
 import goEventsApiImage from "./img/go_events_api_screenshot.png";
 import bankSettlementSystemImage from "./img/bank-settlement-system.png";
+import expenseTrackingAuthApi from "./img/expense-tracking-auth-api.png";
+import expenseTrackingExpenseMgmtApi from "./img/expense-tracking-expense-management.png";
 import {
   LinesIcon,
   FrontendIcon,
@@ -71,6 +73,8 @@ export {
   fastapiAppImage,
   bankSettlementSystemImage,
   goEventsApiImage,
+  expenseTrackingAuthApi,
+  expenseTrackingExpenseMgmtApi,
   ApiIcon,
   TwitterIcon,
   GraphQLAppIcon,
